@@ -124,15 +124,31 @@ class ZeroToFluencyApp {
   private blockTestSession: BlockTestSessionState | null = null;
   private expandedBlocks: Set<number> = new Set<number>([1]);
   private isResetModalOpen = false;
+  private isRestoringSession = false;
+  private isSigningIn = false;
 
   constructor(rootElement: HTMLElement) {
     this.root = rootElement;
-    this.currentUser = storageService.getCurrentUser();
+    const firebaseMode = firebaseAuthService.isConfigured();
+    this.currentUser = null;
+    this.isRestoringSession = firebaseMode;
     const savedTheme = localStorage.getItem('ztf_theme') as 'dark' | 'light' | null;
-    this.theme = savedTheme === 'light' ? 'light' : 'dark';
+    this.theme = savedTheme === 'dark' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', this.theme);
     this.setupGlobalKeyboardShortcuts();
     this.render();
+
+    if (firebaseMode) {
+      void firebaseAuthService.restoreSession().then((user) => {
+        this.currentUser = user;
+        this.isRestoringSession = false;
+        this.render();
+      }).catch(() => {
+        this.isRestoringSession = false;
+        this.authError = 'Não foi possível verificar sua sessão. Tente entrar novamente.';
+        this.render();
+      });
+    }
   }
 
   private toggleTheme(): void {
@@ -700,61 +716,44 @@ class ZeroToFluencyApp {
   }
 
   private renderLoginScreen(): string {
-    const authorizedUsers = storageService.getAuthorizedUsers();
+    const configured = firebaseAuthService.isConfigured();
+    const errorHtml = this.authError
+      ? `<div class="login-alert">${this.escapeHtml(this.authError)}</div>`
+      : '';
+
+    let actionHtml: string;
+    if (this.isRestoringSession) {
+      actionHtml = `<div class="login-loading"><span class="spinner"></span>Verificando seu acesso...</div>`;
+    } else if (!configured) {
+      actionHtml = `<div class="login-alert">O login com Google ainda não foi configurado neste site.</div>`;
+    } else {
+      actionHtml = `
+        <button id="btn-google-login" class="google-btn" ${this.isSigningIn ? 'disabled' : ''}>
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.7 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+            <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+            <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.9z"/>
+            <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 21.4 7.4 24 12 24z"/>
+          </svg>
+          ${this.isSigningIn ? 'Entrando...' : 'Continuar com Google'}
+        </button>
+        <p class="login-note">O acesso é liberado pelo professor. Use o e-mail Google informado a ele.</p>`;
+    }
+
     return `
-      <div class="app-shell">
+      <div class="login-stage">
+        <div class="login-bubbles" aria-hidden="true">
+          <span class="bubble b1"></span><span class="bubble b2"></span>
+          <span class="bubble b3"></span><span class="bubble b4"></span>
+        </div>
         <div class="login-wrapper">
-          <h1 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 4px;">ZeroToFluency</h1>
-          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 20px;">
-            Entre com sua conta Google autorizada.
-          </p>
-
-          ${
-            this.authError
-              ? `<div style="background: rgba(244,63,94,0.14); border: 1px solid rgba(244,63,94,0.4); color: var(--match-err-text); padding: 10px; border-radius: 6px; font-size: 0.85rem; margin-bottom: 14px;">
-                  ${this.escapeHtml(this.authError)}
-                </div>`
-              : ''
-          }
-
-          <input
-            id="google-email-input"
-            type="email"
-            class="input-field"
-            placeholder="E-mail Google"
-            value="julia.aluna@gmail.com"
-          />
-
-          <button id="btn-google-login" class="google-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24">
-              <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.7 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
-              <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
-              <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.9z"/>
-              <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 21.4 7.4 24 12 24z"/>
-            </svg>
-            Continuar com Google
-          </button>
-
-          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color);">
-            <div style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 6px;">
-              Acesso rápido:
-            </div>
-            ${authorizedUsers
-              .map(
-                (u) => `
-              <button class="account-card-btn" data-quick-email="${this.escapeHtml(u.email)}">
-                <div>
-                  <div style="font-weight: 600; font-size: 0.88rem;">${this.escapeHtml(u.name)}</div>
-                  <div style="font-size: 0.76rem; color: var(--text-secondary);">${this.escapeHtml(u.email)}</div>
-                </div>
-                <span class="tag-minimal">
-                  ${u.role === 'teacher' ? 'Professor' : `${u.dailyStudyDaysQuota ?? 2}d/dia`}
-                </span>
-              </button>
-            `
-              )
-              .join('')}
+          <div class="login-logo" aria-hidden="true">
+            <span class="logo-block lb-1">Z</span><span class="logo-block lb-2">T</span><span class="logo-block lb-3">F</span>
           </div>
+          <h1 class="login-title">ZeroToFluency</h1>
+          <p class="login-subtitle">Aprenda inglês frase por frase, no seu ritmo.</p>
+          ${errorHtml}
+          ${actionHtml}
         </div>
       </div>
     `;
@@ -2436,7 +2435,7 @@ class ZeroToFluencyApp {
     const authorizedUsers = storageService.getAuthorizedUsers();
     const studyDays = storageService.getStudyDays();
     const reports = storageService.getTranslationReports();
-    const fbConfig = firebaseAuthService.getSavedConfig();
+    const firebaseReady = firebaseAuthService.isConfigured();
 
     return `
       <!-- 0. REPORTES E SUGESTÕES DE TRADUÇÃO DOS ALUNOS (BANDEIRINHA) -->
@@ -2523,10 +2522,6 @@ class ZeroToFluencyApp {
           <input id="admin-user-weeks" type="number" min="1" max="150" value="1" class="input-field" placeholder="Módulos liberados" title="Cada módulo libera 7 lições" />
           <input id="admin-user-daily-quota" type="number" min="1" max="20" value="2" class="input-field" placeholder="Dias/dia (Ex: 2 = 20 pal.)" title="Limite diário em Dias de Estudo (1 dia = 10 palavras)" />
           <input id="admin-user-max-days" type="number" min="10" max="1000" value="1000" class="input-field" placeholder="Teto Geral (Ex: 50, 100, 1000)" title="Limite geral de Dias de Estudo do plano" />
-          <select id="admin-user-role" class="input-field">
-            <option value="student">Aluno</option>
-            <option value="teacher">Professor</option>
-          </select>
         </div>
         <button id="btn-admin-save-user" class="btn btn-primary" style="margin-top: 12px;">
           Salvar Aluno
@@ -2537,7 +2532,7 @@ class ZeroToFluencyApp {
             <tr>
               <th>Nome</th>
               <th>E-mail</th>
-              <th>Progresso (1d = 10 pal.)</th>
+              <th>Progresso neste navegador</th>
               <th>Limite Diário / Geral</th>
               <th>Módulos</th>
               <th></th>
@@ -2561,14 +2556,17 @@ class ZeroToFluencyApp {
                 <td style="display:flex; gap:6px; justify-content:flex-end;">
                   ${
                     u.role === 'student'
-                      ? `<button class="btn btn-sm" data-unlock-next-week="${this.escapeHtml(u.email)}">
+                      ? `<button class="btn btn-sm" data-toggle-user-active="${this.escapeHtml(u.email)}">
+                          ${u.active ? 'Pausar' : 'Ativar'}
+                        </button>
+                        <button class="btn btn-sm" data-unlock-next-week="${this.escapeHtml(u.email)}">
                           +7 lições
                         </button>`
                       : ''
                   }
-                  <button class="btn btn-danger btn-sm" data-remove-user="${this.escapeHtml(u.email)}">
+                  ${u.role === 'student' ? `<button class="btn btn-danger btn-sm" data-remove-user="${this.escapeHtml(u.email)}">
                     Remover
-                  </button>
+                  </button>` : ''}
                 </td>
               </tr>
             `;
@@ -2683,53 +2681,49 @@ class ZeroToFluencyApp {
         </button>
       </div>
 
-      <!-- 6. FIREBASE -->
+      <!-- 6. STATUS DO LOGIN GOOGLE -->
       <div class="panel-card">
-        <h2 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 10px;">
-          Firebase Auth (Opcional)
-        </h2>
-        <div class="form-grid">
-          <input id="fb-api-key" type="text" class="input-field" placeholder="apiKey" value="${this.escapeHtml(fbConfig?.apiKey ?? '')}" />
-          <input id="fb-auth-domain" type="text" class="input-field" placeholder="authDomain" value="${this.escapeHtml(fbConfig?.authDomain ?? '')}" />
-          <input id="fb-project-id" type="text" class="input-field" placeholder="projectId" value="${this.escapeHtml(fbConfig?.projectId ?? '')}" />
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <h2 style="font-size: 1.05rem; font-weight: 700;">
+            Login Google & Lista Online (Firebase)
+          </h2>
+          <span class="tag-minimal">
+            ${firebaseReady ? 'Configurado' : 'Aguardando variáveis VITE_FIREBASE_*'}
+          </span>
         </div>
-        <button id="btn-save-fb-config" class="btn btn-sm" style="margin-top: 12px;">
-          Salvar
-        </button>
+        <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 8px;">
+          ${
+            firebaseReady
+              ? 'Os alunos adicionados, pausados ou removidos acima são sincronizados automaticamente com o Firestore.'
+              : 'Configure as variáveis de ambiente VITE_FIREBASE_API_KEY, VITE_FIREBASE_AUTH_DOMAIN, VITE_FIREBASE_PROJECT_ID e VITE_FIREBASE_APP_ID na Vercel ou no arquivo .env.'
+          }
+        </p>
       </div>
     `;
   }
 
   private bindLoginEvents(): void {
-    const emailInput = document.getElementById(
-      'google-email-input'
-    ) as HTMLInputElement | null;
     const loginBtn = document.getElementById('btn-google-login');
 
-    const triggerLogin = async (emailToUse?: string) => {
-      const targetEmail = (emailToUse ?? emailInput?.value ?? '').trim();
-      const res = await firebaseAuthService.signInWithGoogle(targetEmail);
+    loginBtn?.addEventListener('click', async () => {
+      if (this.isSigningIn) return;
+      this.isSigningIn = true;
+      this.authError = null;
+      this.render();
+
+      const res = await firebaseAuthService.signInWithGoogle();
+      this.isSigningIn = false;
+
       if (!res.success || !res.user) {
         this.authError = res.errorMessage ?? 'Acesso não autorizado.';
         this.render();
         return;
       }
+
       this.authError = null;
       this.currentUser = res.user;
       this.activeTab = 'dashboard';
       this.render();
-    };
-
-    loginBtn?.addEventListener('click', () => triggerLogin());
-    emailInput?.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') triggerLogin();
-    });
-
-    document.querySelectorAll<HTMLElement>('[data-quick-email]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const email = btn.getAttribute('data-quick-email') ?? '';
-        triggerLogin(email);
-      });
     });
   }
 
@@ -2779,7 +2773,7 @@ class ZeroToFluencyApp {
     });
 
     document.getElementById('btn-logout')?.addEventListener('click', () => {
-      storageService.setCurrentUser(null);
+      void firebaseAuthService.signOut();
       this.currentUser = null;
       this.session = null;
       this.render();
@@ -3189,7 +3183,7 @@ class ZeroToFluencyApp {
       });
     });
 
-    document.getElementById('btn-admin-save-user')?.addEventListener('click', () => {
+    document.getElementById('btn-admin-save-user')?.addEventListener('click', async () => {
       const name = (
         document.getElementById('admin-user-name') as HTMLInputElement
       )?.value.trim();
@@ -3205,51 +3199,89 @@ class ZeroToFluencyApp {
       const maxDays = Number(
         (document.getElementById('admin-user-max-days') as HTMLInputElement)?.value || 1000
       );
-      const role = (
-        document.getElementById('admin-user-role') as HTMLSelectElement
-      )?.value as 'student' | 'teacher';
-
-      if (!name || !email) {
+      if (!name || !email || !/^[^\s@/]+@[^\s@/]+\.[^\s@/]+$/.test(email)) {
         this.showBanner('error', 'Informe nome e e-mail.');
         return;
       }
 
-      storageService.addOrUpdateAuthorizedUser({
+      const normalizedEmail = email.toLowerCase();
+      const existing = storageService.getAuthorizedUsers().find((u) => u.email === normalizedEmail);
+      if (existing?.role === 'teacher') {
+        this.showBanner('error', 'O administrador não pode ser cadastrado como aluno.');
+        return;
+      }
+      const user: AuthorizedUser = {
+        ...existing,
         name,
-        email,
-        role: role || 'student',
+        email: normalizedEmail,
+        role: 'student',
         tenantId: 'default-teacher-tenant',
         active: true,
         unlockedWeeks: Math.max(1, weeks),
         dailyStudyDaysQuota: Math.max(1, dailyQuota),
         maxTotalStudyDaysLimit: Math.max(10, maxDays),
-        createdAt: new Date().toISOString(),
-      });
-      this.showBanner('success', 'Aluno e limites atualizados.');
+        createdAt: existing?.createdAt ?? new Date().toISOString(),
+      };
+      try {
+        await firebaseAuthService.saveAllowedUser(user);
+        this.showBanner('success', 'Aluno e limites atualizados.');
+      } catch {
+        this.showBanner('error', 'Não foi possível salvar o aluno na nuvem. Tente novamente.');
+      }
     });
+
+    document
+      .querySelectorAll<HTMLElement>('[data-toggle-user-active]')
+      .forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const email = btn.getAttribute('data-toggle-user-active') ?? '';
+          const users = storageService.getAuthorizedUsers();
+          const target = users.find(
+            (u) => u.email.toLowerCase() === email.toLowerCase()
+          );
+          if (target) {
+            const updated = { ...target, active: !target.active };
+            try {
+              await firebaseAuthService.saveAllowedUser(updated);
+              this.showBanner('success', updated.active
+                ? `Acesso ativado para ${target.name}.`
+                : `Acesso pausado para ${target.name}.`);
+            } catch {
+              this.showBanner('error', 'Não foi possível alterar o acesso na nuvem. Tente novamente.');
+            }
+          }
+        });
+      });
 
     document
       .querySelectorAll<HTMLElement>('[data-unlock-next-week]')
       .forEach((btn) => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', async () => {
           const email = btn.getAttribute('data-unlock-next-week') ?? '';
           const users = storageService.getAuthorizedUsers();
           const target = users.find(
             (u) => u.email.toLowerCase() === email.toLowerCase()
           );
           if (target) {
-            target.unlockedWeeks += 1;
-            storageService.addOrUpdateAuthorizedUser(target);
-            this.showBanner('success', `+7 lições liberadas para ${target.name}.`);
+            try {
+              await firebaseAuthService.saveAllowedUser({ ...target, unlockedWeeks: target.unlockedWeeks + 1 });
+              this.showBanner('success', `+7 lições liberadas para ${target.name}.`);
+            } catch {
+              this.showBanner('error', 'Não foi possível atualizar as lições na nuvem. Tente novamente.');
+            }
           }
         });
       });
 
     document.querySelectorAll<HTMLElement>('[data-remove-user]').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         const email = btn.getAttribute('data-remove-user') ?? '';
-        storageService.removeAuthorizedUser(email);
-        this.showBanner('success', 'Removido.');
+        try {
+          await firebaseAuthService.removeAllowedUser(email);
+          this.showBanner('success', 'Removido.');
+        } catch {
+          this.showBanner('error', 'Não foi possível remover da nuvem. Tente novamente.');
+        }
       });
     });
 
@@ -3401,27 +3433,6 @@ class ZeroToFluencyApp {
       } else {
         this.showBanner('success', `${res.importedCount} cards importados.`);
       }
-    });
-
-    document.getElementById('btn-save-fb-config')?.addEventListener('click', () => {
-      const apiKey = (
-        document.getElementById('fb-api-key') as HTMLInputElement
-      )?.value.trim();
-      const authDomain = (
-        document.getElementById('fb-auth-domain') as HTMLInputElement
-      )?.value.trim();
-      const projectId = (
-        document.getElementById('fb-project-id') as HTMLInputElement
-      )?.value.trim();
-
-      if (!apiKey || !authDomain || !projectId) {
-        firebaseAuthService.saveConfig(null);
-        this.showBanner('success', 'Configuração removida.');
-        return;
-      }
-
-      firebaseAuthService.saveConfig({ apiKey, authDomain, projectId });
-      this.showBanner('success', 'Configuração salva.');
     });
   }
 
