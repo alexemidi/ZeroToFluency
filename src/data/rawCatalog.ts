@@ -50,7 +50,7 @@ const RAW_WORDS_TEXT = `
 44. Your — Seu / Sua / Seus / Suas
 45. How — Como / Quão
 46. Said — Disse / Falou
-47. An — Um / Uma (antes de vogal)
+47. An — Um / Uma
 48. Each — Cada
 49. She — Ela
 50. Which — Qual / O qual

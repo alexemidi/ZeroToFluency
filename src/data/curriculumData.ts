@@ -1,4 +1,5 @@
 import { StudyDayLesson, Flashcard, CefrLevel } from '../types';
+import { REVIEWED_A1_LESSONS } from './reviewedA1Lessons';
 
 /**
  * Currículo Pedagógico Estruturado 100% Construtivo Nível A1 (150 Lições, 15 Blocos, 1.500+ Palavras).
@@ -467,7 +468,7 @@ export const GRAMMAR_ROADMAP_100_DAYS: GrammarRoadmapModule[] = [
   },
 ];
 
-export const INITIAL_STUDY_DAYS: StudyDayLesson[] = [
+const ORIGINAL_STUDY_DAYS: StudyDayLesson[] = [
   {
     dayNumber: 1,
     weekNumber: 1,
@@ -12112,3 +12113,7 @@ export const INITIAL_STUDY_DAYS: StudyDayLesson[] = [
     ]
   }
 ];
+
+export const INITIAL_STUDY_DAYS: StudyDayLesson[] = ORIGINAL_STUDY_DAYS.map(
+  (lesson) => REVIEWED_A1_LESSONS.find((reviewed) => reviewed.dayNumber === lesson.dayNumber) ?? lesson
+);

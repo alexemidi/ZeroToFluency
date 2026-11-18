@@ -19,6 +19,7 @@ const STORAGE_KEYS = {
   AUTHORIZED_USERS: 'ztf_authorized_users',
   STUDY_DAYS: 'ztf_study_days',
   CURRICULUM_REVISION: 'ztf_curriculum_revision',
+  REVIEWED_A1_REVISION: 'ztf_reviewed_a1_revision',
   CUSTOM_CARDS: 'ztf_custom_cards',
   SRS_PROGRESS: 'ztf_srs_progress',
   DAILY_ACTIVITY: 'ztf_daily_activity',
@@ -311,13 +312,89 @@ class StorageService {
     return migratedDays;
   }
 
+  private migrateReviewedA1Lessons(days: StudyDayLesson[]): StudyDayLesson[] {
+    if (localStorage.getItem(STORAGE_KEYS.REVIEWED_A1_REVISION) === 'v3') return days;
+
+    const allIds = new Set(days.flatMap((day) => day.cards.map((card) => card.id)));
+    const changedDays = new Set<number>();
+    const migrated = days.map((storedLesson) => {
+      const courseCards = storedLesson.cards.filter((card) => !card.isCustom);
+      const origins = new Set(
+        courseCards
+          .map((card) => /^day-(\d+)-card-\d{1,2}(?:-[a-z0-9]+)*$/i.exec(card.id)?.[1])
+          .filter((origin): origin is string => Boolean(origin))
+      );
+      if (origins.size !== 1) return storedLesson;
+      const originalNumber = Number([...origins][0]);
+      if (originalNumber < 1 || originalNumber > 20) return storedLesson;
+      const template = INITIAL_STUDY_DAYS.find((lesson) => lesson.dayNumber === originalNumber);
+      if (!template || template.blockNumber !== storedLesson.blockNumber) return storedLesson;
+
+      const originalCards = courseCards.filter((card) =>
+        new RegExp(`^day-${originalNumber}-card-\\d{1,2}(?:-[a-z0-9]+)*$`, 'i').test(card.id)
+      );
+      const reused = new Set<string>();
+      const cards = template.cards.map((card) => {
+        const same = originalCards.find((old) =>
+          !reused.has(old.id) &&
+          old.type === card.type &&
+          old.english === card.english &&
+          old.portuguese === card.portuguese &&
+          JSON.stringify(old.grammarRule) === JSON.stringify(card.grammarRule) &&
+          JSON.stringify(old.auxiliaryWord) === JSON.stringify(card.auxiliaryWord)
+        );
+        if (same) {
+          reused.add(same.id);
+          return { ...card, id: same.id, tenantId: same.tenantId, dayNumber: storedLesson.dayNumber };
+        }
+        let id = card.id;
+        let suffix = 2;
+        while (allIds.has(id)) id = `${card.id}-r${suffix++}`;
+        allIds.add(id);
+        return { ...card, id, dayNumber: storedLesson.dayNumber };
+      });
+      const extras = storedLesson.cards.filter((card) => !originalCards.includes(card));
+      const result = {
+        ...storedLesson,
+        ...template,
+        dayNumber: storedLesson.dayNumber,
+        weekNumber: storedLesson.weekNumber,
+        title: template.title.replace(/^Lição \d+/, `Lição ${storedLesson.dayNumber}`),
+        cards: [
+          ...cards,
+          ...extras.map((card, index) => ({
+            ...card,
+            dayNumber: storedLesson.dayNumber,
+            orderInDay: cards.length + index + 1,
+          })),
+        ],
+      };
+      if (JSON.stringify(result) !== JSON.stringify(storedLesson)) changedDays.add(storedLesson.dayNumber);
+      return result;
+    });
+
+    if (changedDays.size) {
+      const rawCheckpoints = localStorage.getItem(STORAGE_KEYS.LESSON_CHECKPOINTS);
+      if (rawCheckpoints) {
+        const checkpoints = JSON.parse(rawCheckpoints) as Record<string, LessonSessionCheckpoint>;
+        for (const [email, checkpoint] of Object.entries(checkpoints)) {
+          if (changedDays.has(checkpoint.dayNumber)) delete checkpoints[email];
+        }
+        localStorage.setItem(STORAGE_KEYS.LESSON_CHECKPOINTS, JSON.stringify(checkpoints));
+      }
+      localStorage.setItem(STORAGE_KEYS.STUDY_DAYS, JSON.stringify(migrated));
+    }
+    localStorage.setItem(STORAGE_KEYS.REVIEWED_A1_REVISION, 'v3');
+    return migrated;
+  }
+
   public getStudyDays(): StudyDayLesson[] {
     const raw = localStorage.getItem(STORAGE_KEYS.STUDY_DAYS);
     if (!raw) return [...INITIAL_STUDY_DAYS];
     try {
       const parsed = JSON.parse(raw) as StudyDayLesson[];
       return parsed.length > 0
-        ? this.migrateReviewedBlockFiveLessons(parsed)
+        ? this.migrateReviewedA1Lessons(this.migrateReviewedBlockFiveLessons(parsed))
         : [...INITIAL_STUDY_DAYS];
     } catch {
       return [...INITIAL_STUDY_DAYS];
@@ -787,9 +864,14 @@ class StorageService {
 
   public getScheduledCountsByDate(userEmail: string): Record<string, number> {
     const map = this.getUserSrsMap(userEmail);
+    const reviewableIds = new Set(
+      [...this.getStudyDays().flatMap((day) => day.cards), ...this.getCustomStudentCards(userEmail)]
+        .filter((card) => card.type === 'phrase' || card.type === 'dialogue')
+        .map((card) => card.id)
+    );
     const counts: Record<string, number> = {};
     for (const item of Object.values(map)) {
-      if (item.stage === 'graduated' && item.nextReviewDateIso) {
+      if (reviewableIds.has(item.cardId) && item.stage === 'graduated' && item.nextReviewDateIso) {
         const d = item.nextReviewDateIso.slice(0, 10);
         counts[d] = (counts[d] ?? 0) + 1;
       }
@@ -814,9 +896,9 @@ class StorageService {
 
     const dueCards: Flashcard[] = [];
     for (const prog of Object.values(srsMap)) {
-      if (prog.stage === 'graduated' && prog.nextReviewDateIso.slice(0, 10) <= todayIso) {
+      if (prog.stage === 'graduated' && prog.nextReviewDateIso && prog.nextReviewDateIso.slice(0, 10) <= todayIso) {
         const card = cardLookup.get(prog.cardId);
-        if (card) {
+        if (card && (card.type === 'phrase' || card.type === 'dialogue')) {
           dueCards.push(card);
         }
       }
@@ -825,13 +907,32 @@ class StorageService {
     return dueCards;
   }
 
+  public selectDueReviewCards(userEmail: string, limit: number, todayIso = getTodayDateIso()): Flashcard[] {
+    if (!Number.isSafeInteger(limit) || limit < 1) {
+      throw new RangeError('O limite de revisão deve ser um número inteiro positivo.');
+    }
+
+    const srsMap = this.getUserSrsMap(userEmail);
+    const today = Date.parse(`${todayIso}T00:00:00Z`);
+    return this.getDueReviewCards(userEmail, todayIso)
+      .map((card) => {
+        const dueDate = Date.parse(`${srsMap[card.id].nextReviewDateIso.slice(0, 10)}T00:00:00Z`);
+        const daysLate = Math.max(0, Math.floor((today - dueDate) / 86400000));
+        return { card, key: -Math.log(1 - Math.random()) / (daysLate + 1) };
+      })
+      .sort((a, b) => a.key - b.key)
+      .slice(0, limit)
+      .map(({ card }) => card);
+  }
+
   public isDayCompletedByUser(userEmail: string, dayNumber: number): boolean {
     const days = this.getStudyDays();
     const day = days.find((d) => d.dayNumber === dayNumber);
     if (!day || day.cards.length === 0) return false;
 
     const srsMap = this.getUserSrsMap(userEmail);
-    return day.cards.every((c) => srsMap[c.id]?.stage === 'graduated');
+    const studyCards = day.cards.filter((card) => card.type !== 'grammar');
+    return studyCards.length > 0 && studyCards.every((card) => srsMap[card.id]?.stage === 'graduated');
   }
 
   public getCompletedDayNumbers(userEmail: string): number[] {
@@ -1121,11 +1222,16 @@ class StorageService {
       if (foundCheckpointLesson) {
         return foundCheckpointLesson;
       }
+
     }
 
     const completed = new Set(this.getCompletedDayNumbers(userEmail));
     const firstPending = days.find((d) => !completed.has(d.dayNumber));
     return firstPending ?? days[days.length - 1];
+  }
+
+  public getFollowingLesson(dayNumber: number): StudyDayLesson | null {
+    return this.getStudyDays().find((day) => day.dayNumber > dayNumber) ?? null;
   }
 
   /**

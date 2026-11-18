@@ -1,4 +1,5 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { readFileSync } from 'node:fs';
 import {
   createInitialSrsProgress,
   applySrsRating,
@@ -152,6 +153,28 @@ describe('Correspondência por Palavra Inteira + Sinônimos + Deduplicação de 
 });
 
 describe('Currículo Construtivo i+1 (Sem Palavras Auxiliares Desconhecidas), Lições 1–7 Exatas e Plano CEFR A1–C2 (10.000 Palavras)', () => {
+  it('mantém títulos e sequência dos cards das lições 1 a 20 iguais ao roteiro revisado', () => {
+    const plan = readFileSync('roteiro_a1_v2.md', 'utf8');
+    for (let number = 1; number <= 20; number++) {
+      const heading = new RegExp(`^### Lição ${number} — (.+)$`, 'm').exec(plan)!;
+      const start = heading.index + heading[0].length;
+      const end = plan.slice(start).search(/^### |^# BLOCO /m);
+      const section = plan.slice(start, end < 0 ? undefined : start + end);
+      const expected = [...section.matchAll(/^\d+\. `\[(Palavra|Frase|Diálogo|Gramática)\]` \*\*(.+?)\*\*(?: — (.+?))?$/gm)]
+        .map((match) => ({
+          type: { Palavra: 'word', Frase: 'phrase', Diálogo: 'dialogue', Gramática: 'grammar' }[match[1]],
+          english: match[2],
+          portuguese: (match[3] || '').replace(/\s+`\[Ver palavra: .+?\]`$/, ''),
+        }));
+      const lesson = INITIAL_STUDY_DAYS.find((item) => item.dayNumber === number)!;
+      expect(lesson.title).toBe(`Lição ${number} — ${heading[1]}`);
+      expect(lesson.cards.map(({ type, english, portuguese }) => ({
+        type,
+        english,
+        portuguese: type === 'grammar' ? '' : portuguese,
+      }))).toEqual(expected);
+    }
+  });
   it('deve conter os 10 módulos do Mapa Gramatical de 100 Dias e os 6 níveis CEFR (A1 a C2) somando 10.000 palavras e 1.000 dias de estudo', () => {
     expect(GRAMMAR_ROADMAP_100_DAYS).toHaveLength(10);
     expect(CEFR_CURRICULUM_PLAN_A1_TO_C2).toHaveLength(6);
@@ -169,18 +192,18 @@ describe('Currículo Construtivo i+1 (Sem Palavras Auxiliares Desconhecidas), Li
     }
   });
 
-  it('deve seguir exatamente os modelos construtivos de Lições dos Blocos 1 e 3 (Ex: Lição 5 com I am e You are, Lição 28 com Living room)', () => {
-    const lesson5 = INITIAL_STUDY_DAYS.find((d) => d.dayNumber === 5)!;
-    expect(lesson5.cards.map((c) => c.english)).toContain('Am');
-    expect(lesson5.cards.map((c) => c.english)).toContain('I am in the house.');
-    expect(lesson5.cards.map((c) => c.english)).toContain('You are a student.');
+  it('deve manter as lições revisadas e preservar os rascunhos posteriores', () => {
+    const lesson8 = INITIAL_STUDY_DAYS.find((d) => d.dayNumber === 8)!;
+    expect(lesson8.cards.map((c) => c.english)).toContain('In');
+    expect(lesson8.cards.map((c) => c.english)).toContain('I am in the house.');
+    expect(lesson8.cards.map((c) => c.english)).toContain('You are on the bus.');
 
     const lesson24 = INITIAL_STUDY_DAYS.find((d) => d.dayNumber === 24)!;
     expect(lesson24.cards.map((c) => c.english)).toContain('Living room');
     expect(lesson24.cards.map((c) => c.english)).toContain('My father is in the living room.');
   });
 
-  it('deve garantir que o Dia 1 siga exatamente a sequência construtiva: The, Apple, The apple., Orange, And, The orange., Boy, Girl, The apple and the orange., The boy and the girl., Gramática', () => {
+  it('deve seguir a sequência revisada da lição 1', () => {
     const day1 = INITIAL_STUDY_DAYS.find((d) => d.dayNumber === 1)!;
     expect(day1).toBeDefined();
     expect(day1.cards.slice(0, 10).map((c) => c.english)).toEqual([
@@ -188,43 +211,51 @@ describe('Currículo Construtivo i+1 (Sem Palavras Auxiliares Desconhecidas), Li
       'Apple',
       'The apple.',
       'Orange',
-      'And',
       'The orange.',
-      'Boy',
-      'Girl',
+      'And',
       'The apple and the orange.',
+      'Boy',
+      'The boy.',
       'The boy and the girl.',
     ]);
     expect(day1.cards[10].type).toBe('grammar');
   });
 
-  it('deve garantir que todas as palavras usadas nas frases dos Dias 1 a 9 já tenham sido apresentadas como card de palavra antes da frase', () => {
-    const learnedWords = new Set<string>();
-
-    for (const day of INITIAL_STUDY_DAYS.filter((d) => d.dayNumber <= 9)) {
-      for (const card of day.cards) {
-        if (card.type === 'word') {
-          const tokens = card.english
-            .toLowerCase()
-            .replace(/[^a-z']/g, ' ')
-            .split(/\s+/)
-            .filter(Boolean);
-          tokens.forEach((t) => learnedWords.add(t));
-        } else if (card.type === 'phrase') {
-          const phraseTokens = card.english
-            .toLowerCase()
-            .replace(/[^a-z']/g, ' ')
-            .split(/\s+/)
-            .filter(Boolean);
-          for (const token of phraseTokens) {
-            expect(
-              learnedWords.has(token),
-              `A palavra "${token}" na frase "${card.english}" (Dia ${day.dayNumber}) não foi ensinada antes!`
-            ).toBe(true);
-          }
-        }
-      }
+  it('não adiciona explicações gramaticais às lições revisadas de fixação', () => {
+    for (const number of [3, 6, 9, 13, 16, 19]) {
+      const lesson = INITIAL_STUDY_DAYS.find((day) => day.dayNumber === number)!;
+      expect(lesson.isReviewLesson).toBe(true);
+      expect(lesson.cards.every((card) => card.type === 'phrase' && !card.grammarRule)).toBe(true);
     }
+  });
+
+  it('apresenta todos os pronomes antes das preposições e os usa com To Be na lição 8', () => {
+    const lessons = INITIAL_STUDY_DAYS.slice(3, 8);
+    const beforePrepositions = lessons.slice(0, 4).flatMap((lesson) => lesson.cards)
+      .filter((card) => card.type !== 'grammar');
+    expect(beforePrepositions.some((card) => /\b(in|on|under)\b/i.test(card.english))).toBe(false);
+    const words = beforePrepositions.filter((card) => card.type === 'word')
+      .map((card) => card.english.toLowerCase());
+    expect(words).toEqual(expect.arrayContaining(['i', 'you', 'he', 'she', 'it', 'we', 'they']));
+    const sentences = lessons[4].cards.filter((card) => card.type === 'phrase')
+      .map((card) => card.english.toLowerCase());
+    for (const prefix of ['i am', 'you are', 'he is', 'she is', 'it is', 'we are', 'they are']) {
+      expect(sentences.some((sentence) => sentence.startsWith(`${prefix} `))).toBe(true);
+    }
+  });
+
+  it('não repete no banco 10x frases estudadas no primeiro bloco', () => {
+    const plan = readFileSync('roteiro_a1_v2.md', 'utf8');
+    const section = plan.split('### Lição 10x —')[1].split('# BLOCO 2')[0];
+    const unseen = [...section.matchAll(/^\d+\. `\[Frase inédita\]` \*\*(.+?)\*\*/gm)]
+      .map((match) => match[1].toLowerCase());
+    const studied = new Set(INITIAL_STUDY_DAYS.slice(0, 10)
+      .flatMap((lesson) => lesson.cards)
+      .filter((card) => card.type === 'phrase')
+      .map((card) => card.english.toLowerCase()));
+    expect(unseen).toHaveLength(10);
+    expect(new Set(unseen).size).toBe(10);
+    expect(unseen.filter((sentence) => studied.has(sentence))).toEqual([]);
   });
 
   it('deve manter a ordem fixa dos 22 tópicos do Nível A1 no planejamento e cobrir 150 lições estruturadas no Nível A1', () => {
@@ -288,22 +319,79 @@ describe('Pré-cadastro Inteligente de Palavras Conhecidas (Pulo Automático) e 
     storageService.saveStudyDays(JSON.parse(JSON.stringify(INITIAL_STUDY_DAYS)));
   });
 
-  it('deve reconhecer quando o aluno cadastra "am" ("sou") antes do Dia 5, não duplicar como card customizado e pular o card "Am" no Dia 5 mantendo "I am."', () => {
+  it('revisa apenas frases e falas vencidas e não conta palavras ou gramática no calendário', () => {
+    const email = 'aluno@example.com';
+    const days = storageService.getStudyDays();
+    const template = days[0].cards[0];
+    const cards = (['word', 'phrase', 'dialogue', 'grammar'] as const).map((type) => ({
+      ...template,
+      id: `review-${type}`,
+      type,
+    }));
+    days[0].cards = cards;
+    storageService.saveStudyDays(days);
+    for (const card of cards) {
+      storageService.saveUserCardSrs(email, {
+        ...createInitialSrsProgress(card.id, email),
+        stage: 'graduated',
+        nextReviewDateIso: card.type === 'dialogue' ? '2026-01-03' : '2026-01-01',
+      });
+    }
+
+    expect(storageService.getDueReviewCards(email, '2026-01-02').map((card) => card.type))
+      .toEqual(['phrase']);
+    expect(storageService.getDueReviewCards(email, '2026-01-03').map((card) => card.type))
+      .toEqual(['phrase', 'dialogue']);
+    expect(storageService.getScheduledCountsByDate(email))
+      .toEqual({ '2026-01-01': 1, '2026-01-03': 1 });
+  });
+
+  it('limita o sorteio de revisões e favorece frases atrasadas sem duplicá-las', () => {
+    const email = 'aluno@example.com';
+    const days = storageService.getStudyDays();
+    const template = days[0].cards[0];
+    const cards = ['recente', 'antiga', 'outra'].map((name) => ({
+      ...template,
+      id: `phrase-${name}`,
+      type: 'phrase' as const,
+    }));
+    days[0].cards = cards;
+    storageService.saveStudyDays(days);
+    cards.forEach((card, index) => {
+      storageService.saveUserCardSrs(email, {
+        ...createInitialSrsProgress(card.id, email),
+        stage: 'graduated',
+        nextReviewDateIso: index === 1 ? '2026-01-01' : '2026-01-10',
+      });
+    });
+
+    const random = vi.spyOn(Math, 'random').mockReturnValue(0.5);
+    try {
+      const selected = storageService.selectDueReviewCards(email, 2, '2026-01-10');
+      expect(selected).toHaveLength(2);
+      expect(selected[0].id).toBe('phrase-antiga');
+      expect(new Set(selected.map((card) => card.id)).size).toBe(2);
+      expect(() => storageService.selectDueReviewCards(email, 0, '2026-01-10'))
+        .toThrow(RangeError);
+    } finally {
+      random.mockRestore();
+    }
+  });
+
+  it('deve pular a palavra conhecida "am" na lição 4 sem pular a frase', () => {
     const email = 'julia.aluna@gmail.com';
     const regResult = storageService.addCustomStudentCard(email, 'word', 'am', 'sou');
 
     expect(regResult.matchedExistingCourseCard).toBe(true);
-    expect(regResult.matchedDayNumbers).toContain(5);
+    expect(regResult.matchedDayNumbers).toContain(4);
     expect(storageService.getCustomStudentCards(email)).toHaveLength(0);
     expect(storageService.getKnownWordsCount(email)).toBe(1);
 
-    const day5 = storageService.getStudyDays().find((d) => d.dayNumber === 5)!;
-    const { queue, skippedCount } = storageService.getLessonQueueForUser(email, day5);
-
-    // No Dia 5: Card 1 é "I", Card 2 é "Am" (pulado!), Card 3 é "I am in the house." (mantido!)
+    const day4 = storageService.getStudyDays().find((d) => d.dayNumber === 4)!;
+    const { queue, skippedCount } = storageService.getLessonQueueForUser(email, day4);
     expect(skippedCount).toBe(1);
     expect(queue[0].english).toBe('I');
-    expect(queue[1].english).toBe('I am in the house.');
+    expect(queue[1].english).toBe('I am a student.');
   });
 
   it('deve atualizar as lições revisadas do Bloco 5 preservando progresso de cards idênticos e cards personalizados', () => {
@@ -364,10 +452,75 @@ describe('Pré-cadastro Inteligente de Palavras Conhecidas (Pulo Automático) e 
     });
   });
 
+  it('migra a lição original deslocada sem transferir progresso de conteúdo alterado', () => {
+      const email = 'aluno@example.com';
+      const template = INITIAL_STUDY_DAYS[0];
+      const same = { ...template.cards[0], id: 'day-1-card-1', dayNumber: 3 };
+      const changed = { ...template.cards[1], id: 'day-1-card-2', dayNumber: 3, english: 'Outro' };
+      const custom = { ...template.cards[1], id: 'custom-test', dayNumber: 3, isCustom: true };
+      const teacherCard = { ...template.cards[1], id: 'day-1-card-1760000000000-abcd', dayNumber: 3 };
+      storageService.saveStudyDays([{
+        ...template,
+        dayNumber: 3,
+        title: 'Lição 3 — Conteúdo antigo',
+        cards: [same, changed, custom, teacherCard],
+      }]);
+      localStorage.removeItem('ztf_reviewed_a1_revision');
+      storageService.saveUserCardSrs(email, {
+        ...createInitialSrsProgress(same.id, email),
+        stage: 'graduated',
+      });
+      storageService.saveUserCardSrs(email, {
+        ...createInitialSrsProgress(changed.id, email),
+        stage: 'graduated',
+      });
+      storageService.saveLessonCheckpoint({
+        userEmail: email,
+        dayNumber: 3,
+        title: 'Antiga',
+        queueCardIds: [same.id, changed.id],
+        currentIndex: 1,
+        elapsedSeconds: 10,
+        answeredCount: 1,
+        accuracySum: 100,
+        newWordsCountInLesson: 1,
+        updatedAtIso: '2026-01-01',
+      });
+
+      const migrated = storageService.getStudyDays()[0];
+      expect(migrated.title).toBe('Lição 3 — Artigo Definido "The" e Conjunção "And"');
+      expect(migrated.cards[0].id).toBe(same.id);
+      expect(storageService.getUserSrsMap(email)[same.id].stage).toBe('graduated');
+      const apple = migrated.cards.find((card) => card.english === 'Apple')!;
+      expect(apple.id).not.toBe(changed.id);
+      expect(storageService.getUserSrsMap(email)[apple.id]).toBeUndefined();
+      expect(migrated.cards.some((card) => card.id === custom.id)).toBe(true);
+      expect(migrated.cards.some((card) => card.id === teacherCard.id)).toBe(true);
+      expect(storageService.getLessonCheckpoint(email)).toBeNull();
+  });
+
+  it('considera concluída a lição quando os cards de estudo, sem a gramática, foram graduados', () => {
+      const email = 'aluno@example.com';
+      const lesson = storageService.getStudyDays()[0];
+      for (const card of lesson.cards.filter((item) => item.type !== 'grammar')) {
+        storageService.saveUserCardSrs(email, {
+          ...createInitialSrsProgress(card.id, email),
+          stage: 'graduated',
+        });
+
+      }
+      expect(storageService.isDayCompletedByUser(email, lesson.dayNumber)).toBe(true);
+  });
+
+  it('continua para a próxima lição, mesmo que haja lições anteriores pendentes', () => {
+    expect(storageService.getFollowingLesson(5)?.dayNumber).toBe(6);
+    expect(storageService.getFollowingLesson(150)).toBeNull();
+  });
+
   it('deve empurrar os dias seguintes para frente quando um diálogo com Dia Preparatório (i+1) é inserido após o Dia 4', () => {
     const beforeDays = storageService.getStudyDays();
     const day5Before = beforeDays.find((d) => d.dayNumber === 5)!;
-    expect(day5Before.title).toContain('I am');
+    expect(day5Before.title).toContain('He is');
 
     const inserted = storageService.insertElasticDialogueOrStory({
       afterDayNumber: 4,
@@ -385,7 +538,7 @@ describe('Pré-cadastro Inteligente de Palavras Conhecidas (Pulo Automático) e 
 
     const afterDays = storageService.getStudyDays();
     const shiftedDay5 = afterDays.find((d) => d.dayNumber === 7)!;
-    expect(shiftedDay5.title).toContain('I am');
+    expect(shiftedDay5.title).toContain('He is');
   });
 
   it('deve permitir ao aluno reportar uma tradução (bandeirinha) e ao professor aprová-la como nova possibilidade oficial (+ Incluir Possibilidade)', () => {

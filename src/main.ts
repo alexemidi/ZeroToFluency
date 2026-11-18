@@ -205,6 +205,12 @@ class ZeroToFluencyApp {
       const currentCard = this.session.queue[this.session.currentIndex];
       if (!currentCard) return;
 
+      if (e.key === 'Enter' && e.ctrlKey && !e.altKey && !e.metaKey) {
+        e.preventDefault();
+        this.playCurrentCardAudio();
+        return;
+      }
+
       // Se estiver digitando dentro do formulário de reporte da bandeirinha, não avança o card com Enter
       if (activeId === 'report-reason-input' || activeId === 'report-suggestion-input') {
         return;
@@ -244,6 +250,13 @@ class ZeroToFluencyApp {
   private checkCanUserStartLesson(day: StudyDayLesson): { allowed: boolean; reason?: string } {
     if (!this.currentUser) return { allowed: false, reason: 'Usuário não autenticado.' };
     if (this.currentUser.role === 'teacher') return { allowed: true };
+
+    if (day.blockNumber && !storageService.isBlockUnlocked(day.blockNumber, this.currentUser.email)) {
+      return {
+        allowed: false,
+        reason: `Conclua o teste do Bloco ${day.blockNumber - 1} para liberar esta lição.`,
+      };
+    }
 
     const maxUnlockedLesson = this.currentUser.unlockedWeeks * 7;
     if (day.dayNumber > maxUnlockedLesson) {
@@ -358,6 +371,7 @@ class ZeroToFluencyApp {
 
         this.activeTab = 'study_player';
         this.render();
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
         this.playCurrentCardAudio();
         return;
       }
@@ -419,12 +433,19 @@ class ZeroToFluencyApp {
 
     this.activeTab = 'study_player';
     this.render();
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     this.playCurrentCardAudio();
   }
 
   private startDueReviewsSession(): void {
     if (!this.currentUser) return;
-    const dueCards = storageService.getDueReviewCards(this.currentUser.email);
+    const limitInput = document.getElementById('review-limit') as HTMLInputElement | null;
+    const limit = Number(limitInput?.value);
+    if (!Number.isSafeInteger(limit) || limit < 1) {
+      this.showBanner('error', 'Informe um número inteiro positivo de frases para revisar.');
+      return;
+    }
+    const dueCards = storageService.selectDueReviewCards(this.currentUser.email, limit);
     if (dueCards.length === 0) {
       this.showBanner('success', 'Nenhuma revisão pendente para hoje.');
       return;
@@ -649,7 +670,9 @@ class ZeroToFluencyApp {
         });
       }
 
-      const nextPending = storageService.getNextPendingLessonForUser(this.currentUser.email);
+      const nextPending = this.session.mode === 'lesson_day' && this.session.dayNumber
+        ? storageService.getFollowingLesson(this.session.dayNumber)
+        : storageService.getNextPendingLessonForUser(this.currentUser.email);
       const canStartNext =
         nextPending && nextPending.dayNumber !== this.session.dayNumber
           ? this.checkCanUserStartLesson(nextPending)
@@ -941,8 +964,11 @@ class ZeroToFluencyApp {
 
           ${
             dueReviews.length > 0
-              ? `<button id="btn-start-due-reviews" class="btn btn-primary" style="padding: 15px 24px; font-size: 0.98rem;">
-                  Revisar Pendências de Hoje (${dueReviews.length})
+              ? `<label for="review-limit">Frases por revisão:
+                  <input id="review-limit" type="number" min="1" step="1" value="20" style="width: 80px;" />
+                </label>
+                <button id="btn-start-due-reviews" class="btn btn-primary" style="padding: 15px 24px; font-size: 0.98rem;">
+                  Revisar frases pendentes (${dueReviews.length})
                 </button>`
               : ''
           }
@@ -1990,7 +2016,7 @@ class ZeroToFluencyApp {
                 : `<div class="css-mystery-badge" title="Ouça o áudio"></div>`
             }
             <div class="audio-controls-group">
-              <button id="btn-replay-audio" class="css-icon-play" title="Ouvir (velocidade normal)"></button>
+              <button id="btn-replay-audio" class="css-icon-play" title="Ouvir novamente (Ctrl+Enter)"></button>
               <button id="btn-replay-audio-slow" class="css-icon-play-slow" title="Ouvir mais devagar (0.5x)">
                 <span class="css-slow-wave-icon"></span>
                 <span>0.5x</span>

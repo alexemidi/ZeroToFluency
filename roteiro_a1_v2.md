@@ -155,13 +155,13 @@ flowchart TD
    > - **The boy and the girl.**
 
 ### Lição 2 — Artigos Indefinidos "A" e "An"
-*Diferenciação prática por som vocálico e consonantal*
-**Foco**: Uso de A antes de som de consoante e An antes de som de vogal.
+*Artigos indefinidos em exemplos do cotidiano*
+**Foco**: Apresentar os artigos indefinidos A e An em frases curtas.
 
-1. `[Palavra]` **A** — Um, uma (antes de som de consoante)
+1. `[Palavra]` **A** — Um, uma
 2. `[Palavra]` **Car** — Carro
 3. `[Frase]` **A car.** — Um carro.
-4. `[Palavra]` **An** — Um, uma (antes de som de vogal)
+4. `[Palavra]` **An** — Um, uma
 5. `[Palavra]` **Egg** — Ovo
 6. `[Frase]` **An egg.** — Um ovo.
 7. `[Palavra]` **House** — Casa
@@ -170,7 +170,7 @@ flowchart TD
 10. `[Frase]` **An office.** — Um escritório.
 11. `[Frase]` **A house and an office.** — Uma casa e um escritório.
 12. `[Gramática]` **Gramática — Lição 2: "A" vs "An"**
-   > Usa-se *a* antes de sons consonantais (*a car, a house*) e *an* antes de sons vocálicos (*an egg, an office, an apple*). O critério é fonético: evita o choque entre duas vogais consecutivas.
+   > *A* e *an* são artigos indefinidos e podem ser traduzidos como "um" ou "uma". Veja seu uso nos exemplos.
    > *Exemplos*:
    > - **A car and an office.**
    > - **A house and an egg.**
@@ -212,46 +212,9 @@ flowchart TD
    > - **I am a student.**
    > - **You are a friend.**
 
-### Lição 5 — Preposições de Lugar: "In", "On" e "Under"
-*Localização do falante e do interlocutor com o verbo To Be já conhecido*
-**Foco**: Preposições espaciais *in* (dentro), *on* (sobre/em cima) e *under* (embaixo), aplicadas com *I am* e *you are*.
-
-1. `[Palavra]` **In** — Em, dentro de
-2. `[Frase]` **I am in the house.** — Eu estou na casa.
-3. `[Palavra]` **On** — Em, sobre, em cima de
-4. `[Frase]` **You are on the bus.** — Você está no ônibus. `[Ver palavra: bus]`
-5. `[Palavra]` **Under** — Embaixo de
-6. `[Frase]` **I am under a tree.** — Eu estou debaixo de uma árvore. `[Ver palavra: tree]`
-7. `[Frase]` **You are in the kitchen.** — Você está na cozinha. `[Ver palavra: kitchen]`
-8. `[Frase]` **I am on the train.** — Eu estou no trem. `[Ver palavra: train]`
-9. `[Frase]` **You are under a blanket.** — Você está debaixo de um cobertor. `[Ver palavra: blanket]`
-10. `[Frase]` **I am in the garden.** — Eu estou no jardim. `[Ver palavra: garden]`
-11. `[Gramática]` **Gramática — Lição 5: Preposições In, On e Under**
-   > *In* expressa interior ou espaço fechado (*in the house*); *on* indica posição sobre uma superfície ou meio de transporte (*on the bus*); *under* indica posição inferior (*under a tree*).
-   > *Exemplos*:
-   > - **I am in the house.**
-   > - **You are on the bus.**
-
-### Lição 6 — Fixação: "I am", "You are" e Preposições de Lugar
-*Vocabulário novo praticado com as estruturas das Lições 4 e 5*
-**Foco**: Fixar somente *I am/you are* e *in/on/under*. Cada frase introduz, no máximo, uma unidade lexical nova por contexto.
-
-1. `[Frase]` **I am in the bedroom.** — Eu estou no quarto. `[Ver palavra: bedroom]`
-2. `[Frase]` **You are in the bathroom.** — Você está no banheiro. `[Ver palavra: bathroom]`
-3. `[Frase]` **I am in the classroom.** — Eu estou na sala de aula. `[Ver palavra: classroom]`
-4. `[Frase]` **You are on the floor.** — Você está no chão. `[Ver palavra: floor]`
-5. `[Frase]` **I am under the table.** — Eu estou embaixo da mesa. `[Ver palavra: table]`
-6. `[Frase]` **You are in the room.** — Você está no cômodo. `[Ver palavra: room]`
-7. `[Frase]` **I am on the bus.** — Eu estou no ônibus.
-8. `[Frase]` **You are under the tree.** — Você está debaixo da árvore.
-9. `[Frase]` **I am in the garden.** — Eu estou no jardim.
-10. `[Frase]` **You are on the train.** — Você está no trem.
-
-> **Fixação do ciclo:** esta lição pratica apenas *I am/you are* e as preposições *in/on/under*, ensinadas nas Lições 4 e 5. Não inclui card ou explicação de gramática.
-
-### Lição 7 — Verbo To Be: "He is", "She is" e "It is"
+### Lição 5 — Verbo To Be: "He is", "She is" e "It is"
 *Terceira pessoa do singular com pessoas, animais e objetos*
-**Foco**: Concordância verbal com is e artigos diante de profissões iniciadas por vogal.
+**Foco**: Forma verbal is com he, she e it.
 
 1. `[Palavra]` **He** — Ele
 2. `[Palavra]` **Is** — É, está
@@ -263,48 +226,87 @@ flowchart TD
 8. `[Frase]` **It is an office.** — É um escritório.
 9. `[Palavra]` **Actor** — Ator
 10. `[Frase]` **He is an actor.** — Ele é ator.
-11. `[Gramática]` **Gramática — Lição 7: To Be na 3ª Pessoa (He, She e It)**
-   > *He, she, it* sempre usam a forma verbal *is* (contraídos: *he's, she's, it's*). Lembre-se de usar *an* antes de profissões e substantivos com som vocálico (*he is an actor*, *it is an office*).
+11. `[Gramática]` **Gramática — Lição 5: To Be na 3ª Pessoa (He, She e It)**
+   > *He, she, it* sempre usam a forma verbal *is* (contraídos: *he's, she's, it's*).
    > *Exemplos*:
    > - **He is a doctor.**
    > - **He is an actor.**
 
-### Lição 8 — Verbo To Be no Plural: "We" e "They"
-*Pronomes no plural e ambientes comunitários*
-**Foco**: Forma verbal *are* com os pronomes plurais *we* e *they*, usando a preposição *in* já ensinada.
+### Lição 6 — Fixação: "I am", "You are", "He is", "She is" e "It is"
+*Fixação das formas afirmativas das Lições 4 e 5*
+**Foco**: Praticar os pronomes e as formas *am*, *are* e *is* já apresentados, sem introduzir preposições ou explicar gramática nova.
+
+1. `[Frase]` **I am a student.** — Eu sou estudante.
+2. `[Frase]` **You are a friend.** — Você é um amigo.
+3. `[Frase]` **He is a doctor.** — Ele é médico.
+4. `[Frase]` **She is a doctor.** — Ela é médica.
+5. `[Frase]` **It is an office.** — É um escritório.
+6. `[Frase]` **He is an actor.** — Ele é ator.
+7. `[Frase]` **She is an actor.** — Ela é atriz.
+8. `[Frase]` **I am a friend.** — Eu sou um amigo.
+9. `[Frase]` **You are a student.** — Você é estudante.
+10. `[Frase]` **It is a house.** — É uma casa.
+
+> **Fixação do ciclo:** esta lição pratica somente as formas afirmativas das Lições 4 e 5. Não inclui card ou explicação de gramática.
+
+### Lição 7 — Verbo To Be no Plural: "We" e "They"
+*Pronomes no plural em frases sobre estados*
+**Foco**: Forma verbal *are* com os pronomes plurais *we* e *they*, antes da introdução das preposições.
 
 1. `[Palavra]` **We** — Nós
-2. `[Palavra]` **Park** — Parque
-3. `[Frase]` **We are in the park.** — Nós estamos no parque.
+2. `[Palavra]` **Happy** — Feliz, felizes
+3. `[Frase]` **We are happy.** — Nós estamos felizes.
 4. `[Palavra]` **They** — Eles, elas
-5. `[Palavra]` **Classroom** — Sala de aula
-6. `[Frase]` **They are in the classroom.** — Eles estão na sala de aula.
-7. `[Palavra]` **Library** — Biblioteca
-8. `[Frase]` **We are in the library.** — Nós estamos na biblioteca.
-9. `[Palavra]` **Museum** — Museu
-10. `[Frase]` **They are in the museum.** — Eles estão no museu.
-11. `[Gramática]` **Gramática — Lição 8: To Be no Plural (We e They)**
-   > *We* e *they* usam a forma *are*. Nesta lição, *in* retoma a preposição de lugar já aprendida.
+5. `[Palavra]` **Tired** — Cansado, cansada, cansados, cansadas
+6. `[Frase]` **They are tired.** — Eles estão cansados.
+7. `[Palavra]` **Ready** — Pronto, pronta, prontos, prontas
+8. `[Frase]` **We are ready.** — Nós estamos prontos.
+9. `[Palavra]` **Busy** — Ocupado, ocupada, ocupados, ocupadas
+10. `[Frase]` **They are busy.** — Eles estão ocupados.
+11. `[Gramática]` **Gramática — Lição 7: To Be no Plural (We e They)**
+   > *We* e *they* usam a forma *are* para indicar o estado de mais de uma pessoa.
    > *Exemplos*:
-   > - **We are in the park.**
-   > - **They are in the museum.**
+   > - **We are happy.**
+   > - **They are tired.**
 
-### Lição 9 — Fixação: "He is", "She is", "It is", "We are" e "They are"
-*Vocabulário novo praticado com as formas ensinadas nas Lições 7 e 8*
-**Foco**: Fixar somente os pronomes e as formas *is/are* das duas lições anteriores. As frases reutilizam estruturas conhecidas e acrescentam vocabulário de pessoas, animais e lugares.
+### Lição 8 — Preposições de Lugar: "In", "On" e "Under"
+*Localização com os pronomes e formas afirmativas do To Be já aprendidos*
+**Foco**: Usar *in*, *on* e *under* depois de *I am*, *you are*, *he is*, *she is*, *it is*, *we are* e *they are*.
 
-1. `[Frase]` **He is a pilot.** — Ele é piloto.
-2. `[Frase]` **She is a nurse.** — Ela é enfermeira.
-3. `[Frase]` **It is an animal.** — É um animal.
-4. `[Frase]` **He is in the museum.** — Ele está no museu.
-5. `[Frase]` **She is in the classroom.** — Ela está na sala de aula.
-6. `[Frase]` **It is on the desk.** — Está sobre a escrivaninha.
-7. `[Frase]` **We are in the studio.** — Nós estamos no estúdio.
-8. `[Frase]` **We are in the park.** — Nós estamos no parque.
-9. `[Frase]` **They are in the station.** — Eles estão na estação.
-10. `[Frase]` **They are in the library.** — Eles estão na biblioteca.
+1. `[Palavra]` **In** — Em, dentro de
+2. `[Frase]` **I am in the house.** — Eu estou na casa.
+3. `[Frase]` **You are in the office.** — Você está no escritório.
+4. `[Frase]` **He is in the garden.** — Ele está no jardim. `[Ver palavra: garden]`
+5. `[Frase]` **She is in the kitchen.** — Ela está na cozinha. `[Ver palavra: kitchen]`
+6. `[Frase]` **We are in the classroom.** — Nós estamos na sala de aula. `[Ver palavra: classroom]`
+7. `[Frase]` **They are in the library.** — Eles estão na biblioteca. `[Ver palavra: library]`
+8. `[Palavra]` **On** — Em, sobre, em cima de
+9. `[Frase]` **It is on the table.** — Está sobre a mesa. `[Ver palavra: table]`
+10. `[Frase]` **You are on the bus.** — Você está no ônibus. `[Ver palavra: bus]`
+11. `[Palavra]` **Under** — Embaixo de
+12. `[Frase]` **It is under the tree.** — Está embaixo da árvore. `[Ver palavra: tree]`
+13. `[Gramática]` **Gramática — Lição 8: Preposições In, On e Under**
+   > *In* expressa interior ou espaço fechado; *on* indica posição sobre uma superfície ou meio de transporte; *under* indica posição inferior. As preposições vêm depois da forma afirmativa do verbo To Be.
+   > *Exemplos*:
+   > - **I am in the house.**
+   > - **It is on the table.**
 
-> **Fixação do ciclo:** esta lição pratica somente *he/she/it is* e *we/they are*, ensinados nas Lições 7 e 8. Não introduz verbos de ação, outras regras gramaticais, card ou explicação de gramática.
+### Lição 9 — Fixação: "We are", "They are" e Preposições de Lugar
+*Vocabulário novo praticado com as estruturas das Lições 7 e 8*
+**Foco**: Fixar *we/they are* e as preposições *in/on/under*, sem introduzir ou explicar gramática nova.
+
+1. `[Frase]` **We are in the park.** — Nós estamos no parque. `[Ver palavra: park]`
+2. `[Frase]` **They are in the museum.** — Eles estão no museu. `[Ver palavra: museum]`
+3. `[Frase]` **We are in the bedroom.** — Nós estamos no quarto. `[Ver palavra: bedroom]`
+4. `[Frase]` **They are in the bathroom.** — Eles estão no banheiro. `[Ver palavra: bathroom]`
+5. `[Frase]` **We are in the room.** — Nós estamos no cômodo. `[Ver palavra: room]`
+6. `[Frase]` **They are on the floor.** — Eles estão no chão. `[Ver palavra: floor]`
+7. `[Frase]` **We are on the bus.** — Nós estamos no ônibus.
+8. `[Frase]` **They are under the tree.** — Eles estão embaixo da árvore.
+9. `[Frase]` **We are in the garden.** — Nós estamos no jardim.
+10. `[Frase]` **They are in the kitchen.** — Eles estão na cozinha.
+
+> **Fixação do ciclo:** esta lição pratica *we/they are* e *in/on/under*, ensinados nas Lições 7 e 8. Não inclui card ou explicação de gramática.
 
 ### Lição 10 — Descrição 1 (A Escola, o Escritório e o Parque)
 *Texto de Fechamento do Bloco 1 reunindo os conceitos em narrativa*
@@ -318,8 +320,8 @@ flowchart TD
 6. `[Frase]` **It is an office.** — É um escritório.
 7. `[Frase]` **We are in the park.** — Nós estamos no parque.
 8. `[Frase]` **They are in the museum.** — Eles estão no museu.
-9. `[Frase]` **The pilot is in the station.** — O piloto está na estação.
-10. `[Frase]` **The nurse is in the bedroom.** — A enfermeira está no quarto.
+9. `[Frase]` **We are in the bedroom.** — Nós estamos no quarto.
+10. `[Frase]` **They are in the garden.** — Eles estão no jardim.
 
 ### Lição 10x — Banco de Frases Inéditas do Teste do Bloco 1
 *Banco auxiliar; não é uma lição de estudo e não apresenta vocabulário ou gramática novos.*
@@ -327,10 +329,10 @@ flowchart TD
 1. `[Frase inédita]` **The apple is on the table.** — A maçã está sobre a mesa.
 2. `[Frase inédita]` **The orange is under the tree.** — A laranja está embaixo da árvore.
 3. `[Frase inédita]` **I am in the garden.** — Eu estou no jardim.
-4. `[Frase inédita]` **You are on the bus.** — Você está no ônibus.
+4. `[Frase inédita]` **She is on the bus.** — Ela está no ônibus.
 5. `[Frase inédita]` **He is in the office.** — Ele está no escritório.
 6. `[Frase inédita]` **She is in the classroom.** — Ela está na sala de aula.
-7. `[Frase inédita]` **It is under the blanket.** — Está embaixo do cobertor.
+7. `[Frase inédita]` **We are under the tree.** — Nós estamos embaixo da árvore.
 8. `[Frase inédita]` **We are in the library.** — Nós estamos na biblioteca.
 9. `[Frase inédita]` **They are in the park.** — Eles estão no parque.
 10. `[Frase inédita]` **The doctor is in the bedroom.** — O médico está no quarto.
@@ -355,7 +357,7 @@ flowchart TD
 9. `[Palavra]` **Artist** — Artista
 10. `[Frase]` **She is not an artist.** — Ela não é artista.
 11. `[Gramática]` **Gramática — Lição 11: A Negação com "Not"**
-   > Para negar com o verbo *to be*, acrescenta-se *not* logo após a forma verbal: *I am not*, *he is not*, *she is not*. O artigo *an* permanece antes de *artist* por causa do som inicial de vogal.
+   > Para negar com o verbo *to be*, acrescenta-se *not* logo após a forma verbal: *I am not*, *he is not*, *she is not*.
    > *Exemplos*:
    > - **I am not sad.**
    > - **She is not an artist.**
