@@ -3376,6 +3376,18 @@ function drawBlockOneQuestions(): BlockTestQuestion[] {
   const formats = shuffle([...skills, ...skills, ...shuffle(skills).slice(0, 2)]);
   return sentences.map(([english, portuguese], index) => {
     const skill = formats[index];
+    const isTranslation = skill === 'listening_translation' || skill === 'reading_translation';
+    const answers: string[] = [];
+    if (isTranslation) {
+      answers.push(portuguese);
+      if (portuguese.startsWith('Ela é a ')) {
+        answers.push(portuguese.replace('Ela é a ', 'Ela é '));
+      } else if (portuguese.startsWith('Ele é o ')) {
+        answers.push(portuguese.replace('Ele é o ', 'Ele é '));
+      }
+    } else {
+      answers.push(english);
+    }
     return {
       id: `block-1-revised-${english}`,
       blockNumber: 1,
@@ -3386,7 +3398,7 @@ function drawBlockOneQuestions(): BlockTestQuestion[] {
         : skill === 'reading_speaking' ? 'Leia a frase em voz alta.'
         : 'Leia e traduza para o português.',
       audioText: english,
-      acceptedAnswers: [skill === 'listening_translation' || skill === 'reading_translation' ? portuguese : english],
+      acceptedAnswers: answers,
     };
   });
 }

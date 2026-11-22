@@ -39,7 +39,7 @@ Para comparar com as palavras e frases da fonte original, consulte o [planejamen
 | 27 | teacher | Lição 5, Bloco 1 | professor, professora |
 | 28 | it | Lição 5, Bloco 1 | ele, ela, isso |
 | 29 | eraser | Lição 5, Bloco 1 | borracha |
-| 30 | principal | Lição 6, Bloco 1 | diretor, diretora da escola |
+| 30 | principal | Lição 6, Bloco 1 | diretor, diretora |
 | 31 | hungry | Lição 6, Bloco 1 | com fome |
 | 32 | thirsty | Lição 6, Bloco 1 | com sede |
 | 33 | tired | Lição 6, Bloco 1 | cansado, cansada, cansados, cansadas |

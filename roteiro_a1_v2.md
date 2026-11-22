@@ -147,7 +147,7 @@ Os resumos **PAL**, **TPA** e **PA** são contadores editoriais, não conteúdo 
 *Fixação das formas afirmativas das Lições 4 e 5*
 **Foco**: Praticar os pronomes e as formas *am*, *are* e *is* já apresentados, sem introduzir preposições ou explicar gramática nova.
 
-1. `[Frase]` **She is a principal.** — Ela é diretora da escola. `[Ver palavra: principal]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+1. `[Frase]` **She is the principal.** — Ela é a diretora. `[Ver palavra: principal]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
 2. `[Frase]` **I am hungry.** — Eu estou com fome. `[Ver palavra: hungry]`
 3. `[Frase]` **You are thirsty.** — Você está com sede. `[Ver palavra: thirsty]`
 4. `[Frase]` **He is tired.** — Ele está cansado. `[Ver palavra: tired]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`

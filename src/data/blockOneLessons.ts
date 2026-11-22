@@ -793,11 +793,11 @@ export const BLOCK_ONE_LESSONS: StudyDayLesson[] = [
         "dayNumber": 6,
         "orderInDay": 1,
         "type": "phrase",
-        "english": "She is a principal.",
-        "portuguese": "Ela é diretora da escola.",
+        "english": "She is the principal.",
+        "portuguese": "Ela é a diretora.",
         "wordHelp": {
           "english": "principal",
-          "portuguese": "diretor, diretora da escola"
+          "portuguese": "diretor, diretora"
         },
         "thirdPersonHelp": {
           "english": "is",

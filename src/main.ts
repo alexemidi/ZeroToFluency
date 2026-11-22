@@ -77,6 +77,36 @@ interface BlockTestSessionState {
   isSubmitted: boolean;
   startedAtMs: number;
   speechRecognitionInstance?: any;
+  wrongLanguageWarning?: string | null;
+  isReportFormOpen?: boolean;
+  reportReasonDraft?: string;
+}
+
+export function detectWrongLanguageAttempt(
+  userText: string,
+  targetSkill: BlockTestSkill
+): 'should_be_en' | 'should_be_pt' | null {
+  const trimmed = userText.trim();
+  if (!trimmed) return null;
+
+  if (targetSkill === 'listening_writing') {
+    // Esperado: Inglês. Detectar se digitou em português.
+    const hasPtAccents = /[áàâãéêíóôõúçÁÀÂÃÉÊÍÓÔÕÚÇ]/.test(trimmed);
+    const ptWordsRegex = /\b(o|a|os|as|um|uma|do|da|dos|das|no|na|nos|nas|ele|ela|eles|elas|nós|você|vocês|eu|sou|estou|está|estão|estamos|é|são|não|sim|com|para|de|em|por|favor|livro|mesa|caneta|diretora|diretor|escola|aluno|aluna|menino|menina|cachorro|gato|borracha|laranja|maçã|café|água|leite|chá|sanduíche|refeitório|sala)\b/i;
+    if (hasPtAccents || ptWordsRegex.test(trimmed)) {
+      return 'should_be_en';
+    }
+  } else if (targetSkill === 'listening_translation' || targetSkill === 'reading_translation') {
+    // Esperado: Português. Detectar se digitou em inglês.
+    const hasPtAccents = /[áàâãéêíóôõúçÁÀÂÃÉÊÍÓÔÕÚÇ]/.test(trimmed);
+    if (!hasPtAccents) {
+      const enWordsRegex = /\b(the|and|is|are|am|she|he|they|we|you|it|in|on|under|this|that|these|those|not|with|from|for|of|book|pen|pencil|teacher|student|school|table|chair|cat|dog|orange|apple|coffee|water|milk|tea|sandwich|cafeteria|classroom|principal|janitor|doctor)\b/i;
+      if (enWordsRegex.test(trimmed)) {
+        return 'should_be_pt';
+      }
+    }
+  }
+  return null;
 }
 
 interface StudySessionState {
@@ -206,6 +236,21 @@ class ZeroToFluencyApp {
         if (this.lastCompletedSummary?.canContinueNextLesson && this.lastCompletedSummary.nextLesson) {
           e.preventDefault();
           this.startLessonSession(this.lastCompletedSummary.nextLesson, true);
+        }
+        return;
+      }
+
+      // Atalho Enter no teste de bloco: avançar para a próxima questão após envio ou confirmar
+      if (this.activeTab === 'block_test' && e.key === 'Enter') {
+        if (activeId === 'block-test-report-reason') return;
+        if (this.blockTestSession?.isSubmitted) {
+          if (!this.blockTestSession.evaluationResult?.requiresRetry) {
+            e.preventDefault();
+            this.advanceBlockTestQuestion();
+          }
+        } else if (activeId !== 'block-test-input') {
+          e.preventDefault();
+          this.submitBlockTestAnswer();
         }
         return;
       }
@@ -1492,6 +1537,19 @@ class ZeroToFluencyApp {
     }
     s.currentResponse = response;
 
+    // Se o aluno escreveu no idioma errado na 1ª tentativa, concede uma segunda chance sem contabilizar erro
+    const wrongLang = detectWrongLanguageAttempt(response, q.skill);
+    if (wrongLang && !s.wrongLanguageWarning) {
+      if (wrongLang === 'should_be_en') {
+        s.wrongLanguageWarning = 'Você escreveu em português. Por favor, escreva em inglês!';
+      } else {
+        s.wrongLanguageWarning = 'Você escreveu em inglês. Por favor, escreva em português!';
+      }
+      this.render();
+      return;
+    }
+    s.wrongLanguageWarning = null;
+
     const evalResult = evaluateBlockTestResponse(q, response);
     s.evaluationResult = evalResult;
     s.isSubmitted = true;
@@ -1523,6 +1581,9 @@ class ZeroToFluencyApp {
     s.isListeningSpeech = false;
     s.speechTranscript = '';
     s.speechAttempts = 0;
+    s.wrongLanguageWarning = null;
+    s.isReportFormOpen = false;
+    s.reportReasonDraft = '';
 
     if (s.currentIndex >= s.questions.length) {
       // Test finished, compute and save result
@@ -1616,12 +1677,12 @@ class ZeroToFluencyApp {
         ${
           q.skill === 'listening_writing' || q.skill === 'listening_translation'
             ? `
-            <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin: 20px 0;">
-              <button id="btn-block-test-audio-normal" class="btn btn-primary" style="display:inline-flex; align-items:center; gap:8px;">
-                <span class="css-icon-play"></span> Ouvir Áudio (1.0x)
+            <div class="btn-audio-group">
+              <button id="btn-block-test-audio-normal" class="btn-audio-uniform normal" type="button">
+                <span class="css-icon-play-inline"></span> Ouvir Áudio
               </button>
-              <button id="btn-block-test-audio-slow" class="btn btn-secondary" style="display:inline-flex; align-items:center; gap:8px;">
-                <span class="css-icon-play-slow"></span> Ouvir Lento (0.5x)
+              <button id="btn-block-test-audio-slow" class="btn-audio-uniform slow" type="button">
+                <span class="css-icon-slow-inline"></span> Falar lentamente
               </button>
             </div>
           `
@@ -1669,14 +1730,26 @@ class ZeroToFluencyApp {
           q.skill !== 'reading_speaking'
             ? `
             <div style="margin-top: 20px;">
-              <label for="block-test-input" style="display:block; font-size:0.84rem; color:var(--text-secondary); margin-bottom: 6px;">
-                ${q.skill === 'listening_writing' ? 'Digite a frase exata em inglês:' : 'Digite a tradução em português:'}
+              ${
+                s.wrongLanguageWarning
+                  ? `<div class="test-language-warning-banner">
+                      <span class="css-icon-lock" style="border-color:#f87171;"></span>
+                      <span>${this.escapeHtml(s.wrongLanguageWarning)}</span>
+                    </div>`
+                  : ''
+              }
+              <label for="block-test-input" class="block-test-input-label">
+                ${
+                  q.skill === 'listening_writing'
+                    ? '<span class="css-flag-icon css-flag-us" title="Escreva em inglês"></span> <span>Escreva em inglês:</span>'
+                    : '<span class="css-flag-icon css-flag-br" title="Escreva em português"></span> <span>Escreva em português:</span>'
+                }
               </label>
               <input
                 type="text"
                 id="block-test-input"
                 class="input-field"
-                placeholder="${q.skill === 'listening_writing' ? 'Ex: I am happy...' : 'Ex: Eu sou...'}"
+                placeholder="${q.skill === 'listening_writing' ? 'Escreva em inglês...' : 'Escreva em português...'}"
                 value="${this.escapeHtml(s.currentResponse)}"
                 ${s.isSubmitted ? 'readonly' : 'autofocus'}
                 autocomplete="off"
@@ -1721,21 +1794,56 @@ class ZeroToFluencyApp {
             : ''
         }
 
-        <div style="margin-top: 28px; display:flex; justify-content:flex-end; gap:12px;">
-          ${
-            !s.isSubmitted
-              ? `<button id="btn-submit-block-answer" class="btn btn-primary" style="padding: 12px 24px;">
-                  Confirmar Resposta
-                </button>`
-              : s.evaluationResult?.requiresRetry
-                ? `<button id="btn-retry-block-speech" class="btn btn-primary" style="padding: 12px 24px;">
-                    Tentar pronunciar novamente
+        <div style="margin-top: 28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            ${
+              s.isSubmitted
+                ? `<button id="btn-block-test-report-flag" class="btn-flag-report" type="button">
+                    <span class="css-icon-flag"></span>
+                    <span>Reportar erro nesta questão</span>
                   </button>`
-              : `<button id="btn-next-block-question" class="btn btn-primary" style="padding: 12px 24px;">
-                  ${s.currentIndex + 1 >= s.questions.length ? 'Ver Resultado da Prova' : 'Próxima Questão'}
-                </button>`
-          }
+                : ''
+            }
+          </div>
+          <div style="display:flex; gap:12px;">
+            ${
+              !s.isSubmitted
+                ? `<button id="btn-submit-block-answer" class="btn btn-primary" style="padding: 12px 24px;">
+                    Confirmar Resposta
+                  </button>`
+                : s.evaluationResult?.requiresRetry
+                  ? `<button id="btn-retry-block-speech" class="btn btn-primary" style="padding: 12px 24px;">
+                      Tentar pronunciar novamente
+                    </button>`
+                : `<button id="btn-next-block-question" class="btn btn-primary" style="padding: 12px 24px;">
+                    ${s.currentIndex + 1 >= s.questions.length ? 'Ver Resultado da Prova' : 'Próxima Questão'}
+                  </button>`
+            }
+          </div>
         </div>
+
+        ${
+          s.isReportFormOpen
+            ? `
+            <div class="report-box" style="margin-top: 14px;">
+              <div style="font-size: 0.84rem; font-weight: 700; margin-bottom: 6px;">
+                Reportar erro de tradução ou sugerir resposta válida
+              </div>
+              <textarea
+                id="block-test-report-reason"
+                class="input-field"
+                rows="2"
+                placeholder="Por que sua resposta deveria ser aceita ou qual o erro encontrado?"
+                style="font-size: 0.88rem; margin-bottom: 10px; width: 100%; box-sizing: border-box;"
+              >${this.escapeHtml(s.reportReasonDraft || '')}</textarea>
+              <div style="display:flex; gap:8px; justify-content:flex-end;">
+                <button id="btn-block-test-report-cancel" class="btn btn-sm" type="button">Cancelar</button>
+                <button id="btn-block-test-report-submit" class="btn btn-primary btn-sm" type="button">Enviar Reporte</button>
+              </div>
+            </div>
+          `
+            : ''
+        }
       </section>
     `;
   }
@@ -3090,7 +3198,40 @@ class ZeroToFluencyApp {
     });
 
     document.getElementById('btn-block-test-audio-slow')?.addEventListener('click', () => {
-      this.playBlockTestAudio(0.55);
+      this.playBlockTestAudio(0.62);
+    });
+
+    document.getElementById('btn-block-test-report-flag')?.addEventListener('click', () => {
+      if (!this.blockTestSession) return;
+      this.blockTestSession.isReportFormOpen = !this.blockTestSession.isReportFormOpen;
+      this.render();
+    });
+
+    document.getElementById('btn-block-test-report-cancel')?.addEventListener('click', () => {
+      if (!this.blockTestSession) return;
+      this.blockTestSession.isReportFormOpen = false;
+      this.render();
+    });
+
+    document.getElementById('btn-block-test-report-submit')?.addEventListener('click', () => {
+      if (!this.blockTestSession || !this.currentUser) return;
+      const q = this.blockTestSession.questions[this.blockTestSession.currentIndex];
+      const reasonEl = document.getElementById('block-test-report-reason') as HTMLTextAreaElement | null;
+      const reason = reasonEl?.value.trim() || 'Erro ou sugestão de tradução no exame de bloco';
+      storageService.submitTranslationReport({
+        cardId: q.id,
+        lessonNumber: this.blockTestSession.blockNumber,
+        english: q.audioText || q.prompt,
+        currentPortuguese: q.acceptedAnswers?.[0] || '',
+        studentTypedPortuguese: this.blockTestSession.currentResponse || '',
+        studentReason: reason,
+        studentEmail: this.currentUser.email,
+        studentName: this.currentUser.name,
+      });
+      this.blockTestSession.isReportFormOpen = false;
+      this.blockTestSession.reportReasonDraft = '';
+      this.showBanner('success', 'Reporte enviado para análise do professor.');
+      this.render();
     });
 
     document.getElementById('btn-replay-speech-model')?.addEventListener('click', () => {
@@ -3140,7 +3281,7 @@ class ZeroToFluencyApp {
         e.preventDefault();
         if (!this.blockTestSession?.isSubmitted) {
           this.submitBlockTestAnswer();
-        } else {
+        } else if (!this.blockTestSession?.evaluationResult?.requiresRetry) {
           this.advanceBlockTestQuestion();
         }
       }
@@ -3642,8 +3783,10 @@ function bootstrapApp(): void {
   }
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', bootstrapApp);
-} else {
-  bootstrapApp();
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootstrapApp);
+  } else {
+    bootstrapApp();
+  }
 }
