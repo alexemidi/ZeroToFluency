@@ -12,6 +12,7 @@ import { INITIAL_STUDY_DAYS } from '../data/curriculumData';
 import { addDaysToIsoDate, createInitialSrsProgress, getTodayDateIso } from './srsEngine';
 import { normalizeText } from './letterMatcher';
 import { logger } from './logger';
+import { ADMIN_EMAIL } from '../config/firebaseConfig';
 
 const STORAGE_KEYS = {
   SCHEMA_VERSION: 'ztf_schema_version',
@@ -35,6 +36,19 @@ const CURRENT_SCHEMA_VERSION = 9;
 const CURRENT_CURRICULUM_REVISION = 'a1-block-5-reviewed-v1';
 
 const DEFAULT_AUTHORIZED_USERS: AuthorizedUser[] = [
+  {
+    email: ADMIN_EMAIL,
+    name: 'Alex (Professor)',
+    role: 'teacher',
+    tenantId: 'default-teacher-tenant',
+    active: true,
+    unlockedWeeks: 30,
+    dailyStudyDaysQuota: 99,
+    maxTotalStudyDaysLimit: 1000,
+    subscriptionTier: 'pro',
+    passedBlockTests: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+    createdAt: '2026-11-01T10:00:00Z',
+  },
   {
     email: 'professor@zerotofluency.com',
     name: 'Professor (Admin)',
@@ -174,6 +188,25 @@ class StorageService {
     const normalized = email.trim().toLowerCase();
     const users = this.getAuthorizedUsers();
     const found = users.find((u) => u.email.toLowerCase() === normalized);
+
+    if (normalized === ADMIN_EMAIL.toLowerCase()) {
+      return {
+        allowed: true,
+        user: found ?? {
+          email: ADMIN_EMAIL,
+          name: 'Alex (Professor)',
+          role: 'teacher',
+          tenantId: 'default-teacher-tenant',
+          active: true,
+          unlockedWeeks: 30,
+          dailyStudyDaysQuota: 99,
+          maxTotalStudyDaysLimit: 1000,
+          subscriptionTier: 'pro',
+          passedBlockTests: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+          createdAt: new Date().toISOString(),
+        },
+      };
+    }
 
     if (!found) {
       logger.warn('Tentativa de login bloqueada: e-mail não está na lista do professor', {

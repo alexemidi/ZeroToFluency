@@ -105,10 +105,16 @@ class FirebaseAuthService {
       if (code === 'auth/popup-closed-by-user' || code === 'auth/cancelled-popup-request') {
         return { success: false, errorMessage: 'Login cancelado.' };
       }
+      if (code === 'auth/unauthorized-domain') {
+        return {
+          success: false,
+          errorMessage: 'O Google não permite autenticação por 127.0.0.1. Acesse via http://localhost:5173 para entrar com sua conta Google.',
+        };
+      }
       logger.error('Erro no login Google', { err: String(err) });
       return {
         success: false,
-        errorMessage: 'Não foi possível entrar com o Google. Tente novamente.',
+        errorMessage: (err as { message?: string })?.message || 'Não foi possível entrar com o Google. Tente novamente.',
       };
     }
   }

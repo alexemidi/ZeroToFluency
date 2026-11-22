@@ -16,6 +16,7 @@ import {
   TextPrerequisiteAnalysis,
 } from './services/storageService';
 import { firebaseAuthService } from './services/firebaseAuthService';
+import { ADMIN_EMAIL } from './config/firebaseConfig';
 import { audioService } from './services/audioService';
 import {
   evaluateLetterCorrespondence,
@@ -169,17 +170,21 @@ class ZeroToFluencyApp {
   constructor(rootElement: HTMLElement) {
     this.root = rootElement;
     const firebaseMode = firebaseAuthService.isConfigured();
-    this.currentUser = null;
-    this.isRestoringSession = firebaseMode;
+    const localUser = storageService.getCurrentUser();
+    this.currentUser = localUser;
+    this.isRestoringSession = !localUser && firebaseMode;
     const savedTheme = localStorage.getItem('ztf_theme') as 'dark' | 'light' | null;
     this.theme = savedTheme === 'dark' ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', this.theme);
     this.setupGlobalKeyboardShortcuts();
     this.render();
 
-    if (firebaseMode) {
+    if (firebaseMode && !localUser) {
       void firebaseAuthService.restoreSession().then((user) => {
-        this.currentUser = user;
+        if (user) {
+          this.currentUser = user;
+          storageService.setCurrentUser(user);
+        }
         this.isRestoringSession = false;
         this.render();
       }).catch(() => {
@@ -858,6 +863,11 @@ class ZeroToFluencyApp {
 
   private renderLoginScreen(): string {
     const configured = firebaseAuthService.isConfigured();
+    const isLocalhost =
+      typeof window !== 'undefined' &&
+      (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+    const isIpAddress = typeof window !== 'undefined' && window.location.hostname === '127.0.0.1';
+
     const errorHtml = this.authError
       ? `<div class="login-alert">${this.escapeHtml(this.authError)}</div>`
       : '';
@@ -865,10 +875,32 @@ class ZeroToFluencyApp {
     let actionHtml: string;
     if (this.isRestoringSession) {
       actionHtml = `<div class="login-loading"><span class="spinner"></span>Verificando seu acesso...</div>`;
-    } else if (!configured) {
-      actionHtml = `<div class="login-alert">O login com Google ainda não foi configurado neste site.</div>`;
     } else {
-      actionHtml = `
+      const devNotice = isIpAddress
+        ? `
+          <div style="background: rgba(234, 179, 8, 0.12); border: 1px solid rgba(234, 179, 8, 0.4); padding: 10px 12px; border-radius: 8px; font-size: 0.82rem; color: #b45309; text-align: left; line-height: 1.4; margin-bottom: 12px;">
+            <strong>Atenção para Login Google:</strong> O Google OAuth não permite o IP <code>127.0.0.1</code>. Para entrar com sua conta Google, acesse pelo link oficial:
+            <div style="margin-top: 6px;"><a href="http://localhost:5173" style="font-weight: 700; color: #2563eb; text-decoration: underline;">http://localhost:5173</a></div>
+          </div>
+        `
+        : '';
+
+      const devButtons = isLocalhost
+        ? `
+          <div style="margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--color-border, #ddd); display: flex; flex-direction: column; gap: 8px;">
+            <p style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-muted, #777); margin: 0; text-align: center;">Acesso Rápido de Desenvolvimento</p>
+            <button id="btn-dev-login-admin" type="button" class="btn-action-primary" style="width: 100%; justify-content: center; padding: 10px; font-size: 0.9rem; font-weight: 600; background: #2563eb; color: #fff; border: none; border-radius: 8px; cursor: pointer;">
+              Entrar como Professor (Dev Alex)
+            </button>
+            <button id="btn-dev-login-student" type="button" class="btn-action-secondary" style="width: 100%; justify-content: center; padding: 8px; font-size: 0.85rem; border-radius: 8px; cursor: pointer;">
+              Entrar como Aluna (Dev Julia)
+            </button>
+          </div>
+        `
+        : '';
+
+      const googleBtn = configured
+        ? `
         <button id="btn-google-login" class="google-btn" ${this.isSigningIn ? 'disabled' : ''}>
           <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
             <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.7 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
@@ -878,7 +910,14 @@ class ZeroToFluencyApp {
           </svg>
           ${this.isSigningIn ? 'Entrando...' : 'Continuar com Google'}
         </button>
-        <p class="login-note">O acesso é liberado pelo professor. Use o e-mail Google informado a ele.</p>`;
+        <p class="login-note">O acesso é liberado pelo professor. Use o e-mail Google informado a ele.</p>`
+        : `<div class="login-alert">O login com Google ainda não foi configurado neste site.</div>`;
+
+      actionHtml = `
+        ${devNotice}
+        ${googleBtn}
+        ${devButtons}
+      `;
     }
 
     return `
@@ -2222,9 +2261,9 @@ class ZeroToFluencyApp {
             }
             <div class="audio-controls-group">
               <button id="btn-replay-audio" class="css-icon-play" title="Ouvir novamente (Ctrl+Enter)"></button>
-              <button id="btn-replay-audio-slow" class="css-icon-play-slow" title="Ouvir mais devagar (0.5x)">
+              <button id="btn-replay-audio-slow" class="css-icon-play-slow" title="Falar lentamente">
                 <span class="css-slow-wave-icon"></span>
-                <span>0.5x</span>
+                <span>Falar lentamente</span>
               </button>
             </div>
           </div>
