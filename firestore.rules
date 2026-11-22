@@ -7,12 +7,35 @@ service cloud.firestore {
         && request.auth.token.email.lower() == 'almeidaalex.cs@gmail.com';
     }
 
+    function isVerifiedAccountOwner(email) {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email.lower() == email;
+    }
+
+    function isNewFreeAccount(email) {
+      return isVerifiedAccountOwner(email)
+        && request.resource.data.keys().hasOnly([
+          'email', 'name', 'role', 'tenantId', 'active', 'unlockedWeeks',
+          'dailyStudyDaysQuota', 'maxTotalStudyDaysLimit', 'subscriptionTier',
+          'passedBlockTests', 'createdAt'
+        ])
+        && request.resource.data.email == email
+        && request.resource.data.role == 'student'
+        && request.resource.data.tenantId == 'free-public'
+        && request.resource.data.active == true
+        && request.resource.data.unlockedWeeks == 2
+        && request.resource.data.dailyStudyDaysQuota == 1
+        && request.resource.data.maxTotalStudyDaysLimit == 11
+        && request.resource.data.subscriptionTier == 'free'
+        && request.resource.data.passedBlockTests is list
+        && request.resource.data.createdAt is string;
+    }
+
     match /allowedUsers/{email} {
-      allow read: if isAdmin()
-        || (request.auth != null
-            && request.auth.token.email_verified == true
-            && request.auth.token.email.lower() == email);
-      allow write: if isAdmin();
+      allow read: if isAdmin() || isVerifiedAccountOwner(email);
+      allow create: if isAdmin() || isNewFreeAccount(email);
+      allow update, delete: if isAdmin();
     }
   }
 }

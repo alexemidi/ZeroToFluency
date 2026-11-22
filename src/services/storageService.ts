@@ -27,6 +27,8 @@ const STORAGE_KEYS = {
   LESSON_CHECKPOINTS: 'ztf_lesson_checkpoints',
   BLOCK_TEST_RESULTS: 'ztf_block_test_results',
   FIREBASE_CONFIG: 'ztf_firebase_config',
+  BLOCK_ONE_REVISION: 'ztf_block_one_revision',
+  PRE_BLOCK_ONE_BACKUP: 'ztf_curriculum_before_block_one',
 };
 
 const CURRENT_SCHEMA_VERSION = 9;
@@ -69,7 +71,7 @@ const DEFAULT_AUTHORIZED_USERS: AuthorizedUser[] = [
     dailyStudyDaysQuota: 2, // 2 dias de estudo por dia = até 20 palavras novas por dia
     maxTotalStudyDaysLimit: 1000,
     subscriptionTier: 'student_class',
-    passedBlockTests: [1],
+    passedBlockTests: [],
     createdAt: '2026-11-01T10:10:00Z',
   },
 ];
@@ -215,13 +217,63 @@ class StorageService {
     localStorage.setItem(STORAGE_KEYS.CURRENT_USER, JSON.stringify(user));
   }
 
+  private migrateBlockOne(days: StudyDayLesson[]): StudyDayLesson[] {
+    if (localStorage.getItem(STORAGE_KEYS.BLOCK_ONE_REVISION) === 'v1') return days;
+    if (days.some((day) => day.cards.some((card) => card.id === 'day-1-card-1-b1r2'))) {
+      localStorage.setItem(STORAGE_KEYS.REVIEWED_A1_REVISION, 'v3');
+      localStorage.setItem(STORAGE_KEYS.CURRICULUM_REVISION, CURRENT_CURRICULUM_REVISION);
+      localStorage.setItem(STORAGE_KEYS.BLOCK_ONE_REVISION, 'v1');
+      return days;
+    }
+
+    const revised = INITIAL_STUDY_DAYS.filter((day) => day.blockNumber === 1).map((day) => {
+      const old = day.dayNumber <= 10 ? days.find((item) => item.dayNumber === day.dayNumber) : undefined;
+      const extra = old?.cards.filter((card) =>
+        card.isCustom || !/^day-\d+-card-\d{1,2}(?:-[a-z0-9]+)*$/i.test(card.id)
+      ) ?? [];
+      return {
+        ...day,
+        cards: [...day.cards, ...extra.map((card, index) => ({
+          ...card, dayNumber: day.dayNumber, orderInDay: day.cards.length + index + 1,
+        }))],
+      };
+    });
+    const legacy = days.filter((day) => day.dayNumber >= 11).map((day) => {
+      const dayNumber = day.dayNumber + 2;
+      return {
+        ...day,
+        dayNumber,
+        weekNumber: Math.ceil(dayNumber / 7),
+        title: day.title.replace(/^(?:Dia|Lição) \d+/, `Lição ${dayNumber}`),
+        cards: day.cards.map((card) => ({ ...card, dayNumber })),
+      };
+    });
+    const migrated = [...revised, ...legacy];
+    if (!localStorage.getItem(STORAGE_KEYS.PRE_BLOCK_ONE_BACKUP)) {
+      localStorage.setItem(STORAGE_KEYS.PRE_BLOCK_ONE_BACKUP, JSON.stringify(days));
+    }
+    localStorage.setItem(STORAGE_KEYS.STUDY_DAYS, JSON.stringify(migrated));
+    for (const key of [STORAGE_KEYS.SRS_PROGRESS, STORAGE_KEYS.DAILY_ACTIVITY,
+      STORAGE_KEYS.LESSON_CHECKPOINTS, STORAGE_KEYS.BLOCK_TEST_RESULTS]) {
+      localStorage.removeItem(key);
+    }
+    const users = this.getAuthorizedUsers().map((user) =>
+      user.role === 'student' ? { ...user, passedBlockTests: [] } : user
+    );
+    this.saveAuthorizedUsers(users);
+    localStorage.setItem(STORAGE_KEYS.REVIEWED_A1_REVISION, 'v3');
+    localStorage.setItem(STORAGE_KEYS.CURRICULUM_REVISION, CURRENT_CURRICULUM_REVISION);
+    localStorage.setItem(STORAGE_KEYS.BLOCK_ONE_REVISION, 'v1');
+    return migrated;
+  }
+
   private migrateReviewedBlockFiveLessons(days: StudyDayLesson[]): StudyDayLesson[] {
     if (localStorage.getItem(STORAGE_KEYS.CURRICULUM_REVISION) === CURRENT_CURRICULUM_REVISION) {
       return days;
     }
 
     const updatedLessons = INITIAL_STUDY_DAYS.filter(
-      (lesson) => lesson.dayNumber >= 41 && lesson.dayNumber <= 46
+      (lesson) => lesson.dayNumber >= 43 && lesson.dayNumber <= 48
     );
     const updatedLessonNumbers = new Set<number>();
     const isCurriculumCardId = (id: string): boolean =>
@@ -391,14 +443,16 @@ class StorageService {
   public getStudyDays(): StudyDayLesson[] {
     const raw = localStorage.getItem(STORAGE_KEYS.STUDY_DAYS);
     if (!raw) return [...INITIAL_STUDY_DAYS];
+    let parsed: StudyDayLesson[];
     try {
-      const parsed = JSON.parse(raw) as StudyDayLesson[];
-      return parsed.length > 0
-        ? this.migrateReviewedA1Lessons(this.migrateReviewedBlockFiveLessons(parsed))
-        : [...INITIAL_STUDY_DAYS];
+      parsed = JSON.parse(raw) as StudyDayLesson[];
     } catch {
+      logger.error('Não foi possível ler o currículo salvo.');
       return [...INITIAL_STUDY_DAYS];
     }
+    return parsed.length > 0
+      ? this.migrateReviewedA1Lessons(this.migrateReviewedBlockFiveLessons(this.migrateBlockOne(parsed)))
+      : [...INITIAL_STUDY_DAYS];
   }
 
   public saveStudyDays(days: StudyDayLesson[]): void {
@@ -806,6 +860,9 @@ class StorageService {
           if (card.type === 'word') {
             knownSet.add(normalizeText(card.english).toLowerCase());
           }
+          if (card.wordHelp) {
+            knownSet.add(normalizeText(card.wordHelp.english).toLowerCase());
+          }
           if (day.dayNumber >= 141) hasGraduatedCardDay141 = true;
           if (day.dayNumber >= 81) hasGraduatedCardDay81 = true;
           if (day.dayNumber >= 31) hasGraduatedCardDay31 = true;
@@ -907,7 +964,7 @@ class StorageService {
     return dueCards;
   }
 
-  public selectDueReviewCards(userEmail: string, limit: number, todayIso = getTodayDateIso()): Flashcard[] {
+  public selectDueReviewCards(userEmail: string, limit: number, todayIso = getTodayDateIso(), beforeDayNumber?: number): Flashcard[] {
     if (!Number.isSafeInteger(limit) || limit < 1) {
       throw new RangeError('O limite de revisão deve ser um número inteiro positivo.');
     }
@@ -915,6 +972,7 @@ class StorageService {
     const srsMap = this.getUserSrsMap(userEmail);
     const today = Date.parse(`${todayIso}T00:00:00Z`);
     return this.getDueReviewCards(userEmail, todayIso)
+      .filter((card) => beforeDayNumber === undefined || (card.dayNumber > 0 && card.dayNumber < beforeDayNumber))
       .map((card) => {
         const dueDate = Date.parse(`${srsMap[card.id].nextReviewDateIso.slice(0, 10)}T00:00:00Z`);
         const daysLate = Math.max(0, Math.floor((today - dueDate) / 86400000));
@@ -1024,11 +1082,11 @@ class StorageService {
       for (const card of day.cards) {
         const prog = srsMap[card.id];
         if (
-          card.type === 'word' &&
+          (card.type === 'word' || card.wordHelp) &&
           prog?.stage === 'graduated' &&
           prog.lastReviewedAtIso?.slice(0, 10) === todayIso
         ) {
-          wordsGraduatedToday.add(normalizeText(card.english).toLowerCase());
+          wordsGraduatedToday.add(normalizeText(card.wordHelp?.english ?? card.english).toLowerCase());
         }
       }
     }
@@ -1212,8 +1270,11 @@ class StorageService {
    * 1º Se houver um checkpoint salvo no meio de uma lição, retorna essa lição.
    * 2º Caso contrário, retorna a primeira lição ainda não concluída (ou a última lição disponível).
    */
-  public getNextPendingLessonForUser(userEmail: string): StudyDayLesson | null {
-    const days = this.getStudyDays();
+  public getNextPendingLessonForUser(
+    userEmail: string,
+    isAvailable: (lesson: StudyDayLesson) => boolean = () => true
+  ): StudyDayLesson | null {
+    const days = this.getStudyDays().filter(isAvailable);
     if (days.length === 0) return null;
 
     const checkpoint = this.getLessonCheckpoint(userEmail);
@@ -1230,8 +1291,11 @@ class StorageService {
     return firstPending ?? days[days.length - 1];
   }
 
-  public getFollowingLesson(dayNumber: number): StudyDayLesson | null {
-    return this.getStudyDays().find((day) => day.dayNumber > dayNumber) ?? null;
+  public getFollowingLesson(
+    dayNumber: number,
+    isAvailable: (lesson: StudyDayLesson) => boolean = () => true
+  ): StudyDayLesson | null {
+    return this.getStudyDays().find((day) => day.dayNumber > dayNumber && isAvailable(day)) ?? null;
   }
 
   /**

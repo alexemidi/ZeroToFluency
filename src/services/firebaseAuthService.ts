@@ -47,6 +47,23 @@ function buildAdminUser(email: string, name: string): AuthorizedUser {
   };
 }
 
+/** Perfil criado no primeiro login de uma pessoa que ainda não foi cadastrada pelo professor. */
+function buildFreeUser(email: string, name: string): AuthorizedUser {
+  return {
+    email,
+    name,
+    role: 'student',
+    tenantId: 'free-public',
+    active: true,
+    unlockedWeeks: 2,
+    dailyStudyDaysQuota: 1,
+    maxTotalStudyDaysLimit: 11,
+    subscriptionTier: 'free',
+    passedBlockTests: [],
+    createdAt: new Date().toISOString(),
+  };
+}
+
 class FirebaseAuthService {
   private app: FirebaseApp | null = null;
 
@@ -161,6 +178,9 @@ class FirebaseAuthService {
         const snapshot = await getDocFromServer(doc(this.db(), USERS_COLLECTION, email));
         if (snapshot.exists()) {
           user = { ...(snapshot.data() as AuthorizedUser), email, role: 'student' };
+        } else {
+          user = buildFreeUser(email, firebaseUser.displayName?.trim() || 'Aluno');
+          await setDoc(doc(this.db(), USERS_COLLECTION, email), user);
         }
       } catch (err) {
         logger.error('Falha ao consultar a lista de acesso', { err: String(err) });

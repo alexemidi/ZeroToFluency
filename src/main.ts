@@ -41,7 +41,14 @@ import {
   evaluateBlockTestResponse,
   A1_BLOCKS_METADATA,
   BlockMeta,
+  BlockTestResponseEvaluation,
 } from './data/blockTestsData';
+import {
+  isPublishedA1Block,
+  isPublishedLesson,
+  publishedBlockCountLabel,
+  publishedLessons,
+} from './data/courseAvailability';
 
 type AppTab =
   | 'dashboard'
@@ -50,6 +57,7 @@ type AppTab =
   | 'block_test'
   | 'cefr_plan'
   | 'calendar'
+  | 'settings'
   | 'student_cards'
   | 'catalog'
   | 'teacher_admin';
@@ -63,15 +71,16 @@ interface BlockTestSessionState {
   isAudioPlaying: boolean;
   isListeningSpeech: boolean;
   speechTranscript: string;
+  speechAttempts: number;
   hasSpeechRecognition: boolean;
-  evaluationResult: { isCorrect: boolean; matchedAnswer?: string } | null;
+  evaluationResult: BlockTestResponseEvaluation | null;
   isSubmitted: boolean;
   startedAtMs: number;
   speechRecognitionInstance?: any;
 }
 
 interface StudySessionState {
-  mode: 'lesson_day' | 'daily_reviews' | 'custom_cards';
+  mode: 'lesson_day' | 'daily_reviews' | 'lesson_reviews' | 'custom_cards';
   title: string;
   dayNumber?: number;
   queue: Flashcard[];
@@ -92,7 +101,7 @@ interface StudySessionState {
 }
 
 interface LessonCompletionSummary {
-  mode: 'lesson_day' | 'daily_reviews' | 'custom_cards';
+  mode: 'lesson_day' | 'daily_reviews' | 'lesson_reviews' | 'custom_cards';
   lessonNumber?: number;
   lessonTitle: string;
   durationSeconds: number;
@@ -222,7 +231,8 @@ class ZeroToFluencyApp {
           this.advanceToPhase(2);
         } else if (this.session.phase === 2) {
           e.preventDefault();
-          this.advanceToPhase(3);
+          if (currentCard.type === 'word') this.handleSrsAnswer('good');
+          else this.advanceToPhase(3);
         } else if (this.session.phase === 3) {
           if (activeTag === 'input' || activeTag === 'textarea') return;
           e.preventDefault();
@@ -249,7 +259,22 @@ class ZeroToFluencyApp {
    */
   private checkCanUserStartLesson(day: StudyDayLesson): { allowed: boolean; reason?: string } {
     if (!this.currentUser) return { allowed: false, reason: 'Usuário não autenticado.' };
+    if (this.currentUser.role !== 'teacher' && !isPublishedLesson(day)) {
+      return {
+        allowed: false,
+        reason: 'Esta etapa ainda está em revisão editorial e não foi publicada no curso.',
+      };
+    }
     if (this.currentUser.role === 'teacher') return { allowed: true };
+
+    if (day.blockNumber === 1) {
+      const previous = storageService.getStudyDays().filter((lesson) =>
+        lesson.blockNumber === 1 && lesson.dayNumber < day.dayNumber
+      );
+      if (previous.some((lesson) => !storageService.isDayCompletedByUser(this.currentUser!.email, lesson.dayNumber))) {
+        return { allowed: false, reason: 'Conclua as etapas anteriores antes de iniciar esta lição.' };
+      }
+    }
 
     if (day.blockNumber && !storageService.isBlockUnlocked(day.blockNumber, this.currentUser.email)) {
       return {
@@ -258,19 +283,17 @@ class ZeroToFluencyApp {
       };
     }
 
-    const maxUnlockedLesson = this.currentUser.unlockedWeeks * 7;
-    if (day.dayNumber > maxUnlockedLesson) {
-      return {
-        allowed: false,
-        reason: `Limite do módulo atingido (${maxUnlockedLesson} lições liberadas). Revise o conteúdo atual até a próxima liberação do professor.`,
-      };
-    }
-
     const isAlreadyCompleted = storageService.isDayCompletedByUser(
       this.currentUser.email,
       day.dayNumber
     );
     if (!isAlreadyCompleted) {
+      const reviewedToday = storageService.getUserCalendarActivities(this.currentUser.email)[getTodayDateIso()]?.reviewsCompleted ?? 0;
+      const pendingPrevious = storageService.getDueReviewCards(this.currentUser.email)
+        .some((card) => card.dayNumber > 0 && card.dayNumber < day.dayNumber);
+      if (pendingPrevious && reviewedToday < this.getReviewLimit()) {
+        return { allowed: false, reason: 'Revise as frases pendentes das lições anteriores antes de continuar.' };
+      }
       const metrics = storageService.getStudyDaysMetrics(this.currentUser.email);
       if (metrics.totalStudyDaysEquivalent >= metrics.maxTotalStudyDaysLimit) {
         return {
@@ -287,6 +310,12 @@ class ZeroToFluencyApp {
     }
 
     return { allowed: true };
+  }
+
+  private getReviewLimit(): number {
+    if (!this.currentUser) return 20;
+    const stored = Number(localStorage.getItem(`ztf_review_limit_${this.currentUser.email.toLowerCase()}`));
+    return Number.isSafeInteger(stored) && stored > 0 ? stored : 20;
   }
 
   /**
@@ -319,7 +348,19 @@ class ZeroToFluencyApp {
    */
   private startNextOrResumedStudy(): void {
     if (!this.currentUser) return;
-    const nextLesson = storageService.getNextPendingLessonForUser(this.currentUser.email);
+    const pendingReviews = storageService.getDueReviewCards(this.currentUser.email);
+    if (pendingReviews.length > 0) {
+      this.showBanner(
+        'success',
+        `Antes da próxima lição, vamos revisar ${pendingReviews.length} frase${pendingReviews.length === 1 ? '' : 's'} pendente${pendingReviews.length === 1 ? '' : 's'}.`
+      );
+      this.startDueReviewsSession();
+      return;
+    }
+    const nextLesson = storageService.getNextPendingLessonForUser(
+      this.currentUser.email,
+      (lesson) => this.currentUser?.role === 'teacher' || isPublishedLesson(lesson)
+    );
     if (!nextLesson) {
       this.showBanner('success', 'Você concluiu todas as lições disponíveis!');
       return;
@@ -399,7 +440,7 @@ class ZeroToFluencyApp {
       }
     });
 
-    const newWordsInQueue = queue.filter((c) => c.type === 'word').length;
+    const newWordsInQueue = queue.filter((c) => c.type === 'word' || c.wordHelp).length;
 
     this.session = {
       mode: 'lesson_day',
@@ -439,13 +480,16 @@ class ZeroToFluencyApp {
 
   private startDueReviewsSession(): void {
     if (!this.currentUser) return;
-    const limitInput = document.getElementById('review-limit') as HTMLInputElement | null;
-    const limit = Number(limitInput?.value);
-    if (!Number.isSafeInteger(limit) || limit < 1) {
-      this.showBanner('error', 'Informe um número inteiro positivo de frases para revisar.');
-      return;
-    }
-    const dueCards = storageService.selectDueReviewCards(this.currentUser.email, limit);
+    const limit = this.getReviewLimit();
+    const nextLesson = storageService.getNextPendingLessonForUser(
+      this.currentUser.email,
+      (lesson) => this.currentUser?.role === 'teacher' || isPublishedLesson(lesson)
+    );
+    const completedToday = storageService.getUserCalendarActivities(this.currentUser.email)[getTodayDateIso()]?.reviewsCompleted ?? 0;
+    const remaining = Math.max(0, limit - completedToday);
+    const dueCards = storageService.selectDueReviewCards(
+      this.currentUser.email, remaining || limit, getTodayDateIso(), nextLesson?.dayNumber
+    );
     if (dueCards.length === 0) {
       this.showBanner('success', 'Nenhuma revisão pendente para hoje.');
       return;
@@ -473,6 +517,27 @@ class ZeroToFluencyApp {
 
     this.activeTab = 'study_player';
     this.render();
+    this.playCurrentCardAudio();
+  }
+
+  private startLessonPhraseReview(dayNumber: number): void {
+    if (!this.currentUser) return;
+    const lesson = storageService.getStudyDays().find((day) => day.dayNumber === dayNumber);
+    const queue = lesson?.cards.filter((card) => card.type === 'phrase' || card.type === 'dialogue') ?? [];
+    if (!lesson || !queue.length) {
+      this.showBanner('error', 'Esta lição não possui frases para revisar.');
+      return;
+    }
+    this.session = {
+      mode: 'lesson_reviews', title: `Revise as frases — ${lesson.title}`, queue,
+      currentIndex: 0, phase: 1, userTypedEnglish: '', userTypedPortuguese: '',
+      isGrammarExpanded: false, isReportFormOpen: false, reportReasonDraft: '',
+      suggestedRating: 'good', completedInSession: 0, startedAtMs: Date.now(),
+      elapsedBeforeResumeSec: 0, answeredCount: 0, accuracySum: 0, newWordsCountInLesson: 0,
+    };
+    this.activeTab = 'study_player';
+    this.render();
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     this.playCurrentCardAudio();
   }
 
@@ -573,13 +638,13 @@ class ZeroToFluencyApp {
       return {
         headline: 'Progresso firme e bem estruturado.',
         message:
-          'Seu repertório ativo está crescendo a cada sessão. O sistema de revisão espaçada vai trazer cada palavra no momento exato para consolidar sua memória.',
+          'Seu repertório ativo está crescendo a cada sessão. A revisão espaçada vai trazer as frases novamente para consolidar sua memória.',
       };
     }
     return {
       headline: 'Etapa concluída com persistência.',
       message:
-        'O primeiro contato com novas estruturas exige atenção. As palavras revisadas hoje voltarão no tempo ideal para se tornarem automáticas.',
+        'O primeiro contato com novas estruturas exige atenção. As frases voltarão para ajudar você a ganhar confiança.',
     };
   }
 
@@ -613,8 +678,10 @@ class ZeroToFluencyApp {
     } else {
       cardScore = rating === 'good' ? 100 : rating === 'hard' ? 75 : 35;
     }
-    this.session.answeredCount += 1;
-    this.session.accuracySum += cardScore;
+    if (card.type !== 'word') {
+      this.session.answeredCount += 1;
+      this.session.accuracySum += cardScore;
+    }
 
     const scheduledCounts = storageService.getScheduledCountsByDate(this.currentUser.email);
     const updatedProgress = applySrsRating(
@@ -635,7 +702,7 @@ class ZeroToFluencyApp {
         storageService.recordDailyActivity(this.currentUser.email, {
           reviewsDelta: 1,
         });
-      } else {
+      } else if (this.session.mode !== 'lesson_reviews') {
         storageService.recordDailyActivity(this.currentUser.email, {
           newCardsDelta: 1,
         });
@@ -671,8 +738,14 @@ class ZeroToFluencyApp {
       }
 
       const nextPending = this.session.mode === 'lesson_day' && this.session.dayNumber
-        ? storageService.getFollowingLesson(this.session.dayNumber)
-        : storageService.getNextPendingLessonForUser(this.currentUser.email);
+        ? storageService.getFollowingLesson(
+            this.session.dayNumber,
+            (lesson) => this.currentUser?.role === 'teacher' || isPublishedLesson(lesson)
+          )
+        : storageService.getNextPendingLessonForUser(
+            this.currentUser.email,
+            (lesson) => this.currentUser?.role === 'teacher' || isPublishedLesson(lesson)
+          );
       const canStartNext =
         nextPending && nextPending.dayNumber !== this.session.dayNumber
           ? this.checkCanUserStartLesson(nextPending)
@@ -710,7 +783,7 @@ class ZeroToFluencyApp {
       <div class="app-shell">
         ${this.renderNavbar()}
         ${this.renderNotificationBanner()}
-        <main>
+        <main class="view-${this.activeTab}">
           ${this.renderActiveTabContent()}
         </main>
       </div>
@@ -793,7 +866,7 @@ class ZeroToFluencyApp {
     return `
       <header class="top-navbar">
         <div class="brand-logo" id="nav-brand-home">
-          <span class="brand-dot"></span>
+          <span class="brand-mark" aria-hidden="true"><i>Z</i><i>T</i><i>F</i></span>
           <span>ZeroToFluency</span>
         </div>
 
@@ -806,6 +879,9 @@ class ZeroToFluencyApp {
           </button>
           <button class="nav-tab ${this.activeTab === 'calendar' ? 'active' : ''}" data-tab="calendar">
             Calendário
+          </button>
+          <button class="nav-tab ${this.activeTab === 'settings' ? 'active' : ''}" data-tab="settings">
+            Ajustes
           </button>
           <button class="nav-tab ${this.activeTab === 'student_cards' ? 'active' : ''}" data-tab="student_cards">
             Meus Cards
@@ -870,6 +946,8 @@ class ZeroToFluencyApp {
         return this.renderCefrPlanTab();
       case 'calendar':
         return this.renderCalendarTab();
+      case 'settings':
+        return this.renderSettingsTab();
       case 'student_cards':
         return this.renderStudentCustomCardsTab();
       case 'catalog':
@@ -883,15 +961,19 @@ class ZeroToFluencyApp {
 
   private renderDashboard(): string {
     if (!this.currentUser) return '';
-    const days = storageService.getStudyDays();
+    const allDays = storageService.getStudyDays();
+    const days = this.currentUser.role === 'teacher' ? allDays : publishedLessons(allDays);
     const completedLessons = storageService.getCompletedDayNumbers(this.currentUser.email);
-    const dueReviews = storageService.getDueReviewCards(this.currentUser.email);
-    const metrics = storageService.getStudyDaysMetrics(this.currentUser.email);
     const checkpoint = storageService.getLessonCheckpoint(this.currentUser.email);
-    const nextLesson = storageService.getNextPendingLessonForUser(this.currentUser.email);
+    const nextLesson = storageService.getNextPendingLessonForUser(
+      this.currentUser.email,
+      (lesson) => this.currentUser?.role === 'teacher' || isPublishedLesson(lesson)
+    );
+    const dueReviews = storageService.getDueReviewCards(this.currentUser.email).filter((card) =>
+      !nextLesson || (card.dayNumber > 0 && card.dayNumber < nextLesson.dayNumber)
+    );
 
-    const maxUnlockedLesson =
-      this.currentUser.role === 'teacher' ? 999 : this.currentUser.unlockedWeeks * 7;
+    const maxUnlockedLesson = this.currentUser.role === 'teacher' ? 999 : Number.MAX_SAFE_INTEGER;
 
     const weeksMap = new Map<number, StudyDayLesson[]>();
     days.forEach((d) => {
@@ -904,31 +986,6 @@ class ZeroToFluencyApp {
       Boolean(checkpoint && nextLesson && checkpoint.dayNumber === nextLesson.dayNumber);
 
     return `
-      <section class="summary-bar">
-        <div class="summary-metrics">
-          <div class="metric-item">
-            <span class="metric-label">Dias estudados (1 dia = 10 palavras)</span>
-            <span class="metric-val">${metrics.totalStudyDaysEquivalent} / ${metrics.maxTotalStudyDaysLimit}</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-label">Hoje (Limite: ${this.currentUser.role === 'teacher' ? 'Livre' : `${metrics.dailyStudyDaysQuota} dias / ${metrics.dailyWordsQuota} pal.`})</span>
-            <span class="metric-val">${metrics.studyDaysCompletedToday} dia (${metrics.newWordsLearnedToday} pal.)</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-label">Palavras conhecidas</span>
-            <span class="metric-val">${metrics.knownWordsTotal}</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-label">Lições concluídas</span>
-            <span class="metric-val">${completedLessons.length} / ${days.length}</span>
-          </div>
-          <div class="metric-item">
-            <span class="metric-label">Revisões hoje</span>
-            <span class="metric-val">${dueReviews.length}</span>
-          </div>
-        </div>
-      </section>
-
       <!-- CENTRAL DE ESTUDO DIRETO (BOTÃO ESTUDAR QUE RETOMA EXATAMENTE DE ONDE PAROU) -->
       <section class="study-hub-card">
         <div class="study-hub-badge">
@@ -936,7 +993,7 @@ class ZeroToFluencyApp {
             isResumingCheckpoint && checkpoint
               ? `Em andamento • Card ${checkpoint.currentIndex + 1} de ${checkpoint.queueCardIds.length}`
               : nextLesson
-                ? `Próxima Etapa • Lição ${nextLesson.dayNumber} de ${days.length} (Nível ${nextLesson.cefrLevel || 'A1'})`
+                ? `Próxima etapa • ${this.escapeHtml(nextLesson.title)}`
                 : 'Trilha Concluída'
           }
         </div>
@@ -953,24 +1010,18 @@ class ZeroToFluencyApp {
           }
         </p>
 
-        <div style="display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap;">
+        <div class="study-hub-action">
           ${
             nextLesson
               ? `<button id="btn-main-study-now" class="btn-study-cta">
-                  <span>${isResumingCheckpoint ? 'Estudar (Retomar de onde parou)' : 'Estudar'}</span>
+                  <span>${isResumingCheckpoint ? 'Continuar estudo' : 'Começar a estudar'}</span>
                 </button>`
               : ''
           }
-
           ${
             dueReviews.length > 0
-              ? `<label for="review-limit">Frases por revisão:
-                  <input id="review-limit" type="number" min="1" step="1" value="20" style="width: 80px;" />
-                </label>
-                <button id="btn-start-due-reviews" class="btn btn-primary" style="padding: 15px 24px; font-size: 0.98rem;">
-                  Revisar frases pendentes (${dueReviews.length})
-                </button>`
-              : ''
+              ? `<p class="study-hub-note">Há ${dueReviews.length} revis${dueReviews.length === 1 ? 'ão pendente' : 'ões pendentes'}. Ao estudar, elas vêm antes da próxima lição.</p>`
+              : '<p class="study-hub-note">Siga no seu ritmo: uma lição de cada vez.</p>'
           }
         </div>
       </section>
@@ -979,17 +1030,17 @@ class ZeroToFluencyApp {
       <section class="curriculum-blocks-container">
         <div class="curriculum-blocks-header">
           <div>
-            <h3 class="curriculum-blocks-title">Trilha Pedagógica A1 — 15 Blocos Construtivos</h3>
+            <h3 class="curriculum-blocks-title">Sua trilha de inglês</h3>
             <span style="font-size: 0.82rem; color: var(--text-secondary);">
-              150 lições graduais com textos narrativos e Teste de Bloco (5 habilidades, mínimo 80% para desbloquear).
+              ${this.escapeHtml(publishedBlockCountLabel())} • novas etapas aparecem aqui somente depois da migração e validação no site.
             </span>
           </div>
           <span class="tag-minimal">
-            ${storageService.getPassedBlockTests(this.currentUser.email).length} de 15 Blocos Aprovados
+            ${this.currentUser.role === 'teacher' ? 'Visão do professor' : `${storageService.getPassedBlockTests(this.currentUser.email).filter(isPublishedA1Block).length} de 1 bloco disponível aprovado`}
           </span>
         </div>
 
-        ${A1_BLOCKS_METADATA.map((block) => this.renderBlockCard(block, days, completedLessons)).join('')}
+        ${A1_BLOCKS_METADATA.filter((block) => this.currentUser?.role === 'teacher' || isPublishedA1Block(block.blockNumber)).map((block) => this.renderBlockCard(block, days, completedLessons)).join('')}
       </section>
 
       <!-- OPÇÃO EXCLUSIVA DO PROFESSOR PARA VER TODAS AS LIÇÕES E CARDS -->
@@ -1108,7 +1159,9 @@ class ZeroToFluencyApp {
     const email = this.currentUser.email;
     const isTeacher = this.currentUser.role === 'teacher';
     const isUnlocked = isTeacher || storageService.isBlockUnlocked(block.blockNumber, email);
-    const isPassed = storageService.isBlockPassedTest(block.blockNumber, email);
+    const isPassed = isTeacher
+      ? storageService.getBlockTestResults(email).some((result) => result.blockNumber === block.blockNumber && result.passed)
+      : storageService.isBlockPassedTest(block.blockNumber, email);
     const blockDays = allDays.filter(
       (d) => d.dayNumber >= block.lessonRange[0] && d.dayNumber <= block.lessonRange[1]
     );
@@ -1139,7 +1192,7 @@ class ZeroToFluencyApp {
 
     return `
       <article class="block-card ${isUnlocked ? 'unlocked' : 'locked'}">
-        <header class="block-header" data-toggle-block="${block.blockNumber}">
+        <button type="button" class="block-header" data-toggle-block="${block.blockNumber}" aria-expanded="${isOpen}">
           <div class="block-header-info">
             <div class="block-title-row">
               <h4 class="block-title">${this.escapeHtml(block.title)}</h4>
@@ -1149,13 +1202,13 @@ class ZeroToFluencyApp {
               </span>
             </div>
             <div class="block-theme">
-              ${this.escapeHtml(block.theme)} • Lições ${block.lessonRange[0]} a ${block.lessonRange[1]}
+              ${this.escapeHtml(block.theme)} • Lições ${block.lessonRange[0]} a ${block.lessonRange[1]}${block.blockNumber === 1 ? ' • Exame 12' : ' • versão anterior'}
             </div>
           </div>
           <div class="block-header-actions">
             <span class="block-toggle-arrow ${isOpen ? 'open' : ''}"></span>
           </div>
-        </header>
+        </button>
 
         <div class="block-progress-track">
           <div class="block-progress-fill" style="width: ${progressPercent}%;"></div>
@@ -1268,10 +1321,10 @@ class ZeroToFluencyApp {
                 <div class="block-test-action-desc">
                   ${
                     isPassed
-                      ? `Você já foi aprovado neste bloco com nota ${bestResult?.score ?? 8}/10. Você pode refazer o teste a qualquer momento.`
+                      ? `Você já foi aprovado neste bloco${bestResult ? ` com nota ${bestResult.score}/10` : ''}. Você pode refazer o teste a qualquer momento.`
                       : allBlockLessonsCompleted || isTeacher
-                        ? 'Todas as 10 lições foram concluídas. Faça a avaliação de 10 questões (mínimo 80% / 8 acertos) para desbloquear o próximo bloco.'
-                        : `Complete todas as 10 lições deste bloco para habilitar o teste oficial de aprovação.`
+                      ? `Faça a avaliação de 10 questões (mínimo 80% / 8 acertos) para desbloquear o próximo bloco.`
+                      : `Complete as ${blockDays.length} lições deste bloco para habilitar a avaliação.`
                   }
                 </div>
               </div>
@@ -1282,7 +1335,7 @@ class ZeroToFluencyApp {
                       ${isPassed ? 'Refazer Teste do Bloco' : 'Iniciar Teste do Bloco'}
                     </button>`
                   : `<button class="btn btn-sm" disabled style="opacity:0.6; cursor:not-allowed;">
-                      Bloqueado (Complete as 10 lições)
+                      Bloqueado (Complete as lições)
                     </button>`
               }
             </div>
@@ -1296,6 +1349,18 @@ class ZeroToFluencyApp {
 
   public startBlockTestSession(blockNumber: number): void {
     if (!this.currentUser) return;
+    if (this.currentUser.role !== 'teacher' && !isPublishedA1Block(blockNumber)) {
+      this.showBanner('error', 'Este exame ainda não foi publicado com o novo roteiro.');
+      return;
+    }
+    if (this.currentUser.role !== 'teacher') {
+      const lessons = publishedLessons(storageService.getStudyDays()).filter((day) => day.blockNumber === blockNumber);
+      if (!storageService.isBlockUnlocked(blockNumber, this.currentUser.email) ||
+          !lessons.length || lessons.some((day) => !storageService.isDayCompletedByUser(this.currentUser!.email, day.dayNumber))) {
+        this.showBanner('error', 'Conclua as lições do bloco antes de iniciar o exame.');
+        return;
+      }
+    }
     const questions = drawBlockTestQuestions(blockNumber);
     if (!questions || questions.length === 0) {
       this.showBanner('error', `Nenhuma questão encontrada para o Bloco ${blockNumber}.`);
@@ -1315,6 +1380,7 @@ class ZeroToFluencyApp {
       isAudioPlaying: false,
       isListeningSpeech: false,
       speechTranscript: '',
+      speechAttempts: 0,
       hasSpeechRecognition: hasSpeech,
       evaluationResult: null,
       isSubmitted: false,
@@ -1362,7 +1428,7 @@ class ZeroToFluencyApp {
       (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
-      this.showBanner('error', 'Reconhecimento de voz indisponível no navegador. Use a autoavaliação.');
+      this.showBanner('error', 'Reconhecimento de voz indisponível. Use um navegador compatível para realizar esta questão.');
       return;
     }
 
@@ -1394,7 +1460,7 @@ class ZeroToFluencyApp {
       recognition.onerror = () => {
         if (this.blockTestSession) {
           this.blockTestSession.isListeningSpeech = false;
-          this.render();
+          this.showBanner('error', 'Não foi possível captar sua fala. Verifique o microfone e tente novamente.');
         }
       };
 
@@ -1420,11 +1486,21 @@ class ZeroToFluencyApp {
 
     const inputEl = document.getElementById('block-test-input') as HTMLInputElement | null;
     const response = inputEl ? inputEl.value : s.currentResponse;
+    if (!response.trim()) {
+      this.showBanner('error', q.skill === 'reading_speaking' ? 'Grave sua resposta antes de confirmar.' : 'Escreva sua resposta antes de confirmar.');
+      return;
+    }
     s.currentResponse = response;
 
     const evalResult = evaluateBlockTestResponse(q, response);
     s.evaluationResult = evalResult;
     s.isSubmitted = true;
+
+    if (q.skill === 'reading_speaking' && evalResult.requiresRetry && s.speechAttempts === 0) {
+      s.speechAttempts++;
+      this.render();
+      return;
+    }
 
     s.answers.push({
       questionId: q.id,
@@ -1446,6 +1522,7 @@ class ZeroToFluencyApp {
     s.isSubmitted = false;
     s.isListeningSpeech = false;
     s.speechTranscript = '';
+    s.speechAttempts = 0;
 
     if (s.currentIndex >= s.questions.length) {
       // Test finished, compute and save result
@@ -1574,9 +1651,6 @@ class ZeroToFluencyApp {
                   ${s.isListeningSpeech ? 'Ouvindo... Fale agora' : 'Gravar Pronúncia (Microfone)'}
                 </button>
 
-                <button id="btn-block-test-speak-fallback" class="btn btn-sm">
-                  Pronunciei Corretamente (Autoavaliação)
-                </button>
               </div>
 
               ${
@@ -1618,7 +1692,11 @@ class ZeroToFluencyApp {
             ? `
             <div class="test-feedback-box ${s.evaluationResult.isCorrect ? 'correct' : 'incorrect'}">
               <div style="font-weight: 700; margin-bottom: 4px;">
-                ${s.evaluationResult.isCorrect ? 'Resposta Correta!' : 'Resposta Incorreta'}
+                ${
+                  q.skill === 'reading_speaking'
+                    ? (s.evaluationResult.isCorrect ? 'Pronúncia acompanhada!' : 'Vamos praticar mais uma vez?')
+                    : (s.evaluationResult.isCorrect ? 'Resposta correta!' : 'Resposta ainda não correspondeu')
+                }
               </div>
               <div>
                 ${
@@ -1629,6 +1707,15 @@ class ZeroToFluencyApp {
                        ${q.acceptedAnswers.length > 1 ? `<br/><span style="font-size:0.8rem; color:var(--text-secondary);">Outras variantes válidas: ${q.acceptedAnswers.slice(1).map((a) => `"${this.escapeHtml(a)}"`).join(', ')}</span>` : ''}`
                 }
               </div>
+              ${
+                s.evaluationResult.wordFeedback
+                  ? `<div class="speech-word-feedback">
+                      ${s.evaluationResult.wordFeedback.map((word) => `<span class="speech-word ${word.status}">${this.escapeHtml(word.spoken)}</span>`).join('')}
+                    </div>`
+                  : ''
+              }
+              ${s.evaluationResult.feedback ? `<p class="test-feedback-tip">${this.escapeHtml(s.evaluationResult.feedback)}</p>` : ''}
+              ${q.skill === 'reading_speaking' ? `<button id="btn-replay-speech-model" class="btn btn-sm" style="margin-top:10px;">Ouvir o modelo novamente</button>` : ''}
             </div>
           `
             : ''
@@ -1640,6 +1727,10 @@ class ZeroToFluencyApp {
               ? `<button id="btn-submit-block-answer" class="btn btn-primary" style="padding: 12px 24px;">
                   Confirmar Resposta
                 </button>`
+              : s.evaluationResult?.requiresRetry
+                ? `<button id="btn-retry-block-speech" class="btn btn-primary" style="padding: 12px 24px;">
+                    Tentar pronunciar novamente
+                  </button>`
               : `<button id="btn-next-block-question" class="btn btn-primary" style="padding: 12px 24px;">
                   ${s.currentIndex + 1 >= s.questions.length ? 'Ver Resultado da Prova' : 'Próxima Questão'}
                 </button>`
@@ -1785,10 +1876,15 @@ class ZeroToFluencyApp {
                 `
                   : ''
               }
+              ${grammarCard.thirdPersonHelp ? `<details class="study-help"><summary>Ver terceira pessoa</summary><p><strong>${this.escapeHtml(grammarCard.thirdPersonHelp.english)} → ${this.escapeHtml(grammarCard.thirdPersonHelp.base)}</strong> — ${this.escapeHtml(grammarCard.thirdPersonHelp.explanation)}</p></details>` : ''}
             </div>
           `
             : ''
         }
+
+        ${summary.mode === 'lesson_day' && summary.lessonNumber
+          ? `<button id="btn-review-current-lesson" class="btn" style="margin-top: 20px;">Revise as frases</button>`
+          : ''}
 
         ${
           summary.canContinueNextLesson && summary.nextLesson
@@ -1970,7 +2066,8 @@ class ZeroToFluencyApp {
     );
 
     const isWordCard = card.type === 'word';
-    const hasGrammarContent = wordMapping.length > 1 || Boolean(card.grammarRule);
+    const isRevisedBlockOne = card.id.endsWith('-b1r2');
+    const hasGrammarContent = !isRevisedBlockOne && (wordMapping.length > 1 || Boolean(card.grammarRule));
     const suggested = this.session.suggestedRating;
     const isTeacher = this.currentUser.role === 'teacher';
 
@@ -2039,7 +2136,13 @@ class ZeroToFluencyApp {
           }
 
           ${
-            this.session.phase === 2
+            this.session.phase === 2 && isWordCard
+              ? `
+              <div class="anki-answer-pt">${this.escapeHtml(card.portuguese)}</div>
+              ${card.thirdPersonHelp ? `<details class="study-help"><summary>Ver terceira pessoa</summary><p><strong>${this.escapeHtml(card.thirdPersonHelp.english)} → ${this.escapeHtml(card.thirdPersonHelp.base)}</strong> — ${this.escapeHtml(card.thirdPersonHelp.explanation)}</p></details>` : ''}
+              <button id="btn-next-word" class="btn btn-primary" style="width:100%; margin-top:20px;">Continuar ↵</button>
+            `
+              : this.session.phase === 2
               ? `
               <input
                 id="phase2-pt-input"
@@ -2062,6 +2165,8 @@ class ZeroToFluencyApp {
             this.session.phase === 3
               ? `
               <div class="anki-answer-pt">${this.escapeHtml(card.portuguese)}</div>
+              ${card.wordHelp ? `<details class="study-help"><summary>Ver palavra</summary><p><strong>${this.escapeHtml(card.wordHelp.english)}</strong> — ${this.escapeHtml(card.wordHelp.portuguese)}</p></details>` : ''}
+              ${card.thirdPersonHelp ? `<details class="study-help"><summary>Ver terceira pessoa</summary><p><strong>${this.escapeHtml(card.thirdPersonHelp.english)} → ${this.escapeHtml(card.thirdPersonHelp.base)}</strong> — ${this.escapeHtml(card.thirdPersonHelp.explanation)}</p></details>` : ''}
 
               ${ptEval.isSubmitted ? this.renderAnkiTwoLineDiff(ptEval) : ''}
 
@@ -2294,6 +2399,29 @@ class ZeroToFluencyApp {
     `;
   }
 
+  private renderSettingsTab(): string {
+    if (!this.currentUser) return '';
+    return `
+      <section class="settings-page">
+        <div class="settings-heading">
+          <span class="settings-eyebrow">SEU RITMO</span>
+          <h2>Ajustes de estudo</h2>
+          <p>Escolha um ritmo confortável para as revisões. O estudo sempre prioriza o que já precisa ser relembrado.</p>
+        </div>
+        <div class="settings-card">
+          <div>
+            <h3>Frases por sessão de revisão</h3>
+            <p>Esse é o máximo de frases que aparece quando o estudo começa pelas revisões pendentes.</p>
+          </div>
+          <div class="settings-control-row">
+            <input id="settings-review-limit" type="number" min="1" step="1" value="${this.getReviewLimit()}" aria-label="Frases por sessão de revisão" />
+            <button id="btn-save-study-settings" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
   private renderStudentCustomCardsTab(): string {
     if (!this.currentUser) return '';
     const customCards = storageService.getCustomStudentCards(this.currentUser.email);
@@ -2462,8 +2590,19 @@ class ZeroToFluencyApp {
     const studyDays = storageService.getStudyDays();
     const reports = storageService.getTranslationReports();
     const firebaseReady = firebaseAuthService.isConfigured();
+    const lastLessonNumber = Math.max(0, ...studyDays.map((day) => day.dayNumber));
 
     return `
+      <div class="teacher-welcome">
+        <span class="teacher-welcome-label">ESPAÇO DO PROFESSOR</span>
+        <h1>Ensinar também é acompanhar.</h1>
+        <p>Organize sua turma, acompanhe sugestões e prepare as próximas lições em um só lugar.</p>
+        <div class="teacher-welcome-stats">
+          <span><strong>${authorizedUsers.filter((user) => user.role === 'student').length}</strong> alunos</span>
+          <span><strong>${reports.filter((report) => report.status === 'pending').length}</strong> sugestões pendentes</span>
+          <span><strong>${studyDays.length}</strong> lições</span>
+        </div>
+      </div>
       <!-- 0. REPORTES E SUGESTÕES DE TRADUÇÃO DOS ALUNOS (BANDEIRINHA) -->
       <div class="panel-card">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 10px;">
@@ -2606,10 +2745,11 @@ class ZeroToFluencyApp {
       <div class="panel-card">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom: 6px;">
           <h2 style="font-size: 1.05rem; font-weight: 700;">
-            Roteiro de Módulos & Pontos de Diálogos/Histórias
+            Planejamento anterior de módulos
           </h2>
           <span class="tag-minimal">${studyDays.length} lições ativas</span>
         </div>
+        <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:12px;">Referência antiga, ainda não atualizada para o roteiro revisado.</p>
         <div class="roadmap-grid">
           ${GRAMMAR_ROADMAP_100_DAYS.map(
             (m) => `
@@ -2640,7 +2780,7 @@ class ZeroToFluencyApp {
 
         <div class="form-grid" style="margin-bottom: 10px;">
           <input id="admin-dialogue-title" type="text" class="input-field" placeholder="Título do Diálogo ou Fábula" />
-          <input id="admin-dialogue-after-day" type="number" min="0" max="${studyDays.length}" value="${studyDays.length}" class="input-field" placeholder="Inserir após a Lição..." />
+          <input id="admin-dialogue-after-day" type="number" min="0" max="${lastLessonNumber}" value="${lastLessonNumber}" class="input-field" placeholder="Inserir após a Lição..." />
         </div>
 
         <textarea id="admin-dialogue-prep-lines" rows="2" class="input-field" placeholder="Opcional — Cards da Lição Preparatória (i+1): Inglês — Português (um por linha)" style="margin-bottom: 10px;"></textarea>
@@ -2675,7 +2815,7 @@ class ZeroToFluencyApp {
         </h2>
 
         <div class="form-grid">
-          <input id="admin-card-day" type="number" min="1" value="${studyDays.length + 1}" class="input-field" placeholder="Lição" />
+          <input id="admin-card-day" type="number" min="1" value="${lastLessonNumber + 1}" class="input-field" placeholder="Lição" />
           <select id="admin-card-type" class="input-field">
             <option value="word">Palavra</option>
             <option value="phrase">Frase</option>
@@ -2837,6 +2977,18 @@ class ZeroToFluencyApp {
       .getElementById('btn-main-study-now')
       ?.addEventListener('click', () => this.startNextOrResumedStudy());
 
+    document.getElementById('btn-save-study-settings')?.addEventListener('click', () => {
+      if (!this.currentUser) return;
+      const input = document.getElementById('settings-review-limit') as HTMLInputElement | null;
+      const limit = Number(input?.value);
+      if (!Number.isSafeInteger(limit) || limit < 1) {
+        this.showBanner('error', 'Informe pelo menos 1 frase por sessão.');
+        return;
+      }
+      localStorage.setItem(`ztf_review_limit_${this.currentUser.email.toLowerCase()}`, String(limit));
+      this.showBanner('success', 'Seu ritmo de revisão foi salvo.');
+    });
+
     document
       .getElementById('btn-teacher-toggle-lessons')
       ?.addEventListener('click', () => {
@@ -2941,19 +3093,25 @@ class ZeroToFluencyApp {
       this.playBlockTestAudio(0.55);
     });
 
+    document.getElementById('btn-replay-speech-model')?.addEventListener('click', () => {
+      this.playBlockTestAudio(0.7);
+    });
+
     document.getElementById('btn-block-test-mic')?.addEventListener('click', () => {
       this.toggleBlockTestSpeech();
     });
 
-    document.getElementById('btn-block-test-speak-fallback')?.addEventListener('click', () => {
-      if (!this.blockTestSession) return;
-      const q = this.blockTestSession.questions[this.blockTestSession.currentIndex];
-      this.blockTestSession.currentResponse = q?.audioText || q?.prompt || 'Autoavaliação';
+    document.getElementById('btn-submit-block-answer')?.addEventListener('click', () => {
       this.submitBlockTestAnswer();
     });
 
-    document.getElementById('btn-submit-block-answer')?.addEventListener('click', () => {
-      this.submitBlockTestAnswer();
+    document.getElementById('btn-retry-block-speech')?.addEventListener('click', () => {
+      if (!this.blockTestSession) return;
+      this.blockTestSession.isSubmitted = false;
+      this.blockTestSession.evaluationResult = null;
+      this.blockTestSession.currentResponse = '';
+      this.blockTestSession.speechTranscript = '';
+      this.render();
     });
 
     document.getElementById('btn-next-block-question')?.addEventListener('click', () => {
@@ -3010,6 +3168,10 @@ class ZeroToFluencyApp {
     document.getElementById('btn-go-phase-3')?.addEventListener('click', () => {
       this.advanceToPhase(3);
     });
+    document.getElementById('btn-next-word')?.addEventListener('click', () => this.handleSrsAnswer('good'));
+    document.getElementById('btn-review-current-lesson')?.addEventListener('click', () => {
+      if (this.lastCompletedSummary?.lessonNumber) this.startLessonPhraseReview(this.lastCompletedSummary.lessonNumber);
+    });
 
     document.getElementById('btn-toggle-teacher-script')?.addEventListener('click', () => {
       this.teacherInSessionScriptOpen = !this.teacherInSessionScriptOpen;
@@ -3053,7 +3215,7 @@ class ZeroToFluencyApp {
             this.playCurrentCardAudio();
           }
         } else if (action === 'reveal') {
-          this.session.phase = 3;
+          this.session.phase = this.session.queue[this.session.currentIndex]?.type === 'word' ? 2 : 3;
           this.render();
         }
       });

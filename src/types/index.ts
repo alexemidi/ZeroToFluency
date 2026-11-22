@@ -56,6 +56,15 @@ export interface Flashcard {
     portuguese: string;
     futureDayNumber?: number;
   };
+  wordHelp?: {
+    english: string;
+    portuguese: string;
+  };
+  thirdPersonHelp?: {
+    english: string;
+    base: string;
+    explanation: string;
+  };
   /**
    * Explicação detalhada quando o card é do tipo 'grammar' ou nota gramatical extra
    */

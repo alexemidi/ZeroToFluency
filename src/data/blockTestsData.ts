@@ -1,4 +1,5 @@
 import { BlockTestQuestion, BlockTestSkill } from '../types';
+import { BLOCK_ONE_LESSONS } from './blockOneLessons';
 
 export interface BlockMeta {
   blockNumber: number;
@@ -13,7 +14,7 @@ export const A1_BLOCKS_METADATA: BlockMeta[] = [
     blockNumber: 1,
     title: "Bloco 1 — Fundamentos da Frase",
     theme: "Artigos, Substantivos e To Be Afirmativo",
-    lessonRange: [1, 10],
+    lessonRange: [1, 11],
     grammarTopics: "Artigos definidos e indefinidos, substantivos singulares, preposições de lugar simples e To Be afirmativo.",
   },
   {
@@ -116,6 +117,11 @@ export const A1_BLOCKS_METADATA: BlockMeta[] = [
   },
 ];
 
+// Os blocos legados ainda não seguem o roteiro novo; a etapa 12 pertence ao exame.
+for (const block of A1_BLOCKS_METADATA.slice(1)) {
+  block.lessonRange = [block.lessonRange[0] + 2, block.lessonRange[1] + 2];
+}
+
 /**
  * Banco Completo de Testes de Bloco do Nível A1 (15 Blocos x 20 Itens = 300 Questões).
  * Avalia as 5 habilidades fundamentais:
@@ -125,7 +131,7 @@ export const A1_BLOCKS_METADATA: BlockMeta[] = [
  * 4. Reading + Tradução (Texto -> Tradução escrita em Português)
  */
 
-export const ALL_BLOCK_TEST_QUESTIONS: BlockTestQuestion[] = [
+const LEGACY_BLOCK_TEST_QUESTIONS: BlockTestQuestion[] = [
   {
     "id": "block-1-q-1",
     "blockNumber": 1,
@@ -3336,12 +3342,60 @@ export const ALL_BLOCK_TEST_QUESTIONS: BlockTestQuestion[] = [
   }
 ];
 
-/**
- * Mapeamento agrupado dos 15 Blocos de Teste (1 a 15).
- */
+const BLOCK_ONE_APPENDIX: Array<[string, string]> = [
+  ['The teacher and the principal are in the school.', 'A professora e a diretora estão na escola.'],
+  ['I am ready.', 'Eu estou pronto.'],
+  ['He is hungry.', 'Ele está com fome.'],
+  ['It is an orange.', 'É uma laranja.'],
+  ['The eraser and the pencil are on the table.', 'A borracha e o lápis estão sobre a mesa.'],
+  ['She is in the library.', 'Ela está na biblioteca.'],
+  ['We are tired.', 'Nós estamos cansados.'],
+  ['The lunchbox is under the table.', 'A lancheira está embaixo da mesa.'],
+  ['A sandwich and an apple.', 'Um sanduíche e uma maçã.'],
+  ['The janitor is in the classroom.', 'O zelador está na sala de aula.'],
+];
+
+const shuffle = <T>(items: T[]): T[] => {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+};
+
+function drawBlockOneQuestions(): BlockTestQuestion[] {
+  const known = new Map<string, [string, string]>();
+  for (const card of BLOCK_ONE_LESSONS.flatMap((lesson) => lesson.cards)) {
+    if (card.type === 'phrase' || card.type === 'dialogue') {
+      known.set(card.english.toLowerCase(), [card.english, card.portuguese]);
+    }
+  }
+  const sentences = shuffle([...shuffle([...known.values()]).slice(0, 5), ...shuffle(BLOCK_ONE_APPENDIX).slice(0, 5)]);
+  const skills: BlockTestSkill[] = ['listening_writing', 'listening_translation', 'reading_speaking', 'reading_translation'];
+  const formats = shuffle([...skills, ...skills, ...shuffle(skills).slice(0, 2)]);
+  return sentences.map(([english, portuguese], index) => {
+    const skill = formats[index];
+    return {
+      id: `block-1-revised-${english}`,
+      blockNumber: 1,
+      qNum: index + 1,
+      skill,
+      prompt: skill === 'listening_writing' ? 'Ouça e escreva em inglês.'
+        : skill === 'listening_translation' ? 'Ouça e traduza para o português.'
+        : skill === 'reading_speaking' ? 'Leia a frase em voz alta.'
+        : 'Leia e traduza para o português.',
+      audioText: english,
+      acceptedAnswers: [skill === 'listening_translation' || skill === 'reading_translation' ? portuguese : english],
+    };
+  });
+}
+
+export const ALL_BLOCK_TEST_QUESTIONS = LEGACY_BLOCK_TEST_QUESTIONS.filter((q) => q.blockNumber !== 1);
+
 export const BLOCK_TESTS_MAP: Record<number, BlockTestQuestion[]> = {};
 for (let b = 1; b <= 15; b++) {
-  BLOCK_TESTS_MAP[b] = ALL_BLOCK_TEST_QUESTIONS.filter((q) => q.blockNumber === b);
+  BLOCK_TESTS_MAP[b] = b === 1 ? drawBlockOneQuestions() : ALL_BLOCK_TEST_QUESTIONS.filter((q) => q.blockNumber === b);
 }
 
 /**
@@ -3349,6 +3403,7 @@ for (let b = 1; b <= 15; b++) {
  * garantindo uma distribuição equilibrada das 4 habilidades (no mínimo 2 de cada tipo).
  */
 export function drawBlockTestQuestions(blockNumber: number): BlockTestQuestion[] {
+  if (blockNumber === 1) return drawBlockOneQuestions();
   const blockPool = ALL_BLOCK_TEST_QUESTIONS.filter((q) => q.blockNumber === blockNumber);
   if (blockPool.length === 0) return [];
 
@@ -3366,8 +3421,6 @@ export function drawBlockTestQuestions(blockNumber: number): BlockTestQuestion[]
   }
 
   // Embaralha cada grupo
-  const shuffle = <T>(arr: T[]): T[] => [...arr].sort(() => Math.random() - 0.5);
-
   const selected: BlockTestQuestion[] = [];
   const remainingPool: BlockTestQuestion[] = [];
 
@@ -3389,10 +3442,136 @@ export function drawBlockTestQuestions(blockNumber: number): BlockTestQuestion[]
 /**
  * Avalia a resposta do aluno com tolerância inteligente de pontuação e contrações.
  */
+export interface BlockAnswerWordFeedback {
+  spoken: string;
+  expected?: string;
+  status: 'correct' | 'attention' | 'missing';
+}
+
+export interface BlockTestResponseEvaluation {
+  isCorrect: boolean;
+  matchedAnswer?: string;
+  accuracyPercent?: number;
+  feedback?: string;
+  wordFeedback?: BlockAnswerWordFeedback[];
+  requiresRetry?: boolean;
+}
+
+const PORTUGUESE_EQUIVALENTS = [
+  ['aluno', 'aluna', 'estudante'],
+  ['escola', 'colegio'],
+  ['garoto', 'menino'],
+  ['garota', 'menina'],
+  ['carro', 'automovel'],
+  ['casa', 'lar'],
+];
+
+function normalizedWords(text: string): string[] {
+  return (text || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+function sourceUsesIndefiniteArticle(question: BlockTestQuestion): boolean {
+  return normalizedWords(question.audioText || '').some((word) => word === 'a' || word === 'an');
+}
+
+function sourceStartsWithProperName(question: BlockTestQuestion, words: string[]): boolean {
+  const source = (question.audioText || '').trim().match(/^([A-Za-zÀ-ÿ]+)/)?.[1] ?? '';
+  const firstAnswerWord = words[0] === 'o' || words[0] === 'a' ? words[1] : words[0];
+  return Boolean(
+    source &&
+    /^[A-Z]/.test(source) &&
+    !['The', 'A', 'An'].includes(source) &&
+    firstAnswerWord === normalizeForNameComparison(source)
+  );
+}
+
+function normalizeForNameComparison(text: string): string {
+  return normalizedWords(text)[0] ?? '';
+}
+
+function sameTranslation(question: BlockTestQuestion, left: string, right: string): boolean {
+  const canonicalize = (text: string) => {
+    const words = normalizedWords(text);
+    // "Um/uma" é opcional somente quando corresponde ao a/an da frase em inglês.
+    // "O/a" antes de nome próprio é aceito no português brasileiro, sem generalizar
+    // essa remoção para artigos definidos em outros contextos.
+    const contextualWords = words.filter((word, index) => {
+      if ((word === 'um' || word === 'uma') && sourceUsesIndefiniteArticle(question)) return false;
+      if (index === 0 && (word === 'o' || word === 'a') && sourceStartsWithProperName(question, words)) return false;
+      return true;
+    });
+    return contextualWords.map((word) => PORTUGUESE_EQUIVALENTS.find((group) => group.includes(word))?.[0] ?? word);
+  };
+  const a = canonicalize(left);
+  const b = canonicalize(right);
+  return a.length === b.length && a.every((word, index) => word === b[index]);
+}
+
+function evaluateSpeechTranscript(transcript: string, expected: string): {
+  matchedWords: number;
+  accuracyPercent: number;
+  wordFeedback: BlockAnswerWordFeedback[];
+} {
+  const heard = normalizedWords(transcript);
+  const target = normalizedWords(expected);
+  const wordFeedback: BlockAnswerWordFeedback[] = [];
+  let heardIndex = 0;
+  let targetIndex = 0;
+  let matchedWords = 0;
+
+  while (heardIndex < heard.length || targetIndex < target.length) {
+    if (heardIndex < heard.length && targetIndex < target.length && heard[heardIndex] === target[targetIndex]) {
+      wordFeedback.push({ spoken: heard[heardIndex], expected: target[targetIndex], status: 'correct' });
+      matchedWords++;
+      heardIndex++;
+      targetIndex++;
+    } else if (heardIndex < heard.length && targetIndex < target.length) {
+      wordFeedback.push({ spoken: heard[heardIndex], expected: target[targetIndex], status: 'attention' });
+      heardIndex++;
+      targetIndex++;
+    } else if (heardIndex < heard.length) {
+      wordFeedback.push({ spoken: heard[heardIndex], status: 'attention' });
+      heardIndex++;
+    } else {
+      wordFeedback.push({ spoken: '—', expected: target[targetIndex], status: 'missing' });
+      targetIndex++;
+    }
+  }
+
+  return {
+    matchedWords,
+    accuracyPercent: Math.round((matchedWords / Math.max(target.length, 1)) * 100),
+    wordFeedback,
+  };
+}
+
+function personalNameArticleTip(question: BlockTestQuestion, response: string): string | undefined {
+  const responseWords = normalizedWords(response);
+  const sourceWords = normalizedWords(question.audioText || '');
+  const article = responseWords[0];
+  const possibleName = responseWords[1];
+  if (
+    (article === 'o' || article === 'a') &&
+    possibleName &&
+    sourceWords[0] === possibleName &&
+    sourceWords[0] !== 'the' && sourceWords[0] !== 'a' && sourceWords[0] !== 'an'
+  ) {
+    return `No português, “${article === 'o' ? 'O' : 'A'} ${possibleName}” é natural. Em inglês, porém, usamos apenas “${possibleName}”, sem “the”.`;
+  }
+  return undefined;
+}
+
 export function evaluateBlockTestResponse(
   arg1: BlockTestQuestion | string,
   arg2: string | BlockTestQuestion
-): { isCorrect: boolean; matchedAnswer?: string } {
+): BlockTestResponseEvaluation {
   const question = (typeof arg1 === 'object' ? arg1 : arg2) as BlockTestQuestion;
   const userResponse = (typeof arg1 === 'string' ? arg1 : arg2) as string;
 
@@ -3406,15 +3585,44 @@ export function evaluateBlockTestResponse(
   const normalizedUser = normalize(userResponse);
   if (!normalizedUser) return { isCorrect: false };
 
+  const expectedSpeech = question.audioText || question.acceptedAnswers?.[0] || '';
+  if (question.skill === 'reading_speaking' && expectedSpeech) {
+    const speech = evaluateSpeechTranscript(userResponse, expectedSpeech);
+    // A transcrição do navegador não é uma prova de pronúncia. Ela dá feedback por
+    // palavra, mas só confirma a questão quando há correspondência reconhecida.
+    const isCorrect = speech.matchedWords > 0;
+    return {
+      isCorrect,
+      requiresRetry: !isCorrect,
+      matchedAnswer: expectedSpeech,
+      accuracyPercent: speech.accuracyPercent,
+      wordFeedback: speech.wordFeedback,
+      feedback: isCorrect
+        ? speech.accuracyPercent === 100
+          ? 'Pronúncia compreendida. Muito bem!'
+          : 'A transcrição pode falhar. As palavras em verde foram compreendidas; ouça o modelo e pratique as destacadas.'
+        : 'O microfone não encontrou palavras em comum desta vez. Ouça o modelo com calma e tente de novo.',
+    };
+  }
+
   if (Array.isArray(question.acceptedAnswers)) {
     for (const accepted of question.acceptedAnswers) {
-      if (normalize(accepted) === normalizedUser) {
-        return { isCorrect: true, matchedAnswer: accepted };
+      if (
+        normalize(accepted) === normalizedUser ||
+        ((question.skill === 'listening_translation' || question.skill === 'reading_translation') &&
+          sameTranslation(question, accepted, userResponse))
+      ) {
+        return {
+          isCorrect: true,
+          matchedAnswer: accepted,
+          feedback: personalNameArticleTip(question, userResponse),
+        };
       }
     }
   }
 
-  if (question.audioText && normalize(question.audioText) === normalizedUser) {
+  if ((question.skill === 'listening_writing' || question.skill === 'reading_speaking') &&
+      question.audioText && normalize(question.audioText) === normalizedUser) {
     return { isCorrect: true, matchedAnswer: question.audioText };
   }
 

@@ -1,2529 +1,3304 @@
-# Roteiro A1 — Lições i+1, ciclos e bancos de vocabulário
+# Roteiro A1 — Lições, bancos de frases e exames
 
-## 1. Especificação aprovada — fonte de verdade
+A lógica compartilhada, os limites de acesso, os grupos de vocabulário e o comparativo dos cenários estão em [Regras gerais e planejamento do curso](./regras_gerais_curso.md). A ordem dos 15 blocos existentes é mantida provisoriamente; a quantidade de blocos, ciclos e lições pode aumentar conforme a necessidade do conteúdo.
 
-| Tema | Regra e Diretriz |
-| :--- | :--- |
-| **Quantidade e organização** | O mapa-base começa com **15 blocos temáticos de cerca de 10 lições** (referência inicial: 150 lições), em geral com três ciclos de três lições e uma lição de fechamento. O número pode crescer quando a progressão i+1, a naturalidade ou a prática exigirem uma lição adicional; não se remove conteúdo útil apenas para preservar uma contagem. Cada bloco também tem uma **Lição 10x** auxiliar, que guarda 10 frases inéditas para o teste e não conta como lição de estudo nem altera a numeração. Os blocos agrupam assuntos; não são a unidade de revisão. |
-| **Progressão i+1** | As frases partem de palavras e estruturas já ensinadas e acrescentam, em regra, uma unidade lexical ou estrutural nova por vez. Palavras novas podem aparecer em qualquer lição, inclusive na terceira, sempre em contexto de frase. |
-| **Ciclo de três lições** | As duas primeiras lições ensinam um foco gramatical cada; a terceira não introduz nem explica gramática nova e fixa somente os dois focos das lições anteriores do mesmo ciclo. Ela pode introduzir vocabulário novo em frases. A fixação nunca revisa o bloco inteiro. |
-| **Ordem de palavras e frases** | A sequência é flexível: uma ou duas palavras novas podem vir antes de uma frase que use **todas as unidades pendentes**. Assim que uma palavra isolada é apresentada, a próxima frase adequada deve implementá-la; não se deixa uma palavra para ser aplicada só várias posições depois. Uma palavra nova também pode estrear dentro de uma frase, desde que tenha o botão **“Ver palavra”**. Não se apresentam três cartões de palavras isoladas seguidos sem uma frase que as contextualize. |
-| **Frases e naturalidade** | Todo conteúdo em frases deve ser curto, compreensível para o estágio do aluno e natural em situações reais. Falas de diálogo são unidades completas de frase, não palavras isoladas. |
-| **Unidades lexicais compostas** | Compostos, expressões fixas e phrasal verbs são ensinados e contabilizados como uma unidade lexical, sem separar seus componentes para formar o significado. Exemplos: *bedroom* (uma palavra: quarto), *living room* (sala de estar), *good morning* (bom dia), *happy birthday* (feliz aniversário), *Merry Christmas* (Feliz Natal), *Happy New Year* (Feliz Ano Novo), *good afternoon* (boa tarde), *good evening* (boa noite ao chegar), *good night* (boa noite ao se despedir ou antes de dormir), *wake up* (acordar) e *get up* (levantar-se). Um componente também pode ser ensinado separadamente quando tiver significado próprio em outro contexto, mas isso não substitui o card da expressão inteira. |
-| **Estatística do ciclo** | Ao concluir a terceira lição, mostrar **“Você aprendeu X palavras”**, contando os itens lexicais novos e distintos do ciclo, incluindo palavras introduzidas dentro de frases. Repetições não contam novamente. |
-| **Estatística do bloco** | No fechamento de cada bloco, mostrar o total cumulativo de palavras e expressões conhecidas, sem duplicar itens já contabilizados, incluindo os aprendidos em bancos suplementares. |
-| **Card de palavra a partir da frase** | Uma palavra ou expressão lexical nova apresentada numa frase tem um botão **“Ver palavra”** que abre seu card específico no banco de palavras. Esse card oferece **“Voltar à lição”** e retorna ao ponto da lição de origem; expressões compostas abrem como uma unidade inteira. |
-| **Revisão opcional do dia** | Um botão **“Revise as frases”** oferece, opcionalmente, revisão das frases da lição atual. Inclui frases completas e falas de diálogo; não inclui palavras isoladas nem cards de gramática. |
-| **Revisão obrigatória de dias anteriores** | Frases vencidas de lições anteriores são revisões obrigatórias e não incluem frases da lição atual, palavras isoladas ou cards de gramática. |
-| **Limite ajustável de revisão** | O limite padrão de revisões obrigatórias é **20 frases por dia**. O aluno pode alterá-lo nas configurações e na tela de revisão. Se houver mais frases vencidas que o limite, a seleção é aleatória e ponderada: quanto mais antiga a frase, maior sua chance de entrar. O limite não se aplica à revisão opcional da lição atual. |
-| **Cards de gramática** | São exibidos somente nas lições 1 e 2 de cada ciclo, depois das estatísticas; são exclusivamente para leitura e não entram em revisões de frases. |
-| **Fechamento e teste do bloco** | A lição de fechamento não substitui nem altera a fixação do ciclo anterior. Depois do fechamento, o aluno faz o teste do bloco; a aprovação libera o próximo bloco. |
-| **Bancos de vocabulário** | São lições suplementares, identificadas separadamente e sem frases de exemplo, com **5 a 20 palavras ou expressões** cada. Contam no vocabulário aprendido, têm cards próprios e podem ser retomadas em frases futuras. |
-| **Filtro de sobrevivência e naturalidade** | Todas as frases devem passar pelo critério: *“Um nativo usaria essa frase em uma conversa ou situação cotidiana?”*. Frases artificiais e circulares são evitadas. |
-| **Multiplicadores morfológicos** | A partir da introdução de cada regra (*plural +s*, *3ª pessoa -s/-es*, *passado regular -ed*), formas derivadas regulares são contabilizadas na métrica de vocabulário. |
-| **Meta de vocabulário A1** | O aluno atinge **mais de 1.500 palavras e expressões** reconhecidas, ou o patamar real imediatamente inferior mais honesto, ao concluir o plano A1. O produto calcula o total real; a comunicação arredonda para baixo em blocos de 50 (ex.: 1.572 itens = “mais de 1.550 palavras e expressões”). Bancos suplementares, formas morfológicas e lições adicionais também entram na contagem. |
-| **Teste de fechamento** | Cada tentativa usa 10 frases: 5 sorteadas das lições já estudadas e 5 sorteadas da Lição 10x do bloco. Cada frase pode ser usada nos quatro formatos, garantindo ao menos 5 frases elegíveis para cada formato no banco. Após a seleção, cada frase recebe um formato aleatório, com pelo menos 2 questões de cada formato; a ordem também é sorteada. É preciso acertar 8/10 para liberar o bloco seguinte. |
+As palavras e traduções aceitas estão em [Vocabulário A1](./vocabulario_a1.md), ainda em construção.
 
-### Bancos de vocabulário — orientação de distribuição
+**Estado do conteúdo:** o Bloco 1 revisado foi aplicado ao site para testes. Os Blocos 2–13 foram reorganizados neste roteiro, mas ainda não foram aplicados ao site; nele, os blocos posteriores continuam em versões anteriores e têm numeração provisória. Os Blocos 14–15 precisam ser revisados na sequência, pois podem não cumprir esses limites, depender de palavras retiradas dos blocos anteriores, repetir palavras que agora aparecem neles ou usar **Ver palavra** em lições de gramática. A triagem anterior das terceiras lições precisa ser refeita após as alterações.
 
-Não há um banco obrigatório após cada ciclo ou bloco. A ordem deve acompanhar o contexto: apresentar algumas palavras em lições com frases, ampliar o mesmo tema em um banco suplementar e reutilizar o vocabulário em frases, diálogos ou histórias posteriores. Assim, o banco expande o repertório sem virar uma lição de frases nem interromper um ciclo.
+A numeração sequencial foi atualizada até o Bloco 13. Nos Blocos 14–15, as lições mantêm números antigos de referência para o conteúdo já publicado e podem coincidir temporariamente com números dos blocos revisados. Os números das lições **-BF** posteriores são provisórios e precisam ser recalculados conforme a revisão dos ciclos. A numeração final será definida após a revisão dos ciclos. Nenhuma proposta deste documento deve ser considerada automaticamente validada como i+1 ou inédita.
 
-| Grupo de palavras ou expressões | Momento pedagógico sugerido |
-| :--- | :--- |
-| Saudações e despedidas (*good morning, good afternoon, good evening, good night, hello, goodbye*) | No início, antes dos primeiros diálogos de apresentação. *Good evening* é uma saudação ao chegar; *good night* é usado ao se despedir ou antes de dormir. |
-| Sala de aula e materiais escolares | Depois das primeiras frases sobre escola e localização; antes de contextos mais amplos de sala de aula. |
-| Família e relações pessoais | Próximo das lições de pronomes e possessivos, antes de relatos sobre família. |
-| Cômodos, mobília e objetos da casa | Depois de *in/on/under* e de exemplos iniciais do lar; antes de descrições mais completas da casa. |
-| Cores e formas | Depois de algumas descrições com cores; antes de expandir para roupas, compras e descrições visuais. |
-| Números | Dividir conforme o uso: 1–10 no começo; números de idade, datas, horas e preços quando esses contextos forem ensinados. Um banco pode cobrir 21–100 se selecionar no máximo 20 valores úteis, sem listar todas as combinações em sequência; 100–1000 pode vir quando houver contexto para quantidades ou preços. |
-| Roupas e acessórios | Antes de diálogos de compras, depois de já haver contexto para cores e demonstrativos. |
-| Países, nacionalidades e idiomas | Depois das primeiras perguntas sobre origem e antes de diálogos de viagem ou imigração. |
-| Alimentos e bebidas | Próximo dos contextos de cafeteria, refeições e restaurante; separar em bancos menores por tipo, se necessário. |
-| Animais e pets | Próximo dos contextos de família, casa, parque e preferências. |
-| Profissões e locais de trabalho | Junto de apresentação pessoal e antes de diálogos sobre trabalho. |
-| Lugares da cidade e serviços | Antes de contextos sobre bairro, direções, compras e viagem. |
-| Transporte | Junto de deslocamentos, rotina e viagem. |
-| Partes do corpo e saúde | Quando surgirem descrições físicas, sintomas ou necessidades básicas. |
-| Dias, meses, estações e clima | Próximo de rotina, calendário, planos e atividades ao ar livre. |
-| Esportes e hobbies | Junto de preferências, lazer e rotina. |
+Os resumos **PAL**, **TPA** e **PA** são contadores editoriais, não conteúdo para o site. A partir do Bloco 14, os resumos antigos estão desatualizados e não refletem a revisão dos blocos anteriores; não devem ser usados como totais válidos. Os antigos rótulos e listas de “palavras novas” desses rascunhos também podem estar desatualizados. Revisar os conteúdos e recalcular os resumos e acumulados seguintes a cada mudança.
 
-Esses grupos são candidatos, não uma lista que precise entrar toda de uma vez. A seleção e o momento de cada banco devem respeitar o vocabulário já conhecido e o que será usado nas lições seguintes.
+# BLOCO 1 — Escola e Cantina: Artigos, Identificação e Verbo To Be Afirmativo
 
----
-
-## 2. Teste de fechamento de bloco
-
-- **Lição 10x — banco de frases inéditas**: Cada bloco tem um banco auxiliar de 10 frases novas, por exemplo, L10x para o bloco 1, L20x para o bloco 2 e assim por diante. As frases usam somente vocabulário e gramática já ensinados; são novas pela combinação e organização das palavras. Cada frase é elegível para os quatro formatos, sem cópias separadas por modalidade. A Lição 10x não ensina conteúdo, não é exibida como uma lição regular e não entra na contagem das 150 lições.
-- **Seleção das frases**: Em cada tentativa, sortear 5 frases entre as já estudadas até o fechamento daquele bloco e 5 das 10 frases guardadas na Lição 10x correspondente. Não repetir frase dentro da tentativa. As frases estudadas devem ser elegíveis para qualquer um dos quatro formatos, sem cópias separadas por modalidade.
-- **Combinações do teste**: Depois de selecionar as 10 frases, sortear para cada questão um formato entre:
-  1. **Listening + Writing**: o aluno ouve a frase em inglês e escreve em inglês o que ouviu.
-  2. **Listening + Translation**: o aluno ouve a frase em inglês e escreve a tradução em português.
-  3. **Reading + Speaking**: o aluno lê a frase em inglês e a diz em voz alta.
-  4. **Reading + Translation**: o aluno lê a frase em inglês e escreve a tradução em português.
-- **Distribuição e ordem**: Garantir ao menos 2 questões de cada formato. Sortear os 2 formatos das questões restantes aleatoriamente e, depois, embaralhar a ordem das 10 questões. Assim, cada tentativa cobre os quatro formatos sem fixar em quais posições aparecem.
-- **Aprovação**: É necessário acertar pelo menos 8 de 10 questões (80%) para liberar o próximo bloco.
-- **Nova tentativa**: Se não atingir 80%, refazer os sorteios de frases, formatos e ordem, sem dar prioridade às questões erradas ou às ainda não vistas. Uma frase ou formato pode voltar em outra tentativa.
-- **Separação das lições**: O teste é diferente das lições de estudo e acontece no fechamento do bloco. Não apresenta explicações gramaticais nem vocabulário novo.
-- **Validação de respostas**: Aceitar variantes válidas de tradução e escrita; a frase ditada deve ser comparada com a resposta em inglês, considerando as tolerâncias já definidas pelo sistema. No formato *Reading + Speaking*, avaliar a fala conforme o mecanismo de reconhecimento de voz/pronúncia adotado pelo aplicativo.
-
-### Exemplo de sorteio — Bloco 2
-
-Este é apenas um resultado possível: 5 frases já estudadas e 5 da Lição 20x, com os formatos e a ordem sorteados novamente em cada tentativa.
-
-| Ordem | Origem | Formato sorteado | Frase |
-| :---: | :---: | :--- | :--- |
-| 1 | L11 | Listening + Writing | The lawyer is not busy. |
-| 2 | L12 | Listening + Translation | The mother is with the teacher. |
-| 3 | L12 | Reading + Translation | The sister is with the teacher. |
-| 4 | L20x | Listening + Writing | Is the doctor in the quiet bedroom? |
-| 5 | L20x | Reading + Speaking | Is the glass of milk for the patient? |
-| 6 | L20x | Reading + Speaking | The bed is not under the window. |
-| 7 | L16 | Listening + Translation | Is it a glass of milk? |
-| 8 | L20x | Listening + Writing | The clean cup is for the teacher. |
-| 9 | L12 | Reading + Translation | I am with my brother. |
-| 10 | L20x | Reading + Speaking | The milk is not for the guest. |
-
----
-
-## 3. Mapa Mestre da Sequência A1 — rascunho a reorganizar
-
-> **Atenção:** as Lições 1–20, os bancos 10x/20x e o Banco B2.1 foram reorganizados conforme a especificação aprovada nas seções 1 e 2. As Lições 21–150 ainda são rascunhos e precisam ser reorganizadas antes de serem tratadas como sequência final ou base para implementação. Cada lição de fixação deve cobrir somente as duas lições de gramática do próprio ciclo.
->
-> **Resultado da auditoria preliminar das Lições 21–150:** a checagem de sequência sinalizou 91 lições com pelo menos uma palavra nova que não aparece na frase seguinte. Além disso, 24 lições de fixação ainda contêm um card de gramática: 23, 26, 29, 33, 36, 39, 93, 96, 99, 103, 106, 109, 113, 116, 119, 123, 126, 129, 133, 136, 139, 143, 146 e 149. Esses pontos permanecem pendentes de reorganização; a checagem de vocabulário é uma triagem e deve considerar também formas flexionadas.
-
-```mermaid
-flowchart TD
-    B1["Bloco 1 (L1-10)<br/>Artigos & To Be Afirmativo"] --> B2["Bloco 2 (L11-20)<br/>To Be Neg/Int & Preposições"]
-    B2 --> B3["Bloco 3 (L21-30)<br/>Possessivos & Espaço"]
-    B3 --> B4["Bloco 4 (L31-40)<br/>Plurais, Números & Cores"]
-    B4 --> B5["Bloco 5 (L41-50)<br/>Demonstrativos & There is/are"]
-    B5 --> B6["Bloco 6 (L51-60)<br/>Question Words & Países"]
-    B6 --> B7["Bloco 7 (L61-70)<br/>Have/Has & Necessidades"]
-    B7 --> B8["Bloco 8 (L71-80)<br/>Simple Present (Rotina)"]
-    B8 --> B9["Bloco 9 (L81-90)<br/>Simple Present (3ª Pessoa)"]
-    B9 --> B10["Bloco 10 (L91-100)<br/>Do/Does & Frequência"]
-    B10 --> B11["Bloco 11 (L101-110)<br/>Horas, Tempo & Transporte"]
-    B11 --> B12["Bloco 12 (L111-120)<br/>Can/Can't & Clima"]
-    B12 --> B13["Bloco 13 (L121-130)<br/>Contáveis/Incontáveis & Comida"]
-    B13 --> B14["Bloco 14 (L131-140)<br/>Descrição, 's & Comparativos"]
-    B14 --> B15["Bloco 15 (L141-150)<br/>Passado Simples & Fluência A1"]
-```
-
-### Grade Geral dos Blocos
-
-| Bloco | Lições | Tópicos Centrais | Tipo de Fechamento | Meta Vocab. Acumulada |
-| :---: | :---: | :--- | :--- | :---: |
-| **1** | 1 a 10 | Artigos (the, a, an com vogais), preposições básicas (in, on, under), To Be afirmativo completo | **Descrição 1** (A Escola e o Parque) | ~70 palavras |
-| **2** | 11 a 20 | To Be negativo (not), preposições with/from/at/for/of/near, To Be interrogativo e cortesias | **Diálogo 1** (Check-in no Hotel) | ~140 palavras |
-| **3** | 21 a 30 | Possessivos (my, your, his, her, its, our, their), família, love/loves, preposições 2 | **Relato 1** (Minha Família e Nossa Casa) | ~220 palavras |
-| **4** | 31 a 40 | Plurais (+s, +es, -ies, irregulares), números (1-10), compras na feira, cores | **Descrição 2** (A Feira e a Praça Central) | ~350 palavras *(multiplicador +s)* |
-| **5** | 41 a 50 | Demonstrativos (this, that, these, those), roupas, There is / There are (afirm., neg., interr.) | **Diálogo 2** (Na Loja e no Bairro) | ~450 palavras |
-| **6** | 51 a 60 | Question Words (what, where, who, how, when, which), países, nacionalidades e profissões | **Diálogo 3 / Entrevista** (Imigração e Apresentação) | ~560 palavras |
-| **7** | 61 a 70 | Verbo Have / Has, Need e Want, documentos de viagem, aeroporto e conveniência | **Relato 2** (No Aeroporto com a Bagagem) | ~670 palavras |
-| **8** | 71 a 80 | Simple Present afirmativo (I, you, we, they), ações da manhã, alimentos e bebidas naturais | **Relato 3** (Minha Rotina Diária) | ~780 palavras |
-| **9** | 81 a 90 | Simple Present (3ª pessoa: he, she, it: -s, -es, -ies, has, goes), dias da semana | **História 1** (A Rotina de Sarah) | ~900 palavras *(multiplicador 3ª p.)* |
-| **10** | 91 a 100 | Negação e perguntas com Do e Does, respostas curtas, advérbios de frequência (always, never) | **Diálogo 4** (Entrevista sobre Hábitos e Esportes) | ~1.000 palavras |
-| **11** | 101 a 110 | Horas e tempo (o'clock, half past), preposições de tempo (at, on, in), meios de transporte (by) | **Relato 4** (Meu Deslocamento e Itinerário) | ~1.100 palavras |
-| **12** | 111 a 120 | Modal Can / Can't (habilidades e pedidos), clima e temperaturas, estações do ano | **Diálogo 5** (Planejando um Passeio ao Ar Livre) | ~1.200 palavras |
-| **13** | 121 a 130 | Substantivos contáveis vs. incontáveis, how much / how many, quantificadores, restaurante | **Diálogo 6** (Jantar Completo no Restaurante) | ~1.300 palavras |
-| **14** | 131 a 140 | Possessive 's, descrição de aparência e personalidade, comparativos básicos (-er than) | **História 2** (Comparações entre Amigos e Cidades) | ~1.400 palavras |
-| **15** | 141 a 150 | Passado To Be (was/were), passado regular (-ed), marcadores temporais, fechamento A1 | **Grande História 3** (A Viagem dos Sonhos no A1) | **1.500+ palavras** |
-
----
-
-# BLOCO 1 — Fundações: Identificação, Artigos e Verbo To Be Afirmativo
-*Ciclos: (1, 2, fixação 3) · (4, 5, fixação 6) · (7, 8, fixação 9) · Fechamento: Lição 10 · Teste 1 após o fechamento.*
+### Lições dos ciclos — numeração anterior
 
 ### Lição 1 — Artigo Definido "The" e Conjunção "And"
-*Identificação com substantivos regulares e com vogal*
-**Foco**: Artigo definido The (o, a, os, as) antes de consoante e vogal, e conjunção And.
+*Identificação de materiais escolares e pessoas*
+**Foco**: Artigo definido The (o, a, os, as) e conjunção And.
 
 1. `[Palavra]` **The** — O, a, os, as
-2. `[Palavra]` **Apple** — Maçã
-3. `[Frase]` **The apple.** — A maçã.
-4. `[Palavra]` **Orange** — Laranja
-5. `[Frase]` **The orange.** — A laranja.
+2. `[Palavra]` **Pencil** — Lápis
+3. `[Frase]` **The pencil.** — O lápis.
+4. `[Palavra]` **Pen** — Caneta
+5. `[Frase]` **The pen.** — A caneta.
 6. `[Palavra]` **And** — E
-7. `[Frase]` **The apple and the orange.** — A maçã e a laranja.
+7. `[Frase]` **The pencil and the pen.** — O lápis e a caneta.
 8. `[Palavra]` **Boy** — Menino, garoto
 9. `[Frase]` **The boy.** — O menino.
-10. `[Frase]` **The boy and the girl.** — O menino e a menina. `[Ver palavra: girl]`
-11. `[Gramática]` **Gramática — Lição 1: O Artigo Definido "The" e a Conjunção "And"**
-   > O artigo *The* serve tanto para o singular quanto para o plural, masculino e feminino (*o, a, os, as*). Antes de palavras iniciadas por som de vogal (*the apple*, *the orange*), sua pronúncia se torna sutilmente /ðiː/. A conjunção *And* une elementos na frase.
+10. `[Palavra]` **Girl** — Menina, garota
+11. `[Frase]` **The boy and the girl.** — O menino e a menina.
+12. `[Gramática]` **Gramática — Lição 1: O Artigo Definido "The" e a Conjunção "And"**
+   > O artigo *The* serve tanto para o singular quanto para o plural, masculino e feminino (*o, a, os, as*). A conjunção *And* une elementos na frase.
    > *Exemplos*:
-   > - **The apple and the orange.**
+   > - **The pencil and the pen.**
    > - **The boy and the girl.**
 
+**PAL:** 6<br>
+**TPA:** 6<br>
+**PA:** The, Pencil, Pen, And, Boy, Girl
+
 ### Lição 2 — Artigos Indefinidos "A" e "An"
-*Artigos indefinidos em exemplos do cotidiano*
+*Artigos indefinidos com materiais escolares e alimentos da cantina*
 **Foco**: Apresentar os artigos indefinidos A e An em frases curtas.
 
 1. `[Palavra]` **A** — Um, uma
-2. `[Palavra]` **Car** — Carro
-3. `[Frase]` **A car.** — Um carro.
+2. `[Palavra]` **Book** — Livro
+3. `[Frase]` **A book.** — Um livro.
 4. `[Palavra]` **An** — Um, uma
-5. `[Palavra]` **Egg** — Ovo
-6. `[Frase]` **An egg.** — Um ovo.
-7. `[Palavra]` **House** — Casa
-8. `[Frase]` **A house.** — Uma casa.
-9. `[Palavra]` **Office** — Escritório
-10. `[Frase]` **An office.** — Um escritório.
-11. `[Frase]` **A house and an office.** — Uma casa e um escritório.
+5. `[Palavra]` **Orange** — Laranja
+6. `[Frase]` **An orange.** — Uma laranja.
+7. `[Palavra]` **Apple** — Maçã
+8. `[Frase]` **An apple.** — Uma maçã.
+9. `[Frase]` **A pencil.** — Um lápis.
+10. `[Frase]` **A book and a pencil.** — Um livro e um lápis.
+11. `[Frase]` **An orange and an apple.** — Uma laranja e uma maçã.
 12. `[Gramática]` **Gramática — Lição 2: "A" vs "An"**
-   > *A* e *an* são artigos indefinidos e podem ser traduzidos como "um" ou "uma". Veja seu uso nos exemplos.
+   > *A* e *an* são artigos indefinidos usados com substantivos contáveis no singular e podem significar "um" ou "uma". Usamos *a* antes de som de consoante, como em *a book*, e *an* antes de som de vogal, como em *an apple*. A escolha depende do som inicial da palavra seguinte, não apenas da letra.
    > *Exemplos*:
-   > - **A car and an office.**
-   > - **A house and an egg.**
+   > - **A book and a pencil.**
+   > - **An orange and an apple.**
 
-### Lição 3 — Fixação: Artigos e Conjunção em uma Cafeteria
-*Fixação de artigos e conjunção com novos itens de café da manhã*
-**Foco**: Praticar *the*, *a*, *an* e *and*, conteúdos das Lições 1 e 2. Introduzir vocabulário novo em frases curtas de cafeteria, sem ensinar estruturas gramaticais novas.
+**PAL:** 5<br>
+**TPA:** 11<br>
+**PA:** A, Book, An, Orange, Apple
 
-1. `[Frase]` **The coffee.** — O café.
-2. `[Frase]` **A coffee.** — Um café.
-3. `[Frase]` **The tea.** — O chá.
-4. `[Frase]` **A tea.** — Um chá.
-5. `[Frase]` **An omelet.** — Um omelete.
-6. `[Frase]` **The omelet.** — O omelete.
-7. `[Frase]` **A sandwich.** — Um sanduíche.
-8. `[Frase]` **The sandwich.** — O sanduíche.
-9. `[Frase]` **A coffee and a sandwich.** — Um café e um sanduíche.
-10. `[Frase]` **An omelet and a tea.** — Um omelete e um chá.
+### Lição 3 — Fixação: Artigos e Conjunção na Cantina
+*Fixação de artigos e conjunção com alimentos e bebidas da cantina escolar*
+**Foco**: Praticar *the*, *a*, *an* e *and*, conteúdos das Lições 1 e 2, com vocabulário da cantina.
 
-> **Fixação do ciclo:** todas as frases praticam artigos definidos/indefinidos e, nas duas últimas, a conjunção *and*. As palavras novas aparecem em contexto; não há cards de palavras isoladas nem card ou explicação de gramática nesta lição.
+1. `[Frase]` **An egg.** — Um ovo. `[Ver palavra: egg]`
+2. `[Frase]` **The coffee.** — O café. `[Ver palavra: coffee]`
+3. `[Frase]` **A coffee.** — Um café.
+4. `[Frase]` **The tea.** — O chá. `[Ver palavra: tea]`
+5. `[Frase]` **A tea.** — Um chá.
+6. `[Frase]` **An omelet.** — Um omelete. `[Ver palavra: omelet]`
+7. `[Frase]` **The omelet.** — O omelete.
+8. `[Frase]` **A sandwich.** — Um sanduíche. `[Ver palavra: sandwich]`
+9. `[Frase]` **The sandwich.** — O sanduíche.
+10. `[Frase]` **A cookie.** — Um biscoito. `[Ver palavra: cookie]`
+11. `[Frase]` **A coffee and a sandwich.** — Um café e um sanduíche.
+12. `[Frase]` **An omelet and a tea.** — Um omelete e um chá.
+13. `[Frase]` **A cookie and an orange.** — Um biscoito e uma laranja.
+
+**PAL:** 6<br>
+**TPA:** 17<br>
+**PA:** egg, coffee, tea, omelet, sandwich, cookie
 
 ### Lição 4 — Verbo To Be: "I am" e "You are"
-*Identidade e localização do falante e do interlocutor*
+*Identidade e estados do falante e do interlocutor na escola*
 **Foco**: Formas singulares I am e You are (ser e estar).
 
 1. `[Palavra]` **I** — Eu
 2. `[Palavra]` **Am** — Sou, estou
-3. `[Frase]` **I am a student.** — Eu sou estudante. `[Ver palavra: student]`
-4. `[Palavra]` **You** — Você
-5. `[Palavra]` **Are** — É, está
-6. `[Frase]` **You are a friend.** — Você é um amigo. `[Ver palavra: friend]`
-7. `[Frase]` **I am a friend.** — Eu sou um amigo.
-8. `[Frase]` **You are a student.** — Você é estudante.
-9. `[Frase]` **I am a student.** — Eu sou estudante.
-10. `[Frase]` **You are a friend.** — Você é um amigo.
-11. `[Gramática]` **Gramática — Lição 4: Verbo To Be no Singular (I e You)**
-   > *I am* (contraído: *I'm*) e *you are* (contraído: *you're*) traduzem tanto "ser" quanto "estar" conforme o contexto da frase. Note que usamos artigo antes de profissões e papéis (*I am a student*).
+3. `[Frase]` **I am a boy.** — Eu sou um menino.
+4. `[Palavra]` **Student** — Estudante, aluno, aluna
+5. `[Frase]` **I am a student.** — Eu sou estudante.
+6. `[Palavra]` **Happy** — Feliz, felizes
+7. `[Frase]` **I am happy.** — Eu estou feliz.
+8. `[Palavra]` **You** — Você
+9. `[Palavra]` **Are** — É, está
+10. `[Frase]` **You are a girl.** — Você é uma menina.
+11. `[Frase]` **You are a student.** — Você é estudante.
+12. `[Gramática]` **Gramática — Lição 4: Verbo To Be no Singular (I e You)**
+   > *I am* e *you are* traduzem tanto "ser" quanto "estar" conforme o contexto da frase. Note que usamos artigo antes de profissões e papéis (*I am a student*). `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
    > *Exemplos*:
    > - **I am a student.**
-   > - **You are a friend.**
+   > - **I am happy.**
+   > - **You are a student.**
+   > **Nota:** *I am* pode ser escrito *I'm* e *you are* pode ser escrito *you're*.
+
+**PAL:** 6<br>
+**TPA:** 23<br>
+**PA:** I, Am, Student, Happy, You, Are
 
 ### Lição 5 — Verbo To Be: "He is", "She is" e "It is"
-*Terceira pessoa do singular com pessoas, animais e objetos*
+*Pessoas e objetos da escola*
 **Foco**: Forma verbal is com he, she e it.
 
 1. `[Palavra]` **He** — Ele
-2. `[Palavra]` **Is** — É, está
-3. `[Frase]` **He is a friend.** — Ele é um amigo.
-4. `[Palavra]` **Doctor** — Médico, médica
+2. `[Palavra]` **Is** — É, está `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+3. `[Frase]` **He is a student.** — Ele é estudante. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+4. `[Frase]` **The boy is a student.** — O menino é estudante. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
 5. `[Palavra]` **She** — Ela
-6. `[Frase]` **She is a doctor.** — Ela é médica.
-7. `[Palavra]` **It** — Ele, ela, isso (objetos e lugares)
-8. `[Frase]` **It is an office.** — É um escritório.
-9. `[Palavra]` **Actor** — Ator
-10. `[Frase]` **He is an actor.** — Ele é ator.
-11. `[Gramática]` **Gramática — Lição 5: To Be na 3ª Pessoa (He, She e It)**
-   > *He, she, it* sempre usam a forma verbal *is* (contraídos: *he's, she's, it's*).
+6. `[Frase]` **She is a student.** — Ela é estudante. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Palavra]` **Teacher** — Professor, professora
+8. `[Frase]` **She is a teacher.** — Ela é professora. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Frase]` **The teacher is happy.** — A professora está feliz. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+10. `[Palavra]` **It** — Ele, ela, isso (animais, objetos e lugares)
+11. `[Frase]` **It is an egg.** — É um ovo. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+12. `[Palavra]` **Eraser** — Borracha
+13. `[Frase]` **It is an eraser.** — É uma borracha. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+14. `[Gramática]` **Gramática — Lição 5: To Be na 3ª Pessoa (He, She e It)**
+   > *He, she, it* usam a forma verbal *is*. Uma pessoa, animal ou objeto no singular também pode aparecer no lugar do pronome: *the boy is a student*. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
    > *Exemplos*:
-   > - **He is a doctor.**
-   > - **He is an actor.**
+   > - **The boy is a student.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > - **She is a teacher.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > - **The teacher is happy.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > - **It is an eraser.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > **Nota:** *he is*, *she is* e *it is* podem ser escritos *he's*, *she's* e *it's*. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]` `[Ver terceira pessoa: he's → be — he is usa a forma de to be para he]` `[Ver terceira pessoa: she's → be — she is usa a forma de to be para she]` `[Ver terceira pessoa: it's → be — it is usa a forma de to be para it]`
+
+**PAL:** 6<br>
+**TPA:** 29<br>
+**PA:** He, Is, She, Teacher, It, Eraser
 
 ### Lição 6 — Fixação: "I am", "You are", "He is", "She is" e "It is"
 *Fixação das formas afirmativas das Lições 4 e 5*
 **Foco**: Praticar os pronomes e as formas *am*, *are* e *is* já apresentados, sem introduzir preposições ou explicar gramática nova.
 
-1. `[Frase]` **I am a student.** — Eu sou estudante.
-2. `[Frase]` **You are a friend.** — Você é um amigo.
-3. `[Frase]` **He is a doctor.** — Ele é médico.
-4. `[Frase]` **She is a doctor.** — Ela é médica.
-5. `[Frase]` **It is an office.** — É um escritório.
-6. `[Frase]` **He is an actor.** — Ele é ator.
-7. `[Frase]` **She is an actor.** — Ela é atriz.
-8. `[Frase]` **I am a friend.** — Eu sou um amigo.
-9. `[Frase]` **You are a student.** — Você é estudante.
-10. `[Frase]` **It is a house.** — É uma casa.
+1. `[Frase]` **She is a principal.** — Ela é diretora da escola. `[Ver palavra: principal]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+2. `[Frase]` **I am hungry.** — Eu estou com fome. `[Ver palavra: hungry]`
+3. `[Frase]` **You are thirsty.** — Você está com sede. `[Ver palavra: thirsty]`
+4. `[Frase]` **He is tired.** — Ele está cansado. `[Ver palavra: tired]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Frase]` **The teacher is busy.** — A professora está ocupada. `[Ver palavra: busy]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. `[Frase]` **He is a janitor.** — Ele é zelador. `[Ver palavra: janitor]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Frase]` **It is an apple.** — É uma maçã. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+8. `[Frase]` **It is a pencil.** — É um lápis. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Frase]` **I am a student.** — Eu sou estudante.
+10. `[Frase]` **She is a teacher.** — Ela é professora. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
 
-> **Fixação do ciclo:** esta lição pratica somente as formas afirmativas das Lições 4 e 5. Não inclui card ou explicação de gramática.
+**PAL:** 6<br>
+**TPA:** 35<br>
+**PA:** principal, hungry, thirsty, tired, busy, janitor
 
 ### Lição 7 — Verbo To Be no Plural: "We" e "They"
 *Pronomes no plural em frases sobre estados*
 **Foco**: Forma verbal *are* com os pronomes plurais *we* e *they*, antes da introdução das preposições.
 
 1. `[Palavra]` **We** — Nós
-2. `[Palavra]` **Happy** — Feliz, felizes
-3. `[Frase]` **We are happy.** — Nós estamos felizes.
-4. `[Palavra]` **They** — Eles, elas
-5. `[Palavra]` **Tired** — Cansado, cansada, cansados, cansadas
-6. `[Frase]` **They are tired.** — Eles estão cansados.
-7. `[Palavra]` **Ready** — Pronto, pronta, prontos, prontas
-8. `[Frase]` **We are ready.** — Nós estamos prontos.
-9. `[Palavra]` **Busy** — Ocupado, ocupada, ocupados, ocupadas
-10. `[Frase]` **They are busy.** — Eles estão ocupados.
-11. `[Gramática]` **Gramática — Lição 7: To Be no Plural (We e They)**
-   > *We* e *they* usam a forma *are* para indicar o estado de mais de uma pessoa.
+2. `[Frase]` **We are happy.** — Nós estamos felizes.
+3. `[Palavra]` **They** — Eles, elas
+4. `[Frase]` **They are happy.** — Eles estão felizes.
+5. `[Palavra]` **Ready** — Pronto, pronta, prontos, prontas
+6. `[Frase]` **They are ready.** — Eles estão prontos.
+7. `[Frase]` **We are hungry.** — Nós estamos com fome.
+8. `[Frase]` **They are tired.** — Eles estão cansados.
+9. `[Palavra]` **Friend** — Amigo, amiga
+10. `[Frase]` **You are a friend.** — Você é um amigo.
+11. `[Palavra]` **Excited** — Animado, animada, animados, animadas
+12. `[Frase]` **We are excited.** — Nós estamos animados.
+13. `[Frase]` **They are busy.** — Eles estão ocupados.
+14. `[Frase]` **The teacher and the student are happy.** — A professora e o estudante estão felizes.
+15. `[Gramática]` **Gramática — Lição 7: To Be no Plural (We e They)**
+   > *We* e *they* usam a forma *are* para indicar características ou estados de um grupo. *We* inclui quem fala; *they* pode se referir a pessoas, animais ou coisas. Duas pessoas ou coisas ligadas por *and* também usam *are*: *the teacher and the student are happy*.
    > *Exemplos*:
    > - **We are happy.**
    > - **They are tired.**
+   > **Nota:** *we are* e *they are* podem ser escritos *we're* e *they're*.
+
+**PAL:** 5<br>
+**TPA:** 40<br>
+**PA:** We, They, Ready, Friend, Excited
 
 ### Lição 8 — Preposições de Lugar: "In", "On" e "Under"
 *Localização com os pronomes e formas afirmativas do To Be já aprendidos*
 **Foco**: Usar *in*, *on* e *under* depois de *I am*, *you are*, *he is*, *she is*, *it is*, *we are* e *they are*.
 
 1. `[Palavra]` **In** — Em, dentro de
-2. `[Frase]` **I am in the house.** — Eu estou na casa.
-3. `[Frase]` **You are in the office.** — Você está no escritório.
-4. `[Frase]` **He is in the garden.** — Ele está no jardim. `[Ver palavra: garden]`
-5. `[Frase]` **She is in the kitchen.** — Ela está na cozinha. `[Ver palavra: kitchen]`
-6. `[Frase]` **We are in the classroom.** — Nós estamos na sala de aula. `[Ver palavra: classroom]`
-7. `[Frase]` **They are in the library.** — Eles estão na biblioteca. `[Ver palavra: library]`
-8. `[Palavra]` **On** — Em, sobre, em cima de
-9. `[Frase]` **It is on the table.** — Está sobre a mesa. `[Ver palavra: table]`
-10. `[Frase]` **You are on the bus.** — Você está no ônibus. `[Ver palavra: bus]`
-11. `[Palavra]` **Under** — Embaixo de
-12. `[Frase]` **It is under the tree.** — Está embaixo da árvore. `[Ver palavra: tree]`
-13. `[Gramática]` **Gramática — Lição 8: Preposições In, On e Under**
-   > *In* expressa interior ou espaço fechado; *on* indica posição sobre uma superfície ou meio de transporte; *under* indica posição inferior. As preposições vêm depois da forma afirmativa do verbo To Be.
+2. `[Palavra]` **School** — Escola
+3. `[Frase]` **I am in the school.** — Eu estou na escola.
+4. `[Palavra]` **Classroom** — Sala de aula
+5. `[Frase]` **I am in the classroom.** — Eu estou na sala de aula.
+6. `[Palavra]` **Cafeteria** — Cantina, refeitório
+7. `[Frase]` **You are in the cafeteria.** — Você está na cantina.
+8. `[Frase]` **The teacher is in the classroom.** — A professora está na sala de aula. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Frase]` **They are in the cafeteria.** — Eles estão na cantina.
+10. `[Palavra]` **On** — Em, sobre, em cima de
+11. `[Frase]` **The pencil is on the book.** — O lápis está sobre o livro. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+12. `[Palavra]` **Under** — Embaixo de
+13. `[Frase]` **The pencil is under the book.** — O lápis está embaixo do livro. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+14. `[Frase]` **The eraser is under the book.** — A borracha está embaixo do livro. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+15. `[Gramática]` **Gramática — Lição 8: Preposições In, On e Under**
+   > *In* expressa interior ou espaço fechado; *on* indica posição sobre uma superfície; *under* indica posição inferior. Nestes exemplos, as preposições vêm depois da forma afirmativa do verbo To Be.
    > *Exemplos*:
-   > - **I am in the house.**
-   > - **It is on the table.**
+   > - **I am in the school.**
+   > - **The pencil is on the book.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > - **The eraser is under the book.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 46<br>
+**PA:** In, School, Classroom, Cafeteria, On, Under
 
 ### Lição 9 — Fixação: "We are", "They are" e Preposições de Lugar
 *Vocabulário novo praticado com as estruturas das Lições 7 e 8*
 **Foco**: Fixar *we/they are* e as preposições *in/on/under*, sem introduzir ou explicar gramática nova.
 
-1. `[Frase]` **We are in the park.** — Nós estamos no parque. `[Ver palavra: park]`
-2. `[Frase]` **They are in the museum.** — Eles estão no museu. `[Ver palavra: museum]`
-3. `[Frase]` **We are in the bedroom.** — Nós estamos no quarto. `[Ver palavra: bedroom]`
-4. `[Frase]` **They are in the bathroom.** — Eles estão no banheiro. `[Ver palavra: bathroom]`
-5. `[Frase]` **We are in the room.** — Nós estamos no cômodo. `[Ver palavra: room]`
-6. `[Frase]` **They are on the floor.** — Eles estão no chão. `[Ver palavra: floor]`
-7. `[Frase]` **We are on the bus.** — Nós estamos no ônibus.
-8. `[Frase]` **They are under the tree.** — Eles estão embaixo da árvore.
-9. `[Frase]` **We are in the garden.** — Nós estamos no jardim.
-10. `[Frase]` **They are in the kitchen.** — Eles estão na cozinha.
+1. `[Frase]` **They are in the library.** — Eles estão na biblioteca. `[Ver palavra: library]`
+2. `[Frase]` **We are in the kitchen.** — Nós estamos na cozinha. `[Ver palavra: kitchen]`
+3. `[Frase]` **The apple is on the table.** — A maçã está sobre a mesa. `[Ver palavra: table]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+4. `[Frase]` **The lunchbox is on the table.** — A lancheira está sobre a mesa. `[Ver palavra: lunchbox]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Frase]` **The backpack is in the classroom.** — A mochila está na sala de aula. `[Ver palavra: backpack]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. `[Frase]` **The ruler is under the book.** — A régua está embaixo do livro. `[Ver palavra: ruler]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Frase]` **The sandwich is on the table.** — O sanduíche está sobre a mesa. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+8. `[Frase]` **The pencil is under the table.** — O lápis está embaixo da mesa. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Frase]` **We are in the cafeteria.** — Nós estamos na cantina.
+10. `[Frase]` **They are in the classroom.** — Eles estão na sala de aula.
+11. `[Frase]` **We are ready.** — Nós estamos prontos.
+12. `[Frase]` **The teacher and the student are in the library.** — A professora e o estudante estão na biblioteca.
+13. `[Frase]` **They are happy.** — Eles estão felizes.
 
-> **Fixação do ciclo:** esta lição pratica *we/they are* e *in/on/under*, ensinados nas Lições 7 e 8. Não inclui card ou explicação de gramática.
+**PAL:** 6<br>
+**TPA:** 52<br>
+**PA:** library, kitchen, table, lunchbox, backpack, ruler
 
-### Lição 10 — Descrição 1 (A Escola, o Escritório e o Parque)
-*Texto de Fechamento do Bloco 1 reunindo os conceitos em narrativa*
-**Foco**: Compreensão de texto em contexto comunicativo.
+### Encerramento — banco, texto e exame
 
-1. `[Frase]` **I am a student.** — Eu sou estudante.
-2. `[Frase]` **I am in the classroom.** — Eu estou na sala de aula.
-3. `[Frase]` **You are in the library.** — Você está na biblioteca.
-4. `[Frase]` **He is a doctor.** — Ele é médico.
-5. `[Frase]` **She is an actor.** — Ela é atriz.
-6. `[Frase]` **It is an office.** — É um escritório.
-7. `[Frase]` **We are in the park.** — Nós estamos no parque.
-8. `[Frase]` **They are in the museum.** — Eles estão no museu.
-9. `[Frase]` **We are in the bedroom.** — Nós estamos no quarto.
-10. `[Frase]` **They are in the garden.** — Eles estão no jardim.
+Pré-requisito: lições 1–9, incluindo artigos, *To Be* afirmativo e *in/on/under*.
 
-### Lição 10x — Banco de Frases Inéditas do Teste do Bloco 1
-*Banco auxiliar; não é uma lição de estudo e não apresenta vocabulário ou gramática novos.*
+#### Lição 10-BF — banco de frases: sala de aula
 
-1. `[Frase inédita]` **The apple is on the table.** — A maçã está sobre a mesa.
-2. `[Frase inédita]` **The orange is under the tree.** — A laranja está embaixo da árvore.
-3. `[Frase inédita]` **I am in the garden.** — Eu estou no jardim.
-4. `[Frase inédita]` **She is on the bus.** — Ela está no ônibus.
-5. `[Frase inédita]` **He is in the office.** — Ele está no escritório.
-6. `[Frase inédita]` **She is in the classroom.** — Ela está na sala de aula.
-7. `[Frase inédita]` **We are under the tree.** — Nós estamos embaixo da árvore.
-8. `[Frase inédita]` **We are in the library.** — Nós estamos na biblioteca.
-9. `[Frase inédita]` **They are in the park.** — Eles estão no parque.
-10. `[Frase inédita]` **The doctor is in the bedroom.** — O médico está no quarto.
+1. `[Frase]` **It is a notebook.** — É um caderno. `[Ver palavra: notebook]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+2. `[Frase]` **The crayon is under the book.** — O giz de cera está embaixo do livro. `[Ver palavra: crayon]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+3. `[Frase]` **The desk is in the classroom.** — A escrivaninha está na sala de aula. `[Ver palavra: desk]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+4. `[Frase]` **The board is in the classroom.** — O quadro está na sala de aula. `[Ver palavra: board]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Frase]` **The chair is under the desk.** — A cadeira está embaixo da escrivaninha. `[Ver palavra: chair]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. `[Frase]` **The door is in the classroom.** — A porta está na sala de aula. `[Ver palavra: door]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Frase]` **The window is in the classroom.** — A janela está na sala de aula. `[Ver palavra: window]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+8. `[Frase]` **The paper is on the desk.** — O papel está sobre a escrivaninha. `[Ver palavra: paper]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Frase]` **It is a marker.** — É um marcador. `[Ver palavra: marker]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
 
----
+**PAL:** 9<br>
+**TPA:** 61<br>
+**PA:** notebook, crayon, desk, board, chair, door, window, paper, marker
 
-# BLOCO 2 — Verbo To Be (Negação/Interrogação), Preposições Fundamentais e Diálogos de Cortesia
-*Ciclos: (11, 12, fixação 13) · (14, 15, fixação 16) · (17, 18, fixação 19) · Fechamento: Lição 20 · Teste 2 após o fechamento.*
+#### Lição 11 — descrição: na sala de aula
 
-### Lição 11 — Negação no Verbo To Be: "Not"
-*Formas negativas diretas para profissões e estados*
-**Foco**: Uso de not imediatamente após am, is, are.
+1. I am in the classroom. — Eu estou na sala de aula.
+2. I am a student. — Eu sou estudante.
+3. The teacher is ready. — A professora está pronta. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+4. The notebook is on the desk. — O caderno está sobre a escrivaninha. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. The marker is on the notebook. — O marcador está sobre o caderno. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. The backpack is under the chair. — A mochila está embaixo da cadeira. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. The lunchbox is on the chair. — A lancheira está sobre a cadeira. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+8. I am hungry. — Eu estou com fome.
+9. The sandwich is on the table. — O sanduíche está sobre a mesa. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+10. We are happy. — Nós estamos felizes.
+
+#### Lição 12 — exame: apêndice de frases inéditas
+
+1. The teacher and the principal are in the school. — A professora e a diretora estão na escola.
+2. I am ready. — Eu estou pronto.
+3. He is hungry. — Ele está com fome.
+4. It is an orange. — É uma laranja.
+5. The eraser and the pencil are on the table. — A borracha e o lápis estão sobre a mesa.
+6. She is in the library. — Ela está na biblioteca.
+7. We are tired. — Nós estamos cansados.
+8. The lunchbox is under the table. — A lancheira está embaixo da mesa.
+9. A sandwich and an apple. — Um sanduíche e uma maçã.
+10. The janitor is in the classroom. — O zelador está na sala de aula.
+
+# BLOCO 2 — Visitas, Casa e Hospedagem: Negação, Perguntas e Descrições
+
+### Lição 13 — Negação no Verbo To Be: "Not"
+*Negar identidades e estados conhecidos*
+**Foco**: Uso de *not* após *am*, *is* e *are*.
 
 1. `[Palavra]` **Not** — Não
-2. `[Palavra]` **Sad** — Triste
-3. `[Frase]` **I am not sad.** — Eu não estou triste.
-4. `[Palavra]` **Teacher** — Professor, professora
-5. `[Frase]` **He is not a teacher.** — Ele não é professor.
-6. `[Palavra]` **Lawyer** — Advogado, advogada
-7. `[Palavra]` **Busy** — Ocupado, ocupada
-8. `[Frase]` **The lawyer is not busy.** — O advogado não está ocupado.
-9. `[Palavra]` **Artist** — Artista
-10. `[Frase]` **She is not an artist.** — Ela não é artista.
-11. `[Gramática]` **Gramática — Lição 11: A Negação com "Not"**
-   > Para negar com o verbo *to be*, acrescenta-se *not* logo após a forma verbal: *I am not*, *he is not*, *she is not*.
+2. `[Frase]` **I am not tired.** — Eu não estou cansado.
+3. `[Frase]` **The teacher is not busy.** — A professora não está ocupada. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+4. `[Frase]` **You are not hungry.** — Você não está com fome.
+5. `[Frase]` **She is not a student.** — Ela não é estudante. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. `[Frase]` **We are not ready.** — Nós não estamos prontos.
+7. `[Palavra]` **Sad** — Triste
+8. `[Frase]` **I am not sad.** — Eu não estou triste.
+9. `[Palavra]` **Mother** — Mãe
+10. `[Frase]` **The mother is not sad.** — A mãe não está triste. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+11. `[Palavra]` **Father** — Pai
+12. `[Frase]` **The father is a teacher.** — O pai é professor. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+13. `[Gramática]` **Gramática — Lição 13: A Negação com "Not"**
+   > Para negar com *to be*, coloque *not* depois de *am*, *is* ou *are*. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
    > *Exemplos*:
-   > - **I am not sad.**
-   > - **She is not an artist.**
+   > - **I am not tired.**
+   > - **The teacher is not busy.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > - **We are not ready.**
+   > **Nota:** *I am not* pode ser escrito *I'm not*; *is not* e *are not* podem ser escritos *isn't* e *aren't*. Também é possível contrair o pronome e o verbo: *you are not → you're not*, *they are not → they're not* e *he is not → he's not*. Não se usa *I amn't* no inglês padrão. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]` `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]` `[Ver terceira pessoa: he's → be — he is usa a forma de to be para he]`
 
-### Lição 12 — Preposições "With" e "From" com Pessoas da Família
+**PAL:** 4<br>
+**TPA:** 65<br>
+**PA:** Not, Sad, Mother, Father
+
+### Lição 14 — Preposições "With" e "From"
 *Companhia e origem de pessoas*
-**Foco**: With (companhia) e from (origem).
+**Foco**: *With* para companhia e *from* para origem.
 
 1. `[Palavra]` **With** — Com
-2. `[Frase]` **I am with my brother.** — Eu estou com meu irmão. `[Ver palavra: my, brother]`
-3. `[Palavra]` **From** — De, vindo de
-4. `[Frase]` **The doctor is from Brazil.** — O médico é do Brasil. `[Ver palavra: Brazil]`
-5. `[Palavra]` **Father** — Pai
-6. `[Frase]` **The father is with the teacher.** — O pai está com o professor.
-7. `[Palavra]` **Mother** — Mãe
-8. `[Frase]` **The mother is with the teacher.** — A mãe está com o professor.
-9. `[Palavra]` **Sister** — Irmã
-10. `[Frase]` **The sister is with the teacher.** — A irmã está com o professor.
-11. `[Gramática]` **Gramática — Lição 12: Preposições With e From**
-   > *With* indica companhia (*with my brother*); *from* indica origem ou procedência (*from Brazil*).
+2. `[Frase]` **I'm with the teacher.** — Eu estou com a professora. `[Ver contração: I'm]`
+3. `[Frase]` **The mother is with the teacher.** — A mãe está com a professora. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+4. `[Frase]` **The father is with the mother.** — O pai está com a mãe. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Palavra]` **From** — De, vindo de
+6. `[Palavra]` **Brazil** — Brasil
+7. `[Frase]` **I am from Brazil.** — Eu sou do Brasil.
+8. `[Frase]` **I'm not from Brazil.** — Eu não sou do Brasil. `[Ver contração: I'm not]`
+9. `[Palavra]` **Canada** — Canadá
+10. `[Frase]` **The teacher is from Canada.** — A professora é do Canadá. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+11. `[Frase]` **The teacher isn't from Canada.** — A professora não é do Canadá. `[Ver contração: isn't]` `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]`
+12. `[Frase]` **The student is from Brazil.** — O estudante é do Brasil. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+13. `[Gramática]` **Gramática — Lição 14: With e From**
+   > *With* indica companhia; *from* indica origem ou procedência.
    > *Exemplos*:
-   > - **I am with my brother.**
-   > - **The doctor is from Brazil.**
+   > - **I'm with the teacher.**
+   > - **I am from Brazil.**
+   > **Nota:** *I'm* é a forma contraída de *I am*; *I'm not* corresponde a *I am not*; *isn't* corresponde a *is not*. `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
 
-### Lição 13 — Fixação do Ciclo: Negação com "Not" e Preposições "With"/"From"
-*Vocabulário novo praticado com as estruturas das Lições 11 e 12*
-**Foco**: Fixar somente *not*, *with* e *from*, sem introduzir ou explicar gramática nova.
+**PAL:** 4<br>
+**TPA:** 69<br>
+**PA:** With, From, Brazil, Canada
 
-1. `[Frase]` **I am not with the teacher.** — Eu não estou com o professor.
-2. `[Frase]` **The doctor is not from Brazil.** — O médico não é do Brasil.
-3. `[Frase]` **The father is not with the mother.** — O pai não está com a mãe.
-4. `[Frase]` **The lawyer is not from Brazil.** — O advogado não é do Brasil.
-5. `[Frase]` **The sister is with the teacher.** — A irmã está com o professor.
-6. `[Frase]` **The lawyer is not busy.** — O advogado não está ocupado.
-7. `[Frase]` **The neighbor is not with the teacher.** — O vizinho não está com o professor. `[Ver palavra: neighbor]`
-8. `[Frase]` **The guest is from Brazil.** — O convidado é do Brasil. `[Ver palavra: guest]`
-9. `[Frase]` **The patient is not with the doctor.** — O paciente não está com o médico. `[Ver palavra: patient]`
-10. `[Frase]` **The visitor is from Brazil.** — O visitante é do Brasil. `[Ver palavra: visitor]`
+### Lição 15 — Fixação: Negação, Companhia e Origem
+*Visitas e pessoas em companhia*
+**Foco**: Praticar *not*, *with* e *from*, conteúdos das Lições 13 e 14.
 
-> **Fixação do ciclo:** todas as frases praticam somente a negação com *not* e os usos de *with/from* ensinados nas Lições 11 e 12. Não há cards isolados de palavras nem card ou explicação de gramática.
->
-> **Estatística do ciclo:** ao terminar esta lição, mostrar “Você aprendeu X palavras”, contando os itens lexicais novos e distintos das Lições 11–13.
->
-> **Conteúdo adiado:** *at* e *near* não pertencem a esta fixação; devem ser alocados a uma futura lição de gramática.
+1. `[Frase]` **I'm not with the teacher.** — Eu não estou com a professora. `[Ver contração: I'm not]`
+2. `[Frase]` **The father is not from Brazil.** — O pai não é do Brasil. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+3. `[Frase]` **The mother isn't with the father.** — A mãe não está com o pai. `[Ver contração: isn't]` `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]`
+4. `[Frase]` **The visitor is with the teacher.** — O visitante está com a professora. `[Ver palavra: visitor]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Frase]` **The guest is from Brazil.** — O hóspede é do Brasil. `[Ver palavra: guest]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. `[Frase]` **The brother is from Canada.** — O irmão é do Canadá. `[Ver palavra: brother]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Frase]` **The sister is with the mother.** — A irmã está com a mãe. `[Ver palavra: sister]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+8. `[Frase]` **The classmate is with the student.** — O colega de classe está com o estudante. `[Ver palavra: classmate]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Frase]` **The grandparent is with the teacher.** — O avô ou a avó está com a professora. `[Ver palavra: grandparent]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+10. `[Frase]` **The guest is not from Canada.** — O hóspede não é do Canadá. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+11. `[Frase]` **The visitor isn't with the student.** — O visitante não está com o estudante. `[Ver contração: isn't]` `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]`
+12. `[Frase]` **The friend is with the mother.** — O amigo está com a mãe. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+13. `[Frase]` **You're not with the teacher.** — Você não está com a professora. `[Ver contração: you're not]`
+14. `[Frase]` **They're not from Brazil.** — Eles não são do Brasil. `[Ver contração: they're not]`
+15. `[Frase]` **He's not with the visitor.** — Ele não está com o visitante. `[Ver contração: he's not]` `[Ver terceira pessoa: he's → be — he is usa a forma de to be para he]`
 
-### Lição 14 — Preposições "For" e "Of" com Alimentos e Bebidas
-*Finalidade, destinação e conteúdo de recipientes*
-**Foco**: For (destinação) e Of (conteúdo/pertencimento).
+**PAL:** 6<br>
+**TPA:** 75<br>
+**PA:** visitor, guest, brother, sister, classmate, grandparent
 
-1. `[Palavra]` **For** — Para, por
-2. `[Palavra]` **Tea** — Chá
-3. `[Frase]` **Tea for the teacher, please.** — Chá para o professor, por favor.
+### Lição 16 — Preposições "For" e "Of"
+*Bebidas para uma visita*
+**Foco**: *For* para destinatário e *of* entre recipiente e conteúdo.
+
+1. `[Palavra]` **For** — Para
+2. `[Frase]` **The tea is for the guest.** — O chá é para o hóspede. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+3. `[Frase]` **The coffee is for the teacher.** — O café é para a professora. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
 4. `[Palavra]` **Of** — De, do, da
 5. `[Palavra]` **Cup** — Xícara
-6. `[Frase]` **A cup of tea, please.** — Uma xícara de chá, por favor.
+6. `[Frase]` **A cup of tea.** — Uma xícara de chá.
 7. `[Palavra]` **Milk** — Leite
-8. `[Frase]` **A cup of milk, please.** — Uma xícara de leite, por favor.
+8. `[Frase]` **A cup of milk.** — Uma xícara de leite.
 9. `[Palavra]` **Glass** — Copo
-10. `[Frase]` **A glass of milk, please.** — Um copo de leite, por favor.
-11. `[Gramática]` **Gramática — Lição 14: Preposições For e Of**
-   > *For* indica finalidade ou destinatário (*for the teacher*). *Of* conecta recipientes e seus conteúdos (*a cup of tea*, *a glass of milk*).
+10. `[Frase]` **A glass of milk.** — Um copo de leite.
+11. `[Palavra]` **Please** — Por favor
+12. `[Frase]` **A cup of tea, please.** — Uma xícara de chá, por favor.
+13. `[Frase]` **A glass of milk for the guest.** — Um copo de leite para o hóspede.
+14. `[Frase]` **The tea isn't for the guest.** — O chá não é para o hóspede. `[Ver contração: isn't]` `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]`
+15. `[Frase]` **You aren't thirsty.** — Você não está com sede. `[Ver contração: you aren't]`
+16. `[Gramática]` **Gramática — Lição 16: For e Of**
+   > *For* pode indicar para quem algo é destinado. *Of* liga um recipiente ao seu conteúdo.
    > *Exemplos*:
-   > - **A cup of coffee for the teacher.**
-   > - **A glass of milk, please.**
+   > - **The tea is for the guest.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > - **A cup of tea.**
+   > **Nota:** *isn't* corresponde a *is not*; *you aren't* corresponde a *you are not*. `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
 
-### Lição 15 — Interrogação Simples no Verbo To Be
-*Perguntas por inversão: "Are you...?" e "Is he...?"*
-**Foco**: Inversão do verbo To Be para formar perguntas diretas.
+**PAL:** 6<br>
+**TPA:** 81<br>
+**PA:** For, Of, Cup, Milk, Glass, Please
 
-1. `[Palavra]` **Question** — Pergunta
-2. `[Frase]` **Is it a question?** — Isso é uma pergunta?
-3. `[Palavra]` **Ready** — Pronto, pronta
-4. `[Frase]` **Are you ready?** — Você está pronto?
-5. `[Palavra]` **Hungry** — Com fome
-6. `[Frase]` **Are you hungry?** — Você está com fome?
-7. `[Palavra]` **Thirsty** — Com sede
-8. `[Frase]` **Are you thirsty?** — Você está com sede?
-9. `[Palavra]` **Sure** — Certo, certa, com certeza
-10. `[Frase]` **Are you sure?** — Você tem certeza?
-11. `[Gramática]` **Gramática — Lição 15: Interrogação no Verbo To Be**
-   > Para fazer perguntas com To Be, invertemos a ordem: o verbo vem antes do sujeito (*Are you...?*, *Is he...?*). Adjetivos de estado como *hungry* e *thirsty* não usam ter ("have"), mas sim o verbo To Be.
+### Lição 17 — Perguntas com o Verbo To Be
+*Perguntas e respostas curtas*
+**Foco**: Colocar *am*, *is* ou *are* antes do sujeito para formular perguntas.
+
+1. `[Frase]` **Are you ready?** — Você está pronto?
+2. `[Palavra]` **Yes** — Sim
+3. `[Frase]` **Yes, I am.** — Sim, estou.
+4. `[Frase]` **Are you tired?** — Você está cansado?
+5. `[Palavra]` **No** — Não
+6. `[Frase]` **No, I'm not.** — Não, não estou. `[Ver contração: I'm not]`
+7. `[Palavra]` **Parent** — Pai ou mãe, responsável
+8. `[Frase]` **Is the parent a teacher?** — O responsável é professor? `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Palavra]` **Child** — Criança, filho ou filha
+10. `[Frase]` **Is the child a student?** — A criança é estudante? `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+11. `[Frase]` **Is the guest in the kitchen?** — O hóspede está na cozinha? `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+12. `[Frase]` **Is the coffee for the teacher?** — O café é para a professora? `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+13. `[Frase]` **Are we in the classroom?** — Nós estamos na sala de aula?
+14. `[Frase]` **Am I ready?** — Eu estou pronto?
+15. `[Gramática]` **Gramática — Lição 17: Interrogação no Verbo To Be**
+   > Para perguntar, coloque a forma de *to be* antes do sujeito. Respostas curtas podem usar *yes* ou *no* com o pronome e o verbo.
    > *Exemplos*:
-   > - **Are you ready?**
-   > - **Are you hungry?**
+   > - **Are you ready?** — **Yes, I am.**
+   > - **Are you tired?** — **No, I am not.**
+   > - **Is the guest in the kitchen?** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > **Nota:** na resposta negativa, *I'm not* corresponde a *I am not*.
 
-### Lição 16 — Fixação do Ciclo: "For"/"Of" e Perguntas com "To Be"
-*Fixação exclusiva dos conteúdos das Lições 14 e 15*
-**Foco**: Usar *for/of* em frases interrogativas e afirmativas com o verbo *To Be*, sem introduzir ou explicar gramática nova.
+**PAL:** 4<br>
+**TPA:** 85<br>
+**PA:** Yes, No, Parent, Child
 
-1. `[Frase]` **Are you ready for tea?** — Você está pronto para o chá?
-2. `[Frase]` **Is the tea for the teacher?** — O chá é para o professor?
-3. `[Frase]` **Is the milk for the doctor?** — O leite é para o médico?
-4. `[Frase]` **Is it a cup of tea?** — É uma xícara de chá?
-5. `[Frase]` **Is it a glass of milk?** — É um copo de leite?
-6. `[Frase]` **Are they ready for a cup of tea?** — Eles estão prontos para uma xícara de chá?
-7. `[Frase]` **Is the coffee for the teacher?** — O café é para o professor?
-8. `[Frase]` **Is it a cup of coffee?** — É uma xícara de café?
-9. `[Frase]` **Are you thirsty?** — Você está com sede?
-10. `[Frase]` **Is the coffee for the doctor?** — O café é para o médico?
+### Lição 18 — Fixação: Bebidas e Perguntas
+*Oferecer e identificar bebidas e lanches para a visita*
+**Foco**: Praticar *for/of* e perguntas com *to be*, conteúdos das Lições 16 e 17.
 
-> **Fixação do ciclo:** todas as frases praticam *for/of* e perguntas/afirmações com *To Be*, conteúdos ensinados nas Lições 14 e 15. Não há card ou explicação de gramática nova.
->
-> **Estatística do ciclo:** ao terminar esta lição, mostrar “Você aprendeu X palavras”, contando os itens lexicais novos e distintos das Lições 14–16.
+1. `[Frase]` **Is the water for the guest?** — A água é para o hóspede? `[Ver palavra: water]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+2. `[Frase]` **Is it a glass of juice?** — É um copo de suco? `[Ver palavra: juice]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+3. `[Frase]` **Is the lemonade for the visitor?** — A limonada é para o visitante? `[Ver palavra: lemonade]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+4. `[Frase]` **Is it a glass of soda?** — É um copo de refrigerante? `[Ver palavra: soda]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Frase]` **A muffin for the guest.** — Um bolinho para o hóspede. `[Ver palavra: muffin]`
+6. `[Frase]` **Is the pie for the guest?** — A torta é para o hóspede? `[Ver palavra: pie]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Frase]` **Is it a cup of milk?** — É uma xícara de leite? `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+8. `[Frase]` **Is the tea for the visitor?** — O chá é para o visitante? `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Frase]` **A cup of coffee for the guest.** — Uma xícara de café para o hóspede.
+10. `[Frase]` **Are you thirsty?** — Você está com sede?
+11. `[Frase]` **Is the water in the glass?** — A água está no copo? `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+12. `[Frase]` **A glass of juice, please.** — Um copo de suco, por favor.
+13. `[Frase]` **It isn't a cup of tea.** — Não é uma xícara de chá. `[Ver contração: isn't]` `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]`
+14. `[Frase]` **You're not thirsty.** — Você não está com sede. `[Ver contração: you're not]`
 
-### Lição 17 — Mobília e Cômodos Residenciais
-*Identificação de elementos do quarto e sala*
-**Foco**: Preposições em mobílias do lar.
+**PAL:** 6<br>
+**TPA:** 91<br>
+**PA:** water, juice, lemonade, soda, muffin, pie
 
-1. `[Palavra]` **Bedroom** — Quarto
-2. `[Palavra]` **Bed** — Cama
-3. `[Frase]` **The bed is in the bedroom.** — A cama está no quarto.
-4. `[Palavra]` **Chair** — Cadeira
-5. `[Palavra]` **Window** — Janela
-6. `[Frase]` **The chair is under the window.** — A cadeira está embaixo da janela.
-7. `[Palavra]` **Door** — Porta
-8. `[Palavra]` **Apartment** — Apartamento
-9. `[Frase]` **The door is in the apartment.** — A porta está no apartamento.
-10. `[Frase]` **We are in the apartment.** — Nós estamos no apartamento.
-11. `[Gramática]` **Gramática — Lição 17: Localização em Ambientes do Lar**
-   > Uso de *in the bedroom* (no quarto), *under the window* (embaixo da janela) e *in the apartment*.
+### Lição 19 — Preposições "At" e "Near"
+*Localização da casa e do hotel*
+**Foco**: *At* para localização em um lugar e *near* para proximidade.
+
+1. `[Palavra]` **At** — Em, no, na
+2. `[Palavra]` **Hotel** — Hotel
+3. `[Frase]` **I am at the hotel.** — Eu estou no hotel.
+4. `[Frase]` **The guest is at the hotel.** — O hóspede está no hotel. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Palavra]` **Near** — Perto de
+6. `[Frase]` **The hotel is near the school.** — O hotel fica perto da escola. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Palavra]` **House** — Casa
+8. `[Frase]` **The house is near the school.** — A casa fica perto da escola. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Palavra]` **Bedroom** — Quarto
+10. `[Frase]` **The bedroom is in the house.** — O quarto fica na casa. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+11. `[Palavra]` **Bed** — Cama
+12. `[Frase]` **The bed is in the bedroom.** — A cama está no quarto. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+13. `[Frase]` **They're at the hotel.** — Eles estão no hotel. `[Ver contração: they're]`
+14. `[Frase]` **They aren't at the hotel.** — Eles não estão no hotel. `[Ver contração: they aren't]`
+15. `[Gramática]` **Gramática — Lição 19: At e Near**
+   > *At* situa alguém em um lugar, sem destacar seu interior; *near* indica proximidade.
    > *Exemplos*:
-   > - **The bed is in the bedroom.**
-   > - **We are in the apartment.**
+   > - **I am at the hotel.**
+   > - **The house is near the school.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > **Nota:** *they're* corresponde a *they are*; *they aren't* corresponde a *they are not*.
 
-> **Nota lexical:** *bedroom* é aprendido como uma unidade com o significado “quarto”; não se ensina separando *bed* + *room*. O card *bed* significa “cama” como objeto independente.
+**PAL:** 6<br>
+**TPA:** 97<br>
+**PA:** At, Hotel, Near, House, Bedroom, Bed
 
-### Lição 18 — Adjetivos Descritivos de Objetos e Espaços
-*Qualidades essenciais de ambientes e pertences*
-**Foco**: Posição e concordância dos adjetivos qualificadores.
+### Lição 20 — Adjetivos para Descrever Lugares e Objetos
+*Qualidades da casa e do hotel*
+**Foco**: Adjetivos antes do substantivo ou depois de *to be*.
 
 1. `[Palavra]` **Clean** — Limpo, limpa
-2. `[Palavra]` **Quiet** — Silencioso, calmo
-3. `[Frase]` **The bedroom is clean and quiet.** — O quarto é limpo e silencioso.
-4. `[Palavra]` **Small** — Pequeno, pequena
-5. `[Palavra]` **Beautiful** — Bonito, bonita
-6. `[Frase]` **The small bedroom is beautiful.** — O quarto pequeno é bonito.
-7. `[Palavra]` **Old** — Velho, velha; antigo, antiga
-8. `[Frase]` **The old apartment is small.** — O apartamento antigo é pequeno.
-9. `[Palavra]` **New** — Novo, nova
-10. `[Frase]` **The new bedroom is clean.** — O quarto novo é limpo.
-11. `[Gramática]` **Gramática — Lição 18: Adjetivos Descritivos**
-   > Adjetivos em inglês não têm plural nem gênero: *clean*, *quiet*, *beautiful*. Podem vir antes do substantivo (*a new car*) ou após o verbo To Be (*the room is clean*).
+2. `[Frase]` **The bed is clean.** — A cama está limpa. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+3. `[Palavra]` **Quiet** — Silencioso, silenciosa
+4. `[Frase]` **The bedroom is quiet.** — O quarto é silencioso. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Palavra]` **Small** — Pequeno, pequena
+6. `[Frase]` **The house is small.** — A casa é pequena. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Frase]` **The small house is clean.** — A casa pequena está limpa. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+8. `[Palavra]` **Beautiful** — Bonito, bonita
+9. `[Frase]` **The hotel is beautiful.** — O hotel é bonito. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+10. `[Palavra]` **Old** — Velho, velha; antigo, antiga
+11. `[Frase]` **The old hotel is quiet.** — O hotel antigo é silencioso. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+12. `[Palavra]` **New** — Novo, nova
+13. `[Frase]` **The new bed is clean.** — A cama nova está limpa. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+14. `[Frase]` **He isn't in the old hotel.** — Ele não está no hotel antigo. `[Ver contração: he isn't]` `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]`
+15. `[Gramática]` **Gramática — Lição 20: Adjetivos Descritivos**
+   > Um adjetivo pode vir depois de *to be* ou antes do substantivo. Ele não muda de forma conforme gênero ou número.
    > *Exemplos*:
-   > - **The old house is beautiful.**
-   > - **It is a new car.**
+   > - **The house is small.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > - **The small house is clean.** `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+   > **Nota:** *he isn't* corresponde a *he is not*. `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
 
-### Lição 19 — Fixação do Ciclo: Localização e Adjetivos
-*Fixação exclusiva dos conteúdos das Lições 17 e 18*
-**Foco**: Combinar localização em ambientes com adjetivos descritivos, sem introduzir ou explicar gramática nova.
+**PAL:** 6<br>
+**TPA:** 103<br>
+**PA:** Clean, Quiet, Small, Beautiful, Old, New
 
-1. `[Frase]` **The clean bedroom is in the apartment.** — O quarto limpo fica no apartamento.
-2. `[Frase]` **The bed is in the bedroom.** — A cama está no quarto.
-3. `[Frase]` **The small chair is under the window.** — A cadeira pequena está embaixo da janela.
-4. `[Frase]` **The old door is in the apartment.** — A porta antiga está no apartamento.
-5. `[Frase]` **The bedroom is quiet.** — O quarto é silencioso.
-6. `[Frase]` **The new bed is in the bedroom.** — A cama nova está no quarto.
-7. `[Frase]` **The apartment is clean and quiet.** — O apartamento é limpo e silencioso.
-8. `[Frase]` **The cat is on the bed.** — O gato está em cima da cama.
-9. `[Frase]` **The small bedroom is in the apartment.** — O quarto pequeno fica no apartamento.
-10. `[Frase]` **The window is in the old bedroom.** — A janela está no quarto antigo.
+### Lição 21 — Fixação: Localização e Descrição
+*Casa, quarto e objetos*
+**Foco**: Praticar *at/near* e adjetivos descritivos das Lições 19 e 20.
 
-> **Fixação do ciclo:** todas as frases combinam somente as preposições de localização e os adjetivos ensinados nas Lições 17 e 18. Não há card ou explicação de gramática nova.
->
-> **Estatística do ciclo:** ao terminar esta lição, mostrar “Você aprendeu X palavras”, contando os itens lexicais novos e distintos das Lições 17–19.
+1. `[Frase]` **The cat is near the bed.** — O gato está perto da cama. `[Ver palavra: cat]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+2. `[Frase]` **The blanket is on the bed.** — O cobertor está sobre a cama. `[Ver palavra: blanket]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+3. `[Frase]` **The pillow is on the bed.** — O travesseiro está sobre a cama. `[Ver palavra: pillow]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+4. `[Frase]` **The room is near the bedroom.** — O cômodo fica perto do quarto. `[Ver palavra: room]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Frase]` **The key is on the bed.** — A chave está sobre a cama. `[Ver palavra: key]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. `[Frase]` **The suitcase is near the bed.** — A mala está perto da cama. `[Ver palavra: suitcase]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Frase]` **The guest is in the quiet bedroom.** — O hóspede está no quarto silencioso. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+8. `[Frase]` **The clean pillow is on the bed.** — O travesseiro limpo está sobre a cama. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+9. `[Frase]` **The visitor is at the hotel.** — O visitante está no hotel. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+10. `[Frase]` **The new house is near the school.** — A casa nova fica perto da escola. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+11. `[Frase]` **The cat is in the small bedroom.** — O gato está no quarto pequeno. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+12. `[Frase]` **We're in the small house.** — Nós estamos na casa pequena. `[Ver contração: we're]`
+13. `[Frase]` **She's near the bed.** — Ela está perto da cama. `[Ver contração: she's]` `[Ver terceira pessoa: she's → be — she is usa a forma de to be para she]`
+14. `[Frase]` **The bedroom isn't quiet.** — O quarto não é silencioso. `[Ver contração: isn't]` `[Ver terceira pessoa: isn't → be — is not usa a forma de to be para sujeito singular]`
 
-### Banco B2.1 — Cortesias para Recepção
-*Banco suplementar: prepara o vocabulário de chegada e agradecimento para o diálogo da Lição 20. Não contém frases de exemplo.*
+**PAL:** 6<br>
+**TPA:** 109<br>
+**PA:** cat, blanket, pillow, room, key, suitcase
 
-1. `[Palavra]` **Good morning** — Bom dia
-2. `[Palavra]` **Hello** — Olá
-3. `[Palavra]` **Hotel** — Hotel
-4. `[Palavra]` **Welcome** — Bem-vindo(a)
-5. `[Palavra]` **Yes** — Sim
-6. `[Palavra]` **No** — Não
-7. `[Palavra]` **Thank you** — Obrigado(a)
-8. `[Palavra]` **You are welcome** — De nada
+### Encerramento — banco, diálogo e exame
 
-### Lição 20 — Diálogo 1 (Chegada ao Hotel)
-*Texto de fechamento do Bloco 2 com somente gramática e vocabulário já disponibilizados.*
-**Foco**: Diálogo completo integrando *To Be* interrogativo, negação, *from*, *in* e cortesias do Banco B2.1.
+Pré-requisito: Bloco 1 e Lições 13–21.
 
-1. `[Diálogo]` **Good morning. Welcome.** — Bom dia. Bem-vindo(a).
-2. `[Diálogo]` **Hello. I am from Brazil.** — Olá. Eu sou do Brasil.
-3. `[Diálogo]` **Are you a doctor?** — Você é médico(a)?
-4. `[Diálogo]` **No, I am not a doctor.** — Não, eu não sou médico(a).
-5. `[Diálogo]` **Are you in the hotel?** — Você está no hotel?
-6. `[Diálogo]` **Yes, I am in the hotel.** — Sim, eu estou no hotel.
-7. `[Diálogo]` **The bedroom is quiet.** — O quarto é silencioso.
-8. `[Diálogo]` **Thank you.** — Obrigado(a).
-9. `[Diálogo]` **You are welcome.** — De nada.
+#### Lição 22-BF — banco de frases: chegada ao hotel
 
-### Lição 20x — Banco de Frases Inéditas do Teste do Bloco 2
-*Banco auxiliar; não é uma lição de estudo e não apresenta vocabulário ou gramática novos.*
+1. `[Frase]` **Good morning!** — Bom dia! `[Ver palavra: good morning]`
+2. `[Frase]` **Welcome!** — Bem-vindo! `[Ver palavra: welcome]`
+3. `[Frase]` **Hello!** — Olá! `[Ver palavra: hello]`
+4. `[Frase]` **The receptionist is at the hotel.** — O recepcionista está no hotel. `[Ver palavra: receptionist]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+5. `[Frase]` **The reservation is for the guest.** — A reserva é para o hóspede. `[Ver palavra: reservation]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. `[Frase]` **The guest is in the lobby.** — O hóspede está no saguão. `[Ver palavra: lobby]` `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+7. `[Frase]` **Thank you!** — Obrigado! `[Ver palavra: thank you]`
+8. `[Frase]` **You are welcome!** — De nada! `[Ver palavra: you are welcome]`
+9. `[Frase]` **Good evening!** — Boa noite! `[Ver palavra: good evening]`
 
-1. `[Frase inédita]` **The clean cup is for the teacher.** — A xícara limpa é para o professor.
-2. `[Frase inédita]` **Is the tea in the cup?** — O chá está na xícara?
-3. `[Frase inédita]` **The milk is not for the guest.** — O leite não é para o convidado.
-4. `[Frase inédita]` **Is the doctor in the quiet bedroom?** — O médico está no quarto silencioso?
-5. `[Frase inédita]` **The bed is not under the window.** — A cama não está embaixo da janela.
-6. `[Frase inédita]` **Is the glass of milk for the patient?** — O copo de leite é para o paciente?
-7. `[Frase inédita]` **The neighbor is with the teacher in the apartment.** — O vizinho está com o professor no apartamento.
-8. `[Frase inédita]` **The quiet bedroom is not in the apartment.** — O quarto silencioso não fica no apartamento.
-9. `[Frase inédita]` **Is the coffee for the visitor?** — O café é para o visitante?
-10. `[Frase inédita]` **The visitor is not with the doctor.** — O visitante não está com o médico.
+**PAL:** 9<br>
+**TPA:** 118<br>
+**PA:** good morning, welcome, hello, receptionist, reservation, lobby, thank you, you are welcome, good evening
 
----
+#### Lição 23 — diálogo: chegada ao hotel
 
-# BLOCO 3 — Família, Adjetivos Possessivos, Sentimentos e Espaço
-*Ciclos: (21, 22, R23) · (24, 25, R26) · (27, 28, R29) · Fechamento: Relato 30 · Teste 3*
+1. Recepcionista: Good morning! Welcome! — Bom dia! Bem-vindo!
+2. Hóspede: Hello! A room, please. — Olá! Um quarto, por favor.
+3. Recepcionista: A quiet room? — Um quarto silencioso?
+4. Hóspede: Yes, please. — Sim, por favor.
+5. Recepcionista: The room is ready. — O quarto está pronto. `[Ver terceira pessoa: is → be — forma de to be com he, she, it ou sujeito singular]`
+6. Recepcionista: The key for the room. — A chave do quarto.
+7. Hóspede: Thank you! — Obrigado!
+8. Recepcionista: You are welcome! — De nada!
 
-### Lição 21 — Adjetivos Possessivos: "My" e "Your"
+#### Lição 24 — exame: apêndice de frases inéditas
+
+1. Is the receptionist from Canada? — O recepcionista é do Canadá?
+2. The guest is not near the hotel. — O hóspede não está perto do hotel.
+3. Are you at the hotel? — Você está no hotel?
+4. A glass of water for the receptionist. — Um copo de água para o recepcionista.
+5. The small suitcase is in the room. — A mala pequena está no quarto.
+6. Is the cat under the old bed? — O gato está embaixo da cama antiga?
+7. The mother and the father are in the lobby. — A mãe e o pai estão no saguão.
+8. The key is not on the table. — A chave não está sobre a mesa.
+9. Are they in the quiet bedroom? — Eles estão no quarto silencioso?
+10. The visitor is with the principal. — O visitante está com a diretora.
+
+# BLOCO 3 — Família, Casa e Vizinhança: Possessivos, Cozinha e Descrições
+
+### Lições dos ciclos
+
+### Lição 25 — Adjetivos Possessivos: "My" e "Your"
 *Expressando posse imediata e vínculos familiares diretos*
 **Foco**: My (meu/minha) e Your (seu/sua).
 
 1. `[Palavra]` **My** — Meu, minha, meus, minhas
-2. `[Frase]` **My father is in the office.** — Meu pai está no escritório.
+2. `[Frase]` **My father is in the bedroom.** — Meu pai está no quarto.
 3. `[Palavra]` **Your** — Seu, sua, seus, suas
-4. `[Palavra]` **Daughter** — Filha
-5. `[Frase]` **Your daughter is a student.** — Sua filha é estudante.
-6. `[Palavra]` **Son** — Filho
-7. `[Frase]` **My son is a doctor.** — Meu filho é médico.
-8. `[Palavra]` **Boss** — Chefe
-9. `[Frase]` **Your boss is a lawyer.** — Seu chefe é advogado.
-10. `[Gramática]` **Gramática — Lição 21: Possessivos My e Your**
-   > *My* e *Your* não variam em gênero nem em número (*my son*, *my daughters*). Nunca se usa artigo antes de possessivo em inglês (*my car*, nunca *the my car*).
+4. `[Frase]` **Your mother is in the kitchen.** — Sua mãe está na cozinha.
+5. `[Palavra]` **Daughter** — Filha
+6. `[Frase]` **Your daughter is a student.** — Sua filha é estudante.
+7. `[Palavra]` **Son** — Filho
+8. `[Frase]` **My son is a student.** — Meu filho é estudante.
+9. `[Palavra]` **Family** — Família
+10. `[Frase]` **Your family is in Brazil.** — Sua família está no Brasil.
+11. `[Frase]` **Is your son in the kitchen?** — Seu filho está na cozinha?
+12. `[Frase]` **No, my son is in the classroom.** — Não, meu filho está na sala de aula.
+13. `[Gramática]` **Gramática — Lição 25: Possessivos My e Your**
+   > *My* indica posse ou vínculo de quem fala; *your* indica posse ou vínculo de quem ouve. Eles não variam conforme o gênero da pessoa ou do objeto e vêm antes do substantivo, sem artigo: *my son*, não *the my son*.
    > *Exemplos*:
-   > - **My father is in the office.**
+   > - **My father is in the bedroom.**
    > - **Your daughter is a student.**
 
-### Lição 22 — Possessivos de 3ª Pessoa: "His", "Her" e "Its"
-*Posse atribuída a ele, a ela e a animais/objetos*
-**Foco**: Diferenciação clara entre his (dele) e her (dela).
+**PAL:** 5<br>
+**TPA:** 123<br>
+**PA:** My, Your, Daughter, Son, Family
+
+### Lição 26 — Possessivos "His", "Her", "Its", "Our" e "Their"
+*Posse atribuída a pessoas, animais e objetos*
+**Foco**: Adjetivos possessivos para os demais possuidores.
 
 1. `[Palavra]` **His** — Dele, seu (de ele)
-2. `[Frase]` **His father is in the office.** — O pai dele está no escritório.
+2. `[Frase]` **His father is in the kitchen.** — O pai dele está na cozinha.
 3. `[Palavra]` **Her** — Dela, sua (de ela)
 4. `[Frase]` **Her mother is a teacher.** — A mãe dela é professora.
-5. `[Palavra]` **Its** — Dele, dela (coisas e animais)
-6. `[Frase]` **Its door is clean.** — A porta dele/dela está limpa.
-7. `[Palavra]` **Husband** — Marido
-8. `[Frase]` **Her husband is in the office.** — O marido dela está no escritório.
-9. `[Palavra]` **Wife** — Esposa
-10. `[Frase]` **His wife is in the bedroom.** — A esposa dele está no quarto.
-11. `[Palavra]` **Baby** — Bebê
-12. `[Frase]` **Her baby is in the bedroom.** — O bebê dela está no quarto.
-13. `[Gramática]` **Gramática — Lição 22: His vs Her**
-   > Em inglês, o possessivo concorda com o **possuidor**: se pertence a um homem, é *his*; se pertence a uma mulher, é *her*, independentemente do gênero do objeto possuído.
+5. `[Frase]` **The house is old.** — A casa é antiga.
+6. `[Palavra]` **Its** — Dele, dela (coisas e animais)
+7. `[Frase]` **Its door is clean.** — A porta dela está limpa.
+8. `[Palavra]` **Baby** — Bebê
+9. `[Frase]` **Her baby is in the bedroom.** — O bebê dela está no quarto.
+10. `[Palavra]` **Our** — Nosso, nossa, nossos, nossas
+11. `[Frase]` **Our mother is a teacher.** — Nossa mãe é professora.
+12. `[Palavra]` **Their** — Deles, delas, seus
+13. `[Frase]` **Their father is in Brazil.** — O pai deles está no Brasil.
+14. `[Frase]` **Is their baby ready?** — O bebê deles está pronto?
+15. `[Frase]` **Yes, their baby is ready.** — Sim, o bebê deles está pronto.
+16. `[Gramática]` **Gramática — Lição 26: Possessivos**
+   > O possessivo indica o possuidor: *his* (dele), *her* (dela), *its* (de animal ou coisa), *our* (nosso) e *their* (deles ou delas). Não varia conforme o gênero do objeto possuído.
    > *Exemplos*:
-   > - **His father is in the office.**
-   > - **Her husband is in the office.**
+   > - **His father is in the kitchen.**
+   > - **Its door is clean.**
+   > - **Our mother is a teacher.**
+   > - **Their father is in Brazil.**
+   > **Nota:** *its* é possessivo e não tem apóstrofo; *it's* é a contração de *it is*.
 
-### Lição 23 — Fixação: Possessivos Coletivos e Família
+**PAL:** 6<br>
+**TPA:** 129<br>
+**PA:** His, Her, Its, Baby, Our, Their
+
+### Lição 27 — Fixação: Possessivos e Família
 *Vínculos familiares com os possessivos já ensinados*
-**Foco**: Fixar somente *my, your, his, her, its, our* e *their*, sem introduzir novo verbo ou explicação gramatical.
+**Foco**: Fixar *my, your, his, her, its, our* e *their*, sem explicação gramatical nova.
 
-1. `[Palavra]` **Our** — Nosso, nossa, nossos, nossas
-2. `[Frase]` **Our mother is a teacher.** — Nossa mãe é professora.
-3. `[Palavra]` **Their** — Deles, delas, seus
-4. `[Frase]` **Their father is a doctor.** — O pai deles é médico.
-5. `[Palavra]` **Family** — Família
-6. `[Frase]` **Our family is in Brazil.** — Nossa família está no Brasil.
-7. `[Palavra]` **Parents** — Pais (pai e mãe)
-8. `[Frase]` **My parents are in the apartment.** — Meus pais estão no apartamento.
-9. `[Palavra]` **Kind** — Gentil, bondoso
-10. `[Frase]` **Their parents are kind.** — Os pais deles são gentis.
+1. `[Frase]` **Her husband isn't in the kitchen.** — O marido dela não está na cozinha. `[Ver palavra: husband]` `[Ver contração: isn't]`
+2. `[Frase]` **His wife is in the bedroom.** — A esposa dele está no quarto. `[Ver palavra: wife]`
+3. `[Frase]` **Her pet is in the bedroom.** — O animal de estimação dela está no quarto. `[Ver palavra: pet]`
+4. `[Frase]` **Our dog is with the baby.** — Nosso cachorro está com o bebê. `[Ver palavra: dog]`
+5. `[Frase]` **My grandmother is with the baby.** — Minha avó está com o bebê. `[Ver palavra: grandmother]`
+6. `[Frase]` **Your grandfather is in Brazil.** — Seu avô está no Brasil. `[Ver palavra: grandfather]`
+7. `[Frase]` **Their dog is happy.** — O cachorro deles está feliz.
+8. `[Frase]` **Is your pet a cat?** — Seu animal de estimação é um gato?
+9. `[Frase]` **No, my pet is a dog.** — Não, meu animal de estimação é um cachorro.
+10. `[Frase]` **The house is new. Its door is clean.** — A casa é nova. A porta dela está limpa.
+11. `[Frase]` **They're not with their mother.** — Eles não estão com a mãe deles. `[Ver contração: they're not]`
 
-> **Fixação do ciclo:** esta lição pratica exclusivamente os possessivos apresentados nas Lições 21 e 22. *Family*, *parents* e *kind* entram como vocabulário contextual, sem card ou explicação gramatical.
+**PAL:** 6<br>
+**TPA:** 135<br>
+**PA:** husband, wife, pet, dog, grandmother, grandfather
 
-### Lição 24 — Ambientes da Cozinha e Sala
+### Lição 28 — Ambientes da Cozinha e Sala
 *Objetos utilitários e convivência doméstica*
-**Foco**: Vocabulário do lar e preposições de cômodos.
+**Foco**: A preposição *between* em ambientes da casa.
 
-1. `[Palavra]` **Kitchen** — Cozinha
-2. `[Frase]` **My mother is in the kitchen.** — Minha mãe está na cozinha.
-3. `[Palavra]` **Living room** — Sala de estar
-4. `[Frase]` **My father is in the living room.** — Meu pai está na sala de estar.
-5. `[Palavra]` **Garden** — Jardim
-6. `[Frase]` **Our garden is beautiful.** — Nosso jardim é bonito.
-7. `[Palavra]` **Plate** — Prato
-8. `[Frase]` **The plate is on the table.** — O prato está na mesa.
-9. `[Palavra]` **Fork** — Garfo
-10. `[Frase]` **The fork is on the table.** — O garfo está na mesa.
-11. `[Palavra]` **Spoon** — Colher
-12. `[Frase]` **The spoon is on the table.** — A colher está na mesa.
-13. `[Gramática]` **Gramática — Lição 24: Cômodos da Casa e Utensílios**
-   > *In the kitchen*, *in the living room*, *in the garden*. Lembre-se de usar *on the table* para objetos sobre superfícies.
+1. `[Palavra]` **Between** — Entre
+2. `[Frase]` **The chair is between the bed and the door.** — A cadeira está entre a cama e a porta.
+3. `[Frase]` **My mother is in the kitchen.** — Minha mãe está na cozinha.
+4. `[Palavra]` **Living room** — Sala de estar
+5. `[Frase]` **My father is in the living room.** — Meu pai está na sala de estar.
+6. `[Palavra]` **Plate** — Prato
+7. `[Frase]` **The plate is on the table.** — O prato está na mesa.
+8. `[Palavra]` **Fork** — Garfo
+9. `[Frase]` **The fork is on the table.** — O garfo está na mesa.
+10. `[Palavra]` **Spoon** — Colher
+11. `[Frase]` **The spoon is on the table.** — A colher está na mesa.
+12. `[Frase]` **The fork is between the plate and the spoon.** — O garfo está entre o prato e a colher.
+13. `[Gramática]` **Gramática — Lição 28: Between**
+   > *Between* indica que algo está entre dois elementos: *between the bed and the door*.
    > *Exemplos*:
-   > - **My mother is in the kitchen.**
-   > - **The plate is on the table.**
+   > - **The chair is between the bed and the door.**
 
-### Lição 25 — Alimentos do Café da Manhã
+**PAL:** 5<br>
+**TPA:** 140<br>
+**PA:** Between, Living room, Plate, Fork, Spoon
+
+### Lição 29 — Combinações de Substantivos: Alimentos e Bebidas
 *Vocabulário matinal e sucos de frutas*
-**Foco**: Substantivos de café da manhã e combinações naturais.
+**Foco**: Usar um substantivo antes de outro para especificar uma bebida.
 
 1. `[Palavra]` **Bread** — Pão
-2. `[Palavra]` **Butter** — Manteiga
-3. `[Frase]` **Bread and butter, please.** — Pão e manteiga, por favor.
-4. `[Palavra]` **Cheese** — Queijo
-5. `[Frase]` **Cheese, please.** — Queijo, por favor.
-6. `[Palavra]` **Apple juice** — Suco de maçã
-7. `[Frase]` **Apple juice, please.** — Suco de maçã, por favor.
-8. `[Palavra]` **Fruit** — Fruta
-9. `[Palavra]` **Fresh** — Fresco, fresca
-10. `[Frase]` **The fruit is fresh.** — A fruta está fresca.
-11. `[Gramática]` **Gramática — Lição 25: Alimentos do Café da Manhã**
-   > Para bebidas compostas, a fruta funciona como especificador antes do líquido: *apple juice* (suco de maçã), *orange juice* (suco de laranja).
+2. `[Frase]` **Bread, please.** — Pão, por favor.
+3. `[Palavra]` **Butter** — Manteiga
+4. `[Frase]` **Bread and butter, please.** — Pão e manteiga, por favor.
+5. `[Palavra]` **Cheese** — Queijo
+6. `[Frase]` **Cheese, please.** — Queijo, por favor.
+7. `[Palavra]` **Apple juice** — Suco de maçã
+8. `[Frase]` **Apple juice, please.** — Suco de maçã, por favor.
+9. `[Palavra]` **Fruit** — Fruta
+10. `[Frase]` **The fruit is on the table.** — A fruta está sobre a mesa.
+11. `[Palavra]` **Fresh** — Fresco, fresca
+12. `[Frase]` **The fruit is fresh.** — A fruta está fresca.
+13. `[Gramática]` **Gramática — Lição 29: Combinações de Substantivos**
+   > Em *apple juice*, *apple* especifica o tipo de *juice*: suco de maçã. A palavra que especifica vem antes do substantivo principal.
    > *Exemplos*:
    > - **Bread and butter, please.**
    > - **Apple juice, please.**
 
-### Lição 26 — Fixação: Casa, Cozinha e Café da Manhã
-*Fixação exclusiva dos contextos e das estruturas já usadas nas Lições 24 e 25.*
-**Foco**: Retomar localização com *in/on* e o vocabulário do lar e do café da manhã, sem gramática nova.
+**PAL:** 6<br>
+**TPA:** 146<br>
+**PA:** Bread, Butter, Cheese, Apple juice, Fruit, Fresh
 
-1. `[Frase]` **The plate is on the table.** — O prato está na mesa.
-2. `[Frase]` **The fork is on the table.** — O garfo está na mesa.
-3. `[Frase]` **The spoon is on the table.** — A colher está na mesa.
-4. `[Frase]` **The apple juice is on the table.** — O suco de maçã está na mesa.
-5. `[Frase]` **My mother is in the kitchen.** — Minha mãe está na cozinha.
-6. `[Frase]` **My father is in the living room.** — Meu pai está na sala de estar.
-7. `[Frase]` **Our parents are in the garden.** — Nossos pais estão no jardim.
-8. `[Frase]` **The fruit is fresh.** — A fruta está fresca.
-9. `[Frase]` **Bread and butter are on the table.** — Pão e manteiga estão na mesa.
-10. `[Frase]` **Our family is in the home.** — Nossa família está na casa.
+### Lição 30 — Fixação: Casa, Cozinha e Café da Manhã
+*Fixação exclusiva dos contextos e das estruturas já usadas nas Lições 28 e 29.*
+**Foco**: Fixar *between* e os nomes compostos de alimentos das Lições 28 e 29, sem gramática nova.
 
-> **Fixação do ciclo:** esta lição não introduz *between*, *behind* nem *in front of*; essas preposições serão ensinadas em um ciclo próprio posterior, com frases de aplicação imediata.
+1. `[Frase]` **The chair is between the bed and the door.** — A cadeira está entre a cama e a porta.
+2. `[Frase]` **The plate is between the fork and the spoon.** — O prato está entre o garfo e a colher.
+3. `[Frase]` **The apple juice is on the table.** — O suco de maçã está na mesa.
+4. `[Frase]` **The orange juice is on the table.** — O suco de laranja está na mesa. `[Ver palavra: orange juice]`
+5. `[Frase]` **The jam is on the table.** — A geleia está sobre a mesa. `[Ver palavra: jam]`
+6. `[Frase]` **The toast is between the plate and the cup.** — A torrada está entre o prato e a xícara. `[Ver palavra: toast]`
+7. `[Frase]` **The napkin is under the spoon.** — O guardanapo está embaixo da colher. `[Ver palavra: napkin]`
+8. `[Frase]` **The bowl is between the glass and the cup.** — A tigela está entre o copo e a xícara. `[Ver palavra: bowl]`
+9. `[Frase]` **The teapot is on the table.** — O bule está sobre a mesa. `[Ver palavra: teapot]`
+10. `[Frase]` **The cup is between the plate and the glass.** — A xícara está entre o prato e o copo.
+11. `[Frase]` **Orange juice, please.** — Suco de laranja, por favor.
+12. `[Frase]` **The spoon is between the plate and the glass.** — A colher está entre o prato e o copo.
+13. `[Frase]` **The glass is between the cup and the plate.** — O copo está entre a xícara e o prato.
 
-### Lição 27 — Conforto e Qualidade do Lar
+**PAL:** 6<br>
+**TPA:** 152<br>
+**PA:** orange juice, jam, toast, napkin, bowl, teapot
+
+### Lição 31 — Conforto e Qualidade do Lar
 *Adjetivos para descrever ambientes acolhedores*
 **Foco**: Qualificadores de ambiente e intensidade com very.
 
 1. `[Palavra]` **Comfortable** — Confortável
-2. `[Frase]` **The bed is very comfortable.** — A cama é muito confortável.
-3. `[Palavra]` **Warm** — Aconchegante, morno
-4. `[Frase]` **The living room is warm.** — A sala de estar é aconchegante.
-5. `[Palavra]` **Modern** — Moderno, moderna
-6. `[Frase]` **Our apartment is modern.** — Nosso apartamento é moderno.
-7. `[Palavra]` **Simple** — Simples
-8. `[Frase]` **It is a simple house.** — É uma casa simples.
-9. `[Palavra]` **Cozy** — Aconchegante, acolhedor
-10. `[Frase]` **The bedroom is cozy.** — O quarto é acolhedor.
-11. `[Gramática]` **Gramática — Lição 27: Intensificador "Very" com Adjetivos**
+2. `[Frase]` **The bed is comfortable.** — A cama é confortável.
+3. `[Palavra]` **Very** — Muito
+4. `[Frase]` **The bed is very comfortable.** — A cama é muito confortável.
+5. `[Palavra]` **Warm** — Aconchegante, morno
+6. `[Frase]` **The living room is warm.** — A sala de estar é aconchegante.
+7. `[Palavra]` **Modern** — Moderno, moderna
+8. `[Frase]` **Our house is modern.** — Nossa casa é moderna.
+9. `[Palavra]` **Simple** — Simples
+10. `[Frase]` **It is a simple house.** — É uma casa simples.
+11. `[Palavra]` **Cozy** — Aconchegante, acolhedor
+12. `[Frase]` **The bedroom is cozy.** — O quarto é acolhedor.
+13. `[Frase]` **The tea is very warm.** — O chá está bem morno.
+14. `[Gramática]` **Gramática — Lição 31: Intensificador "Very" com Adjetivos**
    > Usa-se *very* antes de adjetivos para intensificar a qualidade: *very comfortable*, *very clean*.
    > *Exemplos*:
    > - **The bed is very comfortable.**
-   > - **Our apartment is modern and clean.**
+   > - **Our house is modern and clean.**
 
-### Lição 28 — Vizinhança e Comunidade
+**PAL:** 6<br>
+**TPA:** 158<br>
+**PA:** Comfortable, Very, Warm, Modern, Simple, Cozy
+
+### Lição 32 — Vizinhança e Distâncias
 *Relações de bairro e proximidade urbana*
-**Foco**: Vocabulário de vizinhança e adjetivos de segurança.
+**Foco**: Descrever proximidade e distância com *near here* e *far*.
 
 1. `[Palavra]` **Neighbor** — Vizinho, vizinha
 2. `[Palavra]` **Friendly** — Amigável, simpático
 3. `[Frase]` **My neighbor is friendly.** — Meu vizinho é amigável.
 4. `[Palavra]` **Neighborhood** — Bairro, vizinhança
-5. `[Palavra]` **Safe** — Seguro, protegida
-6. `[Frase]` **Our neighborhood is safe.** — Nosso bairro é seguro.
-7. `[Palavra]` **Near here** — Perto daqui
-8. `[Frase]` **The hotel is near here.** — O hotel fica perto daqui.
-9. `[Palavra]` **Far** — Longe, distante
-10. `[Frase]` **The station is far.** — A estação é longe.
-11. `[Gramática]` **Gramática — Lição 28: Vizinhança e Distâncias**
-   > *Near here* (perto daqui) e *not far* (não longe) são expressões comunicativas práticas essenciais.
+5. `[Frase]` **Our neighborhood is beautiful.** — Nosso bairro é bonito.
+6. `[Palavra]` **Safe** — Seguro, segura
+7. `[Frase]` **Our neighborhood is safe.** — Nosso bairro é seguro.
+8. `[Palavra]` **Near here** — Perto daqui
+9. `[Frase]` **The hotel is near here.** — O hotel fica perto daqui.
+10. `[Palavra]` **Far** — Longe, distante
+11. `[Frase]` **The school is far.** — A escola fica longe.
+12. `[Frase]` **The hotel is not far.** — O hotel não fica longe.
+13. `[Gramática]` **Gramática — Lição 32: Vizinhança e Distâncias**
+   > *Near here* indica proximidade de quem fala. *Far* indica distância; *not far* significa que algo não fica longe.
    > *Exemplos*:
    > - **Our neighborhood is very safe.**
    > - **My neighbor is friendly.**
 
-### Lição 29 — Fixação: Família, Lar e Vizinhança
+**PAL:** 6<br>
+**TPA:** 164<br>
+**PA:** Neighbor, Friendly, Neighborhood, Safe, Near here, Far
+
+### Lição 33 — Fixação: Família, Lar e Vizinhança
 *Convivência familiar e lugares já conhecidos*
-**Foco**: Fixar os adjetivos e contextos das Lições 27 e 28, sem estrutura gramatical nova.
+**Foco**: Fixar *very* e as expressões de distância das Lições 31 e 32, sem estrutura gramatical nova.
 
-1. `[Palavra]` **Together** — Juntos, juntas
-2. `[Frase]` **We are together.** — Nós estamos juntos.
-3. `[Palavra]` **Morning** — Manhã
-4. `[Frase]` **Good morning.** — Bom dia.
-5. `[Palavra]` **Breakfast** — Café da manhã
-6. `[Frase]` **Breakfast is on the table.** — O café da manhã está na mesa.
-7. `[Palavra]` **Every day** — Todo dia, diariamente
-8. `[Frase]` **We are together every day.** — Nós estamos juntos todos os dias.
-9. `[Palavra]` **Home** — Lar, em casa
-10. `[Frase]` **We are in our home.** — Nós estamos em nossa casa.
+1. `[Frase]` **Our home is very cozy.** — Nosso lar é muito aconchegante. `[Ver palavra: home]`
+2. `[Frase]` **Our family is very happy together.** — Nossa família está muito feliz reunida. `[Ver palavra: together]`
+3. `[Frase]` **The breakfast is very simple.** — O café da manhã é muito simples. `[Ver palavra: breakfast]`
+4. `[Frase]` **The building is near here.** — O prédio fica perto daqui. `[Ver palavra: building]`
+5. `[Frase]` **The station is not far.** — A estação não fica longe. `[Ver palavra: station]`
+6. `[Frase]` **The park is near the school.** — O parque fica perto da escola. `[Ver palavra: park]`
+7. `[Frase]` **The hotel is near here.** — O hotel fica perto daqui.
+8. `[Frase]` **My neighbor is very friendly.** — Meu vizinho é muito simpático.
+9. `[Frase]` **The bed is very comfortable.** — A cama é muito confortável.
+10. `[Frase]` **Our neighborhood is very safe.** — Nosso bairro é muito seguro.
+11. `[Frase]` **The living room is very warm.** — A sala de estar é muito aconchegante.
 
-> **Fixação do ciclo:** esta lição pratica apenas as descrições e relações de lugar das Lições 27 e 28. *Always* foi adiado para o ciclo do Simple Present, onde pode ser ensinado com sua posição correta na frase.
+**PAL:** 6<br>
+**TPA:** 170<br>
+**PA:** home, together, breakfast, building, station, park
 
-### Lição 30 — Relato 1 (Minha Família e Nossa Casa)
-*Texto de Fechamento do Bloco 3 consolidando lar e família*
-**Foco**: Texto narrativo descritivo em primeira pessoa.
+### Encerramento — banco, texto e exame
 
-1. `[Frase]` **Welcome.** — Bem-vindo(a).
-2. `[Frase]` **Our family is in Brazil.** — Nossa família está no Brasil.
-3. `[Frase]` **Our apartment is clean and cozy.** — Nosso apartamento é limpo e aconchegante.
-4. `[Frase]` **My father is in the living room.** — Meu pai está na sala de estar.
-5. `[Frase]` **My mother is in the kitchen.** — Minha mãe está na cozinha.
-6. `[Frase]` **My son is in the bedroom.** — Meu filho está no quarto.
-7. `[Frase]` **Breakfast is on the table.** — O café da manhã está na mesa.
-8. `[Frase]` **Our garden is beautiful and safe.** — Nosso jardim é bonito e seguro.
+Pré-requisito: Blocos 1 e 2 e Lições 25–33.
 
----
+#### Lição 34-BF — banco de frases: familiares
 
-# BLOCO 4 — Plural dos Substantivos (+s, +es, -ies, Irregulares), Números 1 a 10 e Cores
-*Ciclos: (31, 32, R33) · (34, 35, R36) · (37, 38, R39) · Fechamento: Descrição 40 · Teste 4*
+1. `[Frase]` **My aunt is in the kitchen.** — Minha tia está na cozinha. `[Ver palavra: aunt]`
+2. `[Frase]` **Is his uncle at the hotel?** — O tio dele está no hotel? `[Ver palavra: uncle]`
+3. `[Frase]` **Her cousin isn't a teacher.** — O primo dela não é professor. `[Ver palavra: cousin]` `[Ver contração: isn't]`
+4. `[Frase]` **Our niece is happy.** — Nossa sobrinha está feliz. `[Ver palavra: niece]`
+5. `[Frase]` **Their nephew and the teacher are in the classroom.** — O sobrinho deles e a professora estão na sala de aula. `[Ver palavra: nephew]`
+6. `[Frase]` **Is my grandson ready?** — Meu neto está pronto? `[Ver palavra: grandson]`
+7. `[Frase]` **Her granddaughter is with the teacher.** — A neta dela está com a professora. `[Ver palavra: granddaughter]`
+8. `[Frase]` **Your sibling is not at the school.** — Seu irmão ou sua irmã não está na escola. `[Ver palavra: sibling]`
 
-### Lição 31 — Plural Regular com "+s"
-*Regra geral do plural para substantivos conhecidos*
-**Foco**: Adição de -s no plural e concordância com are.
+**PAL:** 8<br>
+**TPA:** 178<br>
+**PA:** aunt, uncle, cousin, niece, nephew, grandson, granddaughter, sibling
 
-1. `[Palavra]` **Books** — Livros
-2. `[Frase]` **The books are on the desk.** — Os livros estão na escrivaninha.
-3. `[Palavra]` **Cars** — Carros
-4. `[Frase]` **The cars are in the park.** — Os carros estão no parque.
-5. `[Palavra]` **Houses** — Casas
-6. `[Frase]` **The houses are in Brazil.** — As casas estão no Brasil.
-7. `[Palavra]` **Tables** — Mesas
-8. `[Frase]` **The tables are in the classroom.** — As mesas estão na sala de aula.
-9. `[Palavra]` **Apples** — Maçãs
-10. `[Frase]` **The apples are on the table.** — As maçãs estão sobre a mesa.
-11. `[Palavra]` **Dogs** — Cachorros
-12. `[Frase]` **The dogs are in the park.** — Os cachorros estão no parque.
-13. `[Gramática]` **Gramática — Lição 31: A Regra Geral do Plural (+s)**
-   > A maioria dos substantivos em inglês forma o plural simplesmente acrescentando **-s** ao final da palavra (*book -> books, car -> cars*). O verbo concorda no plural (*cars are*).
-   > *Exemplos*:
-   > - **Two cars are in the street.**
-   > - **The books are on the desk.**
+#### Lição 35 — descrição: minha família
 
-### Lição 32 — Números Cardinais de 1 a 6
-*Quantificação com substantivos plurais*
-**Foco**: Números cardinais de um a seis.
+1. I am in the living room. — Eu estou na sala de estar.
+2. My aunt and my uncle are near the window. — Minha tia e meu tio estão perto da janela.
+3. Their granddaughter is with my grandmother. — A neta deles está com minha avó.
+4. My cousin is in the kitchen. — Meu primo está na cozinha.
+5. My book is on the table. — Meu livro está sobre a mesa.
+6. The tea is in the kitchen. — O chá está na cozinha.
+7. My family is very happy. — Minha família está muito feliz.
+
+#### Lição 36 — exame: apêndice de frases inéditas
+
+1. Her aunt is near the school. — A tia dela está perto da escola.
+2. His uncle is not in the classroom. — O tio dele não está na sala de aula.
+3. Our cousin is in the library. — Nosso primo está na biblioteca.
+4. Their niece is in the kitchen. — A sobrinha deles está na cozinha.
+5. My nephew is with your father. — Meu sobrinho está com seu pai.
+6. Her grandson is in the cafeteria. — O neto dela está na cantina.
+7. His granddaughter is very tired. — A neta dele está muito cansada.
+8. Your sibling isn't in the bedroom. — Seu irmão ou sua irmã não está no quarto.
+9. Is the napkin under the table? — O guardanapo está embaixo da mesa?
+10. My grandfather is near the park. — Meu avô está perto do parque.
+
+# BLOCO 4 — Encontro da Família no Jardim: Plurais, Números e Cores
+
+*Uma reunião familiar no jardim, com decoração, alimentos e visitas.*
+
+### Lição 37 — Plural Regular com "-s"
+**Foco**: Apresentar palavras inéditas no plural e a formação regular com *-s*.
+
+1. `[Palavra]` **Balloons** — Balões `[Ver singular: balloons → balloon — balão]`
+2. `[Frase]` **The balloons are in the room.** — Os balões estão no cômodo. `[Ver singular: balloons → balloon — balão]`
+3. `[Palavra]` **Gifts** — Presentes `[Ver singular: gifts → gift — presente]`
+4. `[Frase]` **The gifts are on the table.** — Os presentes estão na mesa. `[Ver singular: gifts → gift — presente]`
+5. `[Palavra]` **Candles** — Velas `[Ver singular: candles → candle — vela]`
+6. `[Frase]` **The candles are on the table.** — As velas estão na mesa. `[Ver singular: candles → candle — vela]`
+7. `[Palavra]` **Cards** — Cartões `[Ver singular: cards → card — cartão]`
+8. `[Frase]` **The cards are in the room.** — Os cartões estão no cômodo. `[Ver singular: cards → card — cartão]`
+9. `[Palavra]` **Ribbons** — Fitas `[Ver singular: ribbons → ribbon — fita]`
+10. `[Frase]` **The ribbons are on the table.** — As fitas estão na mesa. `[Ver singular: ribbons → ribbon — fita]`
+11. `[Palavra]` **Flags** — Bandeiras `[Ver singular: flags → flag — bandeira]`
+12. `[Frase]` **The flags are in the room.** — As bandeiras estão no cômodo. `[Ver singular: flags → flag — bandeira]`
+13. `[Gramática]` **Gramática — Lição 37: Plural Regular com "-s"**
+   > Muitos substantivos formam o plural acrescentando *-s*: *balloon → balloons*, *gift → gifts* e *candle → candles*. A forma singular e a plural representam a mesma palavra na contagem. Com um sujeito no plural e o verbo *to be* no presente, usamos *are*: *The balloons are in the room.* `[Ver singular: balloons → balloon — balão]` `[Ver singular: gifts → gift — presente]` `[Ver singular: candles → candle — vela]`
+
+**PAL:** 6<br>
+**TPA:** 184<br>
+**PA:** Balloons, Gifts, Candles, Cards, Ribbons, Flags
+
+### Lição 38 — Números de 1 a 3
+**Foco**: Contar frutas e organizar alimentos para o encontro da família.
 
 1. `[Palavra]` **One** — Um, uma
-2. `[Frase]` **One apple is on the table.** — Uma maçã está sobre a mesa.
+2. `[Frase]` **One apple is on the table.** — Uma maçã está na mesa.
 3. `[Palavra]` **Two** — Dois, duas
-4. `[Frase]` **Two cars are in the park.** — Dois carros estão no parque.
+4. `[Frase]` **Two oranges are on the table.** — Duas laranjas estão na mesa. `[Ver singular: oranges → orange — laranja]`
 5. `[Palavra]` **Three** — Três
-6. `[Frase]` **Three books are on the table.** — Três livros estão na mesa.
-7. `[Palavra]` **Four** — Quatro
-8. `[Frase]` **Four dogs are in the park.** — Quatro cachorros estão no parque.
-9. `[Palavra]` **Five** — Cinco
-10. `[Frase]` **Five students are in the classroom.** — Cinco estudantes estão na sala de aula.
-11. `[Palavra]` **Six** — Seis
-12. `[Frase]` **Six tables are in the classroom.** — Seis mesas estão na sala de aula.
-13. `[Gramática]` **Gramática — Lição 32: Números Cardinais (1 a 6)**
-   > Números antecedem diretamente o substantivo no plural: *two brothers*, *three books*, *four apples*.
-   > *Exemplos*:
-   > - **I have two brothers.**
-   > - **Three books are on the table.**
+6. `[Frase]` **Three apples are on the table.** — Três maçãs estão na mesa. `[Ver singular: apples → apple — maçã]`
+7. `[Palavra]` **Basket** — Cesta
+8. `[Frase]` **The oranges are in the basket.** — As laranjas estão na cesta. `[Ver singular: oranges → orange — laranja]`
+9. `[Frase]` **An apple is a fruit.** — Uma maçã é uma fruta.
+10. `[Palavra]` **Vegetable** — Legume, verdura
+11. `[Frase]` **The vegetable is fresh.** — O legume está fresco.
+12. `[Palavra]` **Garden** — Jardim
+13. `[Frase]` **The garden is near the kitchen.** — O jardim fica perto da cozinha.
+14. `[Gramática]` **Gramática — Lição 38: Números e Quantidades**
+   > O número vem antes do substantivo. Com *one*, use o singular; com *two* ou mais, use o plural: *one apple is*, *two oranges are*. `[Ver singular: oranges → orange — laranja]`
 
-### Banco B4.1 — Números 7 a 10 e "Many"
-*Banco suplementar que amplia a contagem após a Lição 32; os itens são aplicados na Lição 33.*
+**PAL:** 6<br>
+**TPA:** 190<br>
+**PA:** One, Two, Three, Basket, Vegetable, Garden
+
+### Lição 39 — Fixação: Quantidades no Encontro
+**Foco**: Praticar plurais regulares e números preparando frutas e legumes para o encontro.
+
+1. `[Frase]` **Four apples are in the basket.** — Quatro maçãs estão na cesta. `[Ver palavra: four]` `[Ver singular: apples → apple — maçã]`
+2. `[Frase]` **Five oranges are on the table.** — Cinco laranjas estão na mesa. `[Ver palavra: five]` `[Ver singular: oranges → orange — laranja]`
+3. `[Frase]` **Six eggs are in the kitchen.** — Seis ovos estão na cozinha. `[Ver palavra: six]` `[Ver singular: eggs → egg — ovo]`
+4. `[Frase]` **The pears are in the basket.** — As peras estão na cesta. `[Ver palavra: pears]` `[Ver singular: pears → pear — pera]`
+5. `[Frase]` **The lemons are on the table.** — Os limões estão na mesa. `[Ver palavra: lemons]` `[Ver singular: lemons → lemon — limão]`
+6. `[Frase]` **The carrots are in the kitchen.** — As cenouras estão na cozinha. `[Ver palavra: carrots]` `[Ver singular: carrots → carrot — cenoura]`
+7. `[Frase]` **The carrot is a vegetable.** — A cenoura é um legume.
+8. `[Frase]` **The carrots are vegetables.** — As cenouras são legumes. `[Ver singular: carrots → carrot — cenoura]` `[Ver singular: vegetables → vegetable — legume ou verdura]`
+9. `[Frase]` **Are the pears in the kitchen?** — As peras estão na cozinha? `[Ver singular: pears → pear — pera]`
+10. `[Frase]` **I am with my family.** — Eu estou com minha família.
+
+**PAL:** 6<br>
+**TPA:** 196<br>
+**PA:** four, five, six, pears, lemons, carrots
+
+### Lição 40 — Demonstrativos no Singular: "This" e "That"
+**Foco**: Identificar partes do corpo e objetos próximos ou distantes ao mostrar fotos da família.
+
+1. `[Palavra]` **This** — Este, esta, isto
+2. `[Palavra]` **Head** — Cabeça
+3. `[Frase]` **This is my head.** — Esta é a minha cabeça.
+4. `[Palavra]` **Hand** — Mão
+5. `[Frase]` **This is my hand.** — Esta é a minha mão.
+6. `[Palavra]` **That** — Aquele, aquela, aquilo
+7. `[Frase]` **That is your hand.** — Aquela é a sua mão.
+8. `[Palavra]` **Nose** — Nariz
+9. `[Frase]` **This is my nose.** — Este é o meu nariz.
+10. `[Palavra]` **Yellow** — Amarelo, amarela
+11. `[Frase]` **That balloon is yellow.** — Aquele balão é amarelo.
+12. `[Frase]` **Is that your head?** — Aquela é a sua cabeça?
+13. `[Frase]` **Yes, and this is my hand.** — Sim, e esta é a minha mão.
+14. `[Gramática]` **Gramática — Lição 40: "This" e "That"**
+   > *This* aponta algo próximo; *that*, algo distante. Podem aparecer sozinhos, como em *This is my head*, ou antes de um substantivo singular, como em *That balloon is yellow*.
+
+**PAL:** 6<br>
+**TPA:** 202<br>
+**PA:** This, Head, Hand, That, Nose, Yellow
+
+### Lição 41 — Números de 7 a 9
+**Foco**: Ampliar a contagem de objetos do encontro e identificar partes do corpo nas fotos.
 
 1. `[Palavra]` **Seven** — Sete
-2. `[Palavra]` **Eight** — Oito
-3. `[Palavra]` **Nine** — Nove
-4. `[Palavra]` **Ten** — Dez
-5. `[Palavra]` **Many** — Muitos, muitas
+2. `[Frase]` **Seven balloons are in the room.** — Sete balões estão no cômodo. `[Ver singular: balloons → balloon — balão]`
+3. `[Palavra]` **Eight** — Oito
+4. `[Frase]` **Eight candles are on the table.** — Oito velas estão na mesa. `[Ver singular: candles → candle — vela]`
+5. `[Palavra]` **Nine** — Nove
+6. `[Frase]` **Nine gifts are on the table.** — Nove presentes estão na mesa. `[Ver singular: gifts → gift — presente]`
+7. `[Palavra]` **Ear** — Orelha
+8. `[Frase]` **This is my ear.** — Esta é a minha orelha.
+9. `[Palavra]` **Arm** — Braço
+10. `[Frase]` **My arm is on the table.** — Meu braço está sobre a mesa.
+11. `[Palavra]` **Leg** — Perna
+12. `[Frase]` **That is my leg.** — Aquela é a minha perna.
+13. `[Gramática]` **Gramática — Lição 41: Números com Substantivos Plurais**
+   > Números maiores que um vêm antes de substantivos no plural: *seven balloons*, *eight candles* e *nine gifts*. `[Ver singular: balloons → balloon — balão]` `[Ver singular: candles → candle — vela]` `[Ver singular: gifts → gift — presente]`
 
-### Lição 33 — Fixação: Plurais Regulares e Números
-*Fixação exclusiva das Lições 31 e 32, com aplicação do Banco B4.1.*
-**Foco**: Usar plurais regulares e números em frases completas, sem nova explicação gramatical.
+**PAL:** 6<br>
+**TPA:** 208<br>
+**PA:** Seven, Eight, Nine, Ear, Arm, Leg
 
-1. `[Frase]` **Seven apples are on the table.** — Sete maçãs estão sobre a mesa.
-2. `[Frase]` **Eight books are in the classroom.** — Oito livros estão na sala de aula.
-3. `[Frase]` **Nine cars are in the park.** — Nove carros estão no parque.
-4. `[Frase]` **Ten dogs are in the garden.** — Dez cachorros estão no jardim.
-5. `[Frase]` **Many students are in the classroom.** — Muitos estudantes estão na sala de aula.
-6. `[Frase]` **One house is in Brazil.** — Uma casa está no Brasil.
-7. `[Frase]` **Two tables are in the room.** — Duas mesas estão no cômodo.
-8. `[Frase]` **Six apples are on the table.** — Seis maçãs estão sobre a mesa.
+### Lição 42 — Fixação: Demonstrativos e Quantidades
+**Foco**: Fixar *this/that* e os números de 7 a 9 ao observar fotos e objetos do encontro.
 
-> **Fixação do ciclo:** não há card de gramática. A lição pratica somente plural regular e números; os números do Banco B4.1 entram como vocabulário contextual.
+1. `[Frase]` **This is my eye.** — Este é o meu olho. `[Ver palavra: eye]`
+2. `[Frase]` **That is your mouth.** — Aquela é a sua boca. `[Ver palavra: mouth]`
+3. `[Frase]` **This is my elbow.** — Este é o meu cotovelo. `[Ver palavra: elbow]`
+4. `[Frase]` **That is your finger.** — Aquele é o seu dedo. `[Ver palavra: finger]`
+5. `[Frase]` **My hair is beautiful.** — Meu cabelo é bonito. `[Ver palavra: hair]`
+6. `[Frase]` **This is my foot.** — Este é o meu pé. `[Ver palavra: foot]`
+7. `[Frase]` **Seven gifts are on the table.** — Sete presentes estão na mesa. `[Ver singular: gifts → gift — presente]`
+8. `[Frase]` **Is that your arm?** — Aquele é o seu braço?
+9. `[Frase]` **My friend is happy.** — Meu amigo está feliz.
 
-### Lição 34 — Plural com "+es" (Sibilantes)
-*Terminações em -s, -ss, -sh, -ch, -x*
-**Foco**: Regra morfológica do sufixo -es.
+**PAL:** 6<br>
+**TPA:** 214<br>
+**PA:** eye, mouth, elbow, finger, hair, foot
 
-1. `[Palavra]` **Boxes** — Caixas
-2. `[Frase]` **Two boxes are in the room.** — Duas caixas estão no cômodo.
-3. `[Palavra]` **Glasses** — Copos, taças, óculos
-4. `[Frase]` **Two glasses of milk, please.** — Dois copos de leite, por favor.
-5. `[Palavra]` **Bushes** — Arbustos
-6. `[Frase]` **The bushes are in the garden.** — Os arbustos estão no jardim.
-7. `[Palavra]` **Watches** — Relógios de pulso
-8. `[Frase]` **The watches are on the desk.** — Os relógios estão sobre a escrivaninha.
-9. `[Palavra]` **Sandwiches** — Sanduíches
-10. `[Frase]` **Two sandwiches, please.** — Dois sanduíches, por favor.
-11. `[Palavra]` **Buses** — Ônibus (plural)
-12. `[Frase]` **Two buses are in the park.** — Dois ônibus estão no parque.
-13. `[Gramática]` **Gramática — Lição 34: Plural com "+es"**
-   > Substantivos terminados em sons sibilantes (*-s, -ss, -sh, -ch, -x*) recebem **-es** para facilitar a pronúncia: *box -> boxes*, *bus -> buses*, *sandwich -> sandwiches*.
-   > *Exemplos*:
-   > - **Two boxes are in the room.**
-   > - **Two sandwiches, please.**
+### Lição 43 — Plural com "-es"
+**Foco**: Apresentar novas palavras e plurais regulares com *-es*.
 
-### Lição 35 — Plural com "-ies" (Consoante + Y)
-*Eliminação do Y e acréscimo de -ies*
-**Foco**: Regra morfológica de consoante + y -> -ies.
+1. `[Palavra]` **Boxes** — Caixas `[Ver singular: boxes → box — caixa]`
+2. `[Frase]` **The boxes are under the table.** — As caixas estão embaixo da mesa. `[Ver singular: boxes → box — caixa]`
+3. `[Palavra]` **Dishes** — Pratos `[Ver singular: dishes → dish — prato]`
+4. `[Frase]` **The dishes are in the kitchen.** — Os pratos estão na cozinha. `[Ver singular: dishes → dish — prato]`
+5. `[Palavra]` **Brushes** — Escovas `[Ver singular: brushes → brush — escova]`
+6. `[Frase]` **The brushes are in the room.** — As escovas estão no cômodo. `[Ver singular: brushes → brush — escova]`
+7. `[Palavra]` **Buses** — Ônibus, no plural `[Ver singular: buses → bus — ônibus]`
+8. `[Frase]` **The buses are near the school.** — Os ônibus estão perto da escola. `[Ver singular: buses → bus — ônibus]`
+9. `[Palavra]` **Benches** — Bancos `[Ver singular: benches → bench — banco]`
+10. `[Frase]` **The benches are in the park.** — Os bancos estão no parque. `[Ver singular: benches → bench — banco]`
+11. `[Palavra]` **Classes** — Turmas `[Ver singular: classes → class — turma]`
+12. `[Frase]` **The classes are in the school.** — As turmas estão na escola. `[Ver singular: classes → class — turma]`
+13. `[Gramática]` **Gramática — Lição 43: Plural com "-es"**
+   > Alguns substantivos terminados em *-s*, *-ss*, *-sh*, *-ch* ou *-x* formam o plural com *-es*: *box → boxes*, *dish → dishes* e *bus → buses*. Cada par conta como uma palavra. `[Ver singular: boxes → box — caixa]` `[Ver singular: dishes → dish — prato]` `[Ver singular: buses → bus — ônibus]`
 
-1. `[Palavra]` **Cities** — Cidades
-2. `[Frase]` **The cities are beautiful.** — As cidades são bonitas.
-3. `[Palavra]` **Babies** — Bebês
-4. `[Frase]` **The babies are in the bedroom.** — Os bebês estão no quarto.
-5. `[Palavra]` **Parties** — Festas
-6. `[Frase]` **The parties are in the park.** — As festas estão no parque.
-7. `[Palavra]` **Families** — Famílias
-8. `[Frase]` **The families are in the park.** — As famílias estão no parque.
-9. `[Frase]` **Two cities are in Brazil.** — Duas cidades estão no Brasil.
-10. `[Frase]` **Two families are in the garden.** — Duas famílias estão no jardim.
-11. `[Gramática]` **Gramática — Lição 35: Plural com "-ies"**
-   > Quando o substantivo termina em **consoante + y**, troca-se o *y* por **-ies** (*city -> cities*, *baby -> babies*, *family -> families*). Se for vogal + y, segue o plural normal com +s (*day -> days*).
-   > *Exemplos*:
-   > - **Two big cities in Brazil.**
-   > - **The babies are happy.**
+**PAL:** 6<br>
+**TPA:** 220<br>
+**PA:** Boxes, Dishes, Brushes, Buses, Benches, Classes
 
-### Lição 36 — Fixação: Plurais com -es e -ies
-*Fixação exclusiva das regras ensinadas nas Lições 34 e 35.*
-**Foco**: Reutilizar os dois padrões de plural em frases completas, sem gramática nova.
+### Lição 44 — Plural com "-ies"
+**Foco**: Apresentar novas palavras com plural em *-ies*.
 
-1. `[Frase]` **Two boxes are in the room.** — Duas caixas estão no cômodo.
-2. `[Frase]` **The glasses are on the table.** — Os copos estão sobre a mesa.
-3. `[Frase]` **The bushes are in the garden.** — Os arbustos estão no jardim.
-4. `[Frase]` **Two watches are on the desk.** — Dois relógios estão sobre a escrivaninha.
-5. `[Frase]` **The sandwiches are on the table.** — Os sanduíches estão sobre a mesa.
-6. `[Frase]` **The buses are in the park.** — Os ônibus estão no parque.
-7. `[Frase]` **The cities are beautiful.** — As cidades são bonitas.
-8. `[Frase]` **The babies are in the bedroom.** — Os bebês estão no quarto.
-9. `[Frase]` **The parties are in the park.** — As festas estão no parque.
-10. `[Frase]` **The families are in the garden.** — As famílias estão no jardim.
+1. `[Palavra]` **Candies** — Doces `[Ver singular: candies → candy — doce]`
+2. `[Frase]` **The candies are in the boxes.** — Os doces estão nas caixas. `[Ver singular: candies → candy — doce]` `[Ver singular: boxes → box — caixa]`
+3. `[Palavra]` **Parties** — Festas `[Ver singular: parties → party — festa]`
+4. `[Frase]` **The parties are in the gardens.** — As festas são nos jardins. `[Ver singular: parties → party — festa]` `[Ver singular: gardens → garden — jardim]`
+5. `[Palavra]` **Cities** — Cidades `[Ver singular: cities → city — cidade]`
+6. `[Frase]` **The cities are beautiful.** — As cidades são bonitas. `[Ver singular: cities → city — cidade]`
+7. `[Palavra]` **Stories** — Histórias `[Ver singular: stories → story — história]`
+8. `[Frase]` **The stories are in the books.** — As histórias estão nos livros. `[Ver singular: stories → story — história]` `[Ver singular: books → book — livro]`
+9. `[Palavra]` **Puppies** — Filhotes de cachorro `[Ver singular: puppies → puppy — filhote de cachorro]`
+10. `[Frase]` **The puppies are in the garden.** — Os filhotes de cachorro estão no jardim. `[Ver singular: puppies → puppy — filhote de cachorro]`
+11. `[Palavra]` **Butterflies** — Borboletas `[Ver singular: butterflies → butterfly — borboleta]`
+12. `[Frase]` **The butterflies are in the garden.** — As borboletas estão no jardim. `[Ver singular: butterflies → butterfly — borboleta]`
+13. `[Gramática]` **Gramática — Lição 44: Plural com "-ies"**
+   > Quando um substantivo termina em consoante + *y*, trocamos o *y* por *-ies*: *party → parties*, *city → cities*. Cada par conta como uma palavra. `[Ver singular: parties → party — festa]` `[Ver singular: cities → city — cidade]`
 
-### Lição 37 — Plurais Irregulares Fundamentais
-*Men, women, children e people*
-**Foco**: Substantivos plurais irregulares sem adição de -s.
+**PAL:** 6<br>
+**TPA:** 226<br>
+**PA:** Candies, Parties, Cities, Stories, Puppies, Butterflies
 
-1. `[Palavra]` **Men** — Homens
-2. `[Frase]` **The men are in the office.** — Os homens estão no escritório.
-3. `[Palavra]` **Women** — Mulheres
-4. `[Frase]` **The women are in the office.** — As mulheres estão no escritório.
-5. `[Palavra]` **Children** — Crianças
-6. `[Frase]` **The children are in the park.** — As crianças estão no parque.
-7. `[Palavra]` **People** — Pessoas
-8. `[Frase]` **The people are in the park.** — As pessoas estão no parque.
-9. `[Frase]` **Many people are in Brazil.** — Muitas pessoas estão no Brasil.
-10. `[Frase]` **Two children are in the garden.** — Duas crianças estão no jardim.
-11. `[Gramática]` **Gramática — Lição 37: Plurais Irregulares**
-   > Alguns substantivos não recebem -s no plural: *man -> men*, *woman -> women*, *child -> children*, *person -> people*. Todos concordam com verbos no plural.
+### Lição 45 — Fixação: Famílias, Frutas e Jardim
+**Foco**: Praticar os plurais com *-es* e *-ies*.
 
-### Lição 38 — Cores para Descrição
-*Cores qualificando objetos conhecidos*
-**Foco**: Adjetivos de cor invariáveis antes do substantivo ou após o verbo To Be.
+1. `[Frase]` **Ten sandwiches are in the boxes.** — Dez sanduíches estão nas caixas. `[Ver palavra: ten]` `[Ver singular: sandwiches → sandwich — sanduíche]` `[Ver singular: boxes → box — caixa]`
+2. `[Frase]` **The bee is in the garden.** — A abelha está no jardim. `[Ver palavra: bee]`
+3. `[Frase]` **The honey is in the kitchen.** — O mel está na cozinha. `[Ver palavra: honey]`
+4. `[Frase]` **The tree is in the garden.** — A árvore está no jardim. `[Ver palavra: tree]`
+5. `[Frase]` **The bird is near the tree.** — O pássaro está perto da árvore. `[Ver palavra: bird]`
+6. `[Frase]` **The flower is yellow.** — A flor é amarela. `[Ver palavra: flower]`
+7. `[Frase]` **The families are in the garden.** — As famílias estão no jardim. `[Ver singular: families → family — família]`
+8. `[Frase]` **Two babies are with the families.** — Dois bebês estão com as famílias. `[Ver singular: babies → baby — bebê]` `[Ver singular: families → family — família]`
+9. `[Frase]` **The boxes are near the benches.** — As caixas estão perto dos bancos. `[Ver singular: boxes → box — caixa]` `[Ver singular: benches → bench — banco]`
 
-1. `[Palavra]` **Red** — Vermelho, vermelha
-2. `[Frase]` **The apple is red.** — A maçã é vermelha.
-3. `[Palavra]` **Blue** — Azul
-4. `[Frase]` **The car is blue.** — O carro é azul.
-5. `[Palavra]` **Yellow** — Amarelo, amarela
-6. `[Frase]` **The egg is yellow.** — O ovo é amarelo.
-7. `[Palavra]` **Black** — Preto, preta
-8. `[Frase]` **The dog is black.** — O cachorro é preto.
-9. `[Palavra]` **White** — Branco, branca
-10. `[Frase]` **The cup is white.** — A xícara é branca.
-11. `[Palavra]` **Green** — Verde
-12. `[Frase]` **The tree is green.** — A árvore é verde.
-13. `[Palavra]` **Brown** — Marrom
-14. `[Frase]` **The desk is brown.** — A escrivaninha é marrom.
-15. `[Gramática]` **Gramática — Lição 38: Adjetivos de Cor**
-   > Cores funcionam como adjetivos invariáveis e podem vir após *to be* ou antes do substantivo.
-   > *Exemplos*:
-   > - **The green tree is in the garden.**
-   > - **The brown desk is in the classroom.**
+**PAL:** 6<br>
+**TPA:** 232<br>
+**PA:** ten, bee, honey, tree, bird, flower
 
-### Lição 39 — Fixação: Plurais Irregulares e Cores
-*Fixação exclusiva das Lições 37 e 38.*
-**Foco**: Combinar os plurais irregulares e as cores já aprendidas, sem gramática nova.
+### Encerramento — banco, texto e exame
 
-1. `[Frase]` **The men are in the green park.** — Os homens estão no parque verde.
-2. `[Frase]` **The women are in the blue classroom.** — As mulheres estão na sala de aula azul.
-3. `[Frase]` **The children are in the garden.** — As crianças estão no jardim.
-4. `[Frase]` **The people are in the park.** — As pessoas estão no parque.
-5. `[Frase]` **The red apples are on the table.** — As maçãs vermelhas estão sobre a mesa.
-6. `[Frase]` **The blue cars are in the park.** — Os carros azuis estão no parque.
-7. `[Frase]` **The yellow eggs are on the table.** — Os ovos amarelos estão sobre a mesa.
-8. `[Frase]` **The black dogs are in the garden.** — Os cachorros pretos estão no jardim.
-9. `[Frase]` **The white cups are on the table.** — As xícaras brancas estão sobre a mesa.
-10. `[Frase]` **The brown desks are in the classroom.** — As escrivaninhas marrons estão na sala de aula.
+Pré-requisito: Blocos 1–3 e Lições 37–45.
 
-### Lição 40 — Descrição 2 (A Feira e a Praça Central)
-*Texto de Fechamento do Bloco 4 reunindo cores, números e plurais*
-**Foco**: Descrição narrativa consolidando os plurais e quantidades.
+#### Lição 46-BF — banco de frases: cozinha e jardim
 
-1. `[Frase]` **Many people are in the park.** — Muitas pessoas estão no parque.
-2. `[Frase]` **The men and the women are in the garden.** — Os homens e as mulheres estão no jardim.
-3. `[Frase]` **The children are in the green park.** — As crianças estão no parque verde.
-4. `[Frase]` **The red apples are on the table.** — As maçãs vermelhas estão sobre a mesa.
-5. `[Frase]` **The blue cars are in the park.** — Os carros azuis estão no parque.
-6. `[Frase]` **The yellow eggs are on the table.** — Os ovos amarelos estão sobre a mesa.
-7. `[Frase]` **The black dogs are in the garden.** — Os cachorros pretos estão no jardim.
-8. `[Frase]` **The white cups are on the brown desks.** — As xícaras brancas estão sobre as escrivaninhas marrons.
+1. `[Frase]` **The cake is on the table.** — O bolo está na mesa. `[Ver palavra: cake]`
+2. `[Frase]` **The sugar is in the kitchen.** — O açúcar está na cozinha. `[Ver palavra: sugar]`
+3. `[Frase]` **The flour is in the kitchen.** — A farinha está na cozinha. `[Ver palavra: flour]`
+4. `[Frase]` **The oven is in the kitchen.** — O forno está na cozinha. `[Ver palavra: oven]`
+5. `[Frase]` **The apple is red.** — A maçã é vermelha. `[Ver palavra: red]`
+6. `[Frase]` **The raspberry is red.** — A framboesa é vermelha. `[Ver palavra: raspberry]`
+7. `[Frase]` **The strawberry is in the basket.** — O morango está na cesta. `[Ver palavra: strawberry]`
+8. `[Frase]` **The peach is on the plate.** — O pêssego está no prato. `[Ver palavra: peach]`
+9. `[Frase]` **The coconut is on the table.** — O coco está na mesa. `[Ver palavra: coconut]`
+10. `[Frase]` **The onion is in the kitchen.** — A cebola está na cozinha. `[Ver palavra: onion]`
 
-### Lição 40x — Banco de Frases Inéditas do Teste do Bloco 4
-*Banco auxiliar; usa somente conteúdo já apresentado no Bloco 4 e em blocos anteriores.*
+**PAL:** 10<br>
+**TPA:** 242<br>
+**PA:** cake, sugar, flour, oven, red, raspberry, strawberry, peach, coconut, onion
 
-1. `[Frase inédita]` **Two red apples are on the table.** — Duas maçãs vermelhas estão sobre a mesa.
-2. `[Frase inédita]` **Three blue cars are in the park.** — Três carros azuis estão no parque.
-3. `[Frase inédita]` **The women are in the green garden.** — As mulheres estão no jardim verde.
-4. `[Frase inédita]` **The children are in the classroom.** — As crianças estão na sala de aula.
-5. `[Frase inédita]` **Many books are on the brown desks.** — Muitos livros estão sobre as escrivaninhas marrons.
-6. `[Frase inédita]` **The black dogs are under the tables.** — Os cachorros pretos estão embaixo das mesas.
-7. `[Frase inédita]` **Two white cups are on the table.** — Duas xícaras brancas estão sobre a mesa.
-8. `[Frase inédita]` **The buses are in the park.** — Os ônibus estão no parque.
-9. `[Frase inédita]` **The cities are beautiful.** — As cidades são bonitas.
-10. `[Frase inédita]` **Ten students are in the classroom.** — Dez estudantes estão na sala de aula.
+#### Lição 47 — descrição: a festa no jardim
 
----
+1. I am in the garden. — Eu estou no jardim.
+2. My family is near the table. — Minha família está perto da mesa.
+3. The table is near the tree. — A mesa está perto da árvore.
+4. This cake is on the table. — Este bolo está sobre a mesa.
+5. Two sandwiches are on the table. — Dois sanduíches estão sobre a mesa. `[Ver singular: sandwiches → sandwich — sanduíche]`
+6. The red strawberries are in the basket. — Os morangos vermelhos estão na cesta. `[Ver singular: strawberries → strawberry — morango]`
+7. A bee is near the yellow flower. — Uma abelha está perto da flor amarela.
+8. The bird is in the tree. — O pássaro está na árvore.
+9. I am very happy. — Eu estou muito feliz.
 
-# BLOCO 5 — Demonstrativos (This/That/These/Those), Vestuário e Existência (There is / There are)
-*Ciclos: (41, 42, R43) · (44, 45, R46) · (47, 48, R49) · Fechamento: Diálogo 50 · Teste 5*
+#### Lição 48 — exame: apêndice de frases inéditas
 
-### Lição 41 — Demonstrativos no Singular: "This" e "That"
-*Lição 41 do nível A1*
-**Foco**: *This* indica proximidade no tempo ou espaço; *that* indi...
+1. The yellow flower is near the tree. — A flor amarela está perto da árvore.
+2. Two red boxes are in the kitchen. — Duas caixas vermelhas estão na cozinha.
+3. The flour is near the oven. — A farinha está perto do forno.
+4. Is the honey on the table? — O mel está na mesa?
+5. The bird and the bee are in the garden. — O pássaro e a abelha estão no jardim.
+6. Four strawberries are on the plate. — Quatro morangos estão no prato.
+7. The red cake is in the kitchen. — O bolo vermelho está na cozinha.
+8. Three glasses are near the box. — Três copos estão perto da caixa.
+9. The teachers are with the families. — Os professores estão com as famílias.
+10. Are the peaches and the balloons on the table? — Os pêssegos e os balões estão na mesa?
 
-1. `[Palavra]` **This** — Este, esta, isto (próximo a quem fala)
+
+# BLOCO 5 — Roupas, Lugares e Cozinha: Demonstrativos e Existência
+
+### Lições dos ciclos — sequência revisada
+
+### Lição 49 — Demonstrativos no Plural: "These" e "Those"
+**Foco**: Identificar roupas próximas e distantes no quarto.
+
+1. `[Palavra]` **These** — Estes, estas
 2. `[Palavra]` **Shirt** — Camisa
-3. `[Frase]` **This shirt is blue.** — Esta camisa é azul.
-4. `[Palavra]` **That** — Aquele, aquela, aquilo (afastado de quem fala)
-5. `[Palavra]` **Jacket** — Jaqueta, casaco
-6. `[Frase]` **That jacket is red.** — Aquela jaqueta é vermelha.
-7. `[Frase]` **This book is new.** — Este livro é novo.
-8. `[Frase]` **That book is old.** — Aquele livro é velho.
-9. `[Frase]` **This is a blue shirt.** — Isto é uma camisa azul.
-10. `[Frase]` **That is a red jacket.** — Aquilo é uma jaqueta vermelha.
-12. `[Gramática]` **Gramática — Lição 41**
-   > *This* indica proximidade no tempo ou espaço; *that* indica distanciamento. Ambos concordam com nomes e verbos no singular.
+3. `[Frase]` **These shirts are on the bed.** — Estas camisas estão na cama. `[Ver singular: shirts → shirt — camisa]`
+4. `[Palavra]` **Blue** — Azul
+5. `[Frase]` **This shirt is blue.** — Esta camisa é azul.
+6. `[Palavra]` **Those** — Aqueles, aquelas
+7. `[Palavra]` **Shoes** — Sapatos `[Ver singular: shoes → shoe — sapato]`
+8. `[Frase]` **Those shoes are under the chair.** — Aqueles sapatos estão embaixo da cadeira. `[Ver singular: shoes → shoe — sapato]`
+9. `[Palavra]` **Black** — Preto, preta
+10. `[Frase]` **These shoes are black.** — Estes sapatos são pretos. `[Ver singular: shoes → shoe — sapato]`
+11. `[Frase]` **Those shirts are blue.** — Aquelas camisas são azuis. `[Ver singular: shirts → shirt — camisa]`
+12. `[Gramática]` **Gramática — Lição 49: "These" e "Those"**
+   > *These* indica elementos próximos; *those*, elementos distantes. São as formas plurais correspondentes a *this* e *that*: *this shirt / these shirts* e *that shoe / those shoes*. Quando usamos *to be* no presente com esses plurais, a forma é *are*. `[Ver singular: shirts → shirt — camisa]` `[Ver singular: shoes → shoe — sapato]`
 
-### Lição 42 — Demonstrativos no Plural: "These" e "Those"
-*Lição 42 do nível A1*
-**Foco**: *These* é o plural de *this*; *those* é o plural de *that...
+**PAL:** 6<br>
+**TPA:** 248<br>
+**PA:** These, Shirt, Blue, Those, Shoes, Black
 
-1. `[Palavra]` **These** — Estes, estas (próximos a quem fala)
-2. `[Palavra]` **Pants** — Calça(s) (palavra sempre plural no inglês)
-3. `[Frase]` **These pants are black.** — Estas calças são pretas.
-4. `[Palavra]` **Those** — Aqueles, aquelas (afastados de quem fala)
-5. `[Palavra]` **Shoes** — Sapatos (plural)
-6. `[Frase]` **Those shoes are brown.** — Aqueles sapatos são marrons.
-7. `[Frase]` **These books are on the table.** — Estes livros estão sobre a mesa.
-8. `[Frase]` **Those shoes are under the bed.** — Aqueles sapatos estão embaixo da cama.
-9. `[Frase]` **These are black pants.** — Estas são calças pretas.
-10. `[Frase]` **Those are brown shoes.** — Aqueles são sapatos marrons.
-11. `[Gramática]` **Gramática — Lição 42**
-   > *These* é o plural de *this*; *those* é o plural de *that*. Concordam obrigatoriamente com o verbo *are* e substantivos no plural.
+### Lição 50 — Existência no Singular: "There is"
+**Foco**: Observar peças de roupa em uma loja.
 
-### Lição 43 — Revisão: Vestuário e Compras *(4 palavras novas)*
-*Novas: **Dress** (Plural *dresses* com +es), **Coat** (substantivo com plural *coats*), **Cheap** (adjetivo de valor), **Expensive** (adjetivo de valor).*
-**Foco**: Revisão: Vestuário e Compras *(4 palavras novas)*
+1. `[Palavra]` **There is** — Há, existe
+2. `[Palavra]` **Store** — Loja
+3. `[Frase]` **There is a store near here.** — Há uma loja perto daqui.
+4. `[Palavra]` **Hat** — Chapéu
+5. `[Frase]` **There is a hat on the table.** — Há um chapéu na mesa.
+6. `[Palavra]` **Coat** — Casaco
+7. `[Frase]` **That coat is new.** — Aquele casaco é novo.
+8. `[Palavra]` **Scarf** — Cachecol
+9. `[Frase]` **There is a scarf on the chair.** — Há um cachecol na cadeira.
+10. `[Palavra]` **Green** — Verde
+11. `[Frase]` **This hat is green.** — Este chapéu é verde.
+12. `[Gramática]` **Gramática — Lição 50: "There is"**
+   > *There is* apresenta a existência de algo no singular: *There is a hat on the table.* A forma contraída é *There's*.
 
-1. `[Palavra]` **Dress** — Vestido (plural: dresses)
-2. `[Frase]` **This red dress is beautiful.** — Este vestido vermelho é bonito.
-3. `[Palavra]` **Coat** — Casaco comprido, sobretudo
-4. `[Frase]` **That brown coat is new.** — Aquele casaco marrom é novo.
-5. `[Palavra]` **Cheap** — Barato, barata
-6. `[Frase]` **These black shoes are cheap.** — Estes sapatos pretos são baratos.
-7. `[Palavra]` **Expensive** — Caro, cara
-8. `[Frase]` **That jacket is very expensive.** — Aquela jaqueta é muito cara.
-9. `[Frase]` **This dress is cheap.** — Este vestido é barato.
-10. `[Frase]` **That coat is expensive.** — Aquele casaco é caro.
-11. `[Frase]` **These pants are cheap.** — Estas calças são baratas.
-12. `[Frase]` **Those shoes are expensive.** — Aqueles sapatos são caros.
+**PAL:** 6<br>
+**TPA:** 254<br>
+**PA:** There is, Store, Hat, Coat, Scarf, Green
 
-> **Fixação do ciclo:** a lição pratica somente *this/that/these/those* das Lições 41 e 42. O vocabulário novo entra nas frases; não há explicação gramatical nova.
+### Lição 51 — Fixação: Roupas no Quarto
+**Foco**: Usar *these/those* e *there is* para identificar peças próximas, distantes ou presentes no quarto.
 
-### Lição 44 — Existência Afirmativa no Singular: "There is"
-*Lição 44 do nível A1*
-**Foco**: *There is* (contraído: *There's*) expressa a existência d...
+1. `[Frase]` **This dress is beautiful.** — Este vestido é bonito. `[Ver palavra: dress]`
+2. `[Frase]` **There is a skirt on the bed.** — Há uma saia na cama. `[Ver palavra: skirt]`
+3. `[Frase]` **That belt is on the chair.** — Aquele cinto está na cadeira. `[Ver palavra: belt]`
+4. `[Frase]` **The shirt is white.** — A camisa é branca. `[Ver palavra: white]`
+5. `[Frase]` **These socks are under the bed.** — Estas meias estão embaixo da cama. `[Ver palavra: socks]` `[Ver singular: socks → sock — meia]`
+6. `[Frase]` **There is a jacket near the door.** — Há uma jaqueta perto da porta. `[Ver palavra: jacket]`
+7. `[Frase]` **Those belts are black.** — Aqueles cintos são pretos. `[Ver singular: belts → belt — cinto]`
+8. `[Frase]` **These dresses are green.** — Estes vestidos são verdes. `[Ver singular: dresses → dress — vestido]`
 
-1. `[Palavra]` **There is** — Há, existe, tem (para singular)
-2. `[Palavra]` **Supermarket** — Supermercado
-3. `[Frase]` **There is a supermarket in the city.** — Há um supermercado na cidade.
-4. `[Palavra]` **Pharmacy** — Farmácia (plural: pharmacies)
-5. `[Frase]` **There is a pharmacy in the city.** — Há uma farmácia na cidade.
-6. `[Frase]` **There is a doctor in the office.** — Há um médico no escritório.
-7. `[Frase]` **There is a big bed in the room.** — Há uma cama grande no quarto.
-8. `[Frase]` **There is a clean cup on the table.** — Há uma xícara limpa sobre a mesa.
-9. `[Frase]` **There is an apple on the table.** — Há uma maçã sobre a mesa.
-10. `[Gramática]` **Gramática — Lição 44**
-   > *There is* (contraído: *There's*) expressa a existência de algo no singular. Não confunda com o verbo *have*, que indica posse.
+**PAL:** 6<br>
+**TPA:** 260<br>
+**PA:** dress, skirt, belt, white, socks, jacket
 
-### Lição 45 — Existência Afirmativa no Plural: "There are"
-*Lição 45 do nível A1*
-**Foco**: *There are* expressa existência no plural e não possui fo...
+### Lição 52 — Existência no Plural: "There are"
+**Foco**: Observar animais perto de um lago no parque.
 
-1. `[Palavra]` **There are** — Há, existem, têm (para plural)
-2. `[Palavra]` **Restaurant (Plural: Restaurants)** — Restaurante, restaurantes
-3. `[Frase]` **There are two restaurants in the city.** — Há dois restaurantes na cidade.
-4. `[Frase]` **There are many green trees in the park.** — Há muitas árvores verdes no parque.
-5. `[Frase]` **There are four chairs in the kitchen.** — Há quatro cadeiras na cozinha.
-6. `[Frase]` **There are ten students in the school.** — Há dez estudantes na escola.
-7. `[Frase]` **There are three buses in the park.** — Há três ônibus no parque.
-8. `[Frase]` **There are many people in the city.** — Há muitas pessoas na cidade.
-9. `[Gramática]` **Gramática — Lição 45**
-   > *There are* expressa existência no plural e não possui forma contraída comum na escrita padrão.
+1. `[Palavra]` **There are** — Há, existem
+2. `[Palavra]` **Fox** — Raposa
+3. `[Frase]` **There are two foxes near the tree.** — Há duas raposas perto da árvore. `[Ver singular: foxes → fox — raposa]`
+4. `[Palavra]` **Rabbit** — Coelho, coelha
+5. `[Frase]` **There are three rabbits in the park.** — Há três coelhos no parque. `[Ver singular: rabbits → rabbit — coelho]`
+6. `[Palavra]` **Duck** — Pato, pata
+7. `[Frase]` **There are two ducks near the tree.** — Há dois patos perto da árvore. `[Ver singular: ducks → duck — pato]`
+8. `[Palavra]` **Pond** — Lago, lagoa
+9. `[Frase]` **The pond is in the park.** — O lago fica no parque.
+10. `[Palavra]` **Brown** — Marrom
+11. `[Frase]` **The rabbit is brown.** — O coelho é marrom.
+12. `[Frase]` **There are four ducks in the pond.** — Há quatro patos no lago. `[Ver singular: ducks → duck — pato]`
+13. `[Gramática]` **Gramática — Lição 52: "There are"**
+   > *There are* apresenta a existência de mais de um elemento: *There are two rabbits in the park.* `[Ver singular: rabbits → rabbit — coelho]`
 
-### Lição 46 — Revisão: Pertences e Conveniência *(4 palavras novas)*
-*Novas: **Hat** (substantivo com plural *hats*), **Umbrella** (substantivo com plural *umbrellas*), **Store** (substantivo com plural *stores*), **Nice** (adjetivo geral positivo).*
-**Foco**: Revisão: Pertences e Conveniência *(4 palavras novas)*
+**PAL:** 6<br>
+**TPA:** 266<br>
+**PA:** There are, Fox, Rabbit, Duck, Pond, Brown
 
-1. `[Palavra]` **Hat** — Chapéu
-2. `[Palavra]` **Nice** — Agradável, bom, simpático, legal
-3. `[Frase]` **This black hat is nice.** — Este chapéu preto é legal.
-4. `[Palavra]` **Umbrella** — Guarda-chuva
-5. `[Frase]` **There is a red umbrella in the room.** — Há um guarda-chuva vermelho no cômodo.
-6. `[Palavra]` **Store** — Loja
-7. `[Frase]` **There is a store in the city.** — Há uma loja na cidade.
-8. `[Frase]` **There are two brown hats in the store.** — Há dois chapéus marrons na loja.
-9. `[Frase]` **There is an umbrella under the chair.** — Há um guarda-chuva embaixo da cadeira.
-10. `[Frase]` **These shoes are nice and cheap.** — Estes sapatos são legais e baratos.
+### Lição 53 — Perguntas com "Is there" e "Are there"
+**Foco**: Perguntar sobre serviços e lugares no bairro.
 
-> **Fixação do ciclo:** a lição pratica somente *there is/there are* das Lições 44 e 45. O vocabulário novo é aplicado imediatamente, sem nova explicação gramatical.
+1. `[Palavra]` **Bus stop** — Ponto de ônibus
+2. `[Frase]` **Is there a bus stop near here?** — Há um ponto de ônibus perto daqui?
+3. `[Palavra]` **Street** — Rua
+4. `[Frase]` **Is there a bus stop on this street?** — Há um ponto de ônibus nesta rua?
+5. `[Palavra]` **Supermarket** — Supermercado
+6. `[Frase]` **Is there a supermarket near the school?** — Há um supermercado perto da escola?
+7. `[Palavra]` **Restaurant** — Restaurante
+8. `[Frase]` **Are there two restaurants on that street?** — Há dois restaurantes naquela rua? `[Ver singular: restaurants → restaurant — restaurante]`
+9. `[Palavra]` **Doctor** — Médico, médica
+10. `[Palavra]` **Clinic** — Clínica
+11. `[Frase]` **Is there a doctor in the clinic?** — Há um médico na clínica?
+12. `[Gramática]` **Gramática — Lição 53: Perguntas de Existência**
+   > Na pergunta, *is* ou *are* vem antes de *there*: *Is there a clinic?* para o singular e *Are there two restaurants?* para o plural. `[Ver singular: restaurants → restaurant — restaurante]`
 
-### Lição 47 — Existência Negativa: "There isn't" e "There aren't"
-*Lição 47 do nível A1*
-**Foco**: A negação de existência é feita com *There is not* (*Ther...
+**PAL:** 6<br>
+**TPA:** 272<br>
+**PA:** Bus stop, Street, Supermarket, Restaurant, Doctor, Clinic
 
-1. `[Palavra]` **There isn't** — Não há, não existe (singular negativo)
-2. `[Palavra]` **Problem (Plural: Problems)** — Problema, problemas
-3. `[Frase]` **There isn't a problem here.** — Não há um problema aqui.
-4. `[Palavra]` **There aren't** — Não há, não existem (plural negativo)
-5. `[Frase]` **There aren't buses on this street.** — Não há ônibus nesta rua.
-6. `[Frase]` **There isn't a hospital in this small city.** — Não tem um hospital nesta cidade pequena.
-7. `[Frase]` **There aren't chairs in the room.** — Não há cadeiras na sala.
-8. `[Frase]` **There isn't milk in the kitchen.** — Não há leite na cozinha.
-9. `[Frase]` **There aren't students in the school today.** — Não há estudantes na escola hoje.
-10. `[Gramática]` **Gramática — Lição 47**
-   > A negação de existência é feita com *There is not* (*There isn't*) para o singular e *There are not* (*There aren't*) para o plural.
+### Lição 54 — Fixação: Serviços no Bairro
+**Foco**: Praticar *there are* e perguntas de existência ao procurar lugares.
 
-### Lição 48 — Existência Interrogativa: "Is there...?" e "Are there...?"
-*Lição 48 do nível A1*
-**Foco**: Para formular perguntas de existência, inverte-se o verbo...
+1. `[Frase]` **Is there a hospital near here?** — Há um hospital perto daqui? `[Ver palavra: hospital]`
+2. `[Frase]` **There are two pharmacies on this street.** — Há duas farmácias nesta rua. `[Ver palavra: pharmacies]` `[Ver singular: pharmacies → pharmacy — farmácia]`
+3. `[Frase]` **Is there a map in the hotel?** — Há um mapa no hotel? `[Ver palavra: map]`
+4. `[Frase]` **Is there a bakery near the hospital?** — Há uma padaria perto do hospital? `[Ver palavra: bakery]`
+5. `[Frase]` **There are two bridges near the park.** — Há duas pontes perto do parque. `[Ver palavra: bridges]` `[Ver singular: bridges → bridge — ponte]`
+6. `[Frase]` **Are there three cars near the school?** — Há três carros perto da escola? `[Ver palavra: cars]` `[Ver singular: cars → car — carro]`
+7. `[Frase]` **Are there two restaurants near the supermarket?** — Há dois restaurantes perto do supermercado? `[Ver singular: restaurants → restaurant — restaurante]`
+8. `[Frase]` **There are four buses near the station.** — Há quatro ônibus perto da estação. `[Ver singular: buses → bus — ônibus]`
 
-1. `[Palavra]` **Any** — Algum, alguma, nenhuns (em perguntas e negativas plurais)
-2. `[Palavra]` **Bus stop** — Ponto de ônibus
-3. `[Frase]` **Is there a bus stop near here?** — Há um ponto de ônibus perto daqui?
-4. `[Palavra]` **Station** — Estação
-5. `[Frase]` **Is there a station in the city?** — Há uma estação na cidade?
-6. `[Frase]` **Are there any pharmacies on this street?** — Há alguma farmácia nesta rua?
-7. `[Frase]` **Is there a table near the window? Yes, there is.** — Há uma mesa perto da janela? Sim, há.
-8. `[Frase]` **Are there any clean cups? No, there aren't.** — Há alguma xícara limpa? Não, não há.
-9. `[Frase]` **Is there any coffee for the teacher? Yes, there is.** — Há algum café para o professor? Sim, há.
-10. `[Gramática]` **Gramática — Lição 48**
-   > Para formular perguntas de existência, inverte-se o verbo com a partícula *there*: *Is there a/an...?* (singular) e *Are there any...?* (plural).
+**PAL:** 6<br>
+**TPA:** 278<br>
+**PA:** hospital, pharmacies, map, bakery, bridges, cars
 
-### Lição 49 — Revisão: Serviços do Bairro *(4 palavras novas)*
-*Novas: **Post office** (locução substantiva), **Near here** (locução adverbial), **Around** (preposição/advérbio), **Map** (substantivo).*
-**Foco**: Revisão: Serviços do Bairro *(4 palavras novas)*
+### Lição 55 — Existência Negativa: "There is not" e "There are not"
+**Foco**: Conferir alimentos e utensílios na cozinha.
 
-1. `[Palavra]` **Near here** — Perto daqui
-2. `[Frase]` **Is there a bank near here?** — Há um banco perto daqui?
-3. `[Palavra]` **Post office** — Correio, agência de correios
-4. `[Frase]` **There is a post office next to the supermarket.** — Há um correio ao lado do supermercado.
-5. `[Palavra]` **Map** — Mapa
-6. `[Frase]` **There is a map on the table.** — Há um mapa sobre a mesa.
-7. `[Palavra]` **Around** — Por perto, ao redor
-8. `[Frase]` **Are there good restaurants around?** — Há bons restaurantes por perto?
-9. `[Frase]` **Excuse me!** — Com licença!
-10. `[Frase]` **Is there a pharmacy near here? Yes, there is.** — Há uma farmácia perto daqui? Sim, há.
-11. `[Frase]` **There aren't any post offices around the park.** — Não há nenhum correio ao redor do parque.
-12. `[Frase]` **Those nice stores are near the bus stop.** — Aquelas lojas legais ficam perto do ponto de ônibus.
+1. `[Palavra]` **Fridge** — Geladeira
+2. `[Frase]` **There is a fridge in the kitchen.** — Há uma geladeira na cozinha.
+3. `[Palavra]` **Tomato** — Tomate
+4. `[Frase]` **There is not a tomato in the fridge.** — Não há um tomate na geladeira.
+5. `[Palavra]` **Cucumber** — Pepino
+6. `[Frase]` **There are not two cucumbers on the table. There is one.** — Não há dois pepinos na mesa. Há um. `[Ver singular: cucumbers → cucumber — pepino]`
+7. `[Palavra]` **Jar** — Pote
+8. `[Frase]` **There isn't a jar on the table.** — Não há um pote na mesa. `[Ver contração: isn't → is not — não há]`
+9. `[Palavra]` **Kettle** — Chaleira
+10. `[Frase]` **There isn't a kettle in the kitchen.** — Não há uma chaleira na cozinha. `[Ver contração: isn't → is not — não há]`
+11. `[Palavra]` **Towel** — Toalha
+12. `[Frase]` **The towel is near the fridge.** — A toalha está perto da geladeira.
+13. `[Gramática]` **Gramática — Lição 55: Negação de Existência**
+   > Para negar a existência, acrescentamos *not*: *there is not* para um elemento ou substância e *there are not* para vários elementos. As formas contraídas são *there isn't* e *there aren't*.
 
-### Lição 50 — Diálogo 2 (Na Loja e no Bairro: Compras e Informações)
-*Lição 50 do nível A1*
-**Foco**: Diálogo 2 (Na Loja e no Bairro: Compras e Informações)
+**PAL:** 6<br>
+**TPA:** 284<br>
+**PA:** Fridge, Tomato, Cucumber, Jar, Kettle, Towel
+
+### Lição 56 — "Any" em Perguntas e Negativas
+**Foco**: Perguntar sobre utensílios e ingredientes e dizer que faltam.
+
+1. `[Palavra]` **Any** — Algum, alguma, alguns, algumas; nenhum, nenhuma em frases negativas
+2. `[Palavra]` **Rice** — Arroz
+3. `[Frase]` **Is there any rice in the kitchen?** — Há arroz na cozinha?
+4. `[Palavra]` **Pan** — Frigideira
+5. `[Frase]` **Are there any pans in the kitchen?** — Há frigideiras na cozinha? `[Ver singular: pans → pan — frigideira]`
+6. `[Palavra]` **Bottle** — Garrafa
+7. `[Frase]` **There aren't any bottles on the table.** — Não há garrafas na mesa. `[Ver contração: aren't → are not — não há]` `[Ver singular: bottles → bottle — garrafa]`
+8. `[Palavra]` **Salt** — Sal
+9. `[Frase]` **Is there any salt on the table?** — Há sal na mesa?
+10. `[Palavra]` **Cupboard** — Armário
+11. `[Frase]` **There isn't any salt in the cupboard.** — Não há sal no armário. `[Ver contração: isn't → is not — não há]`
+12. `[Gramática]` **Gramática — Lição 56: "Any"**
+   > Em perguntas e negativas, *any* pode acompanhar substantivos contáveis no plural, como *pans*, ou substâncias incontáveis, como *rice*. Em português, nem sempre é necessário traduzi-lo separadamente. `[Ver singular: pans → pan — frigideira]`
+
+**PAL:** 6<br>
+**TPA:** 290<br>
+**PA:** Any, Rice, Pan, Bottle, Salt, Cupboard
+
+### Lição 57 — Fixação: Ingredientes para a Refeição
+**Foco**: Praticar negativas de existência e *any* ao conferir alimentos e utensílios.
+
+1. `[Frase]` **There isn't any soup in the kitchen.** — Não há sopa na cozinha. `[Ver palavra: soup]` `[Ver contração: isn't → is not — não há]`
+2. `[Frase]` **Is there any salad in the fridge?** — Há salada na geladeira? `[Ver palavra: salad]`
+3. `[Frase]` **There isn't any fish in the fridge.** — Não há peixe na geladeira. `[Ver palavra: fish]` `[Ver contração: isn't → is not — não há]`
+4. `[Frase]` **Is there any chicken in the kitchen?** — Há frango na cozinha? `[Ver palavra: chicken]`
+5. `[Frase]` **There isn't a pot on the table.** — Não há uma panela na mesa. `[Ver palavra: pot]` `[Ver contração: isn't → is not — não há]`
+6. `[Frase]` **Are there any mushrooms in the fridge?** — Há cogumelos na geladeira? `[Ver palavra: mushrooms]` `[Ver singular: mushrooms → mushroom — cogumelo]`
+7. `[Frase]` **There aren't any cucumbers in the cupboard.** — Não há pepinos no armário. `[Ver contração: aren't → are not — não há]` `[Ver singular: cucumbers → cucumber — pepino]`
+8. `[Frase]` **There isn't any rice in the pot.** — Não há arroz na panela. `[Ver contração: isn't → is not — não há]`
+
+**PAL:** 6<br>
+**TPA:** 296<br>
+**PA:** soup, salad, fish, chicken, pot, mushrooms
+
+### Encerramento — banco, texto e exame
+
+Pré-requisito: Blocos 1–4 e Lições 49–57.
+
+#### Lição 58-BF — banco de frases: acessórios e pertences
+
+1. `[Frase]` **There is an umbrella near the door.** — Há um guarda-chuva perto da porta. `[Ver palavra: umbrella]`
+2. `[Frase]` **These gloves are black.** — Estas luvas são pretas. `[Ver palavra: gloves]` `[Ver singular: gloves → glove — luva]`
+3. `[Frase]` **That sweater is green.** — Aquele suéter é verde. `[Ver palavra: sweater]`
+4. `[Frase]` **Those boots are brown.** — Aquelas botas são marrons. `[Ver palavra: boots]` `[Ver singular: boots → boot — bota]`
+5. `[Frase]` **This cap is blue.** — Este boné é azul. `[Ver palavra: cap]`
+6. `[Frase]` **These jeans are new.** — Esta calça jeans é nova. `[Ver palavra: jeans]` `[Ver singular: jeans — para esta peça de roupa, jeans não tem singular usual em inglês]`
+7. `[Frase]` **The bag is under the chair.** — A bolsa está embaixo da cadeira. `[Ver palavra: bag]`
+8. `[Frase]` **There is a wallet in the bag.** — Há uma carteira na bolsa. `[Ver palavra: wallet]`
+9. `[Frase]` **The phone is on the table.** — O telefone está na mesa. `[Ver palavra: phone]`
+10. `[Frase]` **My phone is in my pocket.** — Meu telefone está no meu bolso. `[Ver palavra: pocket]`
+
+**PAL:** 10<br>
+**TPA:** 306<br>
+**PA:** umbrella, gloves, sweater, boots, cap, jeans, bag, wallet, phone, pocket
+
+#### Lição 59 — descrição: roupas e pertences para sair
+
+1. I am in my bedroom. — Eu estou no meu quarto.
+2. My coat is on the bed. — Meu casaco está na cama.
+3. My blue scarf is near the coat. — Meu cachecol azul está perto do casaco.
+4. These gloves are in my bag. — Estas luvas estão na minha bolsa. `[Ver singular: gloves → glove — luva]`
+5. There is a wallet in my bag. — Há uma carteira na minha bolsa.
+6. There are two shoes under the chair. — Há dois sapatos embaixo da cadeira. `[Ver singular: shoes → shoe — sapato]`
+7. My phone is on the bed. — Meu telefone está na cama.
+8. That umbrella is near the door. — Aquele guarda-chuva está perto da porta.
+
+#### Lição 60 — exame: apêndice de frases inéditas
+
+1. Those green shirts are on the bed. — Aquelas camisas verdes estão na cama.
+2. There is a black hat under the chair. — Há um chapéu preto embaixo da cadeira.
+3. Are there two rabbits near the pond? — Há dois coelhos perto do lago?
+4. Is there a pharmacy near the bakery? — Há uma farmácia perto da padaria?
+5. There are three cars near the hospital. — Há três carros perto do hospital.
+6. Is there any rice in the cupboard? — Há arroz no armário?
+7. There aren't any mushrooms in the pot. — Não há cogumelos na panela.
+8. Are there any bottles in the fridge? — Há garrafas na geladeira?
+9. The brown boots are near the door. — As botas marrons estão perto da porta.
+10. Is the wallet in your pocket? — A carteira está no seu bolso?
 
 
----
+# BLOCO 6 — Perguntas, Preferências, Posse e Ações Simples
 
-# BLOCO 6 — Question Words (What, Where, Who, How, When, Which), Países e Apresentação Pessoal
-*Ciclos: (51, 52, R53) · (54, 55, R56) · (57, 58, R59) · Fechamento: Diálogo/Entrevista 60 · Teste 6*
+### Lições dos ciclos — sequência revisada
 
-### Lição 51 — Question Words: "What" e "Where"
-*Lição 51 do nível A1*
-**Foco**: *What* questiona sobre objetos ou identidade; *Where* que...
+### Lição 61 — Presente Afirmativo: Preferências e Ações
+**Foco**: Falar de preferências e alimentos com *I*, *you*, *we* e *they*.
+
+1. `[Palavra]` **Like** — Gostar de
+2. `[Frase]` **I like cheese.** — Eu gosto de queijo.
+3. `[Palavra]` **Love** — Amar, adorar
+4. `[Frase]` **We love cake.** — Nós adoramos bolo.
+5. `[Palavra]` **Eat** — Comer
+6. `[Frase]` **I eat bread.** — Eu como pão.
+7. `[Palavra]` **Drink** — Beber
+8. `[Frase]` **They drink tea.** — Eles bebem chá.
+9. `[Palavra]` **Corn** — Milho
+10. `[Frase]` **We eat corn.** — Nós comemos milho.
+11. `[Palavra]` **Food** — Comida, alimento
+12. `[Frase]` **The food is fresh.** — A comida está fresca.
+13. `[Gramática]` **Gramática — Lição 61: Ações e Preferências no Presente**
+   > Com *I*, *you*, *we* e *they*, usamos a forma apresentada do verbo: *I like*, *we eat*, *they drink*. Essas frases podem falar de preferências e hábitos; a ação não precisa estar acontecendo no momento da fala.
+
+**PAL:** 6<br>
+**TPA:** 312<br>
+**PA:** Like, Love, Eat, Drink, Corn, Food
+
+### Lição 62 — Presente Afirmativo: "He", "She" e "It"
+**Foco**: Descrever onde os animais moram e o que uma pessoa prepara.
+
+1. `[Palavra]` **Mouse** — Rato, ratazana
+2. `[Frase]` **The mouse is in the garden.** — O rato está no jardim.
+3. `[Palavra]` **Live** — Morar, viver
+4. `[Frase]` **The mouse lives in the garden.** — O rato mora no jardim. `[Ver terceira pessoa: lives → live — no presente, acrescenta-se -s para sujeito singular]`
+5. `[Palavra]` **Country** — Campo, zona rural
+6. `[Frase]` **The rabbit lives in the country.** — O coelho mora no campo. `[Ver terceira pessoa: lives → live — no presente, acrescenta-se -s para sujeito singular]`
+7. `[Palavra]` **Cook** — Cozinhar, preparar
+8. `[Frase]` **My mother cooks eggs.** — Minha mãe prepara ovos. `[Ver terceira pessoa: cooks → cook — no presente, acrescenta-se -s para sujeito singular]`
+9. `[Palavra]` **Dinner** — Jantar, refeição noturna
+10. `[Frase]` **She cooks dinner.** — Ela prepara o jantar. `[Ver terceira pessoa: cooks → cook — no presente, acrescenta-se -s para sujeito singular]`
+11. `[Palavra]` **Nest** — Ninho
+12. `[Frase]` **The bird lives in the nest.** — O pássaro mora no ninho. `[Ver terceira pessoa: lives → live — no presente, acrescenta-se -s para sujeito singular]`
+13. `[Frase]` **The mouse likes cheese.** — O rato gosta de queijo. `[Ver terceira pessoa: likes → like — no presente, acrescenta-se -s para sujeito singular]`
+14. `[Gramática]` **Gramática — Lição 62: Ações com "He", "She" e "It"**
+   > No presente afirmativo, com *he*, *she*, *it* ou um substantivo singular, muitos verbos acrescentam *-s*: *like → likes*, *live → lives* e *cook → cooks*. Outras terminações serão apresentadas depois. `[Ver terceira pessoa: likes → like — no presente, acrescenta-se -s para sujeito singular]` `[Ver terceira pessoa: lives → live — no presente, acrescenta-se -s para sujeito singular]` `[Ver terceira pessoa: cooks → cook — no presente, acrescenta-se -s para sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 318<br>
+**PA:** Mouse, Live, Country, Cook, Dinner, Nest
+
+### Lição 63 — Fixação: Animais e Natureza
+**Foco**: Praticar ações no presente ao falar de animais e seus ambientes.
+
+1. `[Frase]` **The fox lives in the forest.** — A raposa vive na floresta. `[Ver palavra: forest]` `[Ver terceira pessoa: lives → live — no presente, acrescenta-se -s para sujeito singular]`
+2. `[Frase]` **The ducks live near the river.** — Os patos vivem perto do rio. `[Ver palavra: river]`
+3. `[Frase]` **The rabbit eats grass.** — O coelho come grama. `[Ver palavra: grass]` `[Ver terceira pessoa: eats → eat — no presente, acrescenta-se -s para sujeito singular]`
+4. `[Frase]` **The rabbit lives in the field.** — O coelho vive no campo. `[Ver palavra: field]` `[Ver terceira pessoa: lives → live — no presente, acrescenta-se -s para sujeito singular]`
+5. `[Frase]` **This animal lives in the garden.** — Este animal vive no jardim. `[Ver palavra: animal]` `[Ver terceira pessoa: lives → live — no presente, acrescenta-se -s para sujeito singular]`
+6. `[Frase]` **The bird eats a seed.** — O pássaro come uma semente. `[Ver palavra: seed]` `[Ver terceira pessoa: eats → eat — no presente, acrescenta-se -s para sujeito singular]`
+7. `[Frase]` **We like the garden.** — Nós gostamos do jardim.
+8. `[Frase]` **The fox drinks water.** — A raposa bebe água. `[Ver terceira pessoa: drinks → drink — no presente, acrescenta-se -s para sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 324<br>
+**PA:** forest, river, grass, field, animal, seed
+
+### Lição 64 — Perguntas com "What" e "Where"
+**Foco**: Pedir informações durante uma chegada ao hotel e ao restaurante.
 
 1. `[Palavra]` **What** — O que, qual
-2. `[Palavra]` **Where** — Onde
+2. `[Palavra]` **Name** — Nome
 3. `[Frase]` **What is your name?** — Qual é o seu nome?
-4. `[Frase]` **Where is the hospital?** — Onde fica o hospital?
-5. `[Palavra]` **Country** — País (plural: countries)
-6. `[Frase]` **What country is this?** — Que país é este?
-7. `[Frase]` **Where is my bag?** — Onde está a minha bolsa?
-8. `[Frase]` **What is in that box?** — O que está naquela caixa?
-9. `[Frase]` **Where is the doctor? He is at the hospital.** — Onde está o médico? Ele está no hospital.
-10. `[Frase]` **What is on the table?** — O que está sobre a mesa?
-11. `[Gramática]` **Gramática — Lição 51**
-   > *What* questiona sobre objetos ou identidade; *Where* questiona sobre localização. Em perguntas com o To Be, o verbo inverte imediatamente após a palavra interrogativa (*What is...*, *Where are...*).
+4. `[Palavra]` **Where** — Onde
+5. `[Frase]` **Where is my room?** — Onde fica o meu quarto?
+6. `[Palavra]` **Menu** — Cardápio
+7. `[Frase]` **What is on the menu?** — O que há no cardápio?
+8. `[Palavra]` **Today** — Hoje
+9. `[Frase]` **The restaurant is busy today.** — O restaurante está movimentado hoje.
+10. `[Palavra]` **Here** — Aqui
+11. `[Frase]` **The menu is here.** — O cardápio está aqui.
+12. `[Frase]` **Where is the receptionist? She is here.** — Onde está a recepcionista? Ela está aqui.
+13. `[Gramática]` **Gramática — Lição 64: "What" e "Where"**
+   > *What* pergunta o que ou qual; *where* pergunta onde. Com *to be*, usamos, por exemplo, *What is your name?* e *Where is my room?*
 
-### Lição 52 — Origens e Países 1: "Where are you from?"
-*Lição 52 do nível A1*
-**Foco**: Para perguntar a origem: *Where are you from?* $\rightarr...
+**PAL:** 6<br>
+**TPA:** 330<br>
+**PA:** What, Name, Where, Menu, Today, Here
 
-1. `[Palavra]` **United States** — Estados Unidos
-2. `[Palavra]` **American** — Americano, americana
-3. `[Frase]` **I am from the United States.** — Eu sou dos Estados Unidos.
-4. `[Frase]` **She is American.** — Ela é americana.
-5. `[Palavra]` **England** — Inglaterra
-6. `[Palavra]` **English** — Inglês, inglesa (nacionalidade)
-7. `[Frase]` **He is from England.** — Ele é da Inglaterra.
-8. `[Frase]` **They are English.** — Eles são ingleses.
-9. `[Frase]` **Where are you from? I am from Brazil.** — De onde você é? Eu sou do Brasil.
-10. `[Frase]` **Is he American or English?** — Ele é americano ou inglês?
-11. `[Frase]` **We are from Brazil, and they are from England.** — Nós somos do Brasil, e eles são da Inglaterra.
-12. `[Gramática]` **Gramática — Lição 52**
-   > Para perguntar a origem: *Where are you from?* $\rightarrow$ resposta: *I am from + [país]*. Nacionalidades em inglês iniciam sempre com letra maiúscula (*American, English*).
-
-### Lição 53 — Revisão: Identidade e Boas-Vindas *(4 palavras novas)*
-*Novas: **Spain** (substantivo próprio), **Spanish** (adjetivo de nacionalidade), **Meet** (verbo de encontro), **Nice to meet you** (fórmula social).*
-**Foco**: Revisão: Identidade e Boas-Vindas *(4 palavras novas)*
-
-1. `[Palavra]` **Spain** — Espanha
-2. `[Palavra]` **Spanish** — Espanhol, espanhola
-3. `[Frase]` **She is from Spain.** — Ela é da Espanha.
-4. `[Frase]` **He is Spanish.** — Ele é espanhol.
-5. `[Palavra]` **Meet** — Conhecer, encontrar
-6. `[Palavra]` **Nice to meet you** — Prazer em conhecer você
-7. `[Frase]` **Hello! Nice to meet you.** — Olá! Prazer em conhecer você.
-8. `[Frase]` **Where is she from? She is from Spain.** — De onde ela é? Ela é da Espanha.
-9. `[Frase]` **He speaks Spanish and English.** — Ele fala espanhol e inglês.
-10. `[Frase]` **What is his name? His name is Carlos.** — Qual é o nome dele? O nome dele é Carlos.
-11. `[Frase]` **Nice to meet you, Carlos!** — Prazer em conhecer você, Carlos!
-12. `[Frase]` **Are they from England? No, they are from Spain.** — Eles são da Inglaterra? Não, eles são da Espanha.
-
-### Lição 54 — Question Words: "Who" e "How"
-*Lição 54 do nível A1*
-**Foco**: *Who* investiga identidade pessoal (*Who is he?*); *How* ...
+### Lição 65 — Perguntas com "Who" e "How"
+**Foco**: Identificar pessoas e perguntar como elas estão.
 
 1. `[Palavra]` **Who** — Quem
-2. `[Palavra]` **How** — Como
-3. `[Frase]` **Who is that man?** — Quem é aquele homem?
+2. `[Frase]` **Who is at the door?** — Quem está na porta?
+3. `[Palavra]` **How** — Como
 4. `[Frase]` **How are you?** — Como você está?
-5. `[Frase]` **Who is she? She is my teacher.** — Quem é ela? Ela é minha professora.
-6. `[Frase]` **How are you today? I am fine, thanks.** — Como você está hoje? Estou bem, obrigado.
-7. `[Frase]` **Who are those people?** — Quem são aquelas pessoas?
-8. `[Frase]` **They are my friends.** — Eles são meus amigos.
-9. `[Frase]` **Who is at the door?** — Quem está na porta?
-10. `[Frase]` **It is my brother.** — É meu irmão.
-11. `[Gramática]` **Gramática — Lição 54**
-   > *Who* investiga identidade pessoal (*Who is he?*); *How* pergunta sobre modo, qualidade ou condição (*How are you?*).
+5. `[Palavra]` **Fine** — Bem
+6. `[Palavra]` **Thanks** — Obrigado, obrigada
+7. `[Frase]` **I'm fine, thanks.** — Estou bem, obrigado.
+8. `[Palavra]` **Nurse** — Enfermeiro, enfermeira
+9. `[Frase]` **She is a nurse.** — Ela é enfermeira.
+10. `[Palavra]` **Waiter** — Garçom
+11. `[Frase]` **The waiter is in the restaurant.** — O garçom está no restaurante.
+12. `[Frase]` **How is your mother?** — Como está sua mãe?
+13. `[Gramática]` **Gramática — Lição 65: "Who" e "How"**
+   > *Who* pergunta sobre a identidade de uma pessoa; *how* pode perguntar como alguém está: *Who is at the door?* e *How are you?*
 
-### Lição 55 — Profissões 1 (Com Artigos "A" e "An")
-*Lição 55 do nível A1*
-**Foco**: Em inglês, profissões no singular exigem **obrigatoriamen...
+**PAL:** 6<br>
+**TPA:** 336<br>
+**PA:** Who, How, Fine, Thanks, Nurse, Waiter
 
-1. `[Palavra]` **Nurse** — Enfermeiro, enfermeira
-2. `[Palavra]` **Driver** — Motorista
-3. `[Frase]` **She is a nurse at the hospital.** — Ela é enfermeira no hospital.
-4. `[Frase]` **He is a bus driver.** — Ele é motorista de ônibus.
-5. `[Palavra]` **Engineer** — Engenheiro, engenheira
-6. `[Palavra]` **Waiter** — Garçom
-7. `[Frase]` **My brother is an engineer.** — Meu irmão é engenheiro.
-8. `[Frase]` **That man is a waiter in the restaurant.** — Aquele homem é garçom no restaurante.
-9. `[Frase]` **Who is the nurse? She is my sister.** — Quem é a enfermeira? Ela é minha irmã.
-10. `[Frase]` **Is he a driver? Yes, he is.** — Ele é motorista? Sim, ele é.
-11. `[Gramática]` **Gramática — Lição 55**
-   > Em inglês, profissões no singular exigem **obrigatoriamente** o artigo indefinido *a* ou *an* (*a nurse*, *an engineer*), diferentemente do português ("ela é enfermeira").
+### Lição 66 — Fixação: Pessoas e Informações
+**Foco**: Praticar as perguntas do ciclo em uma recepção.
 
-### Lição 56 — Revisão: Profissões e Local de Trabalho *(4 palavras novas)*
-*Novas: **Manager** (substantivo regular), **Job** (substantivo regular), **Great** (adjetivo geral), **Help** (verbo de cooperação com I/you/we/they).*
-**Foco**: Revisão: Profissões e Local de Trabalho *(4 palavras novas)*
+1. `[Frase]` **Who is that man? He is my uncle.** — Quem é aquele homem? Ele é meu tio. `[Ver palavra: man]`
+2. `[Frase]` **Who is that woman? She is my aunt.** — Quem é aquela mulher? Ela é minha tia. `[Ver palavra: woman]`
+3. `[Frase]` **What is your job?** — Qual é a sua profissão? `[Ver palavra: job]`
+4. `[Frase]` **Where is the office?** — Onde fica o escritório? `[Ver palavra: office]`
+5. `[Frase]` **What is the number on the door?** — Qual é o número na porta? `[Ver palavra: number]`
+6. `[Frase]` **What is your address?** — Qual é o seu endereço? `[Ver palavra: address]`
+7. `[Frase]` **How is the guest today?** — Como o hóspede está hoje?
+8. `[Frase]` **Where is the nurse? She is near the doctor.** — Onde está a enfermeira? Ela está perto do médico.
 
-1. `[Palavra]` **Manager** — Gerente
-2. `[Palavra]` **Job** — Emprego, trabalho (plural: jobs)
-3. `[Frase]` **He is a store manager.** — Ele é gerente de loja.
-4. `[Frase]` **This is a great job.** — Este é um ótimo trabalho.
-5. `[Palavra]` **Great** — Ótimo, excelente
-6. `[Palavra]` **Help** — Ajudar
-7. `[Frase]` **The nurses help the doctors.** — As enfermeiras ajudam os médicos.
-8. `[Frase]` **What is your job? I am an engineer.** — Qual é o seu trabalho? Eu sou engenheiro.
-9. `[Frase]` **Who is the manager of the hotel?** — Quem é o gerente do hotel?
-10. `[Frase]` **That woman is a great doctor.** — Aquela mulher é uma médica excelente.
-11. `[Frase]` **Where is the waiter? He is in the kitchen.** — Onde está o garçom? Ele está na cozinha.
-12. `[Frase]` **The drivers help the people.** — Os motoristas ajudam as pessoas.
+**PAL:** 6<br>
+**TPA:** 342<br>
+**PA:** man, woman, job, office, number, address
 
-### Lição 57 — Question Words: "When" e "Which"
-*Lição 57 do nível A1*
-**Foco**: *When* pergunta sobre tempo/data (*When is the meeting?*)...
+### Lição 67 — Perguntas com "When" e "Which"
+**Foco**: Confirmar o dia de uma festa e organizar os espaços da casa.
 
 1. `[Palavra]` **When** — Quando
-2. `[Palavra]` **Party** — Festa (já revisada)
-3. `[Frase]` **When is the party?** — Quando é a festa?
-4. `[Frase]` **The party is today.** — A festa é hoje.
-5. `[Palavra]` **Which** — Qual, quais (escolha entre opções delimitadas)
-6. `[Palavra]` **Meeting** — Reunião (plural: meetings)
-7. `[Frase]` **When is the meeting?** — Quando é a reunião?
-8. `[Frase]` **The meeting is now.** — A reunião é agora.
-9. `[Frase]` **Which car is new?** — Qual carro é novo?
-10. `[Frase]` **This blue car is new.** — Este carro azul é novo.
-11. `[Frase]` **Which bus is for the hospital?** — Qual ônibus é para o hospital?
-12. `[Frase]` **The yellow bus is for the hospital.** — O ônibus amarelo é para o hospital.
-13. `[Gramática]` **Gramática — Lição 57**
-   > *When* pergunta sobre tempo/data (*When is the meeting?*); *Which* implica seleção entre um conjunto restrito de alternativas (*Which bus...?*).
+2. `[Frase]` **When is the party?** — Quando é a festa?
+3. `[Frase]` **The party is today.** — A festa é hoje.
+4. `[Palavra]` **Which** — Qual, quais
+5. `[Frase]` **Which room is clean?** — Qual quarto está limpo?
+6. `[Palavra]` **Floor** — Chão, piso
+7. `[Frase]` **The floor is clean.** — O chão está limpo.
+8. `[Palavra]` **Wall** — Parede
+9. `[Frase]` **Which wall is white?** — Qual parede é branca?
+10. `[Palavra]` **Basement** — Porão
+11. `[Frase]` **The basement is under the house.** — O porão fica embaixo da casa.
+12. `[Palavra]` **Furniture** — Móveis, mobília
+13. `[Frase]` **The furniture is beautiful.** — Os móveis são bonitos.
+14. `[Gramática]` **Gramática — Lição 67: "When" e "Which"**
+   > *When* pergunta quando algo acontece; *which* pergunta qual elemento entre opções disponíveis: *When is the party?* e *Which room is clean?*
 
-### Lição 58 — Países 2: França e Japão
-*Lição 58 do nível A1*
-**Foco**: Padrões comuns de terminação de nacionalidades: *-an* (Am...
+**PAL:** 6<br>
+**TPA:** 348<br>
+**PA:** When, Which, Floor, Wall, Basement, Furniture
 
-1. `[Palavra]` **France** — França
-2. `[Palavra]` **French** — Francês, francesa
-3. `[Frase]` **She is from France.** — Ela é da França.
-4. `[Frase]` **She is French.** — Ela é francesa.
-5. `[Palavra]` **Japan** — Japão
-6. `[Palavra]` **Japanese** — Japonês, japonesa
-7. `[Frase]` **He is from Japan.** — Ele é do Japão.
-8. `[Frase]` **He is Japanese.** — Ele é japonês.
-9. `[Frase]` **Which engineer is from France?** — Qual engenheiro é da França?
-10. `[Frase]` **That manager is Japanese.** — Aquele gerente é japonês.
-11. `[Frase]` **Where is the meeting? It is in France.** — Onde é a reunião? É na França.
-12. `[Gramática]` **Gramática — Lição 58**
-   > Padrões comuns de terminação de nacionalidades: *-an* (American), *-ish* (English, Spanish), *-ch* (French), *-ese* (Japanese).
+### Lição 68 — Posse com "Have" e "Has"
+**Foco**: Falar de pertences e necessidades na estação.
 
-### Lição 59 — Revisão: Formulário e Dados Pessoais *(4 palavras novas)*
-*Novas: **Address** (substantivo), **Number** (substantivo), **Email** (substantivo), **Form** (substantivo).*
-**Foco**: Revisão: Formulário e Dados Pessoais *(4 palavras novas)*
+1. `[Palavra]` **Have** — Ter
+2. `[Palavra]` **Ticket** — Passagem, bilhete
+3. `[Frase]` **I have a ticket.** — Eu tenho uma passagem.
+4. `[Palavra]` **Has** — Tem `[Ver terceira pessoa: has → have — forma irregular de have para sujeito singular]`
+5. `[Frase]` **My friend has a ticket.** — Meu amigo tem uma passagem. `[Ver terceira pessoa: has → have — forma irregular de have para sujeito singular]`
+6. `[Palavra]` **Want** — Querer
+7. `[Frase]` **I want a ticket.** — Eu quero uma passagem.
+8. `[Palavra]` **Train** — Trem
+9. `[Frase]` **The train is at the station.** — O trem está na estação.
+10. `[Palavra]` **Time** — Tempo
+11. `[Frase]` **We have time.** — Nós temos tempo.
+12. `[Frase]` **They have two tickets.** — Eles têm duas passagens.
+13. `[Gramática]` **Gramática — Lição 68: "Have" e "Has"**
+   > Para falar de posse ou disponibilidade, usamos *have* com *I*, *you*, *we* e *they*: *I have a ticket*. Com *he*, *she*, *it* ou um sujeito singular, usamos a forma irregular *has*: *My friend has a ticket*. `[Ver terceira pessoa: has → have — forma irregular de have para sujeito singular]`
 
-1. `[Palavra]` **Address** — Endereço
-2. `[Palavra]` **Number** — Número
-3. `[Frase]` **What is your address?** — Qual é o seu endereço?
-4. `[Frase]` **What is your phone number?** — Qual é o seu número de telefone?
-5. `[Palavra]` **Email** — E-mail
-6. `[Palavra]` **Form** — Formulário, ficha
-7. `[Frase]` **My email is on the form.** — Meu e-mail está no formulário.
-8. `[Frase]` **There is a form on the table.** — Há um formulário sobre a mesa.
-9. `[Frase]` **What is his job? He is a driver.** — Qual é o trabalho dele? Ele é motorista.
-10. `[Frase]` **Where is she from? She is from France.** — De onde ela é? Ela é da França.
-11. `[Frase]` **Who is the manager? That tall man.** — Quem é o gerente? Aquele homem alto.
-12. `[Frase]` **Your address and your email are here.** — Seu endereço e seu e-mail estão aqui.
+**PAL:** 6<br>
+**TPA:** 354<br>
+**PA:** Have, Ticket, Has, Want, Train, Time
 
-### Lição 60 — Diálogo 3 / Entrevista (Recepção de Imigração e Boas-Vindas)
-*Lição 60 do nível A1*
-**Foco**: Diálogo 3 / Entrevista (Recepção de Imigração e Boas-Vindas)
+### Lição 69 — Fixação: A Cidade e a Casa
+**Foco**: Usar *when*, *which*, *have* e *has* ao falar de lugares da cidade e de uma festa na escola.
+
+1. `[Frase]` **Which museum is near here?** — Qual museu fica perto daqui? `[Ver palavra: museum]`
+2. `[Frase]` **The city has a theater.** — A cidade tem um teatro. `[Ver palavra: theater]` `[Ver terceira pessoa: has → have — forma irregular de have para sujeito singular]`
+3. `[Frase]` **Which shop is near the station?** — Qual loja fica perto da estação? `[Ver palavra: shop]`
+4. `[Frase]` **The school has a big library.** — A escola tem uma biblioteca grande. `[Ver palavra: big]` `[Ver terceira pessoa: has → have — forma irregular de have para sujeito singular]`
+5. `[Frase]` **The city has a tall building.** — A cidade tem um prédio alto. `[Ver palavra: tall]` `[Ver terceira pessoa: has → have — forma irregular de have para sujeito singular]`
+6. `[Frase]` **We visit the museum.** — Nós visitamos o museu. `[Ver palavra: visit]`
+7. `[Frase]` **When is the party at the school?** — Quando é a festa na escola?
+8. `[Frase]` **We have a map of the city.** — Nós temos um mapa da cidade.
+
+**PAL:** 6<br>
+**TPA:** 360<br>
+**PA:** museum, theater, shop, big, tall, visit
+
+### Lição 70 — Capacidade com "Can"
+**Foco**: Ajudar um hóspede na recepção.
+
+1. `[Palavra]` **Can** — Poder, conseguir
+2. `[Palavra]` **See** — Ver
+3. `[Frase]` **I can see the reservation.** — Eu consigo ver a reserva.
+4. `[Palavra]` **Find** — Encontrar
+5. `[Frase]` **She can find the key.** — Ela consegue encontrar a chave. `[Ver terceira pessoa: can → can — can não muda com sujeito singular; o verbo seguinte fica na forma-base]`
+6. `[Palavra]` **Help** — Ajudar
+7. `[Frase]` **The receptionist can help the guest.** — A recepcionista pode ajudar o hóspede. `[Ver terceira pessoa: can → can — can não muda com sujeito singular; o verbo seguinte fica na forma-base]`
+8. `[Palavra]` **Say** — Dizer
+9. `[Frase]` **I say, "Good morning."** — Eu digo: "Bom dia."
+10. `[Palavra]` **Talk** — Conversar, falar
+11. `[Frase]` **The guest and the receptionist talk in the lobby.** — O hóspede e a recepcionista conversam no saguão.
+12. `[Gramática]` **Gramática — Lição 70: "Can"**
+   > *Can* pode indicar capacidade. Depois dele, usamos a forma-base do verbo, também com *he*, *she* e *it*: *I can see* e *she can find*. `[Ver terceira pessoa: can → can — can não muda com sujeito singular; o verbo seguinte fica na forma-base]`
+
+**PAL:** 6<br>
+**TPA:** 366<br>
+**PA:** Can, See, Find, Help, Say, Talk
+
+### Lição 71 — Perguntas e Negativas com "Can"
+**Foco**: Continuar procurando um objeto em um quarto escuro.
+
+1. `[Palavra]` **Flashlight** — Lanterna
+2. `[Frase]` **I cannot find the flashlight.** — Eu não consigo encontrar a lanterna.
+3. `[Palavra]` **Dark** — Escuro, escura
+4. `[Frase]` **The room is dark.** — O quarto está escuro.
+5. `[Palavra]` **Light** — Luz
+6. `[Frase]` **Can you see the light?** — Você consegue ver a luz?
+7. `[Palavra]` **Problem** — Problema
+8. `[Frase]` **There is a problem.** — Há um problema.
+9. `[Palavra]` **Look** — Olhar, procurar com os olhos
+10. `[Frase]` **I can look in the room.** — Eu posso procurar no quarto.
+11. `[Palavra]` **Closet** — Armário de roupas
+12. `[Frase]` **Can you look in the closet?** — Você pode procurar no armário de roupas?
+13. `[Frase]` **I can't see the key.** — Eu não consigo ver a chave. `[Ver contração: can't → cannot — não consigo]`
+14. `[Gramática]` **Gramática — Lição 71: Perguntas e Negativas com "Can"**
+   > Para perguntar, colocamos *can* antes do sujeito: *Can you see the light?* Para negar, usamos *cannot*; a contração é *can't*.
+
+**PAL:** 6<br>
+**TPA:** 372<br>
+**PA:** Flashlight, Dark, Light, Problem, Look, Closet
+
+### Lição 72 — Fixação: Possibilidades e Ajuda
+**Foco**: Praticar afirmações, perguntas e negativas com *can*.
+
+1. `[Frase]` **Can you help my friend now?** — Você pode ajudar meu amigo agora? `[Ver palavra: now]`
+2. `[Frase]` **I can visit my friend tomorrow.** — Eu posso visitar meu amigo amanhã. `[Ver palavra: tomorrow]`
+3. `[Frase]` **We can visit the museum early.** — Nós podemos visitar o museu cedo. `[Ver palavra: early]`
+4. `[Frase]` **I can see the late train.** — Eu consigo ver o trem atrasado. `[Ver palavra: late]`
+5. `[Frase]` **I can see the other door.** — Eu consigo ver a outra porta. `[Ver palavra: other]`
+6. `[Frase]` **We can talk quietly in the library.** — Podemos conversar baixinho na biblioteca. `[Ver palavra: quietly]`
+7. `[Frase]` **Can you see the door?** — Você consegue ver a porta?
+8. `[Frase]` **I can't find my bag.** — Eu não consigo encontrar minha bolsa. `[Ver contração: can't → cannot — não consigo]`
+
+**PAL:** 6<br>
+**TPA:** 378<br>
+**PA:** now, tomorrow, early, late, other, quietly
+
+### Encerramento — banco, diálogo e exame
+
+Pré-requisito: Blocos 1–5 e Lições 61–72.
+
+#### Lição 73-BF — banco de frases: objetos e espaços da casa
+
+1. `[Frase]` **There is a hole in the wall.** — Há um buraco na parede. `[Ver palavra: hole]`
+2. `[Frase]` **The stairs are near the door.** — A escada fica perto da porta. `[Ver palavra: stairs]`
+3. `[Frase]` **The dining room is near the kitchen.** — A sala de jantar fica perto da cozinha. `[Ver palavra: dining room]`
+4. `[Frase]` **The lamp is on the table.** — O abajur está na mesa. `[Ver palavra: lamp]`
+5. `[Frase]` **The sofa is in the living room.** — O sofá está na sala de estar. `[Ver palavra: sofa]`
+6. `[Frase]` **There is a shelf in the bedroom.** — Há uma prateleira no quarto. `[Ver palavra: shelf]`
+7. `[Frase]` **The mirror is near the door.** — O espelho fica perto da porta. `[Ver palavra: mirror]`
+8. `[Frase]` **The clock is on the wall.** — O relógio está na parede. `[Ver palavra: clock]`
+9. `[Frase]` **There is a rug under the table.** — Há um tapete embaixo da mesa. `[Ver palavra: rug]`
+10. `[Frase]` **There is a drawer in the desk.** — Há uma gaveta na escrivaninha. `[Ver palavra: drawer]`
+
+**PAL:** 10<br>
+**TPA:** 388<br>
+**PA:** hole, stairs, dining room, lamp, sofa, shelf, mirror, clock, rug, drawer
+
+#### Lição 74 — diálogo: procurando o telefone
+
+1. Filha: Can you see my phone? — Você consegue ver meu telefone?
+2. Mãe: No, I can't. Is it in the living room? — Não, não consigo. Ele está na sala de estar? `[Ver contração: can't → cannot — não consigo]`
+3. Filha: I can't find my phone. — Eu não consigo encontrar meu telefone. `[Ver contração: can't → cannot — não consigo]`
+4. Mãe: Is the phone on the sofa? — O telefone está no sofá?
+5. Filha: No, it isn't. — Não, não está.
+6. Mãe: I can see the phone on the desk. — Eu consigo ver o telefone na escrivaninha.
+7. Filha: Thank you. — Obrigada.
+8. Mãe: You are welcome. — De nada.
+
+#### Lição 75 — exame: apêndice de frases inéditas
+
+1. They eat cheese in the kitchen. — Eles comem queijo na cozinha.
+2. The rabbit likes the garden. — O coelho gosta do jardim.
+3. Where is the red menu? — Onde está o cardápio vermelho?
+4. Who is in the office? — Quem está no escritório?
+5. We have three tickets. — Nós temos três passagens.
+6. The house has a white wall. — A casa tem uma parede branca.
+7. Can you see the key under the chair? — Você consegue ver a chave embaixo da cadeira?
+8. I cannot find the key in the closet. — Eu não consigo encontrar a chave no armário de roupas.
+9. The lamp is in the dining room. — O abajur está na sala de jantar.
+10. The mouse lives near the river. — O rato vive perto do rio.
 
 
----
+# BLOCO 7 — Ações, Perguntas e Instruções no Cotidiano
 
-# BLOCO 7 — Posse (Have/Has), Necessidades e Desejos (Need/Want), Viagem e Conveniência
-*Ciclos: (61, 62, R63) · (64, 65, R66) · (67, 68, R69) · Fechamento: Relato 70 · Teste 7*
+### Lições dos ciclos — sequência revisada
 
-### Lição 61 — O Verbo "Have" com I, You, We, They
-*Lição 61 do nível A1*
-**Foco**: O verbo *have* expressa posse real ou relação. Com os pro...
+### Lição 76 — Negativas no Presente com "Do Not"
+**Foco**: Falar de hábitos em casa e no trabalho.
 
-1. `[Palavra]` **Have** — Ter (com I, you, we, they)
-2. `[Palavra]` **Passport** — Passaporte
-3. `[Frase]` **I have a passport.** — Eu tenho um passaporte.
-4. `[Palavra]` **Suitcase** — Mala de viagem
-5. `[Frase]` **You have a big suitcase.** — Você tem uma mala grande.
-6. `[Frase]` **We have two tickets.** — Nós temos duas passagens.
-7. `[Frase]` **They have American passports.** — Eles têm passaportes americanos.
-8. `[Frase]` **I have my bag and my phone.** — Eu tenho minha bolsa e meu celular.
-9. `[Frase]` **We have our suitcases here.** — Nós temos nossas malas aqui.
-10. `[Frase]` **They have a new car.** — Eles têm um carro novo.
-11. `[Gramática]` **Gramática — Lição 61**
-   > O verbo *have* expressa posse real ou relação. Com os pronomes *I, you, we, they*, utiliza-se a forma base *have*.
+1. `[Palavra]` **Do** — Auxiliar usado em negativas e perguntas no presente
+2. `[Palavra]` **Sleep** — Dormir
+3. `[Frase]` **I do not sleep in the living room.** — Eu não durmo na sala de estar.
+4. `[Palavra]` **Walk** — Caminhar, andar
+5. `[Frase]` **We do not walk in the forest.** — Nós não caminhamos na floresta.
+6. `[Palavra]` **Read** — Ler
+7. `[Frase]` **I read in the library.** — Eu leio na biblioteca.
+8. `[Palavra]` **Work** — Trabalhar
+9. `[Frase]` **They do not work at the hotel.** — Eles não trabalham no hotel.
+10. `[Palavra]` **Morning** — Manhã
+11. `[Frase]` **This morning is quiet.** — Esta manhã está tranquila.
+12. `[Frase]` **We don't eat in the living room.** — Nós não comemos na sala de estar. `[Ver contração: don't → do not — não]`
+13. `[Gramática]` **Gramática — Lição 76: Negativas com "Do Not"**
+   > Com *I*, *you*, *we* e *they*, usamos *do not* antes da forma-base do verbo: *I do not sleep*. A contração de *do not* é *don't*.
 
-### Lição 62 — O Verbo "Has" com He, She, It
-*Lição 62 do nível A1*
-**Foco**: *Have* é um verbo irregular. Na 3ª pessoa do singular (*h...
+**PAL:** 6<br>
+**TPA:** 394<br>
+**PA:** Do, Sleep, Walk, Read, Work, Morning
 
-1. `[Palavra]` **Has** — Tem (forma da 3ª pessoa do singular: he, she, it)
-2. `[Palavra]` **Backpack** — Mochila
-3. `[Frase]` **He has a black backpack.** — Ele tem uma mochila preta.
-4. `[Palavra]` **Wallet** — Carteira
-5. `[Frase]` **She has a brown wallet.** — Ela tem uma carteira marrom.
-6. `[Frase]` **My brother has a new job.** — Meu irmão tem um novo emprego.
-7. `[Frase]` **The teacher has two books.** — O professor tem dois livros.
-8. `[Frase]` **The hotel has a restaurant.** — O hotel tem um restaurante.
-9. `[Frase]` **Julia has a red suitcase.** — Julia tem uma mala vermelha.
-10. `[Frase]` **She has her passport and her ticket.** — Ela tem o passaporte dela e a passagem dela.
-11. `[Gramática]` **Gramática — Lição 62**
-   > *Have* é um verbo irregular. Na 3ª pessoa do singular (*he, she, it*), sua forma é **has** (*he has*, *she has*, *it has*).
+### Lição 77 — Perguntas no Presente com "Do"
+**Foco**: Perguntar sobre atividades e interesses.
 
-### Lição 63 — Revisão: Documentos e Pagamento *(4 palavras novas)*
-*Novas: **Credit card** (locução substantiva), **Cash** (substantivo incontável), **Important** (adjetivo), **Ready** (adjetivo).*
-**Foco**: Revisão: Documentos e Pagamento *(4 palavras novas)*
-
-1. `[Palavra]` **Credit card** — Cartão de crédito
-2. `[Palavra]` **Cash** — Dinheiro em espécie, dinheiro vivo
-3. `[Frase]` **I have a credit card and cash.** — Eu tenho um cartão de crédito e dinheiro vivo.
-4. `[Palavra]` **Important** — Importante
-5. `[Palavra]` **Ready** — Pronto, pronta
-6. `[Frase]` **The passport is very important.** — O passaporte é muito importante.
-7. `[Frase]` **My suitcase is ready.** — Minha mala está pronta.
-8. `[Frase]` **We have cash for the bus.** — Nós temos dinheiro em espécie para o ônibus.
-9. `[Frase]` **She has an important meeting today.** — Ela tem uma reunião importante hoje.
-10. `[Frase]` **Are you ready? Yes, I am ready.** — Você está pronto? Sim, estou pronto.
-11. `[Frase]` **He has his wallet and his credit card.** — Ele tem a carteira dele e o cartão de crédito dele.
-12. `[Frase]` **The tickets are in the backpack.** — As passagens estão na mochila.
-
-### Lição 64 — O Verbo "Need" (Precisar)
-*Lição 64 do nível A1*
-**Foco**: *Need* traduz "precisar de". Em inglês, o objeto liga-se ...
-
-1. `[Palavra]` **Need** — Precisar de
-2. `[Palavra]` **Medicine** — Remédio, medicamento
-3. `[Frase]` **I need medicine, please.** — Eu preciso de remédio, por favor.
-4. `[Palavra]` **Taxi** — Táxi
-5. `[Frase]` **We need a taxi now.** — Nós precisamos de um táxi agora.
-6. `[Frase]` **I need help, please.** — Eu preciso de ajuda, por favor.
-7. `[Frase]` **You need a new passport.** — Você precisa de um passaporte novo.
-8. `[Frase]` **We need water, please.** — Nós precisamos de água, por favor.
-9. `[Frase]` **He needs a doctor.** — Ele precisa de um médico.
-10. `[Frase]` **They need a big table.** — Eles precisam de uma mesa grande.
-11. `[Gramática]` **Gramática — Lição 64**
-   > *Need* traduz "precisar de". Em inglês, o objeto liga-se diretamente ao verbo, **sem preposição**: *I need help* (nunca *I need of help*).
-
-### Lição 65 — O Verbo "Want" (Querer)
-*Lição 65 do nível A1*
-**Foco**: *Want* expressa desejo direto por algo (*I want a coffee*...
-
-1. `[Palavra]` **Want** — Querer (com I, you, we, they)
-2. `[Palavra]` **Juice** — Suco
-3. `[Frase]` **I want cold juice, please.** — Eu quero suco gelado, por favor.
-4. `[Palavra]` **Sandwich** — Sanduíche
-5. `[Frase]` **I want a sandwich.** — Eu quero um sanduíche.
-6. `[Frase]` **We want two coffees, please.** — Nós queremos dois cafés, por favor.
-7. `[Frase]` **They want a table near the window.** — Eles querem uma mesa perto da janela.
-8. `[Frase]` **She wants a cup of tea.** — Ela quer uma xícara de chá.
-9. `[Frase]` **I am hungry, and I want a sandwich.** — Eu estou com fome, e eu quero um sanduíche.
-10. `[Frase]` **He wants a glass of water.** — Ele quer um copo de água.
-11. `[Gramática]` **Gramática — Lição 65**
-   > *Want* expressa desejo direto por algo (*I want a coffee*). Na 3ª pessoa do singular, adiciona-se -s (*she wants*).
-
-### Lição 66 — Revisão: No Aeroporto *(4 palavras novas)*
-*Novas: **Airport** (substantivo), **Flight** (substantivo), **Luggage** (substantivo incontável), **Late** (adjetivo).*
-**Foco**: Revisão: No Aeroporto *(4 palavras novas)*
-
-1. `[Palavra]` **Airport** — Aeroporto
-2. `[Palavra]` **Flight** — Voo
-3. `[Frase]` **We are at the airport.** — Nós estamos no aeroporto.
-4. `[Frase]` **Our flight is ready.** — Nosso voo está pronto.
-5. `[Palavra]` **Luggage** — Bagagem
-6. `[Palavra]` **Late** — Atrasado, atrasada, tarde
-7. `[Frase]` **My luggage is here.** — Minha bagagem está aqui.
-8. `[Frase]` **The flight is late today.** — O voo está atrasado hoje.
-9. `[Frase]` **We need our luggage now.** — Nós precisamos da nossa bagagem agora.
-10. `[Frase]` **I have my passport for the flight.** — Eu tenho meu passaporte para o voo.
-11. `[Frase]` **The airport is very big and clean.** — O aeroporto é muito grande e limpo.
-12. `[Frase]` **He is late for the meeting.** — Ele está atrasado para a reunião.
-
-### Lição 67 — "Need to" e "Want to" + Verbo
-*Lição 67 do nível A1*
-**Foco**: Quando *need* e *want* antecedem uma ação verbal, utiliza...
-
-1. `[Palavra]` **Go** — Ir
-2. `[Palavra]` **Buy** — Comprar
-3. `[Frase]` **I need to go now.** — Eu preciso ir agora.
-4. `[Frase]` **I want to buy a ticket.** — Eu quero comprar uma passagem.
-5. `[Palavra]` **Sleep** — Dormir
-6. `[Palavra]` **Drink** — Beber
-7. `[Frase]` **I am tired, and I want to sleep.** — Eu estou cansado, e eu quero dormir.
-8. `[Frase]` **We want to drink cold water.** — Nós queremos beber água gelada.
-9. `[Frase]` **We need to go to the airport.** — Nós precisamos ir para o aeroporto.
-10. `[Frase]` **She wants to buy a new bag.** — Ela quer comprar uma bolsa nova.
-11. `[Frase]` **I need to sleep.** — Eu preciso dormir.
-12. `[Gramática]` **Gramática — Lição 67**
-   > Quando *need* e *want* antecedem uma ação verbal, utiliza-se a partícula **to** para introduzir o verbo no infinitivo (*need to go*, *want to buy*, *want to drink*).
-
-### Lição 68 — Dispositivos Pessoais e Tecnologia
-*Lição 68 do nível A1*
-**Foco**: Substantivos tecnológicos contáveis formam o plural regul...
-
-1. `[Palavra]` **Computer** — Computador
-2. `[Palavra]` **Tablet** — Tablet
-3. `[Frase]` **I have a computer and a tablet.** — Eu tenho um computador e um tablet.
-4. `[Palavra]` **Charger** — Carregador
-5. `[Frase]` **I need a phone charger.** — Eu preciso de um carregador de celular.
-6. `[Frase]` **My charger is in the backpack.** — Meu carregador está na mochila.
-7. `[Frase]` **The computer is on the desk.** — O computador está sobre a escrivaninha.
-8. `[Frase]` **She has a new tablet.** — Ela tem um tablet novo.
-9. `[Frase]` **Where is my charger? It is in the suitcase.** — Onde está o meu carregador? Está na mala.
-10. `[Frase]` **We have two computers in the office.** — Nós temos dois computadores no escritório.
-11. `[Gramática]` **Gramática — Lição 68**
-   > Substantivos tecnológicos contáveis formam o plural regular com -s (*computer $\rightarrow$ computers*, *charger $\rightarrow$ chargers*).
-
-### Lição 69 — Revisão: Conveniência e Farmácia *(4 palavras novas)*
-*Novas: **Bottle** (substantivo), **Pill** (substantivo), **Price** (substantivo), **Time** (substantivo).*
-**Foco**: Revisão: Conveniência e Farmácia *(4 palavras novas)*
-
-1. `[Palavra]` **Bottle** — Garrafa
-2. `[Frase]` **A bottle of water, please.** — Uma garrafa de água, por favor.
-3. `[Palavra]` **Pill** — Pílula, comprimido
-4. `[Frase]` **I need two pills, please.** — Eu preciso de dois comprimidos, por favor.
-5. `[Palavra]` **Price** — Preço
-6. `[Palavra]` **Time** — Tempo, hora
-7. `[Frase]` **What is the price of this bottle?** — Qual é o preço desta garrafa?
-8. `[Frase]` **We have time for a coffee.** — Nós temos tempo para um café.
-9. `[Frase]` **I want to buy a bottle of water.** — Eu quero comprar uma garrafa de água.
-10. `[Frase]` **The price of the medicine is good.** — O preço do remédio é bom.
-11. `[Frase]` **We have time before the flight.** — Nós temos tempo antes do voo.
-12. `[Frase]` **She has a bottle of juice in her bag.** — Ela tem uma garrafa de suco na bolsa dela.
-
-### Lição 70 — Relato 2 (No Aeroporto: Documentos e Bagagem)
-*Lição 70 do nível A1*
-**Foco**: Relato 2 (No Aeroporto: Documentos e Bagagem)
-
-1. `[Frase]` **Today I am at the airport with my brother.** — Hoje eu estou no aeroporto com o meu irmão.
-2. `[Frase]` **Our flight is to the United States.** — Nosso voo é para os Estados Unidos.
-3. `[Frase]` **I have my passport and my ticket in my backpack.** — Eu tenho meu passaporte e minha passagem na minha mochila.
-4. `[Frase]` **My brother has his credit card and cash in his wallet.** — Meu irmão tem o cartão de crédito e dinheiro vivo na carteira dele.
-5. `[Frase]` **Our luggage is ready, and it is not late.** — Nossa bagagem está pronta, e não está atrasada.
-6. `[Frase]` **We have time, and I want to drink a coffee.** — Nós temos tempo, e eu quero beber um café.
-7. `[Frase]` **I buy a bottle of water and a sandwich.** — Eu compro uma garrafa de água e um sanduíche.
-8. `[Frase]` **Now we need to go to the gate.** — Agora nós precisamos ir para o portão.
-9. `[Frase]` **We are ready and very happy!** — Nós estamos prontos e muito felizes!
-
----
-
-# BLOCO 8 — Simple Present Afirmativo (I, You, We, They), Rotina Diária e Hábitos
-*Ciclos: (71, 72, R73) · (74, 75, R76) · (77, 78, R79) · Fechamento: Relato 80 · Teste 8*
-
-### Lição 71 — Ações da Manhã: "Wake up" e "Get up"
-*Lição 71 do nível A1*
-**Foco**: No Simple Present com os pronomes da base (*I, you, we, t...
-
-1. `[Palavra]` **Wake up** — Acordar
-2. `[Palavra]` **Morning** — Manhã
-3. `[Frase]` **I wake up in the morning.** — Eu acordo de manhã.
-4. `[Palavra]` **Get up** — Levantar-se (da cama)
-5. `[Frase]` **I get up in the morning.** — Eu me levanto de manhã.
-6. `[Palavra]` **Breakfast** — Café da manhã (desjejum)
-7. `[Frase]` **We eat breakfast in the kitchen.** — Nós tomamos café da manhã na cozinha.
-8. `[Frase]` **I wake up and eat breakfast.** — Eu acordo e tomo café da manhã.
-9. `[Frase]` **They get up in the morning.** — Eles se levantam de manhã.
-10. `[Frase]` **We wake up and get up.** — Nós acordamos e nos levantamos.
-11. `[Gramática]` **Gramática — Lição 71**
-   > No Simple Present com os pronomes da base (*I, you, we, they*), os verbos permanecem em sua forma infinitiva sem *to* (*wake up*, *get up*, *eat*). A expressão temporal correspondente é *in the morning*.
-
-### Lição 72 — Alimentos do Café da Manhã: Comer e Beber
-*Lição 72 do nível A1*
-**Foco**: *Bread* e *cheese* são substantivos incontáveis no inglês...
-
-1. `[Palavra]` **Bread** — Pão (substantivo incontável)
-2. `[Palavra]` **Butter** — Manteiga
-3. `[Frase]` **I eat bread and butter.** — Eu como pão com manteiga.
-4. `[Palavra]` **Cheese** — Queijo
-5. `[Palavra]` **Egg (Plural: Eggs)** — Ovo, ovos
-6. `[Frase]` **We eat bread and cheese.** — Nós comemos pão com queijo.
-7. `[Frase]` **They eat two eggs in the morning.** — Eles comem dois ovos de manhã.
-8. `[Frase]` **I drink coffee with milk.** — Eu bebo café com leite.
-9. `[Frase]` **You eat bread, and you drink coffee.** — Você come pão e bebe café.
-10. `[Frase]` **We eat eggs, bread and cheese for breakfast.** — Nós comemos ovos, pão e queijo no café da manhã.
-11. `[Gramática]` **Gramática — Lição 72**
-   > *Bread* e *cheese* são substantivos incontáveis no inglês padrão (utiliza-se *bread*, não *a bread*). Combinações cotidianas autênticas de alimentação matinal.
-
-### Lição 73 — Revisão: Café da Manhã e Início do Dia *(4 palavras novas)*
-*Novas: **Tea** (substantivo incontável), **Early** (advérbio), **Fruit** (substantivo), **Start** (verbo com I/you/we/they).*
-**Foco**: Revisão: Café da Manhã e Início do Dia *(4 palavras novas)*
-
-1. `[Palavra]` **Tea** — Chá
-2. `[Palavra]` **Early** — Cedo
-3. `[Frase]` **I wake up early in the morning.** — Eu acordo cedo de manhã.
-4. `[Frase]` **We drink hot tea.** — Nós bebemos chá quente.
-5. `[Palavra]` **Fruit** — Fruta (plural: fruits)
-6. `[Palavra]` **Start** — Começar, iniciar
-7. `[Frase]` **I eat fruit for breakfast.** — Eu como fruta no café da manhã.
-8. `[Frase]` **We start the day early.** — Nós começamos o dia cedo.
-9. `[Frase]` **You get up early and drink tea.** — Você se levanta cedo e bebe chá.
-10. `[Frase]` **They eat bread, eggs and fruit.** — Eles comem pão, ovos e fruta.
-11. `[Frase]` **I drink a cup of coffee and start my job.** — Eu bebo uma xícara de café e começo meu trabalho.
-12. `[Frase]` **The morning is quiet in our house.** — A manhã é tranquila em nossa casa.
-
-### Lição 74 — Atividades Diárias: Trabalhar e Estudar
-*Lição 74 do nível A1*
-**Foco**: Verbos nucleares de rotina: *work* e *study*. Emprego de ...
-
-1. `[Palavra]` **Work** — Trabalhar (verbo)
-2. `[Palavra]` **Study** — Estudar (verbo)
-3. `[Frase]` **I work at the hospital.** — Eu trabalho no hospital.
-4. `[Frase]` **We study English.** — Nós estudamos inglês.
-5. `[Palavra]` **University** — Universidade, faculdade
-6. `[Frase]` **They study at the university.** — Eles estudam na universidade.
-7. `[Frase]` **You work in a big office.** — Você trabalha em um grande escritório.
-8. `[Frase]` **I work in the morning.** — Eu trabalho de manhã.
-9. `[Frase]` **I study at the university.** — Eu estudo na universidade.
-10. `[Frase]` **The engineers work at the bank.** — Os engenheiros trabalham no banco.
-11. `[Frase]` **We study and work in the city.** — Nós estudamos e trabalhamos na cidade.
-12. `[Gramática]` **Gramática — Lição 74**
-   > Verbos nucleares de rotina: *work* e *study*. Emprego de preposições adequadas: *at the hospital*, *at the university*, *in an office*.
-
-### Lição 75 — Moradia e Convivência: Viver e Cozinhar
-*Lição 75 do nível A1*
-**Foco**: Estrutura *live in + lugar*; *cook dinner* (sem artigo an...
-
-1. `[Palavra]` **Live** — Morar, viver
-2. `[Palavra]` **Apartment** — Apartamento
-3. `[Frase]` **I live in a small apartment.** — Eu moro em um apartamento pequeno.
-4. `[Palavra]` **Cook** — Cozinhar
-5. `[Palavra]` **Dinner** — Jantar (refeição noturna)
-6. `[Frase]` **We cook dinner at home.** — Nós cozinhamos o jantar em casa.
-7. `[Frase]` **They live in Brazil.** — Eles moram no Brasil.
-8. `[Frase]` **You live near the park.** — Você mora perto do parque.
-9. `[Frase]` **I cook dinner for my family.** — Eu cozinho o jantar para a minha família.
-10. `[Frase]` **We live in a big city.** — Nós moramos em uma cidade grande.
-11. `[Frase]` **We love our apartment.** — Nós amamos nosso apartamento.
-12. `[Gramática]` **Gramática — Lição 75**
-   > Estrutura *live in + lugar*; *cook dinner* (sem artigo antes dos nomes genéricos de refeições: *breakfast, lunch, dinner*).
-
-### Lição 76 — Revisão: Almoço e Alimentos Salgados *(4 palavras novas)*
-*Novas: **Lunch** (substantivo), **Rice** (substantivo incontável), **Meat** (substantivo incontável), **Salad** (substantivo).*
-**Foco**: Revisão: Almoço e Alimentos Salgados *(4 palavras novas)*
-
-1. `[Palavra]` **Lunch** — Almoço
-2. `[Palavra]` **Rice** — Arroz
-3. `[Frase]` **We eat rice and meat for lunch.** — Nós comemos arroz e carne no almoço.
-4. `[Palavra]` **Meat** — Carne
-5. `[Palavra]` **Salad** — Salada
-6. `[Frase]` **I eat a fresh green salad.** — Eu como uma salada verde fresca.
-7. `[Frase]` **They eat lunch at the restaurant.** — Eles almoçam no restaurante.
-8. `[Frase]` **We cook rice, meat and salad for dinner.** — Nós cozinhamos arroz, carne e salada para o jantar.
-9. `[Frase]` **I work in the morning and eat lunch at the office.** — Eu trabalho de manhã e almoço no escritório.
-10. `[Frase]` **The lunch at the hotel is very good.** — O almoço no hotel é muito bom.
-11. `[Frase]` **Rice, salad and water, please.** — Arroz, salada e água, por favor.
-12. `[Frase]` **We eat lunch together.** — Nós almoçamos juntos.
-
-### Lição 77 — Períodos do Dia: "Afternoon", "Evening" e "Night"
-*Lição 77 do nível A1*
-**Foco**: Preposições para as partes do dia: *in the morning*, *in ...
-
-1. `[Palavra]` **Afternoon** — Tarde (in the afternoon = à tarde)
-2. `[Palavra]` **Evening** — Noite (in the evening = à noite / entardecer)
-3. `[Frase]` **I study in the afternoon.** — Eu estudo à tarde.
-4. `[Frase]` **We eat dinner in the evening.** — Nós jantamos à noite.
-5. `[Palavra]` **Night** — Noite (at night = à noite / hora de dormir)
-6. `[Frase]` **I sleep at night.** — Eu durmo à noite.
-7. `[Frase]` **They work in the afternoon.** — Eles trabalham à tarde.
-8. `[Frase]` **In the evening, we are at home.** — À noite, nós estamos em casa.
-9. `[Frase]` **The street is quiet at night.** — A rua é silenciosa à noite.
-10. `[Frase]` **We study in the morning and work in the afternoon.** — Nós estudamos de manhã e trabalhamos à tarde.
-11. `[Gramática]` **Gramática — Lição 77**
-   > Preposições para as partes do dia: *in the morning*, *in the afternoon*, *in the evening*, mas com o uso obrigatório de **at night**.
-
-### Lição 78 — Verbos de Lazer e Descanso: "Listen to" e "Read"
-*Lição 78 do nível A1*
-**Foco**: O verbo *listen* exige a preposição *to* antes do seu obj...
-
-1. `[Palavra]` **Read** — Ler
-2. `[Palavra]` **Listen to** — Ouvir, escutar (sempre com a partícula to)
-3. `[Frase]` **I read a book in the evening.** — Eu leio um livro à noite.
+1. `[Palavra]` **Watch** — Observar, assistir
+2. `[Frase]` **Do you watch the birds?** — Você observa os pássaros?
+3. `[Palavra]` **Listen to** — Ouvir, escutar
 4. `[Palavra]` **Music** — Música
-5. `[Frase]` **We listen to music.** — Nós ouvimos música.
-6. `[Frase]` **They listen to music in the car.** — Eles escutam música no carro.
-7. `[Frase]` **You read English books.** — Você lê livros em inglês.
-8. `[Frase]` **In the evening, I read and listen to music.** — À noite, eu leio e ouço música.
-9. `[Frase]` **We sleep early at night.** — Nós dormimos cedo à noite.
-10. `[Frase]` **I listen to music in my room.** — Eu escuto música no meu quarto.
-11. `[Gramática]` **Gramática — Lição 78**
-   > O verbo *listen* exige a preposição *to* antes do seu objeto sonoro: *listen to music* (nunca *listen music*).
-
-### Lição 79 — Revisão: Hábitos Saudáveis e Convivência *(4 palavras novas)*
-*Novas: **Walk** (verbo com I/you/we/they), **Together** (advérbio), **Relax** (verbo com I/you/we/they), **Every day** (locução adverbial).*
-**Foco**: Revisão: Hábitos Saudáveis e Convivência *(4 palavras novas)*
-
-1. `[Palavra]` **Walk** — Caminhar, andar
-2. `[Palavra]` **Together** — Juntos, juntas
-3. `[Frase]` **We walk in the park together.** — Nós caminhamos no parque juntos.
-4. `[Palavra]` **Relax** — Relaxar
-5. `[Palavra]` **Every day** — Todo dia, todos os dias
-6. `[Frase]` **I walk every day in the morning.** — Eu caminho todos os dias de manhã.
-7. `[Frase]` **In the evening, we relax on the sofa.** — À noite, nós relaxamos no sofá.
-8. `[Frase]` **They eat fruit and salad every day.** — Eles comem fruta e salada todos os dias.
-9. `[Frase]` **My brother and I study together.** — Meu irmão e eu estudamos juntos.
-10. `[Frase]` **You walk to the office in the morning.** — Você caminha para o escritório de manhã.
-11. `[Frase]` **We listen to music and relax.** — Nós escutamos música e relaxamos.
-12. `[Frase]` **A quiet night at home to relax.** — Uma noite calma em casa para relaxar.
-
-### Lição 80 — Relato 3 (A Minha Rotina Diária)
-*Lição 80 do nível A1*
-**Foco**: Relato 3 (A Minha Rotina Diária)
-
-1. `[Frase]` **I wake up early in the morning, at home.** — Eu acordo cedo de manhã, em casa.
-2. `[Frase]` **I get up and drink hot coffee with milk.** — Eu me levanto e bebo café quente com leite.
-3. `[Frase]` **For breakfast, I eat bread, cheese and fruit.** — No café da manhã, eu como pão, queijo e fruta.
-4. `[Frase]` **In the morning, I work at the office in the city.** — De manhã, eu trabalho no escritório na cidade.
-5. `[Frase]` **In the afternoon, I eat lunch with my friends.** — À tarde, eu almoço com meus amigos.
-6. `[Frase]` **We eat rice, meat and a green salad.** — Nós comemos arroz, carne e uma salada verde.
-7. `[Frase]` **I study English at the university.** — Eu estudo inglês na universidade.
-8. `[Frase]` **In the evening, I cook dinner for my family.** — À noite, eu cozinho o jantar para a minha família.
-9. `[Frase]` **We eat dinner, listen to music and relax on the sofa.** — Nós jantamos, escutamos música e relaxamos no sofá.
-10. `[Frase]` **At night, I read a book and sleep early.** — À noite, eu leio um livro e durmo cedo.
-
----
-
-# BLOCO 9 — Simple Present na 3ª Pessoa (He, She, It: -s, -es, -ies, Irregulares), Dias da Semana
-*Ciclos: (81, 82, R83) · (84, 85, R86) · (87, 88, R89) · Fechamento: História 90 · Teste 9*
-
-### Lição 81 — A Regra Geral do "+s" na 3ª Pessoa (He, She, It)
-*Lição 81 do nível A1*
-**Foco**: Regra Geral da 3ª Pessoa do Singular: no Simple Present a...
-
-1. `[Palavra]` **Speaks** — Fala (forma 3ª pessoa de *speak*)
-2. `[Palavra]` **Works** — Trabalha (forma 3ª pessoa de *work*)
-3. `[Frase]` **She speaks English.** — Ela fala inglês.
-4. `[Frase]` **He works at the hospital.** — Ele trabalha no hospital.
-5. `[Palavra]` **Lives** — Mora, vive (forma 3ª pessoa de *live*)
-6. `[Palavra]` **Cooks** — Cozinha (forma 3ª pessoa de *cook*)
-7. `[Frase]` **My sister lives in Brazil.** — Minha irmã mora no Brasil.
-8. `[Frase]` **He cooks dinner for his family.** — Ele cozinha o jantar para a família dele.
-9. `[Frase]` **Julia works at the office.** — Julia trabalha no escritório.
-10. `[Frase]` **She reads a book in the evening.** — Ela lê um livro à noite.
-11. `[Frase]` **The dog sleeps on the sofa.** — O cachorro dorme no sofá.
-12. `[Gramática]` **Gramática — Lição 81**
-   > Regra Geral da 3ª Pessoa do Singular: no Simple Present afirmativo com *he, she, it*, acrescenta-se **-s** à maioria dos verbos (*work $\rightarrow$ works*, *live $\rightarrow$ lives*, *speak $\rightarrow$ speaks*, *read $\rightarrow$ reads*, *sleep $\rightarrow$ sleeps*).
-
-### Lição 82 — 3ª Pessoa com "+es" e os Verbos "Goes" e "Does"
-*Lição 82 do nível A1*
-**Foco**: Verbos terminados em som sibilante ou na vogal "o" (**-o,...
-
-1. `[Palavra]` **Goes** — Vai (3ª pessoa de *go*)
-2. `[Palavra]` **Watches** — Assiste a (3ª pessoa de *watch*)
-3. `[Frase]` **She goes to the university.** — Ela vai para a universidade.
-4. `[Frase]` **He watches videos on his computer.** — Ele assiste a vídeos no computador dele.
-5. `[Palavra]` **Does** — Faz (3ª pessoa do verbo *do*)
-6. `[Palavra]` **Washes** — Lava (3ª pessoa de *wash*)
-7. `[Frase]` **She does her job very well.** — Ela faz o trabalho dela muito bem.
-8. `[Frase]` **He washes the dishes in the kitchen.** — Ele lava a louça na cozinha.
-9. `[Frase]` **My brother goes to school by bus.** — Meu irmão vai para a escola de ônibus.
-10. `[Frase]` **She washes the salad for dinner.** — Ela lava a salada para o jantar.
-11. `[Gramática]` **Gramática — Lição 82**
-   > Verbos terminados em som sibilante ou na vogal "o" (**-o, -ch, -sh, -ss, -x, -z**) recebem **-es** na 3ª pessoa do singular (*go $\rightarrow$ goes*, *do $\rightarrow$ does*, *watch $\rightarrow$ watches*, *wash $\rightarrow$ washes*).
-
-### Lição 83 — Revisão: Dias da Semana (Parte 1: Segunda a Quarta) *(4 palavras novas)*
-*Novas: **Monday** (substantivo próprio), **Tuesday** (substantivo próprio), **Wednesday** (substantivo próprio), **Gym** (substantivo).*
-**Foco**: Revisão: Dias da Semana (Parte 1: Segunda a Quarta) *(4 palavras novas)*
-
-1. `[Palavra]` **Monday** — Segunda-feira
-2. `[Palavra]` **Tuesday** — Terça-feira
-3. `[Frase]` **She works on Monday.** — Ela trabalha na segunda-feira.
-4. `[Frase]` **He goes to the office on Tuesday.** — Ele vai para o escritório na terça-feira.
-5. `[Palavra]` **Wednesday** — Quarta-feira
-6. `[Palavra]` **Gym** — Academia
-7. `[Frase]` **I go to the gym on Wednesday.** — Eu vou para a academia na quarta-feira.
-8. `[Frase]` **On Monday, she wakes up early.** — Na segunda-feira, ela acorda cedo.
-9. `[Frase]` **My brother studies on Tuesday.** — Meu irmão estuda na terça-feira.
-10. `[Frase]` **He works from Monday to Wednesday.** — Ele trabalha de segunda a quarta.
-11. `[Frase]` **She goes to the gym in the evening.** — Ela vai para a academia à noite.
-12. `[Frase]` **The doctor works at the hospital on Wednesday.** — O médico trabalha no hospital na quarta-feira.
-
-### Lição 84 — 3ª Pessoa com "-ies" (Consoante + Y: "Studies")
-*Lição 84 do nível A1*
-**Foco**: Verbos terminados em **consoante + y** eliminam o *y* e r...
-
-1. `[Palavra]` **Studies** — Estuda (3ª pessoa de *study*)
-2. `[Palavra]` **Carries** — Carrega, leva (3ª pessoa de *carry*)
-3. `[Frase]` **He studies English at the university.** — Ele estuda inglês na universidade.
-4. `[Frase]` **She carries a big backpack.** — Ela carrega uma mochila grande.
-5. `[Palavra]` **Tries** — Tenta (3ª pessoa de *try*)
-6. `[Frase]` **He tries to study every day.** — Ele tenta estudar todos os dias.
-7. `[Frase]` **She studies medicine at the university.** — Ela estuda medicina na universidade.
-8. `[Frase]` **The boy carries his books to school.** — O menino carrega os livros dele para a escola.
-9. `[Frase]` **Julia plays in the park.** — Julia brinca no parque.
-10. `[Frase]` **She studies and plays on Tuesday.** — Ela estuda e brinca na terça-feira.
-11. `[Gramática]` **Gramática — Lição 84**
-   > Verbos terminados em **consoante + y** eliminam o *y* e recebem **-ies** na 3ª pessoa (*study $\rightarrow$ studies*, *carry $\rightarrow$ carries*, *try $\rightarrow$ tries*). Se for precedido de vogal (**vogal + y**), acrescenta-se apenas **-s** (*play $\rightarrow$ plays*).
-
-### Lição 85 — Dias da Semana (Parte 2: Quinta a Domingo)
-*Lição 85 do nível A1*
-**Foco**: Os dias da semana em inglês são **sempre iniciados com le...
-
-1. `[Palavra]` **Thursday** — Quinta-feira
-2. `[Palavra]` **Friday** — Sexta-feira
-3. `[Frase]` **We study on Thursday.** — Nós estudamos na quinta-feira.
-4. `[Frase]` **I relax on Friday evening.** — Eu relaxo na sexta-feira à noite.
-5. `[Palavra]` **Saturday** — Sábado
-6. `[Palavra]` **Sunday** — Domingo
-7. `[Frase]` **She goes to the park on Saturday.** — Ela vai ao parque no sábado.
-8. `[Frase]` **He cooks for his family on Sunday.** — Ele cozinha para a família dele no domingo.
-9. `[Frase]` **On Friday, we eat dinner at the restaurant.** — Na sexta-feira, nós jantamos no restaurante.
-10. `[Frase]` **The supermarket is open on Saturday and Sunday.** — O supermercado está aberto no sábado e no domingo.
-11. `[Gramática]` **Gramática — Lição 85**
-   > Os dias da semana em inglês são **sempre iniciados com letra maiúscula** e utilizam a preposição **on** (*on Thursday*, *on Friday*).
-
-### Lição 86 — Revisão: O Fim de Semana e Lazer *(4 palavras novas)*
-*Novas: **Weekend** (substantivo), **Stay** (verbo com I/you/we/they), **Beach** (substantivo com plural *beaches*), **Rest** (verbo de descanso).*
-**Foco**: Revisão: O Fim de Semana e Lazer *(4 palavras novas)*
-
-1. `[Palavra]` **Weekend** — Fim de semana (on weekends = nos fins de semana)
-2. `[Palavra]` **Stay** — Ficar, permanecer
-3. `[Frase]` **On the weekend, I stay at home.** — No fim de semana, eu fico em casa.
-4. `[Palavra]` **Beach** — Praia (plural: beaches)
-5. `[Palavra]` **Rest** — Descansar
-6. `[Frase]` **She goes to the beach on Saturday.** — Ela vai à praia no sábado.
-7. `[Frase]` **We rest on Sunday.** — Nós descansamos no domingo.
-8. `[Frase]` **He stays at the hotel on the weekend.** — Ele fica no hotel no fim de semana.
-9. `[Frase]` **On weekends, they walk near the beach.** — Nos fins de semana, eles caminham perto da praia.
-10. `[Frase]` **My sister stays with our mother on Friday.** — Minha irmã fica com a nossa mãe na sexta-feira.
-11. `[Frase]` **She loves to rest and read on Sunday.** — Ela ama descansar e ler no domingo.
-12. `[Frase]` **A quiet weekend to relax.** — Um fim de semana tranquilo para relaxar.
-
-### Lição 87 — Expressões de Rotina e Frequência
-*Lição 87 do nível A1*
-**Foco**: Os advérbios de frequência (*always, never, sometimes*) p...
-
-1. `[Palavra]` **Always** — Sempre
-2. `[Palavra]` **Never** — Nunca
-3. `[Frase]` **She always wakes up early.** — Ela sempre acorda cedo.
-4. `[Frase]` **He never drinks coffee at night.** — Ele nunca bebe café à noite.
-5. `[Palavra]` **Sometimes** — Às vezes
-6. `[Frase]` **He sometimes walks to work.** — Ele às vezes caminha para o trabalho.
-7. `[Frase]` **She always studies on Monday.** — Ela sempre estuda na segunda-feira.
-8. `[Frase]` **They never eat meat on Friday.** — Eles nunca comem carne na sexta-feira.
-9. `[Frase]` **Julia sometimes cooks dinner.** — Julia às vezes cozinha o jantar.
-10. `[Frase]` **My brother always listens to music.** — Meu irmão sempre escuta música.
-11. `[Gramática]` **Gramática — Lição 87**
-   > Os advérbios de frequência (*always, never, sometimes*) posicionam-se comumente **antes do verbo principal** de ação no Simple Present (*she always wakes up*, *he never drinks*).
-
-### Lição 88 — Atividades da Família e Rotina de Terceiros
-*Lição 88 do nível A1*
-**Foco**: Consolidação morfológica da 3ª pessoa do singular em verb...
-
-1. `[Palavra]` **Cleans** — Limpa (3ª pessoa de *clean*)
-2. `[Palavra]` **Visits** — Visita (3ª pessoa de *visit*)
-3. `[Frase]` **He cleans the house on Saturday.** — Ele limpa a casa no sábado.
-4. `[Frase]` **She visits her mother on Sunday.** — Ela visita a mãe dela no domingo.
-5. `[Palavra]` **Drinks** — Bebe (3ª pessoa de *drink*)
-6. `[Palavra]` **Eats** — Come (3ª pessoa de *eat*)
-7. `[Frase]` **She drinks hot tea with milk.** — Ela bebe chá quente com leite.
-8. `[Frase]` **He eats bread and cheese for breakfast.** — Ele come pão e queijo no café da manhã.
-9. `[Frase]` **My father cleans his car on the weekend.** — Meu pai limpa o carro dele no fim de semana.
-10. `[Frase]` **She visits her family from Thursday to Sunday.** — Ela visita a família dela de quinta a domingo.
-11. `[Gramática]` **Gramática — Lição 88**
-   > Consolidação morfológica da 3ª pessoa do singular em verbos do dia a dia: *cleans, visits, drinks, eats*.
-
-### Lição 89 — Revisão: A Vida de Outras Pessoas *(4 palavras novas)*
-*Novas: **Usually** (advérbio), **Busy** (adjetivo), **Often** (advérbio), **Life** (substantivo).*
-**Foco**: Revisão: A Vida de Outras Pessoas *(4 palavras novas)*
-
-1. `[Palavra]` **Usually** — Geralmente, habitualmente
-2. `[Palavra]` **Busy** — Ocupado, ocupada
-3. `[Frase]` **She is usually very busy.** — Ela geralmente é muito ocupada.
-4. `[Palavra]` **Often** — Frequentemente, com frequência
-5. `[Palavra]` **Life** — Vida
-6. `[Frase]` **He often visits the city.** — Ele frequentemente visita a cidade.
-7. `[Frase]` **She loves her life in Brazil.** — Ela ama a vida dela no Brasil.
-8. `[Frase]` **The doctor is often busy at the hospital.** — O médico frequentemente está ocupado no hospital.
-9. `[Frase]` **On Monday, my sister is very busy with her job.** — Na segunda-feira, minha irmã fica muito ocupada com o trabalho dela.
-10. `[Frase]` **He usually walks in the park in the morning.** — Ele geralmente caminha no parque de manhã.
-11. `[Frase]` **She often cooks rice and salad for dinner.** — Ela frequentemente cozinha arroz e salada para o jantar.
-12. `[Frase]` **They usually stay at home on the weekend.** — Eles geralmente ficam em casa no fim de semana.
-
-### Lição 90 — História 1 (A Vida e a Rotina de Sarah)
-*Lição 90 do nível A1*
-**Foco**: História 1 (A Vida e a Rotina de Sarah)
-
-1. `[Frase]` **Sarah is a doctor, and she lives in a big city.** — Sarah é médica, e ela mora em uma grande cidade.
-2. `[Frase]` **She is usually very busy with her job at the hospital.** — Ela geralmente é muito ocupada com o trabalho dela no hospital.
-3. `[Frase]` **From Monday to Friday, Sarah wakes up early.** — De segunda a sexta, Sarah acorda cedo.
-4. `[Frase]` **She drinks a cup of coffee and eats bread with cheese.** — Ela bebe uma xícara de café e come pão com queijo.
-5. `[Frase]` **She goes to work by bus and starts her day.** — Ela vai para o trabalho de ônibus e começa o dia dela.
-6. `[Frase]` **In the afternoon, she eats lunch at the hospital.** — À tarde, ela almoça no hospital.
-7. `[Frase]` **In the evening, Sarah cooks dinner and relaxes on her sofa.** — À noite, Sarah cozinha o jantar e relaxa no sofá dela.
-8. `[Frase]` **On the weekend, she stays with her family.** — No fim de semana, ela fica com a família dela.
-9. `[Frase]` **On Saturday, she walks on the beach with her dog.** — No sábado, ela caminha na praia com o cachorro dela.
-10. `[Frase]` **On Sunday, she visits her mother and reads a good book.** — No domingo, ela visita a mãe dela e lê um bom livro.
-11. `[Frase]` **Sarah loves her life and her family.** — Sarah ama a vida dela e a família dela.
-
----
-
-# BLOCO 10 — Simple Present Negativo e Interrogativo com Do/Does, Respostas Curtas e Frequência
-*Ciclos: (91, 92, R93) · (94, 95, R96) · (97, 98, R99) · Fechamento: Diálogo 100 · Teste 10*
-
-### Lição 91 — Negação no Simple Present com "Don't" *(4 palavras novas)*
-*Novas: **Don't** (verbo auxiliar negativo), **Know** (verbo de conhecimento/cognição), **Understand** (verbo de compreensão), **But** (conjunção adversativa).*
-**Foco**: Negação no Simple Present: em inglês, verbos comuns de aç...
-
-1. `[Palavra]` **Don't** — Não (verbo auxiliar negativo para *I, you, we, they*)
-2. `[Palavra]` **Know** — Saber, conhecer
-3. `[Frase]` **I don't know.** — Eu não sei.
-4. `[Frase]` **We don't know that doctor.** — Nós não conhecemos aquele médico.
-5. `[Palavra]` **Understand** — Entender, compreender
-6. `[Palavra]` **But** — Mas, porém
-7. `[Frase]` **I don't understand.** — Eu não entendo.
-8. `[Frase]` **I speak English, but I don't speak French.** — Eu falo inglês, mas não falo francês.
-9. `[Frase]` **I know the teacher, but I don't understand his English.** — Eu conheço o professor, mas não entendo o inglês dele.
-10. `[Frase]` **They live in Brazil, but they don't work in the city.** — Eles moram no Brasil, mas não trabalham na cidade.
-11. `[Frase]` **You don't understand, but we have time.** — Você não compreende, mas nós temos tempo.
-12. `[Gramática]` **Gramática — Lição 91**
-   > Negação no Simple Present: em inglês, verbos comuns de ação não aceitam apenas a palavra *not* diretamente após si. Para os sujeitos **I, you, we, they**, inserimos o auxiliar negativo **don't** (contração de *do not*) antes do verbo principal (*I don't know*, *They don't understand*). A conjunção **but** introduz um contraste direto entre ideias (*I know, but I don't understand*).
-
-### Lição 92 — Perguntas com "Do" e Respostas Curtas *(2 palavras novas)*
-*Novas: **Do** (verbo auxiliar interrogativo com I/you/we/they), **Remember** (verbo de memória).*
-**Foco**: Perguntas e Respostas Curtas (*Short Answers*): Para form...
-
-1. `[Palavra]` **Do** — Verbo auxiliar para perguntas no presente (com *I, you, we, they*)
-2. `[Palavra]` **Remember** — Lembrar, lembrar-se de, recordar
-3. `[Frase]` **Do you remember my name?** — Você se lembra do meu nome? / Você lembra do meu nome?
-4. `[Frase]` **Yes, I do.** — Sim, lembro. / Sim, eu me lembro.
-5. `[Frase]` **No, I don't.** — Não, não lembro.
-6. `[Frase]` **Do you speak English?** — Você fala inglês?
-7. `[Frase]` **Yes, I do. I speak English.** — Sim, falo. Eu falo inglês.
-8. `[Frase]` **Do they work at the hospital?** — Eles trabalham no hospital?
-9. `[Frase]` **No, they don't.** — Não, não trabalham.
-10. `[Frase]` **Do you live in this city?** — Vocês moram nesta cidade?
-11. `[Frase]` **Yes, we do.** — Sim, moramos.
-12. `[Gramática]` **Gramática — Lição 92**
-   > Perguntas e Respostas Curtas (*Short Answers*): Para formular perguntas no presente com *you, they, we*, iniciamos a frase com **Do** (*Do you live here?*). Nas respostas de "Sim/Não", o padrão natural em inglês repete o auxiliar, e não o verbo principal: afirmação: **Yes, I do** / **Yes, we do**; negação: **No, I don't** / **No, they don't**.
-
-### Lição 93 — Revisão: Hobbies e Esportes *(4 palavras novas)*
-*Novas: **Soccer** (substantivo de esporte), **Tennis** (substantivo de esporte), **Guitar** (substantivo de instrumento musical), **Game** (substantivo de lazer/esporte).*
-**Foco**: O verbo **play** possui duplo sentido fundamental: com es...
-
-1. `[Palavra]` **Soccer** — Futebol
-2. `[Palavra]` **Tennis** — Tênis (esporte)
-3. `[Frase]` **Do you play soccer?** — Você joga futebol?
-4. `[Frase]` **No, I don't. I play tennis.** — Não jogo. Eu jogo tênis.
-5. `[Palavra]` **Guitar** — Violão, guitarra
-6. `[Palavra]` **Game** — Jogo, partida
-7. `[Frase]` **Do you play the guitar?** — Você toca violão?
-8. `[Frase]` **Yes, I do. I love music.** — Sim, toco. Eu amo música.
-9. `[Frase]` **They watch a soccer game on Sunday.** — Eles assistem a um jogo de futebol no domingo.
-10. `[Frase]` **We don't play games in the morning.** — Nós não jogamos jogos de manhã.
-11. `[Frase]` **I play the guitar, but I don't play tennis.** — Eu toco violão, mas não jogo tênis.
-12. `[Gramática]` **Gramática — Lição 93**
-   > O verbo **play** possui duplo sentido fundamental: com esportes e jogos significa *jogar* (*play soccer, play a game*); com instrumentos musicais significa *tocar*, exigindo o artigo definido *the* (*play the guitar*).
-
-### Lição 94 — Negação na 3ª Pessoa com "Doesn't" *(2 palavras novas)*
-*Novas: **Doesn't** (verbo auxiliar negativo de 3ª pessoa), **Drive** (verbo de locomoção).*
-**Foco**: Regra de Ouro da Negação com 3ª Pessoa: para *he, she, it...
-
-1. `[Palavra]` **Doesn't** — Não (verbo auxiliar negativo para *he, she, it*)
-2. `[Palavra]` **Drive** — Dirigir, guiar
-3. `[Frase]` **He doesn't drive.** — Ele não dirige.
-4. `[Frase]` **She doesn't drive a car to work.** — Ela não dirige carro para o trabalho.
-5. `[Frase]` **My brother doesn't work on Saturday.** — Meu irmão não trabalha no sábado.
-6. `[Frase]` **She doesn't speak French.** — Ela não fala francês.
-7. `[Frase]` **He doesn't live in this city.** — Ele não mora nesta cidade.
-8. `[Frase]` **Julia doesn't eat meat.** — Julia não come carne.
-9. `[Frase]` **The dog doesn't sleep in the house.** — O cachorro não dorme dentro de casa.
-10. `[Frase]` **He doesn't understand the teacher.** — Ele não entende o professor.
-11. `[Gramática]` **Gramática — Lição 94**
-   > Regra de Ouro da Negação com 3ª Pessoa: para *he, she, it*, usamos **doesn't** (contração de *does not*). Como a marca de 3ª pessoa (*-es*) já está no auxiliar *does*, o verbo principal **retorna obrigatoriamente à forma base infinita** sem flexão: *He works $\rightarrow$ He doesn't work* (errado: *He doesn't works*); *She speaks $\rightarrow$ She doesn't speak* (errado: *She doesn't speaks*).
-
-### Lição 95 — Perguntas com "Does" e Respostas Curtas *(1 palavra nova)*
-*Novas: **Teach** (verbo de educação), e função auxiliar de **Does** em perguntas.*
-**Foco**: Perguntas com *Does*: para formular perguntas com *he, sh...
-
-1. `[Palavra]` **Teach** — Ensinar
-2. `[Frase]` **Does he teach English?** — Ele ensina inglês?
-3. `[Frase]` **Yes, he does.** — Sim, ele ensina.
-4. `[Frase]` **No, he doesn't.** — Não, ele não ensina.
-5. `[Frase]` **Does she work at the hospital?** — Ela trabalha no hospital?
-6. `[Frase]` **Yes, she does. She is a doctor.** — Sim, trabalha. Ela é médica.
-7. `[Frase]` **Does your father drive to work?** — O seu pai dirige para o trabalho?
-8. `[Frase]` **No, he doesn't. He walks.** — Não, não dirige. Ele caminha.
-9. `[Frase]` **Does Julia play tennis?** — Julia joga tênis?
-10. `[Frase]` **Yes, she does. She plays tennis on Friday.** — Sim, joga. Ela joga tênis na sexta-feira.
-11. `[Frase]` **Does the cat sleep on the bed?** — O gato dorme na cama?
-12. `[Frase]` **No, it doesn't.** — Não, não dorme.
-13. `[Gramática]` **Gramática — Lição 95**
-   > Perguntas com *Does*: para formular perguntas com *he, she, it*, iniciamos com o auxiliar **Does**. O verbo de ação volta para a sua **forma base**: *Does she work?* (e nunca *Does she works?*). Nas respostas curtas: afirmativa: **Yes, he does** / **Yes, she does**; negativa: **No, he doesn't** / **No, she doesn't**.
-
-### Lição 96 — Revisão: Preferências e Tempo Livre *(4 palavras novas)*
-*Novas: **Prefer** (verbo de preferência), **Swim** (verbo de ação aquática), **Pool** (substantivo de instalação esportiva), **Free time** (expressão de lazer).*
-**Foco**: O verbo **prefer** expressa preferências pessoais (*I pre...
-
-1. `[Palavra]` **Prefer** — Preferir
-2. `[Palavra]` **Swim** — Nadar
-3. `[Frase]` **Do you prefer to swim?** — Você prefere nadar?
-4. `[Frase]` **Yes, I prefer to swim in the morning.** — Sim, eu prefiro nadar de manhã.
-5. `[Palavra]` **Pool** — Piscina
-6. `[Palavra]` **Free time** — Tempo livre
-7. `[Frase]` **There is a big pool at the hotel.** — Há uma piscina grande no hotel.
-8. `[Frase]` **Does she swim in the pool?** — Ela nada na piscina?
-9. `[Frase]` **Yes, she swims in her free time.** — Sim, ela nada no tempo livre dela.
-10. `[Frase]` **In my free time, I play the guitar.** — No meu tempo livre, eu toco violão.
-11. `[Frase]` **He prefers soccer, and I prefer tennis.** — Ele prefere futebol, e eu prefiro tênis.
-12. `[Gramática]` **Gramática — Lição 96**
-   > O verbo **prefer** expressa preferências pessoais (*I prefer soccer* ou *I prefer to swim*). O verbo **swim** recebe *-s* na 3ª pessoa afirmativa (*she swims*), mas na pergunta e negação permanece em sua forma base (*Does she swim? / She doesn't swim*). A expressão **free time** é usualmente acompanhada da preposição *in* (*in my free time* = no meu tempo livre).
-
-### Lição 97 — Perguntas Abertas (Question Words com Do / Does) *(2 palavras novas)*
-*Novas: **Why** (advérbio interrogativo de causa), **Because** (conjunção explicativa/causal).*
-**Foco**: Estrutura de Perguntas Abertas: **Question Word + Do/Does...
-
-1. `[Palavra]` **Why** — Por que (em perguntas)
-2. `[Palavra]` **Because** — Porque, pois (em respostas e justificativas)
-3. `[Frase]` **Why do you study English?** — Por que você estuda inglês?
-4. `[Frase]` **Because I want to travel.** — Porque eu quero viajar.
-5. `[Frase]` **Where do you live?** — Onde você mora?
-6. `[Frase]` **I live in a small apartment.** — Eu moro em um apartamento pequeno.
-7. `[Frase]` **What does he study at the university?** — O que ele estuda na universidade?
-8. `[Frase]` **He studies medicine.** — Ele estuda medicina.
-9. `[Frase]` **When do you wake up?** — Quando você acorda?
-10. `[Frase]` **I wake up early in the morning.** — Eu acordo cedo de manhã.
-11. `[Frase]` **Why does she walk to work?** — Por que ela caminha para o trabalho?
-12. `[Frase]` **Because she doesn't drive a car.** — Porque ela não dirige carro.
-13. `[Gramática]` **Gramática — Lição 97**
-   > Estrutura de Perguntas Abertas: **Question Word + Do/Does + Sujeito + Verbo Base**. A palavra **Why** é usada exclusivamente para questionar motivos ("por que?"), enquanto **Because** é empregada para fornecer a razão na resposta ("porque...").
-
-### Lição 98 — Gostos, Preferências e Alimentos *(3 palavras novas)*
-*Novas: **Pizza** (substantivo culinário), **Pasta** (substantivo culinário), **Delicious** (adjetivo qualificativo).*
-**Foco**: *Pizza* e *pasta* são amplamente utilizados no vocabulári...
-
-1. `[Palavra]` **Pizza** — Pizza
-2. `[Palavra]` **Pasta** — Massa, macarrão
-3. `[Frase]` **Do you like pizza?** — Você gosta de pizza?
-4. `[Frase]` **Yes, I love pizza.** — Sim, eu amo pizza.
-5. `[Palavra]` **Delicious** — Delicioso, deliciosa
-6. `[Frase]` **This pasta is delicious.** — Esta massa está deliciosa.
-7. `[Frase]` **Does he eat pasta for dinner?** — Ele come massa no jantar?
-8. `[Frase]` **No, he doesn't. He prefers rice and meat.** — Não, ele não come. Ele prefere arroz e carne.
-9. `[Frase]` **We don't eat pizza on Monday.** — Nós não comemos pizza na segunda-feira.
-10. `[Frase]` **She cooks delicious food for her family.** — Ela cozinha comida deliciosa para a família dela.
-11. `[Gramática]` **Gramática — Lição 98**
-   > *Pizza* e *pasta* são amplamente utilizados no vocabulário internacional de alimentação. O adjetivo *delicious* segue a ordem dos adjetivos em inglês: posiciona-se após verbos de ligação (*The pasta is delicious*) ou imediatamente antes do substantivo que qualifica (*delicious food*).
-
-### Lição 99 — Revisão: Saúde e Estilo de Vida *(4 palavras novas)*
-*Novas: **Healthy** (adjetivo de bem-estar), **Fast food** (substantivo culinário composto), **Run** (verbo de atividade física), **Smoke** (verbo de hábito/saúde).*
-**Foco**: O adjetivo **healthy** caracteriza hábitos, estilos de vi...
-
-1. `[Palavra]` **Healthy** — Saudável
-2. `[Palavra]` **Fast food** — Fast food, comida rápida
-3. `[Frase]` **Do you eat healthy food?** — Você come comida saudável?
-4. `[Frase]` **Yes, I eat fruit and salad every day.** — Sim, eu como fruta e salada todos os dias.
-5. `[Frase]` **I don't eat fast food.** — Eu não como fast food.
-6. `[Palavra]` **Run** — Correr
-7. `[Palavra]` **Smoke** — Fumar
-8. `[Frase]` **Do you run in the park?** — Você corre no parque?
-9. `[Frase]` **Yes, I run on Saturday morning.** — Sim, eu corro no sábado de manhã.
-10. `[Frase]` **He doesn't smoke.** — Ele não fuma.
-11. `[Frase]` **Does your father smoke?** — O seu pai fuma?
-12. `[Frase]` **No, he doesn't. He has a healthy life.** — Não, ele não fuma. Ele tem uma vida saudável.
-13. `[Gramática]` **Gramática — Lição 99**
-   > O adjetivo **healthy** caracteriza hábitos, estilos de vida e alimentos benéficos à saúde (*healthy food, healthy routine, healthy life*). Os verbos **run** e **smoke** seguem a flexão do Simple Present: afirmativa (*he runs, he smokes*), negação (*he doesn't run, he doesn't smoke*) e pergunta (*does he run? does he smoke?*).
-
-### Lição 100 — Fechamento do Bloco 10: Diálogo 4 — Entrevista sobre Estilo de Vida e Hábitos
-*Lição 100 do nível A1*
-**Foco**: Fechamento do Bloco 10: Diálogo 4 — Entrevista sobre Estilo de Vida e Hábitos
-
-
----
-
-# BLOCO 11 — Horas, Expressões Temporais, Preposições de Tempo (At/On/In) e Meios de Transporte (By)
-*Ciclos: (101, 102, R103) · (104, 105, R106) · (107, 108, R109) · Fechamento: Relato 110 · Teste 11*
-
-### Lição 101 — Perguntando e Dizendo as Horas (Horas Exatas) *(4 palavras novas)*
-*Novas: **O'clock** (marcador exclusivo de hora cheia), **Eleven** (número 11), **Twelve** (número 12), **Noon** (substantivo meio-dia).*
-**Foco**: Perguntar e Informar as Horas: Para perguntar que horas s...
-
-1. `[Palavra]` **O'clock** — Em ponto (usado estritamente com horas cheias)
-2. `[Palavra]` **Eleven** — Onze (número 11)
-3. `[Frase]` **It is eleven o'clock.** — São onze horas em ponto.
-4. `[Frase]` **What time is it?** — Que horas são?
-5. `[Palavra]` **Twelve** — Doze (número 12)
-6. `[Palavra]` **Noon** — Meio-dia (12:00 PM)
-7. `[Frase]` **It is twelve o'clock.** — São doze horas em ponto.
-8. `[Frase]` **It is noon.** — É meio-dia.
-9. `[Frase]` **What time is it now?** — Que horas são agora?
-10. `[Frase]` **It is eight o'clock in the morning.** — São oito horas da manhã.
-11. `[Frase]` **It is ten o'clock at night.** — São dez horas da noite.
-12. `[Gramática]` **Gramática — Lição 101**
-   > Perguntar e Informar as Horas: Para perguntar que horas são, usamos a expressão **What time is it?**. Para responder, empregamos sempre o pronome neutro **It is** (ou contraído *It's*). O termo **o'clock** (originário de *of the clock*) aplica-se **exclusivamente a horas exatas/cheias** (*It is seven o'clock*). Para as 12:00 do dia, o termo natural mais comum é **noon** (*It is noon*).
-
-### Lição 102 — Minutos, Meia Hora e Frações de Hora *(4 palavras novas)*
-*Novas: **Half** (substantivo metade/meia), **Past** (preposição depois de/passado de), **Quarter** (substantivo um quarto/15 minutos), **Midnight** (substantivo meia-noite).*
-**Foco**: Estruturas Tradicionais de Horas: Em inglês formal e coti...
-
-1. `[Palavra]` **Half** — Metade, meia
-2. `[Palavra]` **Past** — Passado de, depois de (usado em horários)
-3. `[Frase]` **It is half past seven.** — São sete e meia. (Literalmente: metade passada das sete).
-4. `[Frase]` **It is half past eight in the morning.** — São oito e meia da manhã.
-5. `[Palavra]` **Quarter** — Um quarto (15 minutos)
-6. `[Palavra]` **Midnight** — Meia-noite (12:00 AM)
-7. `[Frase]` **It is a quarter past ten.** — São dez e quinze.
-8. `[Frase]` **It is a quarter to five.** — São quinze para as cinco.
-9. `[Frase]` **It is midnight.** — É meia-noite.
-10. `[Frase]` **We eat lunch at half past twelve.** — Nós almoçamos ao meio-dia e meia.
-11. `[Frase]` **She sleeps at midnight.** — Ela dorme à meia-noite.
-12. `[Gramática]` **Gramática — Lição 102**
-   > Estruturas Tradicionais de Horas: Em inglês formal e cotidiano, expressamos frações de hora usando **half past** para 30 minutos (*half past six* = 6:30) e **a quarter** para 15 minutos (*a quarter past seven* = 7:15; *a quarter to eight* = 7:45, ou quinze para as oito). Para as 00:00, usamos **midnight** (*It is midnight*).
-
-### Lição 103 — Revisão: Números de 13 a 30 e Horas Digitais *(4 palavras novas)*
-*Novas: **Thirteen** (número 13), **Fifteen** (número 15), **Twenty** (número 20), **Thirty** (número 30).*
-**Foco**: Leitura Digital das Horas: Paralelamente às formas com *p...
-
-1. `[Palavra]` **Thirteen** — Treze (número 13)
-2. `[Palavra]` **Fifteen** — Quinze (número 15)
-3. `[Frase]` **It is seven fifteen.** — São sete e quinze.
-4. `[Frase]` **The flight is at eight fifteen.** — O voo é às oito e quinze.
-5. `[Palavra]` **Twenty** — Vinte (número 20)
-6. `[Palavra]` **Thirty** — Trinta (número 30)
-7. `[Frase]` **It is two twenty.** — São duas e vinte.
-8. `[Frase]` **The meeting is at ten thirty.** — A reunião é às dez e trinta.
-9. `[Frase]` **There are twenty students in the room.** — Há vinte estudantes na sala.
-10. `[Frase]` **She has thirteen books.** — Ela tem treze livros.
-11. `[Frase]` **We eat dinner at eight thirty.** — Nós jantamos às oito e trinta.
-12. `[Gramática]` **Gramática — Lição 103**
-   > Leitura Digital das Horas: Paralelamente às formas com *past* e *to*, o inglês contemporâneo utiliza intensamente o formato digital direto: diz-se o número da hora seguido imediatamente pelos minutos (*7:15 = seven fifteen*, *8:30 = eight thirty*, *2:20 = two twenty*). Ambas as modalidades são naturais e corretas.
-
-### Lição 104 — Preposições de Tempo: "At", "On" e "In" *(2 palavras novas)*
-*Novas: **Hour** (substantivo hora de duração/relógio), **Minute** (substantivo minuto de tempo).*
-**Foco**: O Triângulo das Preposições de Tempo (*At, On, In*):
-
-1. `[Palavra]` **Hour** — Hora (plural: *hours*)
-2. `[Palavra]` **Minute** — Minuto (plural: *minutes*)
-3. `[Frase]` **The meeting is in one hour.** — A reunião é em uma hora.
-4. `[Frase]` **We have thirty minutes.** — Nós temos trinta minutos.
-5. `[Frase]` **I wake up at six o'clock.** — Eu acordo às seis horas em ponto.
-6. `[Frase]` **She works on Monday.** — Ela trabalha na segunda-feira.
-7. `[Frase]` **He studies in the afternoon.** — Ele estuda à tarde.
-8. `[Frase]` **We eat dinner at eight at night.** — Nós jantamos às oito da noite.
-9. `[Frase]` **The doctor arrives in fifteen minutes.** — O médico chega em quinze minutos.
-10. `[Frase]` **They rest on the weekend.** — Eles descansam no fim de semana.
-11. `[Gramática]` **Gramática — Lição 104**
-   > O Triângulo das Preposições de Tempo (*At, On, In*):
-
-### Lição 105 — Marcadores de Sequência e Rotina *(3 palavras novas)*
-*Novas: **After** (preposição depois de/após), **Finish** (verbo terminar/encerrar), **Then** (advérbio então/em seguida).*
-**Foco**: Marcadores Temporais de Sequência: **After** introduz açõ...
-
-1. `[Palavra]` **After** — Depois de, após
-2. `[Palavra]` **Finish** — Terminar, finalizar, encerrar
-3. `[Frase]` **After breakfast, I go to work.** — Depois do café da manhã, eu vou para o trabalho.
-4. `[Frase]` **We finish work at five o'clock.** — Nós terminamos o trabalho às cinco horas.
-5. `[Palavra]` **Then** — Então, depois, em seguida
-6. `[Frase]` **I wake up early, and then I drink coffee.** — Eu acordo cedo e, em seguida, bebo café.
-7. `[Frase]` **She finishes her class at noon.** — Ela termina a aula dela ao meio-dia.
-8. `[Frase]` **After lunch, he reads a book.** — Depois do almoço, ele lê um livro.
-9. `[Frase]` **We study, and then we walk in the park.** — Nós estudamos e, depois, caminhamos no parque.
-10. `[Frase]` **He finishes his job and goes home.** — Ele termina o trabalho dele e vai para casa.
-11. `[Gramática]` **Gramática — Lição 105**
-   > Marcadores Temporais de Sequência: **After** introduz ações antecedentes (*After lunch* = após o almoço). **Then** encadeia ações cronológicas sucessivas (*I study, and then I rest*). O verbo **finish** termina em *-sh*, flexionando para **finishes** na 3ª pessoa afirmativa (*he finishes, she finishes*).
-
-### Lição 106 — Revisão: Transporte Coletivo *(4 palavras novas)*
-*Novas: **Train** (substantivo trem), **Station** (substantivo estação), **Subway** (substantivo metrô), **Take** (verbo tomar/pegar transporte ou levar tempo).*
-**Foco**: O verbo **take** possui dois usos centrais em mobilidade:...
-
-1. `[Palavra]` **Train** — Trem
-2. `[Palavra]` **Station** — Estação
-3. `[Frase]` **The train is at the station.** — O trem está na estação.
-4. `[Frase]` **Where is the train station?** — Onde fica a estação de trem?
-5. `[Palavra]` **Subway** — Metrô
-6. `[Palavra]` **Take** — Pegar, tomar (transporte) / Levar (tempo)
-7. `[Frase]` **Do you take the subway to work?** — Você pega o metrô para o trabalho?
-8. `[Frase]` **Yes, I take the subway every day.** — Sim, eu pego o metrô todos os dias.
-9. `[Frase]` **She takes the bus at the station.** — Ela pega o ônibus na estação.
-10. `[Frase]` **We take the train at eight fifteen.** — Nós pegamos o trem às oito e quinze.
-11. `[Frase]` **He doesn't take the car; he takes the train.** — Ele não pega o carro; ele pega o trem.
-12. `[Gramática]` **Gramática — Lição 106**
-   > O verbo **take** possui dois usos centrais em mobilidade: 1) pegar ou utilizar condução coletiva (*take the bus, take the train, take the subway*); 2) indicar tempo de duração (*The trip takes ten minutes* = A viagem leva dez minutos). Na 3ª pessoa afirmativa: *he takes, she takes*.
-
-### Lição 107 — Transporte Individual e a Preposição "By" *(3 palavras novas)*
-*Novas: **Bike** (substantivo bicicleta), **Ride** (verbo pedalar/andar de), **By** (preposição de meio de transporte). Expressão fixa: **On foot** (a pé).*
-**Foco**: Meios de Transporte com **By** vs. **On foot**: Em inglês...
-
-1. `[Palavra]` **Bike** — Bicicleta, bike
-2. `[Palavra]` **Ride** — Andar de (bicicleta), pedalar
-3. `[Frase]` **I ride my bike to school.** — Eu ando de bicicleta para a escola.
-4. `[Frase]` **He rides his bike in the park.** — Ele anda de bicicleta no parque.
-5. `[Palavra]` **By** — De, por (preposição de meio de transporte)
-6. `[Frase]` **She goes to work by car.** — Ela vai para o trabalho de carro.
-7. `[Frase]` **We travel by train.** — Nós viajamos de trem.
-8. `[Frase]` **Do you go by bus or by subway?** — Você vai de ônibus ou de metrô?
-9. `[Frase]` **I go on foot.** — Eu vou a pé.
-10. `[Frase]` **Do you go to the gym on foot?** — Você vai para a academia a pé?
-11. `[Frase]` **Yes, I do. It is near my house.** — Sim, vou. Fica perto da minha casa.
-12. `[Gramática]` **Gramática — Lição 107**
-   > Meios de Transporte com **By** vs. **On foot**: Em inglês, utilizamos a preposição **by** diretamente antes de veículos de transporte sem artigo (*by car, by bus, by train, by subway, by bike*). A grande e fundamental exceção é deslocamento a pé, onde a norma culta exige exclusivamente a expressão **on foot** (*I go on foot*, nunca *by foot*).
-
-### Lição 108 — Deslocamento e Movimento: "Leave" e "Arrive" *(3 palavras novas)*
-*Novas: **Leave** (verbo sair de/partir de), **Arrive** (verbo chegar), **Trip** (substantivo viagem/trajeto).*
-**Foco**: Dinâmica de Deslocamento: **leave** marca a saída de um l...
-
-1. `[Palavra]` **Leave** — Sair de, partir de, deixar
-2. `[Palavra]` **Arrive** — Chegar
-3. `[Frase]` **I leave home at seven thirty.** — Eu saio de casa às sete e trinta.
-4. `[Frase]` **She arrives at work at eight o'clock.** — Ela chega ao trabalho às oito horas em ponto.
-5. `[Palavra]` **Trip** — Viagem, trajeto
-6. `[Frase]` **The trip is thirty minutes.** — O trajeto é de trinta minutos.
-7. `[Frase]` **What time do you leave home?** — A que horas você sai de casa?
-8. `[Frase]` **When does the train arrive?** — Quando o trem chega?
-9. `[Frase]` **The train arrives at nine o'clock.** — O trem chega às nove horas.
-10. `[Frase]` **He leaves the office at six in the evening.** — Ele sai do escritório às seis da tarde.
-11. `[Frase]` **We arrive at the airport on time.** — Nós chegamos ao aeroporto a tempo.
-12. `[Gramática]` **Gramática — Lição 108**
-   > Dinâmica de Deslocamento: **leave** marca a saída de um local de partida (*leave home, leave the office*). **Arrive** indica o alcance de um destino, regendo a preposição **at** para locais específicos e prédios (*arrive at work, arrive at the station, arrive at the airport*). Na 3ª pessoa afirmativa: *he leaves*, *she arrives*.
-
-### Lição 109 — Revisão: Trânsito, Velocidade e Distância *(4 palavras novas)*
-*Novas: **Traffic** (substantivo trânsito/tráfego), **Fast** (adjetivo rápido/veloz), **Slow** (adjetivo lento/devagar), **Far** (advérbio/adjetivo longe/distante).*
-**Foco**: Opostos de Mobilidade e Distância: **Fast** (rápido) $\le...
-
-1. `[Palavra]` **Traffic** — Trânsito, tráfego
-2. `[Palavra]` **Fast** — Rápido, veloz
-3. `[Frase]` **The subway is fast.** — O metrô é rápido.
-4. `[Frase]` **There is traffic in the morning.** — Há trânsito de manhã.
-5. `[Palavra]` **Slow** — Lento, devagar
-6. `[Palavra]` **Far** — Longe, distante
-7. `[Frase]` **The bus is slow because there is traffic.** — O ônibus é lento porque há trânsito.
-8. `[Frase]` **My office is far from my house.** — Meu escritório fica longe da minha casa.
-9. `[Frase]` **Is the station far from here?** — A estação fica longe daqui?
-10. `[Frase]` **No, it is not far. It is very near.** — Não, não fica longe. Fica muito perto.
-11. `[Frase]` **He drives fast, but there is traffic.** — Ele dirige rápido, mas há trânsito.
-12. `[Gramática]` **Gramática — Lição 109**
-   > Opostos de Mobilidade e Distância: **Fast** (rápido) $\leftrightarrow$ **Slow** (lento); **Far** (longe) $\leftrightarrow$ **Near** (perto). Atenção à preposição: dizemos *far from* (longe de) e *near* (perto de, sem necessidade de *from* ou *of*).
-
-### Lição 110 — Fechamento do Bloco 11: Relato 4 — Meu Deslocamento Diário e Rotina de Transporte
-*Lição 110 do nível A1*
-**Foco**: Fechamento do Bloco 11: Relato 4 — Meu Deslocamento Diário e Rotina de Transporte
-
-1. `[Frase]` **My name is Tiago, and I live in a big city.** — Meu nome é Tiago, e eu moro em uma cidade grande.
-2. `[Frase]` **From Monday to Friday, I wake up at six o'clock in the morning.** — De segunda a sexta-feira, eu acordo às seis horas da manhã.
-3. `[Frase]` **I eat breakfast with my wife, and then I leave home at seven o'clock.** — Eu tomo café da manhã com a minha esposa, e depois saio de casa às sete horas.
-4. `[Frase]` **My office is far from my apartment.** — Meu escritório fica longe do meu apartamento.
-5. `[Frase]` **I don't go to work by car because there is traffic every morning.** — Eu não vou para o trabalho de carro porque há trânsito todas as manhãs.
-6. `[Frase]` **I walk on foot for fifteen minutes to the train station.** — Eu caminho a pé por quinze minutos até a estação de trem.
-7. `[Frase]` **At seven twenty, I take the train.** — Às sete e vinte, eu pego o trem.
-8. `[Frase]` **The train is fast and clean.** — O trem é rápido e limpo.
-9. `[Frase]` **At half past seven, I arrive at the station near the park.** — Às sete e meia, eu chego à estação perto do parque.
-10. `[Frase]` **Then, I take the subway to my office.** — Depois, eu pego o metrô para o meu escritório.
-11. `[Frase]` **The trip by subway takes ten minutes.** — O trajeto de metrô leva dez minutos.
-12. `[Frase]` **I arrive at work at a quarter to eight.** — Eu chego ao trabalho às quinze para as oito.
-13. `[Frase]` **I start my job at eight o'clock on time.** — Eu começo o meu trabalho às oito horas em ponto.
-14. `[Frase]` **In the evening, I finish work at five o'clock and go home.** — No final da tarde, eu termino o trabalho às cinco horas e vou para casa.
-15. `[Frase]` **I love my job, but I love my home and my family, too.** — Eu amo o meu trabalho, mas amo a minha casa e a minha família também.
-
----
-
-# BLOCO 12 — Modal Can/Can't (Habilidade e Permissão), Clima, Estações do Ano e Pedidos
-*Ciclos: (111, 112, R113) · (114, 115, R116) · (117, 118, R119) · Fechamento: Diálogo 120 · Teste 12*
-
-### Lição 111 — O Verbo Modal "Can" (Habilidade e Capacidade) *(3 palavras novas)*
-*Novas: **Can** (verbo modal poder/saber/conseguir), **Sing** (verbo cantar), **Dance** (verbo dançar).*
-**Foco**: O Verbo Modal **Can**: É um dos verbos mais fundamentais ...
-
-1. `[Palavra]` **Can** — Poder, conseguir, saber (verbo modal invariável)
-2. `[Palavra]` **Sing** — Cantar
-3. `[Frase]` **I can sing.** — Eu sei cantar. / Eu posso cantar.
-4. `[Frase]` **He can sing very well.** — Ele sabe cantar muito bem.
-5. `[Palavra]` **Dance** — Dançar
-6. `[Frase]` **She can dance.** — Ela sabe dançar.
-7. `[Frase]` **They can sing and dance.** — Eles sabem cantar e dançar.
-8. `[Frase]` **I can speak English and Portuguese.** — Eu sei falar inglês e português.
-9. `[Frase]` **My sister can play the guitar.** — Minha irmã sabe tocar violão.
-10. `[Frase]` **He can drive a car.** — Ele sabe dirigir carro.
-11. `[Frase]` **We can work together.** — Nós podemos trabalhar juntos.
-12. `[Gramática]` **Gramática — Lição 111**
-   > O Verbo Modal **Can**: É um dos verbos mais fundamentais do inglês. Expressa capacidade, habilidade (*saber fazer algo*) ou possibilidade/permissão (*poder*). Duas regras essenciais:
-
-### Lição 112 — Negação com "Can't" (Incapacidade e Impossibilidade) *(2 palavras novas)*
-*Novas: **Can't** (verbo modal negativo não poder/não saber/não conseguir), **Hear** (verbo ouvir/escutar).*
-**Foco**: Negação com **Can't**: É a contração de *cannot*. Aplica-...
-
-1. `[Palavra]` **Can't** — Não poder, não conseguir, não saber (contração de *cannot*)
-2. `[Palavra]` **Hear** — Ouvir, escutar
-3. `[Frase]` **I can't hear you.** — Eu não consigo ouvir você. / Eu não estou ouvindo você.
-4. `[Frase]` **She can't hear the music.** — Ela não consegue ouvir a música.
-5. `[Frase]` **He can't drive a car.** — Ele não sabe dirigir carro.
-6. `[Frase]` **My brother can't swim in the pool.** — Meu irmão não sabe nadar na piscina.
-7. `[Frase]` **We can't see the hotel from here.** — Nós não conseguimos ver o hotel daqui.
-8. `[Frase]` **I can't speak French.** — Eu não sei falar francês.
-9. `[Frase]` **She can't work today because she is tired.** — Ela não pode trabalhar hoje porque está cansada.
-10. `[Frase]` **They can't travel on Monday.** — Eles não podem viajar na segunda-feira.
-11. `[Frase]` **The cat can't sleep in the bedroom.** — O gato não pode dormir no quarto.
-12. `[Gramática]` **Gramática — Lição 112**
-   > Negação com **Can't**: É a contração de *cannot*. Aplica-se identicamente a todos os sujeitos (*I can't, he can't, we can't*). Assim como na forma afirmativa, o verbo principal seguinte permanece na sua forma base sem *to* (*She can't swim*).
-
-### Lição 113 — Revisão: Perguntas com "Can", Pedidos e Cortesia *(2 palavras novas)*
-*Novas: **Repeat** (verbo repetir), **Slowly** (advérbio devagar/lentamente).*
-**Foco**: Perguntas com **Can**: Formulamos perguntas invertendo o ...
-
-1. `[Palavra]` **Repeat** — Repetir
-2. `[Palavra]` **Slowly** — Devagar, lentamente
-3. `[Frase]` **Can you repeat, please?** — Você pode repetir, por favor?
-4. `[Frase]` **Can you speak slowly?** — Você pode falar devagar?
-5. `[Frase]` **Can you help me?** — Você pode me ajudar?
-6. `[Frase]` **Yes, I can.** — Sim, posso.
-7. `[Frase]` **No, I can't.** — Não, não posso.
-8. `[Frase]` **Can he cook?** — Ele sabe cozinhar?
-9. `[Frase]` **Yes, he can. He cooks delicious food.** — Sim, sabe. Ele cozinha comida deliciosa.
-10. `[Frase]` **Can she play tennis?** — Ela sabe jogar tênis?
-11. `[Frase]` **No, she can't, but she can swim.** — Não, não sabe, mas sabe nadar.
-12. `[Gramática]` **Gramática — Lição 113**
-   > Perguntas com **Can**: Formulamos perguntas invertendo o modal com o sujeito: **Can + Sujeito + Verbo Base** (*Can you help me?*). Em respostas curtas (*Short Answers*): afirmativa: **Yes, I can** / **Yes, he can**; negativa: **No, I can't** / **No, he can't**. O modal *can* é amplamente usado para pedidos cordiais de auxílio no cotidiano.
-
-### Lição 114 — O Tempo e o Clima *(4 palavras novas)*
-*Novas: **Weather** (substantivo tempo/clima), **Sunny** (adjetivo ensolarado), **Rain** (substantivo/verbo chuva/chover), **Rainy** (adjetivo chuvoso).*
-**Foco**: Falando sobre o Clima: Para perguntar sobre as condições ...
-
-1. `[Palavra]` **Weather** — Tempo, clima
-2. `[Palavra]` **Sunny** — Ensolarado
-3. `[Frase]` **How is the weather today?** — Como está o tempo hoje?
-4. `[Frase]` **The weather is sunny.** — O tempo está ensolarado.
-5. `[Palavra]` **Rain** — Chuva (substantivo), chover (verbo)
-6. `[Palavra]` **Rainy** — Chuvoso
-7. `[Frase]` **It is rainy today.** — Está chuvoso hoje.
-8. `[Frase]` **I don't like rain.** — Eu não gosto de chuva.
-9. `[Frase]` **Does it rain in this city?** — Chove nesta cidade?
-10. `[Frase]` **Yes, it rains on Saturday and Sunday.** — Sim, chove no sábado e no domingo.
-11. `[Frase]` **The weather is sunny and nice.** — O tempo está ensolarado e agradável.
-12. `[Gramática]` **Gramática — Lição 114**
-   > Falando sobre o Clima: Para perguntar sobre as condições climáticas, usamos a pergunta padrão **How is the weather?**. Para responder, empregamos o pronome impessoal **It is** seguido do adjetivo de clima (*It is sunny*, *It is rainy*). A palavra **rain** pode funcionar tanto como substantivo (*cold rain*) quanto como verbo de ação impessoal (*it rains*).
-
-### Lição 115 — Temperaturas e Sensações Térmicas *(4 palavras novas)*
-*Novas: **Hot** (adjetivo quente), **Warm** (adjetivo agradável/ameno/morno), **Cool** (adjetivo fresco), **Temperature** (substantivo temperatura).*
-**Foco**: Escala de Temperaturas:
-
-1. `[Palavra]` **Hot** — Quente
-2. `[Palavra]` **Warm** — Agradável, ameno, morno
-3. `[Frase]` **It is very hot today.** — Está muito quente hoje.
-4. `[Frase]` **The weather is warm and sunny.** — O tempo está agradável e ensolarado.
-5. `[Palavra]` **Cool** — Fresco
-6. `[Palavra]` **Temperature** — Temperatura
-7. `[Frase]` **The temperature is good.** — A temperatura está boa.
-8. `[Frase]` **It is cool in the evening.** — Fica fresco no final da tarde.
-9. `[Frase]` **In the afternoon, it is hot.** — À tarde, é quente.
-10. `[Frase]` **The water in the pool is cool.** — A água na piscina está fresca.
-11. `[Frase]` **I drink hot coffee when it is cold.** — Eu bebo café quente quando está frio.
-12. `[Gramática]` **Gramática — Lição 115**
-   > Escala de Temperaturas:
-
-### Lição 116 — Revisão: Fenômenos Climáticos e o Ar Livre *(4 palavras novas)*
-*Novas: **Cloudy** (adjetivo nublado), **Windy** (adjetivo com vento/ventoso), **Snow** (substantivo/verbo neve/nevar), **Outside** (advérbio lá fora/ao ar livre).*
-**Foco**: Sufixo **-y** em Clima: Muitos adjetivos descritivos de t...
-
-1. `[Palavra]` **Cloudy** — Nublado
-2. `[Palavra]` **Windy** — Com vento, ventoso
-3. `[Frase]` **It is cloudy today.** — Está nublado hoje.
-4. `[Frase]` **It is cold and windy outside.** — Está frio e com vento lá fora.
-5. `[Palavra]` **Snow** — Neve (substantivo), nevar (verbo)
-6. `[Palavra]` **Outside** — Lá fora, do lado de fora, ao ar livre
-7. `[Frase]` **It doesn't snow in Brazil.** — Não neva no Brasil.
-8. `[Frase]` **Does it snow in Canada in the winter?** — Neva no Canadá no inverno?
-9. `[Frase]` **The children play outside.** — As crianças brincam lá fora.
-10. `[Frase]` **We can't walk outside because it is rainy.** — Nós não podemos caminhar lá fora porque está chuvoso.
-11. `[Frase]` **How is the weather outside?** — Como está o tempo lá fora?
-12. `[Gramática]` **Gramática — Lição 116**
-   > Sufixo **-y** em Clima: Muitos adjetivos descritivos de tempo formam-se acrescentando *-y* ao substantivo (*sun $\rightarrow$ sunny*, *rain $\rightarrow$ rainy*, *cloud $\rightarrow$ cloudy*, *wind $\rightarrow$ windy*). O advérbio **outside** posiciona-se ao final da oração para indicar localização ao ar livre (*play outside, cold outside*).
-
-### Lição 117 — As Estações do Ano (Parte 1: Verão e Inverno) *(4 palavras novas)*
-*Novas: **Season** (substantivo estação do ano), **Favorite** (adjetivo favorito/preferido), **Summer** (substantivo verão), **Winter** (substantivo inverno).*
-**Foco**: Estações do Ano e a Preposição **In**: Para expressar oco...
-
-1. `[Palavra]` **Season** — Estação do ano (plural: *seasons*)
-2. `[Palavra]` **Favorite** — Favorito, favorita, preferido
-3. `[Frase]` **What is your favorite season?** — Qual é a sua estação favorita?
-4. `[Frase]` **There are four seasons.** — Há quatro estações.
-5. `[Palavra]` **Summer** — Verão
-6. `[Palavra]` **Winter** — Inverno
-7. `[Frase]` **My favorite season is summer.** — Minha estação favorita é o verão.
-8. `[Frase]` **In the summer, it is hot and sunny.** — No verão, é quente e ensolarado.
-9. `[Frase]` **We travel to the beach in the summer.** — Nós viajamos para a praia no verão.
-10. `[Frase]` **In the winter, it is cold and windy.** — No inverno, faz frio e venta.
-11. `[Frase]` **He doesn't like winter.** — Ele não gosta do inverno.
-12. `[Gramática]` **Gramática — Lição 117**
-   > Estações do Ano e a Preposição **In**: Para expressar ocorrência durante uma estação do ano, usamos a preposição **in** acompanhada usualmente do artigo definido (*in the summer, in the winter*). O adjetivo **favorite** antecede o substantivo (*my favorite season, my favorite sport*).
-
-### Lição 118 — As Estações do Ano (Parte 2: Primavera e Outono) *(3 palavras novas)*
-*Novas: **Spring** (substantivo primavera), **Fall** (substantivo outono / *Autumn*), **Flower** (substantivo flor).*
-**Foco**: As Quatro Estações do Ano: *Spring* (primavera), *Summer*...
-
-1. `[Palavra]` **Spring** — Primavera
-2. `[Palavra]` **Fall** — Outono (inglês americano; também conhecido como *Autumn*)
-3. `[Frase]` **Spring is a beautiful season.** — A primavera é uma estação linda.
-4. `[Frase]` **In the fall, the weather is cool.** — No outono, o tempo é fresco.
-5. `[Palavra]` **Flower** — Flor (plural: *flowers*)
-6. `[Frase]` **There are many flowers in the spring.** — Há muitas flores na primavera.
-7. `[Frase]` **The flowers in our garden are red and yellow.** — As flores no nosso jardim são vermelhas e amarelas.
-8. `[Frase]` **Do you prefer spring or summer?** — Você prefere a primavera ou o verão?
-9. `[Frase]` **I prefer spring because it is not too hot.** — Eu prefiro a primavera porque não é quente demais.
-10. `[Frase]` **In the fall, we walk in the park.** — No outono, nós caminhamos no parque.
-11. `[Frase]` **She loves the flowers in her house.** — Ela ama as flores na casa dela.
-12. `[Gramática]` **Gramática — Lição 118**
-   > As Quatro Estações do Ano: *Spring* (primavera), *Summer* (verão), *Fall* ou *Autumn* (outono) e *Winter* (inverno). No inglês americano, o termo mais usual é *Fall* (em alusão à queda das folhas). O substantivo *flower* forma plural regular com acréscimo de *-s* (*flowers*).
-
-### Lição 119 — Revisão: Planos e Atividades ao Ar Livre *(3 palavras novas)*
-*Novas: **Sun** (substantivo sol), **Picnic** (substantivo piquenique), **Inside** (advérbio do lado de dentro/em local fechado).*
-**Foco**: Contraste de Ambientes: **Outside** (lá fora, ao ar livre...
-
-1. `[Palavra]` **Sun** — Sol
-2. `[Palavra]` **Picnic** — Piquenique
-3. `[Frase]` **The sun is hot today.** — O sol está quente hoje.
-4. `[Frase]` **We can have a picnic in the park.** — Nós podemos fazer um piquenique no parque.
-5. `[Palavra]` **Inside** — Do lado de dentro, dentro de casa, em local coberto
-6. `[Frase]` **It is rainy, and we stay inside.** — Está chuvoso, e nós ficamos do lado de dentro.
-7. `[Frase]` **Can we go to the beach today?** — Nós podemos ir à praia hoje?
-8. `[Frase]` **Yes, we can! The weather is sunny and warm.** — Sim, podemos! O tempo está ensolarado e agradável.
-9. `[Frase]` **The children eat sandwiches on their picnic.** — As crianças comem sanduíches no piquenique delas.
-10. `[Frase]` **When it is cold, I prefer to stay inside.** — Quando está frio, eu prefiro ficar dentro de casa.
-11. `[Frase]` **We can drink cold juice in the sun.** — Nós podemos beber suco gelado ao sol.
-12. `[Gramática]` **Gramática — Lição 119**
-   > Contraste de Ambientes: **Outside** (lá fora, ao ar livre) $\leftrightarrow$ **Inside** (do lado de dentro, em casa/recinto coberto). Para realizar um piquenique, a expressão fixa idiomática é **have a picnic** (*We can have a picnic*).
-
-### Lição 120 — Fechamento do Bloco 12: Diálogo 5 — Planejando um Passeio ao Ar Livre
-*Lição 120 do nível A1*
-**Foco**: Fechamento do Bloco 12: Diálogo 5 — Planejando um Passeio ao Ar Livre
-
-
----
-
-# BLOCO 13 — Substantivos Contáveis vs Incontáveis, Quantificadores (Some/Any, How much/How many) e Restaurante
-*Ciclos: (121, 122, R123) · (124, 125, R126) · (127, 128, R129) · Fechamento: Diálogo 130 · Teste 13*
-
-### Lição 121 — Substantivos Contáveis vs. Incontáveis (Countable & Uncountable) *(3 palavras novas)*
-*Novas: **Sugar** (substantivo incontável açúcar), **Salt** (substantivo incontável sal), **Plate** (substantivo contável prato).*
-**Foco**: Substantivos Contáveis (*Countable*) vs. Incontáveis (*Un...
-
-1. `[Palavra]` **Sugar** — Açúcar (substantivo incontável)
-2. `[Palavra]` **Salt** — Sal (substantivo incontável)
-3. `[Frase]` **Coffee with sugar, please.** — Café com açúcar, por favor.
-4. `[Frase]` **There is salt on the table.** — Há sal sobre a mesa.
-5. `[Palavra]` **Plate** — Prato (substantivo contável, plural: *plates*)
-6. `[Frase]` **A clean plate on the table.** — Um prato limpo sobre a mesa.
-7. `[Frase]` **There are three plates in the kitchen.** — Há três pratos na cozinha.
-8. `[Frase]` **I drink tea with milk and sugar.** — Eu tomo chá com leite e açúcar.
-9. `[Frase]` **I don't like sugar in my coffee.** — Eu não gosto de açúcar no meu café.
-10. `[Frase]` **He doesn't eat salt.** — Ele não come sal.
-11. `[Frase]` **She has a plate on the table.** — Ela tem um prato sobre a mesa.
-12. `[Gramática]` **Gramática — Lição 121**
-   > Substantivos Contáveis (*Countable*) vs. Incontáveis (*Uncountable*):
-
-### Lição 122 — O Quantificador "Some" (Afirmações e Pedidos) *(3 palavras novas)*
-*Novas: **Some** (quantificador algum/alguma/alguns/algumas/um pouco de), **Soup** (substantivo incontável sopa), **Chicken** (substantivo carne de frango/frango).*
-**Foco**: O Uso de **Some**:
-
-1. `[Palavra]` **Some** — Algum, alguma, alguns, algumas, um pouco de (usado em afirmativas e ofertas)
-2. `[Palavra]` **Soup** — Sopa (substantivo incontável)
-3. `[Frase]` **I want some soup, please.** — Eu quero um pouco de sopa, por favor.
-4. `[Frase]` **There is some hot soup on the table.** — Há um pouco de sopa quente sobre a mesa.
-5. `[Palavra]` **Chicken** — Frango (substantivo/alimento)
-6. `[Frase]` **We eat chicken and rice for dinner.** — Nós comemos frango e arroz no jantar.
-7. `[Frase]` **I have some apples in my bag.** — Eu tenho algumas maçãs na minha bolsa.
-8. `[Frase]` **She drinks some water.** — Ela bebe um pouco de água.
-9. `[Frase]` **Can I have some water, please?** — Você pode me dar um pouco de água, por favor?
-10. `[Frase]` **We have some bread and cheese.** — Nós temos um pouco de pão e queijo.
-11. `[Frase]` **There are some clean plates in the kitchen.** — Há alguns pratos limpos na cozinha.
-12. `[Gramática]` **Gramática — Lição 122**
-   > O Uso de **Some**:
-
-### Lição 123 — Revisão: O Quantificador "Any" (Negativas e Perguntas) *(3 palavras novas)*
-*Novas: **Any** (quantificador nenhum/algum em negativas e perguntas), **Waitress** (substantivo garçonete), **Fork** (substantivo contável garfo).*
-**Foco**: Contraste Essencial entre **Some** e **Any**:
-
-1. `[Palavra]` **Any** — Nenhum, nenhuma (em negativas); algum, alguma, qualquer (em perguntas)
-2. `[Palavra]` **Waitress** — Garçonete
-3. `[Frase]` **The waitress is very polite.** — A garçonete é muito educada.
-4. `[Frase]` **Do you have any sugar?** — Você tem algum açúcar?
-5. `[Frase]` **No, I don't have any sugar.** — Não, eu não tenho nenhum açúcar.
-6. `[Palavra]` **Fork** — Garfo (plural: *forks*)
-7. `[Frase]` **Are there any forks on the table?** — Há algum garfo na mesa?
-8. `[Frase]` **There aren't any forks here.** — Não há nenhum garfo aqui.
-9. `[Frase]` **Do you want any soup?** — Você quer alguma sopa?
-10. `[Frase]` **She doesn't eat any meat.** — Ela não come nenhuma carne.
-11. `[Frase]` **We don't have any money today.** — Nós não temos nenhum dinheiro hoje.
-12. `[Gramática]` **Gramática — Lição 123**
-   > Contraste Essencial entre **Some** e **Any**:
-
-### Lição 124 — Quantidade com Contáveis: "How Many" *(3 palavras novas)*
-*Novas: **How many** (expressão interrogativa quantos/quantas), **Knife** (substantivo faca, plural irregular: *knives*), **Spoon** (substantivo colher).*
-**Foco**: A Expressão **How Many**: É empregada estritamente para p...
-
-1. `[Palavra]` **How many** — Quantos, quantas (usado exclusivamente com substantivos contáveis no plural)
-2. `[Palavra]` **Knife (Plural: Knives)** — Faca, facas (plural irregular com terminação *-ves*)
-3. `[Frase]` **How many knives are on the table?** — Quantas facas estão sobre a mesa?
-4. `[Frase]` **There are two knives and two forks.** — Há duas facas e dois garfos.
-5. `[Palavra]` **Spoon** — Colher (plural: *spoons*)
-6. `[Frase]` **I need a spoon for the soup.** — Eu preciso de uma colher para a sopa.
-7. `[Frase]` **How many spoons do you need?** — De quantas colheres você precisa?
-8. `[Frase]` **How many brothers do you have?** — Quantos irmãos você tem?
-9. `[Frase]` **I have two brothers.** — Eu tenho dois irmãos.
-10. `[Frase]` **How many students are in the room?** — Quantos estudantes estão na sala?
-11. `[Frase]` **There are ten students here.** — Há dez estudantes aqui.
-12. `[Gramática]` **Gramática — Lição 124**
-   > A Expressão **How Many**: É empregada estritamente para perguntar quantidades de **substantivos contáveis**. O substantivo que a sucede deve vir **obrigatoriamente no plural** (*How many spoons...? How many students...?*). Plural irregular de *knife*: substantivos terminados em *-fe* trocam essa terminação por **-ves** (*one knife $\rightarrow$ two knives*).
-
-### Lição 125 — Quantidade e Preço: "How Much" *(3 palavras novas)*
-*Novas: **How much** (expressão interrogativa quanto/quanta com incontáveis; quanto custa para preços), **Dollar** (substantivo moeda dólar), **Cost** (verbo custar).*
-**Foco**: Os Dois Usos Centrais de **How Much**:
-
-1. `[Palavra]` **How much** — Quanto, quanta (com incontáveis); quanto custa (para preços)
-2. `[Palavra]` **Dollar** — Dólar (plural: *dollars*)
-3. `[Frase]` **How much is this book?** — Quanto custa este livro?
-4. `[Frase]` **It is ten dollars.** — São dez dólares. / Custa dez dólares.
-5. `[Palavra]` **Cost** — Custar (3ª pessoa: *costs*)
-6. `[Frase]` **How much does the soup cost?** — Quanto custa a sopa?
-7. `[Frase]` **It costs eight dollars.** — Custa oito dólares.
-8. `[Frase]` **How much water do you drink every day?** — Quanta água você bebe todos os dias?
-9. `[Frase]` **I drink two bottles of water.** — Eu bebo duas garrafas de água.
-10. `[Frase]` **How much money do you have?** — Quanto dinheiro você tem?
-11. `[Frase]` **I have twenty dollars.** — Eu tenho vinte dólares.
-12. `[Gramática]` **Gramática — Lição 125**
-   > Os Dois Usos Centrais de **How Much**:
-
-### Lição 126 — Revisão: O Quantificador Universal "A lot of" *(3 palavras novas)*
-*Novas: **A lot of** (locução quantificadora muito/muita/muitos/muitas), **Menu** (substantivo cardápio/menu), **Vegetable** (substantivo vegetal/legume, plural: *vegetables*).*
-**Foco**: O Superquantificador **A lot of**: É extremamente prático...
-
-1. `[Palavra]` **A lot of** — Muito, muita, muitos, muitas (quantificador universal)
-2. `[Palavra]` **Menu** — Cardápio, menu
-3. `[Frase]` **There is a lot of food on the menu.** — Há muita comida no cardápio.
-4. `[Frase]` **Can I see the menu, please?** — Posso ver o cardápio, por favor?
-5. `[Palavra]` **Vegetable (Plural: Vegetables)** — Legume, vegetal, legumes
-6. `[Frase]` **I eat a lot of vegetables.** — Eu como muitos legumes.
-7. `[Frase]` **She drinks a lot of water.** — Ela bebe muita água.
-8. `[Frase]` **There are a lot of people in the restaurant.** — Há muitas pessoas no restaurante.
-9. `[Frase]` **We have a lot of time before dinner.** — Nós temos muito tempo antes do jantar.
-10. `[Frase]` **He eats a lot of rice and chicken.** — Ele come muito arroz e frango.
-11. `[Frase]` **There are fresh vegetables in this soup.** — Há legumes frescos nesta sopa.
-12. `[Gramática]` **Gramática — Lição 126**
-   > O Superquantificador **A lot of**: É extremamente prático e versátil na comunicação diária. Funciona perfeitamente tanto com **substantivos contáveis no plural** (*a lot of vegetables, a lot of plates*) quanto com **substantivos incontáveis** (*a lot of water, a lot of food, a lot of time*).
-
-### Lição 127 — Fazendo Pedidos com "Would like" *(3 palavras novas)*
-*Novas: **Would like** (locução verbal de cortesia gostaria de), **Order** (verbo pedir/fazer pedido em restaurante; substantivo pedido), **Bring** (verbo trazer).*
-**Foco**: Pedidos com **Would Like**: No ambiente de restaurantes, ...
-
-1. `[Palavra]` **Would like** — Gostaria, gostaria de (expressão polida equivalente a *want*)
-2. `[Palavra]` **Order** — Fazer o pedido, pedir (em restaurante); pedido (substantivo)
-3. `[Frase]` **Are you ready to order?** — Vocês estão prontos para pedir?
-4. `[Frase]` **Yes, we are ready to order.** — Sim, nós estamos prontos para pedir.
+5. `[Frase]` **Do you listen to music?** — Você escuta música?
+6. `[Palavra]` **Play** — Jogar, brincar
+7. `[Palavra]` **Game** — Jogo
+8. `[Frase]` **Do you play games?** — Você costuma jogar algum jogo?
+9. `[Palavra]` **Sport** — Esporte
+10. `[Frase]` **Do you play a sport?** — Você pratica algum esporte?
+11. `[Frase]` **Do they work at the school?** — Eles trabalham na escola?
+12. `[Gramática]` **Gramática — Lição 77: Perguntas com "Do"**
+   > Para perguntar sobre ações com *I*, *you*, *we* e *they*, colocamos *do* antes do sujeito: *Do you listen to music?* O verbo principal fica na forma-base.
+
+**PAL:** 6<br>
+**TPA:** 400<br>
+**PA:** Watch, Listen to, Music, Play, Game, Sport
+
+### Lição 78 — Fixação: Atividades e Lazer
+**Foco**: Praticar perguntas e negativas com *do* em atividades do cotidiano.
+
+1. `[Frase]` **Do you run in the park?** — Você corre no parque? `[Ver palavra: run]`
+2. `[Frase]` **Do you sing at school?** — Você canta na escola? `[Ver palavra: sing]`
+3. `[Frase]` **Do you dance at parties?** — Você dança em festas? `[Ver palavra: dance]`
+4. `[Frase]` **Do you draw animals?** — Você desenha animais? `[Ver palavra: draw]`
+5. `[Frase]` **Do you swim in the river?** — Você nada no rio? `[Ver palavra: swim]`
+6. `[Frase]` **We go home together.** — Nós vamos para casa juntos. `[Ver palavra: go]`
+7. `[Frase]` **They don't play in the kitchen.** — Eles não brincam na cozinha. `[Ver contração: don't → do not — não]`
+8. `[Frase]` **I don't work at the school.** — Eu não trabalho na escola. `[Ver contração: don't → do not — não]`
+
+**PAL:** 6<br>
+**TPA:** 406<br>
+**PA:** run, sing, dance, draw, swim, go
+
+### Lição 79 — Negativas com "Does Not"
+**Foco**: Descrever o comportamento de um cachorro e de um gato.
+
+1. `[Palavra]` **Chase** — Perseguir, correr atrás de
+2. `[Frase]` **The dog does not chase the cat.** — O cachorro não persegue o gato. `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+3. `[Palavra]` **Hide** — Esconder-se
+4. `[Frase]` **The cat does not hide under the bed.** — O gato não se esconde embaixo da cama. `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+5. `[Palavra]` **Jump** — Pular
+6. `[Frase]` **The cat can jump on the chair.** — O gato consegue pular na cadeira. `[Ver terceira pessoa: can → can — can não muda com sujeito singular; o verbo seguinte fica na forma-base]`
+7. `[Palavra]` **Scratch** — Arranhar
+8. `[Frase]` **The dog does not scratch the door.** — O cachorro não arranha a porta. `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+9. `[Palavra]` **Bark** — Latir
+10. `[Frase]` **The dog does not bark in the garden.** — O cachorro não late no jardim. `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+11. `[Palavra]` **Tail** — Cauda, rabo
+12. `[Frase]` **The cat has a black tail.** — O gato tem um rabo preto. `[Ver terceira pessoa: has → have — forma irregular de have para sujeito singular]`
+13. `[Frase]` **The dog doesn't sleep under the table.** — O cachorro não dorme embaixo da mesa. `[Ver contração: doesn't → does not — não]` `[Ver terceira pessoa: doesn't → do — does not usa o auxiliar para sujeito singular]`
+14. `[Gramática]` **Gramática — Lição 79: Negativas com "Does Not"**
+   > Com *he*, *she*, *it* ou um sujeito singular, usamos *does not* antes da forma-base: *The dog does not chase*. *Does* é a forma de *do* para esse sujeito. A contração é *doesn't*; o verbo principal não recebe *-s* nessa construção. `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]` `[Ver terceira pessoa: doesn't → do — does not usa o auxiliar para sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 412<br>
+**PA:** Chase, Hide, Jump, Scratch, Bark, Tail
+
+### Lição 80 — Perguntas com "Does"
+**Foco**: Perguntar sobre animais e seus cuidados.
+
+1. `[Palavra]` **Bone** — Osso
+2. `[Frase]` **Does the dog have a bone?** — O cachorro tem um osso? `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+3. `[Palavra]` **Paw** — Pata
+4. `[Frase]` **Does the cat have a white paw?** — O gato tem uma pata branca? `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+5. `[Palavra]` **Wing** — Asa
+6. `[Frase]` **Does the bird have black wings?** — O pássaro tem asas pretas? `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+7. `[Palavra]` **Feather** — Pena
+8. `[Frase]` **Does the bird have yellow feathers?** — O pássaro tem penas amarelas? `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+9. `[Palavra]` **Cage** — Gaiola
+10. `[Frase]` **Does the bird sleep in the cage?** — O pássaro dorme na gaiola? `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+11. `[Palavra]` **Vet** — Veterinário, veterinária
+12. `[Frase]` **Does the vet have a dog?** — O veterinário tem um cachorro? `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+13. `[Gramática]` **Gramática — Lição 80: Perguntas com "Does"**
+   > Para perguntar sobre uma ação ou posse com *he*, *she*, *it* ou um substantivo singular, colocamos *does* antes do sujeito. Compare *The dog has a bone* com *Does the dog have a bone?* Na pergunta, *does* marca a terceira pessoa e o verbo principal fica na forma-base, *have*. `[Ver terceira pessoa: has → have — forma irregular de have para sujeito singular]` `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+
+**PAL:** 6<br>
+**TPA:** 418<br>
+**PA:** Bone, Paw, Wing, Feather, Cage, Vet
+
+### Lição 81 — Fixação: Animais de Estimação
+**Foco**: Praticar negativas e perguntas com *does* ao falar de cuidados e comportamentos.
+
+1. `[Frase]` **Does the dog bite?** — O cachorro morde? `[Ver palavra: bite]` `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+2. `[Frase]` **The girl does not feed the dog.** — A menina não alimenta o cachorro. `[Ver palavra: feed]` `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+3. `[Frase]` **Does the boy wash the dog?** — O menino dá banho no cachorro? `[Ver palavra: wash]` `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+4. `[Frase]` **Does the dog have a toy?** — O cachorro tem um brinquedo? `[Ver palavra: toy]` `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+5. `[Frase]` **Does the bird sing loudly?** — O pássaro canta alto? `[Ver palavra: loudly]` `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+6. `[Frase]` **Does the playful dog chase the cat?** — O cachorro brincalhão persegue o gato? `[Ver palavra: playful]` `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+7. `[Frase]` **The bird doesn't sleep in the kitchen.** — O pássaro não dorme na cozinha. `[Ver contração: doesn't → does not — não]` `[Ver terceira pessoa: doesn't → do — does not usa o auxiliar para sujeito singular]`
+8. `[Frase]` **Does the cat hide under the chair?** — O gato se esconde embaixo da cadeira? `[Ver terceira pessoa: does → do — auxiliar para sujeito singular; o verbo principal fica na forma-base]`
+
+**PAL:** 6<br>
+**TPA:** 424<br>
+**PA:** bite, feed, wash, toy, loudly, playful
+
+### Lição 82 — Terceira Pessoa: "-es" e "-ies"
+**Foco**: Descrever ações na escola e no jardim.
+
+1. `[Palavra]` **Study** — Estudar
+2. `[Frase]` **The child studies in the library.** — A criança estuda na biblioteca. `[Ver terceira pessoa: studies → study — consoante + y: troca-se y por -ies para sujeito singular]`
+3. `[Palavra]` **Teach** — Ensinar
+4. `[Frase]` **The teacher teaches the students.** — O professor ensina os alunos. `[Ver terceira pessoa: teaches → teach — no presente, acrescenta-se -es para sujeito singular]`
+5. `[Palavra]` **Try** — Experimentar, provar
+6. `[Frase]` **The student tries the cake.** — O aluno prova o bolo. `[Ver terceira pessoa: tries → try — consoante + y: troca-se y por -ies para sujeito singular]`
+7. `[Palavra]` **Fly** — Voar
+8. `[Frase]` **The bird flies in the garden.** — O pássaro voa no jardim. `[Ver terceira pessoa: flies → fly — consoante + y: troca-se y por -ies para sujeito singular]`
+9. `[Palavra]` **Carry** — Carregar
+10. `[Frase]` **The teacher carries the books.** — O professor carrega os livros. `[Ver terceira pessoa: carries → carry — consoante + y: troca-se y por -ies para sujeito singular]`
+11. `[Palavra]` **Lesson** — Lição, aula
+12. `[Frase]` **The lesson is in the classroom.** — A aula é na sala de aula.
+13. `[Gramática]` **Gramática — Lição 82: Terceira Pessoa**
+   > No presente afirmativo com *he*, *she*, *it* ou um substantivo singular, verbos terminados em *-o*, *-ch*, *-sh*, *-ss*, *-x* ou *-z* geralmente recebem *-es*, como *teach → teaches* e *go → goes*. Após consoante + *y*, trocamos o *y* por *-ies*, como em *study → studies* e *try → tries*. Após vogal + *y*, acrescentamos apenas *-s*, como em *say → says*. `[Ver terceira pessoa: teaches → teach — no presente, acrescenta-se -es para sujeito singular]` `[Ver terceira pessoa: goes → go — no presente, acrescenta-se -es para sujeito singular]` `[Ver terceira pessoa: studies → study — consoante + y: troca-se y por -ies para sujeito singular]` `[Ver terceira pessoa: tries → try — consoante + y: troca-se y por -ies para sujeito singular]` `[Ver terceira pessoa: says → say — após vogal + y, acrescenta-se -s para sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 430<br>
+**PA:** Study, Teach, Try, Fly, Carry, Lesson
+
+### Lição 83 — Instruções no Imperativo
+**Foco**: Dar instruções simples na sala de aula.
+
+1. `[Palavra]` **Open** — Abrir
+2. `[Frase]` **Open the door.** — Abra a porta.
+3. `[Palavra]` **Close** — Fechar
+4. `[Frase]` **Close the window.** — Feche a janela.
 5. `[Palavra]` **Bring** — Trazer
-6. `[Frase]` **Can you bring the menu, please?** — Você pode trazer o cardápio, por favor?
-7. `[Frase]` **I would like a glass of water.** — Eu gostaria de um copo de água.
-8. `[Frase]` **She would like some soup and a salad.** — Ela gostaria de um pouco de sopa e de uma salada.
-9. `[Frase]` **What would you like to drink?** — O que você gostaria de beber?
-10. `[Frase]` **We would like chicken with rice and vegetables.** — Nós gostaríamos de frango com arroz e legumes.
-11. `[Frase]` **The waiter brings the food to our table.** — O garçom traz a comida para a nossa mesa.
-12. `[Gramática]` **Gramática — Lição 127**
-   > Pedidos com **Would Like**: No ambiente de restaurantes, a fórmula de máxima cortesia para fazer pedidos é **I would like** (frequentemente contraído na oralidade como *I'd like*). Soa muito mais refinado e respeitoso do que o imperativo direto ou *I want*. Estrutura: *I would like + substantivo* (*I would like water*) ou *I would like to + verbo* (*I would like to order*).
+6. `[Frase]` **Bring the key.** — Traga a chave.
+7. `[Palavra]` **Come** — Vir
+8. `[Frase]` **Come here.** — Venha aqui.
+9. `[Palavra]` **Wait** — Esperar
+10. `[Frase]` **Wait here.** — Espere aqui.
+11. `[Palavra]` **Listen** — Escutar, ouvir
+12. `[Frase]` **Listen to the teacher.** — Escute a professora.
+13. `[Gramática]` **Gramática — Lição 83: Imperativo**
+   > Para dar uma instrução, usamos a forma-base do verbo sem sujeito expresso: *Open the door* e *Wait here*. A frase pode ser um pedido ou uma orientação.
 
-### Lição 128 — Sobremesa, Conta e Gorjeta *(4 palavras novas)*
-*Novas: **Dessert** (substantivo sobremesa), **Cake** (substantivo bolo), **Bill** (substantivo conta de consumo/restaurante), **Tip** (substantivo gorjeta).*
-**Foco**: Vocabulário de Fechamento de Refeição:
+**PAL:** 6<br>
+**TPA:** 436<br>
+**PA:** Open, Close, Bring, Come, Wait, Listen
 
-1. `[Palavra]` **Dessert** — Sobremesa
-2. `[Palavra]` **Cake** — Bolo
-3. `[Frase]` **I would like cake for dessert.** — Eu gostaria de bolo de sobremesa.
-4. `[Frase]` **Would you like any dessert?** — Vocês gostariam de alguma sobremesa?
-5. `[Palavra]` **Bill** — Conta (de consumo em restaurante)
-6. `[Palavra]` **Tip** — Gorjeta
-7. `[Frase]` **Can we have the bill, please?** — O senhor pode trazer a conta, por favor?
-8. `[Frase]` **The bill is thirty dollars.** — A conta deu trinta dólares.
-9. `[Frase]` **We leave a tip for the waiter.** — Nós deixamos uma gorjeta para o garçom.
-10. `[Frase]` **How much is the tip?** — De quanto é a gorjeta?
-11. `[Frase]` **The tip is five dollars.** — A gorjeta é de cinco dólares.
-12. `[Gramática]` **Gramática — Lição 128**
-   > Vocabulário de Fechamento de Refeição:
+### Lição 84 — Fixação: Instruções na Sala de Aula
+**Foco**: Praticar o imperativo e o presente afirmativo com sujeito singular.
 
-### Lição 129 — Revisão: Bebidas e Sabores em Refeições *(3 palavras novas)*
-*Novas: **Wine** (substantivo incontável vinho), **Sweet** (adjetivo doce), **Beer** (substantivo cerveja).*
-**Foco**: Bebidas e Medidas: Bebidas como *wine, beer, coffee, wate...
+1. `[Frase]` **Pull the door.** — Puxe a porta. `[Ver palavra: pull]`
+2. `[Frase]` **Push the chair.** — Empurre a cadeira. `[Ver palavra: push]`
+3. `[Frase]` **Put the book on the table.** — Coloque o livro na mesa. `[Ver palavra: put]`
+4. `[Frase]` **Look at the board.** — Olhe para o quadro. `[Ver palavra: look at]`
+5. `[Frase]` **Turn the key.** — Gire a chave. `[Ver palavra: turn]`
+6. `[Frase]` **Stop, please.** — Pare, por favor. `[Ver palavra: stop]`
+7. `[Frase]` **My friend studies at the school.** — Meu amigo estuda na escola. `[Ver terceira pessoa: studies → study — consoante + y: troca-se y por -ies para sujeito singular]`
+8. `[Frase]` **The bird flies near the tree.** — O pássaro voa perto da árvore. `[Ver terceira pessoa: flies → fly — consoante + y: troca-se y por -ies para sujeito singular]`
 
-1. `[Palavra]` **Wine** — Vinho (substantivo incontável)
-2. `[Palavra]` **Sweet** — Doce (adjetivo)
-3. `[Frase]` **A glass of red wine, please.** — Uma taça de vinho tinto, por favor.
-4. `[Frase]` **This white wine is cold and sweet.** — Este vinho branco está gelado e doce.
-5. `[Palavra]` **Beer** — Cerveja (substantivo)
-6. `[Frase]` **Do you prefer beer or wine?** — Você prefere cerveja ou vinho?
-7. `[Frase]` **I would like a cold beer, please.** — Eu gostaria de uma cerveja gelada, por favor.
-8. `[Frase]` **She doesn't drink wine.** — Ela não bebe vinho.
-9. `[Frase]` **This cake is very sweet and delicious.** — Este bolo é muito doce e delicioso.
-10. `[Frase]` **We drink wine with our dinner.** — Nós bebemos vinho com o nosso jantar.
-11. `[Frase]` **He drinks a glass of cold water before the beer.** — Ele bebe um copo de água gelada antes da cerveja.
-12. `[Gramática]` **Gramática — Lição 129**
-   > Bebidas e Medidas: Bebidas como *wine, beer, coffee, water* são gramaticalmente incontáveis. No contexto comercial de restaurantes, é aceito pedir *a beer* (uma cerveja) ou especificar a embalagem/recipiente exato: *a glass of wine* (uma taça de vinho), *a bottle of water* (uma garrafa de água).
+**PAL:** 6<br>
+**TPA:** 442<br>
+**PA:** pull, push, put, look at, turn, stop
 
-### Lição 130 — Fechamento do Bloco 13: Diálogo 6 — Jantar Completo no Restaurante
-*Lição 130 do nível A1*
-**Foco**: Fechamento do Bloco 13: Diálogo 6 — Jantar Completo no Restaurante
+### Encerramento — banco, descrição e exame
+
+Pré-requisito: Blocos 1–6 e Lições 76–84.
+
+#### Lição 85-BF — banco de frases: natureza e animais
+
+1. `[Frase]` **The squirrel is near the tree.** — O esquilo está perto da árvore. `[Ver palavra: squirrel]`
+2. `[Frase]` **The acorn is under the tree.** — A bolota está embaixo da árvore. `[Ver palavra: acorn]`
+3. `[Frase]` **The stream is near the garden.** — O riacho fica perto do jardim. `[Ver palavra: stream]`
+4. `[Frase]` **The bird is on the ground.** — O pássaro está no chão. `[Ver palavra: ground]`
+5. `[Frase]` **The leaf is on the ground.** — A folha está no chão. `[Ver palavra: leaf]`
+6. `[Frase]` **The bird is on the branch.** — O pássaro está no galho. `[Ver palavra: branch]`
+7. `[Frase]` **The tree is on the hill.** — A árvore está na colina. `[Ver palavra: hill]`
+8. `[Frase]` **The rock is near the stream.** — A pedra está perto do riacho. `[Ver palavra: rock]`
+9. `[Frase]` **The dog is strong.** — O cachorro é forte. `[Ver palavra: strong]`
+10. `[Frase]` **The wind is strong.** — O vento está forte. `[Ver palavra: wind]`
+11. `[Frase]` **The sky is blue.** — O céu está azul. `[Ver palavra: sky]`
+12. `[Frase]` **The sun is in the sky.** — O sol está no céu. `[Ver palavra: sun]`
+
+**PAL:** 12<br>
+**TPA:** 454<br>
+**PA:** squirrel, acorn, stream, ground, leaf, branch, hill, rock, strong, wind, sky, sun
+
+#### Lição 86 — descrição: perto do riacho
+
+1. I am near the stream. — Eu estou perto do riacho.
+2. I can see a squirrel. — Eu consigo ver um esquilo.
+3. The squirrel is on the ground. — O esquilo está no chão.
+4. It carries an acorn. — Ele carrega uma bolota. `[Ver terceira pessoa: carries → carry — consoante + y: troca-se y por -ies para sujeito singular]`
+5. A bird flies near the tree. — Um pássaro voa perto da árvore. `[Ver terceira pessoa: flies → fly — consoante + y: troca-se y por -ies para sujeito singular]`
+6. There is a leaf on the ground. — Há uma folha no chão.
+7. The wind is not strong today. — O vento não está forte hoje.
+8. The blue sky is beautiful. — O céu azul é bonito.
+9. I am happy. — Eu estou feliz.
+
+#### Lição 87 — exame: apêndice de frases inéditas
+
+1. Do you watch the ducks? — Você observa os patos?
+2. I don't work at the hotel. — Eu não trabalho no hotel.
+3. Does the cat hide under the table? — O gato se esconde embaixo da mesa?
+4. The dog doesn't chase the bird. — O cachorro não persegue o pássaro.
+5. The teacher studies in the classroom. — O professor estuda na sala de aula.
+6. Close the door, please. — Feche a porta, por favor.
+7. The leaf is near the rock. — A folha está perto da pedra.
+8. The squirrel is under the tree. — O esquilo está embaixo da árvore.
+9. Does the student play games? — O aluno costuma jogar algum jogo?
+10. I listen to music in the kitchen. — Eu escuto música na cozinha.
 
 
----
+# BLOCO 8 — Contrastes, Plurais Irregulares e Deslocamentos
+
+### Lições dos ciclos — sequência revisada
+
+### Lição 88 — Contrastes com "But"
+**Foco**: Contrastar lugares, alimentos e sensações com *but* e retomar a adição com *and*.
+
+1. `[Palavra]` **But** — Mas
+2. `[Frase]` **The kitchen is small, but the living room is big.** — A cozinha é pequena, mas a sala de estar é grande.
+3. `[Palavra]` **Cold** — Frio, fria
+4. `[Frase]` **The water is cold.** — A água está fria.
+5. `[Palavra]` **Hot** — Quente
+6. `[Frase]` **The coffee is hot, but the tea is cold.** — O café está quente, mas o chá está frio.
+7. `[Palavra]` **Delicious** — Delicioso, deliciosa
+8. `[Frase]` **The cake is delicious, but I am not hungry.** — O bolo está delicioso, mas eu não estou com fome.
+9. `[Palavra]` **Wonderful** — Maravilhoso, maravilhosa
+10. `[Frase]` **The garden is wonderful and quiet.** — O jardim é maravilhoso e tranquilo.
+11. `[Palavra]` **Night** — Noite
+12. `[Frase]` **The night is quiet, but the morning is busy.** — A noite é tranquila, mas a manhã é movimentada.
+13. `[Gramática]` **Gramática — Lição 88: "But"**
+   > *But* liga ideias contrastantes: *The kitchen is small, but the living room is big.* Já *and*, que conhecemos, acrescenta uma informação: *The garden is wonderful and quiet.*
+
+**PAL:** 6<br>
+**TPA:** 460<br>
+**PA:** But, Cold, Hot, Delicious, Wonderful, Night
+
+### Lição 89 — Acrescentando Informação com "Too" e "Also"
+**Foco**: Falar de necessidades e planos durante uma visita.
+
+1. `[Frase]` **I like the city.** — Eu gosto da cidade.
+2. `[Palavra]` **Too** — Também
+3. `[Frase]` **My friend likes the city, too.** — Meu amigo também gosta da cidade.
+4. `[Palavra]` **Also** — Também
+5. `[Frase]` **My friend also likes the museum.** — Meu amigo também gosta do museu.
+6. `[Palavra]` **Need** — Precisar de
+7. `[Frase]` **I need my bag.** — Eu preciso da minha bolsa.
+8. `[Palavra]` **Taxi** — Táxi
+9. `[Frase]` **The taxi is near the hotel.** — O táxi está perto do hotel.
+10. `[Palavra]` **Call** — Chamar, telefonar
+11. `[Frase]` **I can call a taxi.** — Eu posso chamar um táxi.
+12. `[Palavra]` **Meal** — Refeição
+13. `[Frase]` **This meal is delicious.** — Esta refeição está deliciosa.
+14. `[Frase]` **We also need the key.** — Nós também precisamos da chave.
+15. `[Gramática]` **Gramática — Lição 89: "Too" e "Also"**
+   > Em frases afirmativas, *too* pode vir no fim: *My friend likes the city, too.* *Also* pode vir antes do verbo principal, como em *we also need*, ou depois de *to be*, como em *she is also happy*.
+
+**PAL:** 6<br>
+**TPA:** 466<br>
+**PA:** Too, Also, Need, Taxi, Call, Meal
+
+### Lição 90 — Fixação: Chegada à Cidade
+**Foco**: Contrastar situações e acrescentar informações em uma viagem.
+
+1. `[Frase]` **The next train is late, but the bus is early.** — O próximo trem está atrasado, mas o ônibus está adiantado. `[Ver palavra: next]`
+2. `[Frase]` **The city is crowded, but the country is quiet.** — A cidade está cheia de gente, mas o campo é tranquilo. `[Ver palavra: crowded]`
+3. `[Frase]` **The taxi can arrive early, too.** — O táxi também pode chegar cedo. `[Ver palavra: arrive]`
+4. `[Frase]` **The bus is full, but the taxi is here.** — O ônibus está cheio, mas o táxi está aqui. `[Ver palavra: full]`
+5. `[Frase]` **The hotel is noisy, but the garden is quiet.** — O hotel é barulhento, mas o jardim é tranquilo. `[Ver palavra: noisy]`
+6. `[Frase]` **I am ready, and the young visitor is also ready.** — Eu estou pronto, e o visitante jovem também está pronto. `[Ver palavra: young]`
+
+**PAL:** 6<br>
+**TPA:** 472<br>
+**PA:** next, crowded, arrive, full, noisy, young
+
+### Lição 91 — Plurais Irregulares
+**Foco**: Observar animais e pessoas em uma clínica veterinária.
+
+1. `[Palavra]` **Mice** — Ratos, ratas `[Ver singular: mice → mouse — rato, ratazana]`
+2. `[Frase]` **The mice are near the vet.** — Os ratos estão perto da veterinária. `[Ver singular: mice → mouse — rato, ratazana]`
+3. `[Palavra]` **Tooth** — Dente
+4. `[Frase]` **The cat has a small tooth.** — O gato tem um dente pequeno.
+5. `[Palavra]` **Teeth** — Dentes `[Ver singular: teeth → tooth — dente]`
+6. `[Frase]` **The cat has white teeth.** — O gato tem dentes brancos. `[Ver singular: teeth → tooth — dente]`
+7. `[Palavra]` **Person** — Pessoa
+8. `[Frase]` **The person is in the clinic.** — A pessoa está na clínica.
+9. `[Palavra]` **People** — Pessoas `[Ver singular: people → person — pessoa]`
+10. `[Frase]` **The people are near the clinic.** — As pessoas estão perto da clínica. `[Ver singular: people → person — pessoa]`
+11. `[Palavra]` **Scared** — Assustado, assustada
+12. `[Frase]` **The mouse is scared.** — O rato está assustado.
+13. `[Gramática]` **Gramática — Lição 91: Plurais Irregulares**
+   > Alguns substantivos têm plural irregular: *mouse → mice*, *tooth → teeth* e *person → people*. Essas formas não seguem as regras regulares já estudadas. `[Ver singular: mice → mouse — rato, ratazana]` `[Ver singular: teeth → tooth — dente]` `[Ver singular: people → person — pessoa]`
+
+**PAL:** 6<br>
+**TPA:** 478<br>
+**PA:** Mice, Tooth, Teeth, Person, People, Scared
+
+### Lição 92 — Quantidades com "Some" e "Many"
+**Foco**: Falar de pessoas e animais no jardim.
+
+1. `[Palavra]` **Some** — Alguns, algumas
+2. `[Frase]` **Some people are near the garden.** — Algumas pessoas estão perto do jardim. `[Ver singular: people → person — pessoa]`
+3. `[Palavra]` **Many** — Muitos, muitas
+4. `[Frase]` **Many mice are in the garden.** — Muitos ratos estão no jardim. `[Ver singular: mice → mouse — rato, ratazana]`
+5. `[Palavra]` **Sharp** — Afiado, afiada
+6. `[Frase]` **The cat has sharp teeth.** — O gato tem dentes afiados. `[Ver singular: teeth → tooth — dente]`
+7. `[Palavra]` **Claw** — Garra
+8. `[Frase]` **The claw is sharp.** — A garra é afiada.
+9. `[Palavra]` **In danger** — Em perigo
+10. `[Frase]` **The mouse is in danger.** — O rato está em perigo.
+11. `[Palavra]` **Escape** — Escapar
+12. `[Frase]` **The mice can escape.** — Os ratos conseguem escapar. `[Ver singular: mice → mouse — rato, ratazana]`
+13. `[Frase]` **The cat has sharp claws, but the mice are safe.** — O gato tem garras afiadas, mas os ratos estão seguros. `[Ver singular: mice → mouse — rato, ratazana]`
+14. `[Gramática]` **Gramática — Lição 92: "Some" e "Many"**
+   > Antes de substantivos contáveis no plural, *some* indica uma quantidade não especificada e *many* indica uma quantidade grande: *some people* e *many mice*. `[Ver singular: people → person — pessoa]` `[Ver singular: mice → mouse — rato, ratazana]`
+
+**PAL:** 6<br>
+**TPA:** 484<br>
+**PA:** Some, Many, Sharp, Claw, In danger, Escape
+
+### Lição 93 — Fixação: Pessoas e Animais
+**Foco**: Praticar plurais irregulares e quantidades com *some* e *many*.
+
+1. `[Frase]` **The mice see some humans.** — Os ratos veem alguns humanos. `[Ver palavra: human]` `[Ver singular: mice → mouse — rato, ratazana]`
+2. `[Frase]` **Some people have strange pets.** — Algumas pessoas têm animais de estimação estranhos. `[Ver palavra: strange]` `[Ver singular: people → person — pessoa]`
+3. `[Frase]` **Some mice wait silently.** — Alguns ratos esperam em silêncio. `[Ver palavra: silently]` `[Ver singular: mice → mouse — rato, ratazana]`
+4. `[Frase]` **The cat can trap some mice.** — O gato pode prender alguns ratos. `[Ver palavra: trap]` `[Ver singular: mice → mouse — rato, ratazana]`
+5. `[Frase]` **Some mice eat grain.** — Alguns ratos comem grãos. `[Ver palavra: grain]` `[Ver singular: mice → mouse — rato, ratazana]`
+6. `[Frase]` **Many cats hunt mice.** — Muitos gatos caçam ratos. `[Ver palavra: hunt]` `[Ver singular: mice → mouse — rato, ratazana]`
+
+**PAL:** 6<br>
+**TPA:** 490<br>
+**PA:** human, strange, silently, trap, grain, hunt
+
+### Lição 94 — Destinos com "To"
+**Foco**: Falar de deslocamentos entre a cidade e o campo.
+
+1. `[Palavra]` **To** — Para, em direção a
+2. `[Frase]` **We go to the city.** — Nós vamos para a cidade.
+3. `[Palavra]` **Back** — De volta
+4. `[Frase]` **My friend is back.** — Meu amigo está de volta.
+5. `[Palavra]` **Go back** — Voltar
+6. `[Frase]` **I go back to the country.** — Eu volto para o campo.
+7. `[Palavra]` **Road** — Estrada
+8. `[Frase]` **The road is near the river.** — A estrada fica perto do rio.
+9. `[Palavra]` **Travel** — Viajar
+10. `[Frase]` **We travel to the country.** — Nós viajamos para o campo.
+11. `[Palavra]` **At the bottom of** — Na base de, na parte de baixo de
+12. `[Frase]` **The mouse is at the bottom of the tree.** — O rato está na base da árvore.
+13. `[Gramática]` **Gramática — Lição 94: Destinos com "To"**
+   > Para indicar um destino, podemos usar *to* depois de um verbo de movimento: *We go to the city.* Com *home*, usamos *go home*, sem *to*.
+
+**PAL:** 6<br>
+**TPA:** 496<br>
+**PA:** To, Back, Go back, Road, Travel, At the bottom of
+
+### Lição 95 — Desejos com "Want To"
+**Foco**: Falar do que alguém quer fazer durante uma visita.
+
+1. `[Palavra]` **Buy** — Comprar
+2. `[Frase]` **I want to buy food.** — Eu quero comprar comida.
+3. `[Palavra]` **Start** — Começar, iniciar
+4. `[Frase]` **I want to start the lesson.** — Eu quero começar a lição.
+5. `[Palavra]` **Thing** — Coisa
+6. `[Frase]` **I want to buy these things.** — Eu quero comprar estas coisas.
+7. `[Palavra]` **Money** — Dinheiro
+8. `[Frase]` **I need money.** — Eu preciso de dinheiro.
+9. `[Palavra]` **Return** — Voltar, retornar
+10. `[Frase]` **I want to return to the hotel.** — Eu quero voltar para o hotel.
+11. `[Palavra]` **Before** — Antes de
+12. `[Frase]` **I want to go home before dinner.** — Eu quero ir para casa antes do jantar.
+13. `[Gramática]` **Gramática — Lição 95: "Want To"**
+   > Para dizer o que alguém quer fazer, usamos *want to* seguido da forma-base do verbo: *I want to buy food.* O *to* aqui introduz o verbo seguinte, em vez de indicar um lugar.
+
+**PAL:** 6<br>
+**TPA:** 502<br>
+**PA:** Buy, Start, Thing, Money, Return, Before
+
+### Lição 96 — Fixação: Planos e Visitas
+**Foco**: Praticar destinos e desejos com verbos na forma-base.
+
+1. `[Frase]` **I want to ask the teacher.** — Eu quero perguntar à professora. `[Ver palavra: ask]`
+2. `[Frase]` **I want to follow my friend.** — Eu quero seguir meu amigo. `[Ver palavra: follow]`
+3. `[Frase]` **I want to wait until dinner.** — Eu quero esperar até o jantar. `[Ver palavra: until]`
+4. `[Frase]` **We want to eat at the feast.** — Nós queremos comer no banquete. `[Ver palavra: feast]`
+5. `[Frase]` **I want to go to the village.** — Eu quero ir para a vila. `[Ver palavra: village]`
+6. `[Frase]` **We want to eat dinner before sunset.** — Nós queremos jantar antes do pôr do sol. `[Ver palavra: sunset]`
+7. `[Frase]` **We want to go back to the city.** — Nós queremos voltar para a cidade.
+
+**PAL:** 6<br>
+**TPA:** 508<br>
+**PA:** ask, follow, until, feast, village, sunset
+
+### Encerramento — banco, descrição e exame
+
+Pré-requisito: Blocos 1–7 e Lições 88–96.
+
+#### Lição 97-BF — banco de frases: espaços e experiências na cidade
+
+1. `[Frase]` **The city is amazing.** — A cidade é incrível. `[Ver palavra: amazing]`
+2. `[Frase]` **The restaurant is fancy.** — O restaurante é sofisticado. `[Ver palavra: fancy]`
+3. `[Frase]` **The house is enormous.** — A casa é enorme. `[Ver palavra: enormous]`
+4. `[Frase]` **The mouse is in darkness.** — O rato está na escuridão. `[Ver palavra: darkness]`
+5. `[Frase]` **The bedrooms are upstairs.** — Os quartos ficam no andar de cima. `[Ver palavra: upstairs]`
+6. `[Frase]` **The kitchen is downstairs.** — A cozinha fica no andar de baixo. `[Ver palavra: downstairs]`
+7. `[Frase]` **The market is near the restaurant.** — O mercado fica perto do restaurante. `[Ver palavra: market]`
+8. `[Frase]` **The food is expensive.** — A comida é cara. `[Ver palavra: expensive]`
+9. `[Frase]` **The bread is cheap.** — O pão é barato. `[Ver palavra: cheap]`
+10. `[Frase]` **The dessert is on the table.** — A sobremesa está na mesa. `[Ver palavra: dessert]`
+11. `[Frase]` **The elevator is near the stairs.** — O elevador fica perto da escada. `[Ver palavra: elevator]`
+12. `[Frase]` **The music is loud.** — A música está alta. `[Ver palavra: loud]`
+
+**PAL:** 12<br>
+**TPA:** 520<br>
+**PA:** amazing, fancy, enormous, darkness, upstairs, downstairs, market, expensive, cheap, dessert, elevator, loud
+
+#### Lição 98 — descrição: uma visita à cidade
+
+1. I am in the city. — Eu estou na cidade.
+2. The house is enormous, but the street is quiet. — A casa é enorme, mas a rua é tranquila.
+3. There are many people near the market. — Há muitas pessoas perto do mercado. `[Ver singular: people → person — pessoa]`
+4. I want to buy bread. — Eu quero comprar pão.
+5. I can see the fancy restaurant. — Eu consigo ver o restaurante sofisticado.
+6. The food is delicious. — A comida é deliciosa.
+7. I want to go back to the country. — Eu quero voltar para o campo.
+8. I love the quiet country. — Eu adoro o campo tranquilo.
+
+#### Lição 99 — exame: apêndice de frases inéditas
+
+1. The milk is cold, but the tea is hot. — O leite está frio, mas o chá está quente.
+2. The guest also needs a taxi. — O hóspede também precisa de um táxi.
+3. The mice are near the stream. — Os ratos estão perto do riacho.
+4. The person has white teeth. — A pessoa tem dentes brancos.
+5. Some cats have sharp claws. — Alguns gatos têm garras afiadas.
+6. The mice wait in the garden until dinner. — Os ratos esperam no jardim até o jantar.
+7. I want to buy a red hat. — Eu quero comprar um chapéu vermelho.
+8. The road is near the village. — A estrada fica perto da vila.
+9. The meal is expensive, but the bread is cheap. — A refeição é cara, mas o pão é barato.
+10. There are many people in the market. — Há muitas pessoas no mercado.
+
+# BLOCO 9 — Ações em Andamento e Primeiros Relatos no Passado
+
+### Lições dos ciclos — sequência revisada
+
+### Lição 100 — Ações em Andamento com "I Am"
+**Foco**: Descrever o que estou fazendo agora.
+
+1. `[Frase]` **I am visiting my friend.** — Eu estou visitando meu amigo.
+2. `[Palavra]` **Pack** — Arrumar, fazer a mala
+3. `[Frase]` **I pack my bag.** — Eu arrumo minha bolsa.
+4. `[Frase]` **I am packing my bag.** — Eu estou arrumando minha bolsa.
+5. `[Palavra]` **Trip** — Viagem
+6. `[Frase]` **The trip is wonderful.** — A viagem é maravilhosa.
+7. `[Palavra]` **Dream** — Sonhar
+8. `[Frase]` **I am dreaming.** — Eu estou sonhando.
+9. `[Palavra]` **Cloud** — Nuvem
+10. `[Frase]` **I am watching the cloud.** — Eu estou observando a nuvem.
+11. `[Palavra]` **Moon** — Lua
+12. `[Frase]` **I can see the moon.** — Eu consigo ver a lua.
+13. `[Palavra]` **Star** — Estrela
+14. `[Frase]` **I can see a star.** — Eu consigo ver uma estrela.
+15. `[Gramática]` **Gramática — Lição 100: "I Am" + Verbo com "-ing"**
+   > Para falar de uma ação em andamento agora, usamos *I am* seguido do verbo com *-ing*: *I am visiting my friend.* Em *pack*, acrescentamos *-ing*: *packing*.
+
+**PAL:** 6<br>
+**TPA:** 526<br>
+**PA:** Pack, Trip, Dream, Cloud, Moon, Star
+
+### Lição 101 — Ações em Andamento com "Is" e "Are"
+**Foco**: Descrever ações de outras pessoas e animais.
+
+1. `[Frase]` **She is cooking dinner.** — Ela está preparando o jantar.
+2. `[Frase]` **They are running in the garden.** — Eles estão correndo no jardim.
+3. `[Palavra]` **Explain** — Explicar
+4. `[Frase]` **I explain the lesson.** — Eu explico a lição.
+5. `[Frase]` **The teacher is explaining the lesson.** — A professora está explicando a lição.
+6. `[Palavra]` **Answer** — Responder
+7. `[Frase]` **I answer the teacher.** — Eu respondo à professora.
+8. `[Frase]` **The student is answering the teacher.** — O aluno está respondendo à professora.
+9. `[Palavra]` **Shout** — Gritar
+10. `[Frase]` **I shout at the cat.** — Eu grito com o gato.
+11. `[Frase]` **They are shouting.** — Eles estão gritando.
+12. `[Palavra]` **Smile** — Sorrir
+13. `[Frase]` **I smile at my friend.** — Eu sorrio para meu amigo.
+14. `[Frase]` **She is smiling.** — Ela está sorrindo.
+15. `[Palavra]` **Rain** — Chover
+16. `[Frase]` **It is raining.** — Está chovendo.
+17. `[Palavra]` **Sleepy** — Com sono, sonolento, sonolenta
+18. `[Frase]` **The boy is sleepy.** — O menino está com sono.
+19. `[Gramática]` **Gramática — Lição 101: "Is" e "Are" + Verbo com "-ing"**
+   > Usamos *is* com *he*, *she*, *it* ou sujeito singular e *are* com *you*, *we*, *they* ou sujeito plural, antes do verbo com *-ing*. Em *smile*, retiramos o *e* final: *smiling*; em *run*, dobramos o *n*: *running*.
+
+**PAL:** 6<br>
+**TPA:** 532<br>
+**PA:** Explain, Answer, Shout, Smile, Rain, Sleepy
+
+### Lição 102 — Fixação: Ações Agora
+**Foco**: Praticar ações em andamento com *am*, *is* e *are*.
+
+1. `[Frase]` **I am whispering.** — Eu estou sussurrando. `[Ver palavra: whisper]`
+2. `[Frase]` **The girl is laughing.** — A menina está rindo. `[Ver palavra: laugh]`
+3. `[Frase]` **The baby is crying.** — O bebê está chorando. `[Ver palavra: cry]`
+4. `[Frase]` **We are waving.** — Nós estamos acenando. `[Ver palavra: wave]`
+5. `[Frase]` **The students are clapping.** — Os alunos estão batendo palmas. `[Ver palavra: clap]`
+6. `[Frase]` **The boy is knocking on the door.** — O menino está batendo na porta. `[Ver palavra: knock]`
+
+**PAL:** 6<br>
+**TPA:** 538<br>
+**PA:** whisper, laugh, cry, wave, clap, knock
+
+### Lição 103 — Perguntas sobre Ações em Andamento
+**Foco**: Perguntar o que está acontecendo durante uma refeição.
+
+1. `[Frase]` **Are you cooking dinner?** — Você está preparando o jantar?
+2. `[Frase]` **Is she eating?** — Ela está comendo?
+3. `[Palavra]` **Knife** — Faca
+4. `[Frase]` **Is the mother carrying a knife?** — A mãe está carregando uma faca?
+5. `[Palavra]` **Tablecloth** — Toalha de mesa
+6. `[Frase]` **Is the tablecloth on the table?** — A toalha de mesa está sobre a mesa?
+7. `[Palavra]` **Tray** — Bandeja
+8. `[Frase]` **Is he carrying the tray?** — Ele está carregando a bandeja?
+9. `[Palavra]` **Platter** — Travessa
+10. `[Frase]` **Is the platter on the table?** — A travessa está sobre a mesa?
+11. `[Palavra]` **Jug** — Jarra
+12. `[Frase]` **Is she carrying a jug?** — Ela está carregando uma jarra?
+13. `[Palavra]` **Straw** — Canudo
+14. `[Frase]` **Is the straw in the glass?** — O canudo está no copo?
+15. `[Gramática]` **Gramática — Lição 103: Perguntas com Ações em Andamento**
+   > Em perguntas, *am*, *is* ou *are* vem antes do sujeito; o verbo principal permanece com *-ing*: *Are you cooking dinner?* e *Is she eating?*
+
+**PAL:** 6<br>
+**TPA:** 544<br>
+**PA:** Knife, Tablecloth, Tray, Platter, Jug, Straw
+
+### Lição 104 — Negativas e Ideias no Presente
+**Foco**: Negar ações em andamento e expressar opiniões.
+
+1. `[Frase]` **I am not sleeping.** — Eu não estou dormindo.
+2. `[Frase]` **The cat is not eating.** — O gato não está comendo.
+3. `[Palavra]` **Agree** — Concordar
+4. `[Frase]` **I agree.** — Eu concordo.
+5. `[Palavra]` **Believe** — Acreditar
+6. `[Frase]` **I believe you.** — Eu acredito em você.
+7. `[Palavra]` **Leave** — Sair, ir embora
+8. `[Frase]` **I want to leave.** — Eu quero ir embora.
+9. `[Frase]` **They are not leaving.** — Eles não estão indo embora.
+10. `[Frase]` **I am not packing my bag.** — Eu não estou arrumando minha bolsa.
+11. `[Palavra]` **Think** — Pensar
+12. `[Frase]` **I think: the garden is beautiful.** — Eu penso: o jardim é bonito.
+13. `[Palavra]` **Life** — Vida
+14. `[Frase]` **Life in the country is quiet.** — A vida no campo é tranquila.
+15. `[Palavra]` **Everything** — Tudo
+16. `[Frase]` **Everything is ready.** — Tudo está pronto.
+17. `[Frase]` **We are not eating in the kitchen.** — Nós não estamos comendo na cozinha.
+18. `[Gramática]` **Gramática — Lição 104: Negativas com Ações em Andamento**
+   > Para negar uma ação em andamento, colocamos *not* depois de *am*, *is* ou *are*: *I am not sleeping.* e *They are not leaving.* Alguns verbos de opinião, como *believe*, costumam aparecer no presente simples: *I believe you.*
+
+**PAL:** 6<br>
+**TPA:** 550<br>
+**PA:** Agree, Believe, Leave, Think, Life, Everything
+
+### Lição 105 — Fixação: Movimentos pela Casa
+**Foco**: Praticar perguntas e negativas sobre ações em andamento.
+
+1. `[Frase]` **Is the cat jumping up on the table?** — O gato está pulando para cima da mesa? `[Ver palavra: up]`
+2. `[Frase]` **Are the mice going down the stairs?** — Os ratos estão descendo a escada? `[Ver palavra: down]` `[Ver singular: mice → mouse — rato, ratazana]`
+3. `[Frase]` **Is the mouse running across the road?** — O rato está atravessando a estrada correndo? `[Ver palavra: across]`
+4. `[Frase]` **The cat is not jumping off the table.** — O gato não está pulando da mesa. `[Ver palavra: off]`
+5. `[Frase]` **My housemate is not cooking dinner.** — A pessoa que mora comigo não está preparando o jantar. `[Ver palavra: housemate]`
+6. `[Frase]` **Is the mouse creeping across the floor?** — O rato está se movendo devagar pelo chão? `[Ver palavra: creep]`
+
+**PAL:** 6<br>
+**TPA:** 556<br>
+**PA:** up, down, across, off, housemate, creep
+
+### Lição 106 — "Was": Como Eu ou Alguém Estava
+**Foco**: Falar de lugares e estados no passado com sujeitos singulares.
+
+1. `[Palavra]` **Was** — Era, estava, fui, estive
+2. `[Frase]` **I was at home.** — Eu estava em casa.
+3. `[Frase]` **She was happy.** — Ela estava feliz. `[Ver terceira pessoa: was → be — forma de to be no passado com she ou sujeito singular]`
+4. `[Palavra]` **Yesterday** — Ontem
+5. `[Frase]` **I was at the museum yesterday.** — Eu estava no museu ontem.
+6. `[Palavra]` **Alone** — Sozinho, sozinha
+7. `[Frase]` **The mouse was alone.** — O rato estava sozinho. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+8. `[Palavra]` **Soft** — Macio, macia
+9. `[Frase]` **The pillow was soft.** — O travesseiro era macio. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+10. `[Palavra]` **Empty** — Vazio, vazia
+11. `[Frase]` **The room was empty.** — O quarto estava vazio. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+12. `[Palavra]` **Afraid** — Com medo, assustado, assustada
+13. `[Frase]` **I was afraid.** — Eu estava com medo.
+14. `[Gramática]` **Gramática — Lição 106: "Was"**
+   > *Was* é uma forma passada de *to be*. Usamos *was* com *I*, *he*, *she*, *it* ou sujeito singular: *I was at home.* e *She was happy.* O contexto indica se significa era, estava ou outra forma natural no passado. `[Ver terceira pessoa: was → be — forma de to be no passado com she]`
+
+**PAL:** 6<br>
+**TPA:** 562<br>
+**PA:** Was, Yesterday, Alone, Soft, Empty, Afraid
+
+### Lição 107 — "Were": Como Outros Estavam
+**Foco**: Falar de lugares e estados no passado com *you*, *we* e *they*.
+
+1. `[Palavra]` **Were** — Era, estava, eram, estavam, fomos, estivemos
+2. `[Frase]` **We were at the hotel.** — Nós estávamos no hotel.
+3. `[Frase]` **You were happy.** — Você estava feliz.
+4. `[Palavra]` **Last night** — Ontem à noite
+5. `[Frase]` **They were at home last night.** — Eles estavam em casa ontem à noite.
+6. `[Palavra]` **Storm** — Tempestade
+7. `[Frase]` **The storm was strong.** — A tempestade foi forte. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+8. `[Palavra]` **Thunder** — Trovão, trovões
+9. `[Frase]` **The thunder was loud last night.** — Os trovões fizeram muito barulho ontem à noite. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+10. `[Palavra]` **Rainbow** — Arco-íris
+11. `[Frase]` **The rainbow was beautiful.** — O arco-íris estava bonito. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+12. `[Palavra]` **Lost** — Perdido, perdida
+13. `[Frase]` **The keys were lost.** — As chaves estavam perdidas.
+14. `[Gramática]` **Gramática — Lição 107: "Were"**
+   > No passado, usamos *were* com *you*, *we*, *they* ou sujeito plural: *You were happy.* e *The keys were lost.* *You were* pode se referir a uma pessoa ou a várias.
+
+**PAL:** 6<br>
+**TPA:** 568<br>
+**PA:** Were, Last night, Storm, Thunder, Rainbow, Lost
+
+### Lição 108 — Fixação: Lugares e Sensações no Passado
+**Foco**: Praticar *was* e *were* em relatos curtos.
+
+1. `[Frase]` **The dog was suddenly quiet.** — De repente, o cachorro estava quieto. `[Ver palavra: suddenly]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+2. `[Frase]` **The path was near the garden.** — O caminho ficava perto do jardim. `[Ver palavra: path]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+3. `[Frase]` **We were near the tunnel.** — Nós estávamos perto do túnel. `[Ver palavra: tunnel]`
+4. `[Frase]` **The gate was red.** — O portão era vermelho. `[Ver palavra: gate]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+5. `[Frase]` **The roof was red.** — O telhado era vermelho. `[Ver palavra: roof]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+6. `[Frase]` **The shadows were on the wall.** — As sombras estavam na parede. `[Ver palavra: shadow]`
+
+**PAL:** 6<br>
+**TPA:** 574<br>
+**PA:** suddenly, path, tunnel, gate, roof, shadow
+
+### Encerramento — banco, descrição e exame
+
+Pré-requisito: Blocos 1–8 e Lições 100–108.
+
+#### Lição 109-BF — banco de frases: lembranças e experiências
+
+1. `[Frase]` **I like Chinese food.** — Eu gosto de comida chinesa. `[Ver palavra: Chinese]`
+2. `[Frase]` **I am cooking; meanwhile, my friend is eating.** — Eu estou cozinhando; enquanto isso, meu amigo está comendo. `[Ver palavra: meanwhile]`
+3. `[Frase]` **The room is actually small.** — Na verdade, o quarto é pequeno. `[Ver palavra: actually]`
+4. `[Frase]` **The cake is absolutely delicious.** — O bolo é absolutamente delicioso. `[Ver palavra: absolutely]`
+5. `[Frase]` **The trip was great.** — A viagem foi ótima. `[Ver palavra: great]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+6. `[Frase]` **The bottom of the bottle is red.** — O fundo da garrafa é vermelho. `[Ver palavra: bottom]`
+7. `[Frase]` **Do you ever visit the museum?** — Você chega a visitar o museu? `[Ver palavra: ever]`
+8. `[Frase]` **The hotel has twenty rooms.** — O hotel tem vinte quartos. `[Ver palavra: twenty]`
+9. `[Frase]` **All the mice are in the kitchen.** — Todos os ratos estão na cozinha. `[Ver palavra: all]` `[Ver singular: mice → mouse — rato, ratazana]`
+10. `[Frase]` **I sometimes visit my friend.** — Às vezes eu visito meu amigo. `[Ver palavra: sometimes]`
+11. `[Frase]` **The city is quiet after all.** — Afinal, a cidade é tranquila. `[Ver palavra: after all]`
+12. `[Frase]` **The garden is really beautiful.** — O jardim é realmente bonito. `[Ver palavra: really]`
+
+**PAL:** 12<br>
+**TPA:** 586<br>
+**PA:** Chinese, meanwhile, actually, absolutely, great, bottom, ever, twenty, all, sometimes, after all, really
+
+#### Lição 110 — descrição: uma visita ao campo
+
+1. I am in the country. — Eu estou no campo.
+2. I am walking near the garden. — Eu estou caminhando perto do jardim.
+3. The sky is blue, and I can see a white cloud. — O céu está azul, e eu consigo ver uma nuvem branca.
+4. A mouse is running across the path. — Um rato está atravessando o caminho correndo.
+5. The flowers are beautiful. — As flores são bonitas.
+6. Yesterday the garden was empty, but today my friends are here. — Ontem o jardim estava vazio, mas hoje meus amigos estão aqui. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+7. We are eating together. — Nós estamos comendo juntos.
+8. The food is really delicious. — A comida está realmente deliciosa.
+
+#### Lição 111 — exame: apêndice de frases inéditas
+
+1. I am packing my suitcase. — Eu estou arrumando minha mala.
+2. The teacher is answering the student. — A professora está respondendo ao aluno.
+3. Are the mice hiding in the garden? — Os ratos estão se escondendo no jardim?
+4. The boy is not carrying the tray. — O menino não está carregando a bandeja.
+5. The cat is jumping off the chair. — O gato está pulando da cadeira.
+6. My friend was at the restaurant yesterday. — Meu amigo estava no restaurante ontem.
+7. The rooms were empty last night. — Os quartos estavam vazios ontem à noite.
+8. The bridge was near the forest. — A ponte ficava perto da floresta.
+9. We are eating Chinese food. — Nós estamos comendo comida chinesa.
+10. The house has twenty windows. — A casa tem vinte janelas.
+
+
+# BLOCO 10 — Perguntas e Ações no Passado
+
+### Lições dos ciclos — sequência revisada
+
+### Lição 112 — "Was Not" e "Were Not"
+**Foco**: Negar estados e localizações no passado.
+
+1. `[Frase]` **I was not at the hotel yesterday.** — Eu não estava no hotel ontem.
+2. `[Frase]` **The mice were not in the garden.** — Os ratos não estavam no jardim.
+3. `[Palavra]` **Bathroom** — Banheiro
+4. `[Frase]` **The bathroom was not small.** — O banheiro não era pequeno. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+5. `[Palavra]` **Apartment** — Apartamento
+6. `[Frase]` **We were not in the apartment.** — Nós não estávamos no apartamento.
+7. `[Palavra]` **Garage** — Garagem
+8. `[Frase]` **The garage was not clean.** — A garagem não estava limpa. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+9. `[Palavra]` **Balcony** — Varanda
+10. `[Frase]` **My friend was not on the balcony.** — Meu amigo não estava na varanda. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+11. `[Palavra]` **Hallway** — Corredor
+12. `[Frase]` **The hallway was not dark.** — O corredor não estava escuro. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+13. `[Palavra]` **Attic** — Sótão
+14. `[Frase]` **They were not in the attic.** — Eles não estavam no sótão.
+15. `[Gramática]` **Gramática — Lição 112: Negação de "Was" e "Were"**
+   > Para negar estados ou localizações no passado, colocamos *not* depois de *was* ou *were*: *The bathroom was not small.* e *They were not in the attic.* As contrações são *was not → wasn't* e *were not → weren't*. `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 592<br>
+**PA:** Bathroom, Apartment, Garage, Balcony, Hallway, Attic
+
+### Lição 113 — Perguntas com "Was" e "Were"
+**Foco**: Perguntar sobre situações passadas.
+
+1. `[Frase]` **Was the room empty yesterday?** — O quarto estava vazio ontem? `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+2. `[Frase]` **Were the mice afraid?** — Os ratos estavam com medo?
+3. `[Palavra]` **About** — Sobre, a respeito de
+4. `[Frase]` **Was the book about the city?** — O livro era sobre a cidade? `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+5. `[Palavra]` **Question** — Pergunta
+6. `[Frase]` **Was the question about the garden?** — A pergunta era sobre o jardim? `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+7. `[Palavra]` **Sure** — Certo, certa; com certeza
+8. `[Frase]` **Were you sure?** — Você tinha certeza?
+9. `[Palavra]` **Then** — Naquele momento; depois, em seguida
+10. `[Frase]` **Were the mice afraid then?** — Os ratos estavam com medo naquele momento?
+11. `[Frase]` **We cook dinner, then we eat.** — Nós preparamos o jantar e depois comemos.
+12. `[Palavra]` **After** — Depois de
+13. `[Frase]` **Was she at home after dinner?** — Ela estava em casa depois do jantar? `[Ver terceira pessoa: was → be — forma de to be no passado com she]`
+14. `[Palavra]` **So** — Tão
+15. `[Frase]` **Was the restaurant so noisy?** — O restaurante era tão barulhento? `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+16. `[Gramática]` **Gramática — Lição 113: Perguntas com "Was" e "Were"**
+   > Para perguntar sobre estados ou localizações no passado, colocamos *was* ou *were* antes do sujeito: *Was the book about the city?* e *Were you sure?* `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 598<br>
+**PA:** About, Question, Sure, Then, After, So
+
+### Lição 114 — Fixação: A Casa Ontem
+**Foco**: Praticar negativas e perguntas com *was* e *were*.
+
+1. `[Frase]` **Was the ceiling white?** — O teto era branco? `[Ver palavra: ceiling]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+2. `[Frase]` **The carpet was not clean.** — O tapete não estava limpo. `[Ver palavra: carpet]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+3. `[Frase]` **Were the curtains blue?** — As cortinas eram azuis? `[Ver palavra: curtain]`
+4. `[Frase]` **The mat was not on the floor.** — O capacho não estava no chão. `[Ver palavra: mat]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+5. `[Frase]` **Was the entrance near the garage?** — A entrada ficava perto da garagem? `[Ver palavra: entrance]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+6. `[Frase]` **The footprint was not near the door.** — A pegada não estava perto da porta. `[Ver palavra: footprint]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 604<br>
+**PA:** ceiling, carpet, curtain, mat, entrance, footprint
+
+### Lição 115 — Ações Concluídas: Passado Regular
+**Foco**: Contar o que aconteceu em uma visita.
+
+1. `[Frase]` **I visited my friend yesterday.** — Eu visitei meu amigo ontem.
+2. `[Frase]` **We cooked dinner.** — Nós preparamos o jantar.
+3. `[Palavra]` **Stay** — Ficar, permanecer
+4. `[Frase]` **I stay at the hotel.** — Eu fico no hotel.
+5. `[Frase]` **I stayed at the hotel yesterday.** — Eu fiquei no hotel ontem.
+6. `[Palavra]` **Invite** — Convidar
+7. `[Frase]` **I invite my friend.** — Eu convido meu amigo.
+8. `[Frase]` **We invited the teacher.** — Nós convidamos a professora.
+9. `[Palavra]` **Enjoy** — Aproveitar, gostar de
+10. `[Frase]` **I enjoy the trip.** — Eu aproveito a viagem.
+11. `[Frase]` **I enjoyed the meal.** — Eu gostei da refeição.
+12. `[Palavra]` **Paint** — Pintar
+13. `[Frase]` **I paint the door.** — Eu pinto a porta.
+14. `[Frase]` **They painted the door.** — Eles pintaram a porta.
+15. `[Palavra]` **Touch** — Tocar
+16. `[Frase]` **I touch the table.** — Eu toco a mesa.
+17. `[Frase]` **The cat touched the table.** — O gato tocou a mesa. `[Ver terceira pessoa: touched → touch — no passado simples a forma não muda com sujeito singular]`
+18. `[Palavra]` **Repair** — Consertar
+19. `[Frase]` **I repair the chair.** — Eu conserto a cadeira.
+20. `[Frase]` **We repaired the chair.** — Nós consertamos a cadeira.
+21. `[Frase]` **The cat trapped a mouse.** — O gato prendeu um rato. `[Ver terceira pessoa: trapped → trap — no passado simples a forma não muda com sujeito singular]`
+22. `[Frase]` **I tried the cake.** — Eu experimentei o bolo.
+23. `[Gramática]` **Gramática — Lição 115: Passado Regular**
+   > Em afirmações sobre ações concluídas, muitos verbos formam o passado com *-ed*: *visit → visited*, *cook → cooked*. Verbos terminados em *e* recebem *-d*: *invite → invited*. Após consoante + *y*, trocamos o *y* por *-ied*: *try → tried*. Após vogal + *y*, mantemos o *y* e acrescentamos *-ed*: *enjoy → enjoyed*. Em verbos de uma sílaba que terminam nas letras consoante + vogal + consoante (CVC), normalmente dobramos a última consoante antes de *-ed*: *trap → trapped*. Não dobramos *w*, *x* ou *y*. A forma passada é a mesma para todos os sujeitos.
+
+**PAL:** 6<br>
+**TPA:** 610<br>
+**PA:** Stay, Invite, Enjoy, Paint, Touch, Repair
+
+### Lição 116 — Ações Concluídas: Passados Irregulares
+**Foco**: Usar formas irregulares em relatos.
+
+1. `[Palavra]` **Ate** — Comeu, comi; passado de *eat*
+2. `[Frase]` **I ate bread.** — Eu comi pão.
+3. `[Frase]` **The mouse ate the cheese.** — O rato comeu o queijo. `[Ver terceira pessoa: ate → eat — no passado simples a forma não muda com sujeito singular]`
+4. `[Palavra]` **Went** — Foi, fui; passado de *go*
+5. `[Frase]` **We went to the museum.** — Nós fomos ao museu.
+6. `[Palavra]` **Saw** — Viu, vi; passado de *see*
+7. `[Frase]` **I saw a bird.** — Eu vi um pássaro.
+8. `[Palavra]` **Said** — Disse; passado de *say*
+9. `[Frase]` **She said, "Good morning."** — Ela disse: “Bom dia.” `[Ver terceira pessoa: said → say — no passado simples a forma não muda com sujeito singular]`
+10. `[Palavra]` **Had** — Teve, tinha; passado de *have*
+11. `[Frase]` **They had a dog.** — Eles tinham um cachorro.
+12. `[Palavra]` **Left** — Saiu, foi embora; passado de *leave*
+13. `[Frase]` **We left the hotel.** — Nós saímos do hotel.
+14. `[Frase]` **The cat left the room.** — O gato saiu do quarto. `[Ver terceira pessoa: left → leave — no passado simples a forma não muda com sujeito singular]`
+15. `[Gramática]` **Gramática — Lição 116: Passado Irregular**
+   > Alguns verbos têm formas próprias no passado: *eat → ate*, *go → went*, *see → saw*, *say → said*, *have → had* e *leave → left*. Usamos a mesma forma com todos os sujeitos; essas formas devem ser aprendidas em contexto.
+
+**PAL:** 6<br>
+**TPA:** 616<br>
+**PA:** Ate, Went, Saw, Said, Had, Left
+
+### Lição 117 — Fixação: Uma Visita no Campo
+**Foco**: Praticar ações concluídas com passados regulares e irregulares.
+
+1. `[Frase]` **We gathered flowers in the garden.** — Nós juntamos flores no jardim. `[Ver palavra: gather]`
+2. `[Frase]` **I baked a cake.** — Eu assei um bolo. `[Ver palavra: bake]`
+3. `[Frase]` **They explored the forest.** — Eles exploraram a floresta. `[Ver palavra: explore]`
+4. `[Frase]` **We prepared the food.** — Nós preparamos a comida. `[Ver palavra: prepare]`
+5. `[Frase]` **I smelled the flower.** — Eu senti o cheiro da flor. `[Ver palavra: smell]`
+6. `[Frase]` **We rested near the stream.** — Nós descansamos perto do riacho. `[Ver palavra: rest]`
+7. `[Frase]` **The mice ate the cake and went home.** — Os ratos comeram o bolo e foram para casa.
+
+**PAL:** 6<br>
+**TPA:** 622<br>
+**PA:** gather, bake, explore, prepare, smell, rest
+
+### Lição 118 — Negativas no Passado com "Did Not"
+**Foco**: Dizer o que não aconteceu.
+
+1. `[Palavra]` **Did** — Auxiliar do passado
+2. `[Frase]` **I did not visit the museum.** — Eu não visitei o museu.
+3. `[Frase]` **The mouse did not eat the cheese.** — O rato não comeu o queijo. `[Ver terceira pessoa: did → do — auxiliar no passado, igual para sujeito singular]`
+4. `[Palavra]` **Know** — Saber, conhecer
+5. `[Frase]` **I know the teacher.** — Eu conheço a professora.
+6. `[Frase]` **We did not know the city.** — Nós não conhecíamos a cidade.
+7. `[Palavra]` **Understand** — Entender, compreender
+8. `[Frase]` **I understand the question.** — Eu entendo a pergunta.
+9. `[Frase]` **She did not understand the question.** — Ela não entendeu a pergunta. `[Ver terceira pessoa: did → do — auxiliar no passado, igual para sujeito singular]`
+10. `[Palavra]` **Remember** — Lembrar
+11. `[Frase]` **I remember the trip.** — Eu me lembro da viagem.
+12. `[Frase]` **They did not remember the trip.** — Eles não se lembraram da viagem.
+13. `[Palavra]` **Promise** — Prometer
+14. `[Frase]` **I promise to help.** — Eu prometo ajudar.
+15. `[Frase]` **I did not promise.** — Eu não prometi.
+16. `[Palavra]` **Hope** — Esperar, ter esperança
+17. `[Frase]` **I hope to visit the city.** — Eu espero visitar a cidade.
+18. `[Frase]` **We did not travel yesterday.** — Nós não viajamos ontem.
+19. `[Gramática]` **Gramática — Lição 118: "Did Not"**
+   > Em negativas de ações no passado, usamos *did not* seguido da forma-base: *I did not visit* e *The mouse did not eat*. O auxiliar é igual para todos os sujeitos; não usamos *did not ate*. A contração de *did not* é *didn't*. Com *was/were*, mantemos a negação da Lição 112, sem *did*. `[Ver terceira pessoa: did → do — auxiliar no passado, igual para sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 628<br>
+**PA:** Did, Know, Understand, Remember, Promise, Hope
+
+### Lição 119 — Perguntas no Passado com "Did"
+**Foco**: Perguntar sobre ações concluídas.
+
+1. `[Frase]` **Did you visit the museum?** — Você visitou o museu?
+2. `[Frase]` **Did the mouse eat the cheese?** — O rato comeu o queijo? `[Ver terceira pessoa: did → do — auxiliar no passado, igual para sujeito singular]`
+3. `[Palavra]` **Again** — Novamente, de novo
+4. `[Frase]` **Did you visit the museum again?** — Você visitou o museu de novo?
+5. `[Palavra]` **First** — Primeiro, em primeiro lugar
+6. `[Frase]` **Did the mouse escape first?** — O rato escapou primeiro? `[Ver terceira pessoa: did → do — auxiliar no passado, igual para sujeito singular]`
+7. `[Palavra]` **Finally** — Finalmente
+8. `[Frase]` **Did the mice finally escape?** — Os ratos finalmente escaparam?
+9. `[Palavra]` **Later** — Mais tarde
+10. `[Frase]` **Did you go home later?** — Você foi para casa mais tarde?
+11. `[Palavra]` **Soon** — Logo, em breve
+12. `[Frase]` **Did they return soon?** — Eles voltaram logo?
+13. `[Palavra]` **Only** — Apenas, somente
+14. `[Frase]` **Did you only eat bread?** — Você comeu apenas pão?
+15. `[Gramática]` **Gramática — Lição 119: Perguntas com "Did"**
+   > Em perguntas sobre ações no passado, colocamos *did* antes do sujeito e usamos o verbo principal na forma-base: *Did you visit the museum?* e *Did the mouse eat the cheese?* Com *was/were*, fazemos a inversão da Lição 113, sem *did*. `[Ver terceira pessoa: did → do — auxiliar no passado, igual para sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 634<br>
+**PA:** Again, First, Finally, Later, Soon, Only
+
+### Lição 120 — Fixação: Perguntas e Respostas sobre Ontem
+**Foco**: Praticar perguntas e negativas com *did*.
+
+1. `[Frase]` **Did you lock the door?** — Você trancou a porta? `[Ver palavra: lock]`
+2. `[Frase]` **They did not deliver the food.** — Eles não entregaram a comida. `[Ver palavra: deliver]`
+3. `[Frase]` **Did you cancel the trip?** — Você cancelou a viagem? `[Ver palavra: cancel]`
+4. `[Frase]` **We did not order dessert.** — Nós não pedimos sobremesa. `[Ver palavra: order]`
+5. `[Frase]` **Did you borrow the book?** — Você pegou o livro emprestado? `[Ver palavra: borrow]`
+6. `[Frase]` **The student did not practice.** — O aluno não praticou. `[Ver palavra: practice]` `[Ver terceira pessoa: did → do — auxiliar no passado, igual para sujeito singular]`
+
+**PAL:** 6<br>
+**TPA:** 640<br>
+**PA:** lock, deliver, cancel, order, borrow, practice
+
+### Encerramento — banco, história e exame
+
+Pré-requisito: Blocos 1–9 e Lições 112–120.
+
+#### Lição 121-BF — banco de frases: tempo e lembranças
+
+1. `[Frase]` **I need a minute.** — Eu preciso de um minuto. `[Ver palavra: minute]`
+2. `[Frase]` **I need an hour.** — Eu preciso de uma hora. `[Ver palavra: hour]`
+3. `[Frase]` **The week was wonderful.** — A semana foi maravilhosa. `[Ver palavra: week]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+4. `[Frase]` **The month was quiet.** — O mês foi tranquilo. `[Ver palavra: month]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+5. `[Frase]` **The year was great.** — O ano foi ótimo. `[Ver palavra: year]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+6. `[Frase]` **The dog was here two hours ago.** — O cachorro estava aqui duas horas atrás. `[Ver palavra: ago]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+7. `[Frase]` **There are lots of flowers in the garden.** — Há muitas flores no jardim. `[Ver palavra: lots of]`
+8. `[Frase]` **The picnic was wonderful.** — O piquenique foi maravilhoso. `[Ver palavra: picnic]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+9. `[Frase]` **The room was bright.** — O quarto era iluminado. `[Ver palavra: bright]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+10. `[Frase]` **The garden was peaceful.** — O jardim era tranquilo. `[Ver palavra: peaceful]` `[Ver terceira pessoa: was → be — forma de to be no passado com sujeito singular]`
+11. `[Frase]` **We were glad.** — Nós estávamos contentes. `[Ver palavra: glad]`
+12. `[Frase]` **I want to eat outside.** — Eu quero comer do lado de fora. `[Ver palavra: outside]`
+
+**PAL:** 12<br>
+**TPA:** 652<br>
+**PA:** minute, hour, week, month, year, ago, lots of, picnic, bright, peaceful, glad, outside
+
+#### Lição 122 — história: um piquenique diferente
+
+1. Yesterday I visited my friend in the country. — Ontem eu visitei meu amigo no campo.
+2. We wanted to eat outside. — Nós queríamos comer do lado de fora.
+3. The sky was blue, and the garden was peaceful. — O céu estava azul, e o jardim estava tranquilo. `[Ver terceira pessoa: was → be]`
+4. We prepared a picnic with bread, cheese and cake. — Nós preparamos um piquenique com pão, queijo e bolo.
+5. Suddenly, the sky was dark, and the wind was strong. — De repente, o céu estava escuro, e o vento estava forte. `[Ver terceira pessoa: was → be]`
+6. It started to rain. — Começou a chover. `[Ver terceira pessoa: started → start]`
+7. We carried the food to the living room. — Nós levamos a comida para a sala de estar.
+8. My friend carried the cake to the table. — Meu amigo levou o bolo para a mesa. `[Ver terceira pessoa: carried → carry]`
+9. We ate the bread and cheese. It was delicious. — Nós comemos o pão e o queijo. Estava delicioso. `[Ver terceira pessoa: was → be]`
+10. We played a game and ate the cake. — Nós jogamos uma partida e comemos o bolo.
+11. Then the sky was blue again. — Depois, o céu estava azul novamente. `[Ver terceira pessoa: was → be]`
+12. We went back to the garden and saw a rainbow. It was beautiful. — Nós voltamos ao jardim e vimos um arco-íris. Estava lindo. `[Ver terceira pessoa: was → be]`
+13. We were glad: the picnic was wonderful. — Nós estávamos contentes: o piquenique foi maravilhoso. `[Ver terceira pessoa: was → be]`
+
+#### Lição 123 — exame: apêndice de frases inéditas
+
+1. The bathroom was not dark yesterday. — O banheiro não estava escuro ontem.
+2. Were the mice in the attic? — Os ratos estavam no sótão?
+3. Was the question about the museum? — A pergunta era sobre o museu?
+4. We invited the students. — Nós convidamos os alunos.
+5. I saw the cat near the bridge. — Eu vi o gato perto da ponte.
+6. The mouse ate the bread. — O rato comeu o pão.
+7. They did not visit the restaurant. — Eles não visitaram o restaurante.
+8. Did you repair the chair? — Você consertou a cadeira?
+9. The picnic was two hours ago. — O piquenique foi há duas horas.
+10. We went to the park after dinner. — Nós fomos ao parque depois do jantar.
+
+
+# BLOCO 11 — Pertences, Pessoas e Comparações
+
+### Lições dos ciclos — sequência revisada
+
+### Lição 124 — Pertences de Uma Pessoa: "'s"
+**Foco**: Identificar a quem pertencem objetos.
+
+1. `[Frase]` **The girl's book is on the table.** — O livro da menina está na mesa.
+2. `[Palavra]` **Diary** — Diário
+3. `[Frase]` **The student's diary is on the desk.** — O diário do aluno está na escrivaninha.
+4. `[Palavra]` **Necklace** — Colar
+5. `[Frase]` **My mother's necklace is beautiful.** — O colar da minha mãe é bonito.
+6. `[Palavra]` **Ring** — Anel
+7. `[Frase]` **My sister's ring is on the bed.** — O anel da minha irmã está na cama.
+8. `[Palavra]` **Keychain** — Chaveiro
+9. `[Frase]` **The boy's keychain is in his bag.** — O chaveiro do menino está na bolsa dele.
+10. `[Palavra]` **Bracelet** — Pulseira
+11. `[Frase]` **The girl's bracelet is red.** — A pulseira da menina é vermelha.
+12. `[Palavra]` **Camera** — Câmera
+13. `[Frase]` **The teacher's camera is new.** — A câmera da professora é nova.
+14. `[Gramática]` **Gramática — Lição 124: Posse com "'s"**
+   > Para indicar que algo pertence a uma pessoa ou animal no singular, acrescentamos *'s* ao possuidor antes do objeto: *the girl's book* é o livro da menina. Nesse caso, *'s* indica posse; não é a contração de *is*.
+
+**PAL:** 6<br>
+**TPA:** 658<br>
+**PA:** Diary, Necklace, Ring, Keychain, Bracelet, Camera
+
+### Lição 125 — Pertences de Várias Pessoas
+**Foco**: Expressar posse com substantivos no plural.
+
+1. `[Frase]` **The students' books are on the table.** — Os livros dos estudantes estão na mesa.
+2. `[Palavra]` **Children** — Crianças; plural de *child*
+3. `[Frase]` **The children's toys are in the room.** — Os brinquedos das crianças estão no quarto.
+4. `[Palavra]` **Men** — Homens; plural de *man*
+5. `[Frase]` **The men's bags are near the door.** — As bolsas dos homens estão perto da porta.
+6. `[Palavra]` **Women** — Mulheres; plural de *woman*
+7. `[Frase]` **The women's books are on the desk.** — Os livros das mulheres estão na escrivaninha.
+8. `[Palavra]` **Lives** — Vidas; plural de *life*
+9. `[Frase]` **My friends' lives are wonderful.** — As vidas dos meus amigos são maravilhosas.
+10. `[Palavra]` **Different** — Diferente, diferentes
+11. `[Frase]` **People's lives are different.** — As vidas das pessoas são diferentes.
+12. `[Palavra]` **Puzzle** — Quebra-cabeça
+13. `[Frase]` **The children's puzzle is on the table.** — O quebra-cabeça das crianças está na mesa.
+14. `[Gramática]` **Gramática — Lição 125: Posse no Plural**
+   > Depois de um plural terminado em *s*, usamos apenas o apóstrofo: *students' books*. Em plurais que não terminam em *s*, acrescentamos *'s*: *children's toys* e *people's lives*. O plural também continua clicável para mostrar o singular.
+
+**PAL:** 6<br>
+**TPA:** 664<br>
+**PA:** Children, Men, Women, Lives, Different, Puzzle
+
+### Lição 126 — Fixação: Objetos e Pertences
+**Foco**: Praticar posse com pessoas no singular e no plural.
+
+1. `[Frase]` **The girl's earring is on the table.** — O brinco da menina está na mesa. `[Ver palavra: earring]`
+2. `[Frase]` **My mother's purse is black.** — A bolsa da minha mãe é preta. `[Ver palavra: purse]`
+3. `[Frase]` **The boy's button is on the floor.** — O botão do menino está no chão. `[Ver palavra: button]`
+4. `[Frase]` **The teacher's comb is in the bag.** — O pente da professora está na bolsa. `[Ver palavra: comb]`
+5. `[Frase]` **The children's crown is beautiful.** — A coroa das crianças é bonita. `[Ver palavra: crown]`
+6. `[Frase]` **The students' banner is red.** — A faixa dos estudantes é vermelha. `[Ver palavra: banner]`
+
+**PAL:** 6<br>
+**TPA:** 670<br>
+**PA:** earring, purse, button, comb, crown, banner
+
+### Lição 127 — Dizendo de Quem É: "Mine" e "Yours"
+**Foco**: Identificar pertences sem repetir o nome do objeto.
+
+1. `[Palavra]` **Mine** — Meu, minha; meus, minhas
+2. `[Frase]` **The book is mine.** — O livro é meu.
+3. `[Palavra]` **Yours** — Seu, sua; seus, suas
+4. `[Frase]` **The bag is yours.** — A bolsa é sua.
+5. `[Palavra]` **Hers** — Dela
+6. `[Frase]` **The camera is hers.** — A câmera é dela.
+7. `[Palavra]` **Ours** — Nosso, nossa; nossos, nossas
+8. `[Frase]` **The house is ours.** — A casa é nossa.
+9. `[Palavra]` **Theirs** — Deles, delas
+10. `[Frase]` **The toys are theirs.** — Os brinquedos são deles.
+11. `[Palavra]` **Treasure** — Tesouro
+12. `[Frase]` **The treasure is mine.** — O tesouro é meu.
+13. `[Frase]` **The phone is his.** — O telefone é dele.
+14. `[Gramática]` **Gramática — Lição 127: Pronomes Possessivos**
+   > *Mine*, *yours*, *his*, *hers*, *ours* e *theirs* indicam posse sem vir antes do substantivo: *The book is mine.* Compare com *my book*, em que *my* vem antes de *book*. A forma *yours* pode se referir a uma ou mais pessoas.
+
+**PAL:** 6<br>
+**TPA:** 676<br>
+**PA:** Mine, Yours, Hers, Ours, Theirs, Treasure
+
+### Lição 128 — Pessoas que Recebem a Ação
+**Foco**: Usar pronomes como objeto de verbos.
+
+1. `[Palavra]` **Me** — Me, mim
+2. `[Frase]` **My friend can see me.** — Meu amigo consegue me ver.
+3. `[Palavra]` **Him** — Ele, o, lhe
+4. `[Frase]` **I can see him.** — Eu consigo vê-lo.
+5. `[Palavra]` **Us** — Nós, nos
+6. `[Frase]` **The teacher can see us.** — A professora consegue nos ver.
+7. `[Palavra]` **Them** — Eles, elas, os, as
+8. `[Frase]` **I can see them.** — Eu consigo vê-los.
+9. `[Frase]` **I can see her.** — Eu consigo vê-la.
+10. `[Palavra]` **Give** — Dar
+11. `[Frase]` **I give food to the dog.** — Eu dou comida ao cachorro.
+12. `[Frase]` **I give you the food.** — Eu dou a comida a você.
+13. `[Palavra]` **Show** — Mostrar
+14. `[Frase]` **I show the book to my friend.** — Eu mostro o livro ao meu amigo.
+15. `[Frase]` **We show him the garden.** — Nós mostramos o jardim a ele.
+16. `[Gramática]` **Gramática — Lição 128: Pronomes como Objeto**
+   > Quando recebem a ação, usamos *me*, *you*, *him*, *her*, *it*, *us* e *them*: *I can see her.* Eles também podem vir depois de preposições, como em *for her*. Em *I give you the food*, *you* indica quem recebe a comida e aparece antes do que é dado. *Her* pode indicar “dela” antes de um substantivo ou “ela” como objeto, conforme a posição.
+
+**PAL:** 6<br>
+**TPA:** 682<br>
+**PA:** Me, Him, Us, Them, Give, Show
+
+### Lição 129 — Fixação: Recados e Presentes
+**Foco**: Praticar pronomes possessivos e pronomes como objeto.
+
+1. `[Frase]` **Can you hug me?** — Você pode me abraçar? `[Ver palavra: hug]`
+2. `[Frase]` **I want to thank you.** — Eu quero agradecer a você. `[Ver palavra: thank]`
+3. `[Frase]` **This message is for her.** — Esta mensagem é para ela. `[Ver palavra: message]`
+4. `[Frase]` **The postcard is yours.** — O cartão-postal é seu. `[Ver palavra: postcard]`
+5. `[Frase]` **The note is ours.** — O bilhete é nosso. `[Ver palavra: note]`
+6. `[Frase]` **The souvenir is theirs.** — A lembrança é deles. `[Ver palavra: souvenir]`
+
+**PAL:** 6<br>
+**TPA:** 688<br>
+**PA:** hug, thank, message, postcard, note, souvenir
+
+### Lição 130 — Necessidade com "Must"
+**Foco**: Falar do que é necessário fazer.
+
+1. `[Palavra]` **Must** — Deve, precisa
+2. `[Frase]` **You must visit the garden.** — Você precisa visitar o jardim.
+3. `[Frase]` **The mouse must hide.** — O rato precisa se esconder. `[Ver terceira pessoa: must → must]`
+4. `[Palavra]` **Amazed** — Impressionado, impressionada
+5. `[Frase]` **I'm amazed.** — Eu estou impressionado.
+6. `[Palavra]` **Gone** — Que não está mais aqui, que foi embora
+7. `[Frase]` **The food is gone.** — A comida não está mais aqui.
+8. `[Palavra]` **Lead** — Conduzir, guiar
+9. `[Frase]` **I lead the student to the classroom.** — Eu conduzo o aluno até a sala de aula.
+10. `[Frase]` **We must lead the children to the classroom.** — Nós precisamos conduzir as crianças até a sala de aula.
+11. `[Palavra]` **Hurry** — Apressar-se
+12. `[Frase]` **I hurry to school.** — Eu vou apressado para a escola..
+13. `[Frase]` **They must hurry.** — Eles precisam se apressar.
+14. `[Palavra]` **Make** — Fazer, preparar
+15. `[Frase]` **I make the dinner.** — Eu preparo o jantar.
+16. `[Frase]` **We must make the dinner.** — Nós precisamos preparar o jantar.
+17. `[Gramática]` **Gramática — Lição 130: "Must"**
+   > *Must* expressa necessidade ou obrigação e vem antes do verbo na forma-base: *You must visit* e *The mouse must hide*. Sua forma não muda com o sujeito. `[Ver terceira pessoa: must → must]`
+
+**PAL:** 6<br>
+**TPA:** 694<br>
+**PA:** Must, Amazed, Gone, Lead, Hurry, Make
+
+### Lição 131 — Comparando com "As ... As"
+**Foco**: Comparar características de pessoas, lugares e objetos.
+
+1. `[Palavra]` **As ... as** — Tão ... quanto
+2. `[Frase]` **The room is as big as the kitchen.** — O quarto é tão grande quanto a cozinha.
+3. `[Palavra]` **Deep** — Fundo, funda; profundo, profunda
+4. `[Frase]` **The river is as deep as the stream.** — O rio é tão fundo quanto o riacho.
+5. `[Palavra]` **Wide** — Largo, larga
+6. `[Frase]` **The road is as wide as the street.** — A estrada é tão larga quanto a rua.
+7. `[Palavra]` **Narrow** — Estreito, estreita
+8. `[Frase]` **The path is as narrow as the hallway.** — O caminho é tão estreito quanto o corredor.
+9. `[Palavra]` **Heavy** — Pesado, pesada
+10. `[Frase]` **The bag is as heavy as the backpack.** — A bolsa é tão pesada quanto a mochila.
+11. `[Palavra]` **Clear** — Claro, clara
+12. `[Frase]` **The water is as clear as the sky.** — A água é tão clara quanto o céu.
+13. `[Frase]` **The garden is not as big as the park.** — O jardim não é tão grande quanto o parque.
+14. `[Gramática]` **Gramática — Lição 131: "As ... As"**
+   > Para comparar características, colocamos o adjetivo entre *as* e *as*: *as big as* significa “tão grande quanto”. Podemos negar a igualdade: *The room is not as big as the kitchen.*
+
+**PAL:** 6<br>
+**TPA:** 700<br>
+**PA:** As ... as, Deep, Wide, Narrow, Heavy, Clear
+
+### Lição 132 — Fixação: Tarefas e Comparações
+**Foco**: Praticar *must* e comparações com *as ... as*.
+
+1. `[Frase]` **You must carry the bucket.** — Você precisa carregar o balde. `[Ver palavra: bucket]`
+2. `[Frase]` **The ladder is as tall as the tree.** — A escada é tão alta quanto a árvore. `[Ver palavra: ladder]`
+3. `[Frase]` **We must find the rope.** — Nós precisamos encontrar a corda. `[Ver palavra: rope]`
+4. `[Frase]` **The stone is not as big as the apple.** — A pedra não é tão grande quanto a maçã. `[Ver palavra: stone]`
+5. `[Frase]` **The dog must find the stick.** — O cachorro precisa encontrar o graveto. `[Ver palavra: stick]` `[Ver terceira pessoa: must → must]`
+6. `[Frase]` **The brick is as heavy as the stone.** — O tijolo é tão pesado quanto a pedra. `[Ver palavra: brick]`
+
+**PAL:** 6<br>
+**TPA:** 706<br>
+**PA:** bucket, ladder, rope, stone, stick, brick
+
+### Encerramento — banco, história e exame
+
+Pré-requisito: Blocos 1–10 e Lições 124–132.
+
+#### Lição 133-BF — banco de frases: encontros e sentimentos
+
+1. `[Frase]` **I just want to help.** — Eu só quero ajudar. `[Ver palavra: just]`
+2. `[Frase]` **The moral is clear.** — A moral é clara. `[Ver palavra: moral]`
+3. `[Frase]` **I want to share the cake.** — Eu quero compartilhar o bolo. `[Ver palavra: share]`
+4. `[Frase]` **I want to choose a book.** — Eu quero escolher um livro. `[Ver palavra: choose]`
+5. `[Frase]` **We plan a trip.** — Nós planejamos uma viagem. `[Ver palavra: plan]`
+6. `[Frase]` **I want to protect them.** — Eu quero protegê-los. `[Ver palavra: protect]`
+7. `[Frase]` **I greet my friend.** — Eu cumprimento meu amigo. `[Ver palavra: greet]`
+8. `[Frase]` **The child is curious.** — A criança está curiosa. `[Ver palavra: curious]`
+9. `[Frase]` **My friend is worried.** — Meu amigo está preocupado. `[Ver palavra: worried]`
+10. `[Frase]` **The teacher is surprised.** — A professora está surpresa. `[Ver palavra: surprised]`
+11. `[Frase]` **The sound was strange.** — O som era estranho. `[Ver palavra: sound]`
+12. `[Frase]` **The dog is gentle.** — O cachorro é dócil. `[Ver palavra: gentle]`
+
+**PAL:** 12<br>
+**TPA:** 718<br>
+**PA:** just, moral, share, choose, plan, protect, greet, curious, worried, surprised, sound, gentle
+
+#### Lição 134 — história: procurando um gato
+
+1. Yesterday I went to my friend's house. — Ontem eu fui à casa da minha amiga.
+2. My friend was worried. Her cat was gone. — Minha amiga estava preocupada. O gato dela não estava mais lá.
+3. I wanted to help her. — Eu queria ajudá-la.
+4. We went to the garden, but we didn't see the cat. — Nós fomos ao jardim, mas não vimos o gato. `[Ver contração: didn't → did not — não]`
+5. Then we went upstairs and saw her cat on the bed. — Depois subimos e vimos o gato dela na cama.
+6. The cat was safe and quiet. — O gato estava seguro e tranquilo.
+7. My friend carried the cat to the living room. — Minha amiga levou o gato para a sala de estar. `[Ver terceira pessoa: carried → carry]`
+8. “Thank you!” my friend said. — “Obrigada!”, disse minha amiga. `[Ver terceira pessoa: said → say]`
+9. I was glad, and my friend was happy again. — Eu estava contente, e minha amiga estava feliz novamente.
+
+#### Lição 135 — exame: apêndice de frases inéditas
+
+1. The girl's camera is on the table. — A câmera da menina está sobre a mesa.
+2. The children's toys are in the garden. — Os brinquedos das crianças estão no jardim.
+3. The red book is mine. — O livro vermelho é meu.
+4. The bag is hers, but the phone is yours. — A bolsa é dela, mas o telefone é seu.
+5. We can see them near the museum. — Nós conseguimos vê-los perto do museu.
+6. I want to thank him. — Eu quero agradecer a ele.
+7. The mouse must hurry to the house. — O rato precisa se apressar para chegar à casa.
+8. The garden is as beautiful as the park. — O jardim é tão bonito quanto o parque.
+9. My friend's cat was safe in the kitchen. — O gato da minha amiga estava seguro na cozinha.
+10. The child is curious, but the dog is gentle. — A criança está curiosa, mas o cachorro é dócil.
+
+# BLOCO 12 — Clima, Histórias e Experiências
+
+### Lições dos ciclos — sequência revisada
+
+### Lição 136 — Como Está o Tempo?
+**Foco**: Descrever o clima usando *it*.
+
+1. `[Palavra]` **Weather** — Tempo, condições do tempo
+2. `[Frase]` **How is the weather today?** — Como está o tempo hoje?
+3. `[Palavra]` **Sunny** — Ensolarado, ensolarada
+4. `[Frase]` **It is sunny today.** — Está ensolarado hoje.
+5. `[Palavra]` **Cloudy** — Nublado, nublada
+6. `[Frase]` **It is cloudy in the morning.** — Está nublado de manhã.
+7. `[Palavra]` **Windy** — Com vento, ventoso
+8. `[Frase]` **It is windy outside.** — Está ventando lá fora.
+9. `[Palavra]` **Rainy** — Chuvoso, chuvosa
+10. `[Frase]` **It is rainy today.** — Está chuvoso hoje.
+11. `[Palavra]` **Snow** — Neve; nevar
+12. `[Frase]` **It snows in the country.** — Neva no campo.
+13. `[Frase]` **It rains in the city.** — Chove na cidade.
+14. `[Frase]` **I like the rain.** — Eu gosto da chuva.
+15. `[Gramática]` **Gramática — Lição 136: O Clima com "It"**
+   > Para falar do tempo, o inglês usa *it* como sujeito, sem corresponder a uma pessoa ou coisa específica. Com adjetivos, usamos *it is*: *It is sunny.* Com verbos como *rain* e *snow*, usamos o próprio verbo: *It rains* e *It snows*. *Rain* também pode ser o substantivo “chuva”, como em *the rain*.
+
+**PAL:** 6<br>
+**TPA:** 724<br>
+**PA:** Weather, Sunny, Cloudy, Windy, Rainy, Snow
+
+### Lição 137 — As Estações do Ano
+**Foco**: Situar acontecimentos em uma estação com *in*.
+
+1. `[Palavra]` **Season** — Estação do ano
+2. `[Frase]` **The season is warm.** — A estação é amena.
+3. `[Palavra]` **Summer** — Verão
+4. `[Frase]` **It is hot in the summer.** — Faz calor no verão.
+5. `[Palavra]` **Winter** — Inverno
+6. `[Frase]` **It snows in the winter.** — Neva no inverno.
+7. `[Palavra]` **Spring** — Primavera
+8. `[Frase]` **The garden is beautiful in the spring.** — O jardim é bonito na primavera.
+9. `[Palavra]` **Fall** — Outono
+10. `[Frase]` **We walk in the park in the fall.** — Nós caminhamos no parque no outono.
+11. `[Palavra]` **Favorite** — Favorito, favorita; preferido, preferida
+12. `[Frase]` **My favorite season is spring.** — Minha estação favorita é a primavera.
+13. `[Frase]` **Is summer your favorite season?** — O verão é sua estação favorita?
+14. `[Gramática]` **Gramática — Lição 137: "In" e Estações**
+   > Para dizer que algo acontece em uma estação, podemos usar *in the* antes do nome: *in the summer*, “no verão”. Também é possível usar *in summer*. *Fall* é uma palavra para “outono”; *favorite* vem antes do substantivo em *my favorite season*.
+
+**PAL:** 6<br>
+**TPA:** 730<br>
+**PA:** Season, Summer, Winter, Spring, Fall, Favorite
+
+### Lição 138 — Fixação: Um Dia ao Ar Livre
+**Foco**: Praticar clima e estações.
+
+1. `[Frase]` **It is cool outside today.** — Está fresco lá fora hoje. `[Ver palavra: cool]`
+2. `[Frase]` **There is fog in the garden in the fall.** — Há neblina no jardim no outono. `[Ver palavra: fog]`
+3. `[Frase]` **The breeze is cool in the spring.** — A brisa é fresca na primavera. `[Ver palavra: breeze]`
+4. `[Frase]` **It is rainy today. My raincoat is red.** — Está chuvoso hoje. Minha capa de chuva é vermelha. `[Ver palavra: raincoat]`
+5. `[Frase]` **The forecast is for sun tomorrow.** — A previsão é de sol para amanhã. `[Ver palavra: forecast]`
+6. `[Frase]` **What is the temperature today?** — Qual é a temperatura hoje? `[Ver palavra: temperature]`
+
+**PAL:** 6<br>
+**TPA:** 736<br>
+**PA:** cool, fog, breeze, raincoat, forecast, temperature
+
+### Lição 139 — Contando o que Pensamos
+**Foco**: Ligar uma ideia ao que alguém pensa, percebe ou imagina.
+
+1. `[Frase]` **I think that it is sunny.** — Eu acho que está ensolarado.
+2. `[Palavra]` **Guess** — Achar, supor
+3. `[Frase]` **I guess that the food is hot.** — Eu acho que a comida está quente.
+4. `[Palavra]` **Notice** — Perceber, notar
+5. `[Frase]` **I notice that the door is open.** — Eu percebo que a porta está aberta.
+6. `[Palavra]` **Expect** — Esperar, ter a expectativa de
+7. `[Frase]` **I expect that my friend is at home.** — Eu espero que minha amiga esteja em casa.
+8. `[Palavra]` **Doubt** — Duvidar
+9. `[Frase]` **I doubt that the cat is in the garden.** — Eu duvido que o gato esteja no jardim.
+10. `[Palavra]` **Imagine** — Imaginar
+11. `[Frase]` **I imagine that the country is quiet.** — Eu imagino que o campo seja tranquilo.
+12. `[Palavra]` **Decide** — Decidir
+13. `[Frase]` **We decide that we need a picnic.** — Nós decidimos que precisamos de um piquenique.
+14. `[Frase]` **She dreams that she lives in the city.** — Ela sonha que mora na cidade.
+15. `[Gramática]` **Gramática — Lição 139: Ideias com "That"**
+   > Depois de verbos como *think*, *notice* e *dream*, *that* pode ligar o verbo à ideia que vem em seguida: *I think that it is sunny*, “Eu acho que está ensolarado”. Esse uso de *that*, “que”, é diferente do demonstrativo “aquele, aquela”. Em muitas frases, *that* pode ser omitido.
+
+**PAL:** 6<br>
+**TPA:** 742<br>
+**PA:** Guess, Notice, Expect, Doubt, Imagine, Decide
+
+### Lição 140 — Dois Acontecimentos: "Just As"
+**Foco**: Indicar que algo acontece exatamente quando outra ação começa ou está acontecendo.
+
+1. `[Palavra]` **Just as** — Exatamente quando, bem na hora em que
+2. `[Frase]` **Just as I opened the door, it started to rain.** — Bem na hora em que abri a porta, começou a chover.
+3. `[Frase]` **Just as we start to eat, the dog jumps on the table.** — Bem na hora em que começamos a comer, o cachorro pula na mesa.
+4. `[Palavra]` **Lightning** — Relâmpago; relâmpagos
+5. `[Frase]` **We saw lightning.** — Nós vimos relâmpagos.
+6. `[Frase]` **Just as we went outside, we saw lightning.** — Bem na hora em que saímos, vimos relâmpagos.
+7. `[Palavra]` **Puddle** — Poça
+8. `[Frase]` **The puddle is near the door.** — A poça está perto da porta.
+9. `[Palavra]` **Muddy** — Com lama, lamacento, lamacenta
+10. `[Frase]` **The path is muddy.** — O caminho está com lama.
+11. `[Palavra]` **Indoors** — Dentro de casa, em local fechado
+12. `[Frase]` **We stayed indoors.** — Nós ficamos dentro de casa.
+13. `[Palavra]` **Shelter** — Abrigo
+14. `[Frase]` **We went to the shelter.** — Nós fomos ao abrigo.
+15. `[Frase]` **Just as we arrived at the shelter, it started to rain.** — Bem na hora em que chegamos ao abrigo, começou a chover.
+16. `[Gramática]` **Gramática — Lição 140: "Just As"**
+   > *Just as* pode indicar que um acontecimento ocorre exatamente quando outro começa ou está em andamento. Em *Just as I opened the door, it started to rain*, a chuva começou bem na hora em que abri a porta. Aqui, a expressão não significa “apenas”, sentido de *just* estudado antes.
+
+**PAL:** 6<br>
+**TPA:** 748<br>
+**PA:** Just as, Lightning, Puddle, Muddy, Indoors, Shelter
+
+### Lição 141 — Fixação: Reações e Surpresas
+**Foco**: Praticar ideias com *that* e acontecimentos com *just as*.
+
+1. `[Frase]` **I think that my shoes are wet.** — Eu acho que meus sapatos estão molhados. `[Ver palavra: wet]`
+2. `[Frase]` **I notice that my hands are dry.** — Eu percebo que minhas mãos estão secas. `[Ver palavra: dry]`
+3. `[Frase]` **Just as I go outside, I shiver.** — Bem na hora em que saio, eu tremo de frio. `[Ver palavra: shiver]`
+4. `[Frase]` **Just as I open the window, I hear the wind.** — Bem na hora em que abro a janela, ouço o vento. `[Ver palavra: hear]`
+5. `[Frase]` **I think that the child is nervous.** — Eu acho que a criança está nervosa. `[Ver palavra: nervous]`
+6. `[Frase]` **Just as my friend arrived, I spilled the tea.** — Bem na hora em que minha amiga chegou, eu derramei o chá. `[Ver palavra: spill]`
+
+**PAL:** 6<br>
+**TPA:** 754<br>
+**PA:** wet, dry, shiver, hear, nervous, spill
+
+### Lição 142 — Experiências: "Have" com Particípio
+**Foco**: Falar de experiências sem dizer quando aconteceram.
+
+1. `[Palavra]` **Climb** — Subir, escalar
+2. `[Frase]` **I climb the hill.** — Eu subo a colina.
+3. `[Frase]` **I have climbed the hill.** — Eu já subi a colina.
+4. `[Palavra]` **Camp** — Acampar
+5. `[Frase]` **We camp in the forest.** — Nós acampamos na floresta.
+6. `[Frase]` **We have camped in the forest.** — Nós já acampamos na floresta.
+7. `[Palavra]` **Skate** — Andar de patins
+8. `[Frase]` **I skate in the park.** — Eu ando de patins no parque.
+9. `[Frase]` **I have skated in the park.** — Eu já andei de patins no parque.
+10. `[Palavra]` **Sail** — Navegar
+11. `[Frase]` **I sail on the river.** — Eu navego no rio.
+12. `[Frase]` **They have sailed to the city.** — Eles já navegaram até a cidade.
+13. `[Palavra]` **Taste** — Experimentar, provar
+14. `[Frase]` **I taste the food.** — Eu provo a comida.
+15. `[Frase]` **I have tasted the food.** — Eu já provei a comida.
+16. `[Palavra]` **Learn** — Aprender
+17. `[Frase]` **I learn from my teacher.** — Eu aprendo com minha professora.
+18. `[Frase]` **My friend has learned from the teacher.** — Minha amiga aprendeu com a professora.
+19. `[Gramática]` **Gramática — Lição 142: Experiências com "Have"**
+   > Para falar de uma experiência ocorrida alguma vez até agora, sem dizer quando, podemos usar *have* ou *has* seguido do particípio do verbo: *I have visited the museum* significa “Eu já visitei o museu”. Usamos *have* com *I*, *you*, *we* e *they*; *has* com *he*, *she*, *it* ou um substantivo singular: *my friend has visited the museum*. Aqui *have/has* é auxiliar, não indica posse.
+   >
+   > Nos verbos regulares destes exemplos, o particípio tem a mesma forma do passado: *visit → visited*, *climb → climbed*. Com um tempo passado concluído e definido, como *yesterday*, usamos o passado simples: *I visited the museum yesterday*, “Eu visitei o museu ontem”. A experiência é apenas um dos usos do *present perfect*; os demais podem ser estudados depois.
+
+**PAL:** 6<br>
+**TPA:** 760<br>
+**PA:** Climb, Camp, Skate, Sail, Taste, Learn
+
+### Lição 143 — Perguntando sobre Experiências
+**Foco**: Fazer perguntas com *have/has* e *ever*, e usar alguns particípios irregulares.
+
+1. `[Palavra]` **Seen** — Visto; particípio de *see*
+2. `[Frase]` **I have seen the museum.** — Eu já vi o museu.
+3. `[Frase]` **Have you ever seen the museum?** — Você já viu o museu alguma vez?
+4. `[Palavra]` **Eaten** — Comido; particípio de *eat*
+5. `[Frase]` **I have eaten the cake.** — Eu comi o bolo.
+6. `[Frase]` **Have you ever eaten Chinese food?** — Você já comeu comida chinesa alguma vez?
+7. `[Palavra]` **Given** — Dado; particípio de *give*
+8. `[Frase]` **I have given a gift to my friend.** — Eu dei um presente para minha amiga.
+9. `[Palavra]` **Made** — Feito; particípio de *make*
+10. `[Frase]` **We have made dinner.** — Nós preparamos o jantar.
+11. `[Palavra]` **Never** — Nunca
+12. `[Frase]` **I have never visited the museum.** — Eu nunca visitei o museu.
+13. `[Frase]` **I have not visited the museum.** — Eu não visitei o museu.
+14. `[Frase]` **My friend has not tasted the food.** — Minha amiga ainda não provou a comida.
+15. `[Palavra]` **Twice** — Duas vezes
+16. `[Frase]` **I have visited the museum twice.** — Eu visitei o museu duas vezes.
+17. `[Frase]` **Has your friend ever visited the park?** — Sua amiga já visitou o parque alguma vez?
+18. `[Frase]` **Yes, she has.** — Sim, já visitou.
+19. `[Frase]` **Have you ever tried the cake?** — Você já experimentou o bolo alguma vez?
+20. `[Frase]` **No, I have not.** — Não, nunca experimentei.
+21. `[Gramática]` **Gramática — Lição 143: Perguntas, Negativas e Particípios**
+   > Para perguntar sobre uma experiência, colocamos *have* ou *has* antes do sujeito: *Have you ever visited the museum?* A palavra *ever*, “alguma vez”, ajuda a perguntar se a experiência ocorreu em algum momento até agora; respostas curtas podem ser *Yes, I have* ou *No, I have not*.
+   >
+   > Para formar uma negativa completa, colocamos *not* depois de *have/has* e antes do particípio: *I have not visited the museum*. Também podemos usar *never* para dizer “nunca”: *I have never visited the museum*, sem acrescentar *not*.
+   >
+   > Alguns particípios são irregulares: *see → seen*, *eat → eaten*, *give → given* e *make → made*. O particípio pode ser diferente do passado simples, como em *see → saw → seen*, ou igual a ele, como em *make → made → made*.
+
+**PAL:** 6<br>
+**TPA:** 766<br>
+**PA:** Seen, Eaten, Given, Made, Never, Twice
+
+### Lição 144 — Fixação: Lugares e Experiências
+**Foco**: Praticar relatos e perguntas sobre experiências.
+
+1. `[Frase]` **Have you ever seen a waterfall?** — Você já viu uma cachoeira alguma vez? `[Ver palavra: waterfall]`
+2. `[Frase]` **I have visited an island.** — Eu já visitei uma ilha. `[Ver palavra: island]`
+3. `[Frase]` **She has climbed the mountain.** — Ela já subiu a montanha. `[Ver palavra: mountain]`
+4. `[Frase]` **Have they ever visited a cave?** — Eles já visitaram uma caverna alguma vez? `[Ver palavra: cave]`
+5. `[Frase]` **We have not camped in a tent.** — Nós ainda não acampamos em uma barraca. `[Ver palavra: tent]`
+6. `[Frase]` **He has sailed in a boat.** — Ele já navegou em um barco. `[Ver palavra: boat]`
+
+**PAL:** 6<br>
+**TPA:** 772<br>
+**PA:** waterfall, island, mountain, cave, tent, boat
+
+### Encerramento — banco, história e exame
+
+Pré-requisito: Blocos 1–11 e Lições 136–144.
+
+#### Lição 145-BF — banco de frases: sabores e alimentos
+
+1. `[Frase]` **The food is spicy.** — A comida é apimentada. `[Ver palavra: spicy]`
+2. `[Frase]` **The coffee is bitter.** — O café está amargo. `[Ver palavra: bitter]`
+3. `[Frase]` **The apple is sour.** — A maçã está azeda. `[Ver palavra: sour]`
+4. `[Frase]` **The cake is sweet.** — O bolo é doce. `[Ver palavra: sweet]`
+5. `[Frase]` **The bread is crunchy.** — O pão está crocante. `[Ver palavra: crunchy]`
+6. `[Frase]` **The fruit is ripe.** — A fruta está madura. `[Ver palavra: ripe]`
+7. `[Frase]` **I have a lime.** — Eu tenho um limão-verde. `[Ver palavra: lime]`
+8. `[Frase]` **The pepper is red.** — O pimentão é vermelho. `[Ver palavra: pepper]`
+9. `[Frase]` **I like ginger.** — Eu gosto de gengibre. `[Ver palavra: ginger]`
+10. `[Frase]` **I have a recipe.** — Eu tenho uma receita. `[Ver palavra: recipe]`
+11. `[Frase]` **I have a snack in the morning.** — Eu faço um lanche de manhã. `[Ver palavra: snack]`
+12. `[Frase]` **I like the flavor of the cake.** — Eu gosto do sabor do bolo. `[Ver palavra: flavor]`
+
+**PAL:** 12<br>
+**TPA:** 784<br>
+**PA:** spicy, bitter, sour, sweet, crunchy, ripe, lime, pepper, ginger, recipe, snack, flavor
+
+#### Lição 146 — história: uma visita à cachoeira
+
+1. Yesterday my friend and I went to the mountain. — Ontem minha amiga e eu fomos à montanha.
+2. It was cloudy, but we wanted to see the waterfall. — Estava nublado, mas queríamos ver a cachoeira.
+3. “Have you ever seen a waterfall?” my friend asked. — “Você já viu uma cachoeira alguma vez?”, perguntou minha amiga.
+4. “No, I have not,” I said. — “Não, nunca vi”, eu disse.
+5. Just as we started to walk, it started to rain. — Bem na hora em que começamos a caminhar, começou a chover.
+6. We went to a shelter. We were wet and nervous, but my friend had a snack. — Fomos a um abrigo. Estávamos molhadas e nervosas, mas minha amiga tinha um lanche.
+7. We ate the snack. It was sweet and delicious. — Comemos o lanche. Ele estava doce e delicioso.
+8. Then it was sunny again, and we went to the waterfall. — Depois o tempo ficou ensolarado novamente, e fomos à cachoeira.
+9. It was beautiful, and we were happy. We wanted to visit again. — Ela era linda, e nós estávamos felizes. Queríamos visitar novamente.
+
+#### Lição 147 — exame: apêndice de frases inéditas
+
+1. It is windy in the winter. — Venta no inverno.
+2. My favorite season is summer. — Minha estação favorita é o verão.
+3. I think that it is windy outside. — Eu acho que está ventando lá fora.
+4. Just as we opened the window, we saw the rain. — Bem na hora em que abrimos a janela, vimos a chuva.
+5. She has visited the mountain. — Ela já visitou a montanha.
+6. Have you ever camped in a forest? — Você já acampou em uma floresta alguma vez?
+7. I have never seen an island. — Eu nunca vi uma ilha.
+8. They have sailed to the island twice. — Eles já navegaram até a ilha duas vezes.
+9. The lemon is sour, but the cake is sweet. — O limão é azedo, mas o bolo é doce.
+10. My friend has made a spicy snack. — Minha amiga preparou um lanche apimentado.
+
+# BLOCO 13 — Quantidades, Pedidos e Caminhos
+
+### Lições dos ciclos — sequência revisada
+
+### Lição 148 — Alimentos Contáveis e Incontáveis
+**Foco**: Distinguir unidades contáveis de alimentos tratados como quantidade.
+
+1. `[Palavra]` **Banana** — Banana
+2. `[Frase]` **I have a banana.** — Eu tenho uma banana.
+3. `[Palavra]` **Potato** — Batata
+4. `[Frase]` **We have two potatoes.** — Nós temos duas batatas.
+5. `[Palavra]` **Bean** — Feijão; grão de feijão
+6. `[Frase]` **I eat beans.** — Eu como feijão.
+7. `[Palavra]` **Lettuce** — Alface
+8. `[Frase]` **There is lettuce in the salad.** — Há alface na salada.
+9. `[Palavra]` **Pasta** — Massa, macarrão
+10. `[Frase]` **I like pasta.** — Eu gosto de macarrão.
+11. `[Palavra]` **Meat** — Carne
+12. `[Frase]` **The meat is hot.** — A carne está quente.
+13. `[Frase]` **I have a glass of water.** — Eu tenho um copo de água.
+14. `[Gramática]` **Gramática — Lição 148: Contáveis e Incontáveis**
+   > Podemos contar substantivos como *banana* e *potato* em unidades: *a banana*, *two potatoes*. Nas frases desta lição, *water*, *lettuce* e *pasta* são tratados como quantidades, não como unidades: não colocamos *a* ou um número diretamente antes deles. Podemos contar um recipiente, como em *a glass of water*. Algumas palavras podem ser contáveis em outros sentidos ou contextos.
+
+**PAL:** 6<br>
+**TPA:** 790<br>
+**PA:** Banana, Potato, Bean, Lettuce, Pasta, Meat
+
+### Lição 149 — Quantos? "How Many"
+**Foco**: Perguntar a quantidade de unidades contáveis.
+
+1. `[Palavra]` **How many** — Quantos, quantas
+2. `[Frase]` **How many bananas do you have?** — Quantas bananas você tem?
+3. `[Palavra]` **Plum** — Ameixa
+4. `[Frase]` **How many plums are in the bowl?** — Quantas ameixas estão na tigela?
+5. `[Palavra]` **Melon** — Melão
+6. `[Frase]` **How many melons do we need?** — De quantos melões precisamos?
+7. `[Palavra]` **Pineapple** — Abacaxi
+8. `[Frase]` **The pineapple is ripe.** — O abacaxi está maduro.
+9. `[Palavra]` **Mango** — Manga
+10. `[Frase]` **How many mangoes do you want?** — Quantas mangas você quer?
+11. `[Palavra]` **Grape** — Uva
+12. `[Frase]` **The grapes are sweet.** — As uvas são doces.
+13. `[Gramática]` **Gramática — Lição 149: "How Many"**
+   > Usamos *how many* para perguntar quantas unidades de algo contável há ou são necessárias. O substantivo vem no plural: *How many bananas do you have?* A ordem depois dele depende do verbo: *do you have* ou *are in the bowl*.
+
+**PAL:** 6<br>
+**TPA:** 796<br>
+**PA:** How many, Plum, Melon, Pineapple, Mango, Grape
+
+### Lição 150 — Fixação: Compras para a Refeição
+**Foco**: Praticar substantivos contáveis, incontáveis e perguntas com *how many*.
+
+1. `[Frase]` **I have two cabbages.** — Eu tenho dois repolhos. `[Ver palavra: cabbage]`
+2. `[Frase]` **There is some yogurt in the bowl.** — Há um pouco de iogurte na tigela. `[Ver palavra: yogurt]`
+3. `[Frase]` **How many sausages are on the plate?** — Quantas salsichas estão no prato? `[Ver palavra: sausage]`
+4. `[Frase]` **There is some cereal in the bowl.** — Há um pouco de cereal na tigela. `[Ver palavra: cereal]`
+5. `[Frase]` **How many pancakes are on the plate?** — Quantas panquecas estão no prato? `[Ver palavra: pancake]`
+6. `[Frase]` **How many peanuts are in the bowl?** — Quantos amendoins estão na tigela? `[Ver palavra: peanut]`
+
+**PAL:** 6<br>
+**TPA:** 802<br>
+**PA:** cabbage, yogurt, sausage, cereal, pancake, peanut
+
+### Lição 151 — Quanto? Quantidade e Preço
+**Foco**: Usar *how much* para perguntar sobre quantidade e preço.
+
+1. `[Palavra]` **How much** — Quanto, quanta; quanto custa
+2. `[Frase]` **How much water is in the glass?** — Quanta água há no copo?
+3. `[Palavra]` **Price** — Preço
+4. `[Frase]` **The price is good.** — O preço é bom.
+5. `[Palavra]` **Dollar** — Dólar
+6. `[Frase]` **The price is two dollars.** — O preço é de dois dólares.
+7. `[Palavra]` **Cost** — Custar
+8. `[Frase]` **The soup costs two dollars.** — A sopa custa dois dólares.
+9. `[Frase]` **How much does the soup cost?** — Quanto custa a sopa?
+10. `[Palavra]` **Bill** — Conta, em um restaurante
+11. `[Frase]` **The bill is on the table.** — A conta está na mesa.
+12. `[Palavra]` **Coin** — Moeda
+13. `[Frase]` **The coin is on the table.** — A moeda está na mesa.
+14. `[Frase]` **How much is the bread?** — Quanto custa o pão?
+15. `[Frase]` **How much are the apples?** — Quanto custam as maçãs?
+16. `[Gramática]` **Gramática — Lição 151: "How Much"**
+   > *How much* pergunta a quantidade de algo tratado como incontável, como em *How much water?* Também pergunta preços: *How much is the bread?* e *How much are the apples?* Com o verbo *cost*, usamos a pergunta já aprendida com *do/does*: *How much does the soup cost?* O verbo após *does* fica na forma-base.
+
+**PAL:** 6<br>
+**TPA:** 808<br>
+**PA:** How much, Price, Dollar, Cost, Bill, Coin
+
+### Lição 152 — Pedidos e Ofertas com "Would Like"
+**Foco**: Fazer pedidos e ofertas de maneira educada.
+
+1. `[Palavra]` **Would like** — Gostaria, gostaria de
+2. `[Frase]` **I would like some water.** — Eu gostaria de um pouco de água.
+3. `[Frase]` **She would like the menu.** — Ela gostaria do cardápio. `[Ver terceira pessoa: would → would]`
+4. `[Palavra]` **Waitress** — Garçonete
+5. `[Frase]` **The waitress is at the table.** — A garçonete está na mesa.
+6. `[Palavra]` **Best friend** — Melhor amigo, melhor amiga
+7. `[Frase]` **My best friend would like some water.** — Minha melhor amiga gostaria de um pouco de água. `[Ver terceira pessoa: would → would]`
+8. `[Palavra]` **Sauce** — Molho
+9. `[Frase]` **I would like some sauce.** — Eu gostaria de um pouco de molho.
+10. `[Palavra]` **Pay** — Pagar
+11. `[Frase]` **I pay the bill.** — Eu pago a conta.
+12. `[Frase]` **I would like to pay.** — Eu gostaria de pagar.
+13. `[Palavra]` **Paid** — Paguei, pagou; passado de *pay*
+14. `[Frase]` **My friend paid the bill.** — Minha amiga pagou a conta.
+15. `[Frase]` **Would you like some soup?** — Você gostaria de um pouco de sopa?
+16. `[Frase]` **Yes, please.** — Sim, por favor.
+17. `[Gramática]` **Gramática — Lição 152: "Would Like"**
+   > *Would like* é uma forma educada de dizer “gostaria de”. Pode vir antes de um substantivo, como em *I would like some water*, ou de *to* e um verbo na forma-base, como em *I would like to pay*. Para oferecer algo, colocamos *would* antes do sujeito: *Would you like some soup?* A resposta pode ser *Yes, please*. Com *she*, também usamos *would like*, sem acrescentar *-s* a *like*. `[Ver terceira pessoa: would → would]`
+
+**PAL:** 6<br>
+**TPA:** 814<br>
+**PA:** Would like, Waitress, Best friend, Sauce, Pay, Paid
+
+### Lição 153 — Fixação: Escolhendo a Refeição
+**Foco**: Praticar quantidades, preços, pedidos e ofertas.
+
+1. `[Frase]` **How much is the pizza?** — Quanto custa a pizza? `[Ver palavra: pizza]`
+2. `[Frase]` **I would like a steak.** — Eu gostaria de um bife. `[Ver palavra: steak]`
+3. `[Frase]` **Would you like some cream?** — Você gostaria de um pouco de creme? `[Ver palavra: cream]`
+4. `[Frase]` **I would like an olive.** — Eu gostaria de uma azeitona. `[Ver palavra: olive]`
+5. `[Frase]` **How much is the burger?** — Quanto custa o hambúrguer? `[Ver palavra: burger]`
+6. `[Frase]` **I would like some syrup with the pancake.** — Eu gostaria de um pouco de calda com a panqueca. `[Ver palavra: syrup]`
+
+**PAL:** 6<br>
+**TPA:** 820<br>
+**PA:** pizza, steak, cream, olive, burger, syrup
+
+### Lição 154 — Subindo e Descendo: "Up" e "Down"
+**Foco**: Descrever movimentos para cima e para baixo ao longo de um caminho.
+
+1. `[Frase]` **The boy goes down the stairs.** — O menino desce as escadas.
+2. `[Palavra]` **Step** — Degrau
+3. `[Frase]` **The step is wet.** — O degrau está molhado.
+4. `[Frase]` **We go down the steps.** — Nós descemos os degraus.
+5. `[Palavra]` **Ramp** — Rampa
+6. `[Frase]` **I walk up the ramp.** — Eu subo a rampa andando.
+7. `[Palavra]` **Cliff** — Penhasco
+8. `[Frase]` **The cliff is near the river.** — O penhasco fica perto do rio.
+9. `[Palavra]` **Slippery** — Escorregadio, escorregadia
+10. `[Frase]` **The path is slippery.** — O caminho está escorregadio.
+11. `[Frase]` **We walk down the slippery path.** — Nós descemos pelo caminho escorregadio.
+12. `[Palavra]` **Steep** — Íngreme
+13. `[Frase]` **The hill is steep.** — A colina é íngreme.
+14. `[Frase]` **They walk up the steep hill.** — Eles sobem a colina íngreme.
+15. `[Palavra]` **Down here** — Aqui embaixo
+16. `[Frase]` **My mother is down here.** — Minha mãe está aqui embaixo.
+17. `[Frase]` **The squirrel runs up the tree.** — O esquilo sobe correndo pela árvore.
+18. `[Gramática]` **Gramática — Lição 154: Movimento com "Up" e "Down"**
+   > Antes de um caminho ou de uma escada, *down* pode indicar movimento para baixo e *up*, para cima: *go down the stairs*, “descer as escadas”; *walk up the ramp*, “subir a rampa andando”. Nesse uso, a direção vem antes do lugar, sem *to* entre eles. Compare *go down the stairs* com *go downstairs*, “ir para o andar de baixo”. Já *down here* indica um lugar: “aqui embaixo”.
+
+**PAL:** 6<br>
+**TPA:** 826<br>
+**PA:** Step, Ramp, Cliff, Slippery, Steep, Down here
+
+### Lição 155 — Como Algo Ficou
+**Foco**: Descrever estados usando *to be* e particípios conhecidos.
+
+1. `[Frase]` **The door is closed.** — A porta está fechada.
+2. `[Frase]` **The doors are closed.** — As portas estão fechadas.
+3. `[Palavra]` **Cabinet** — Armário
+4. `[Frase]` **Is the cabinet locked?** — O armário está trancado?
+5. `[Palavra]` **Lid** — Tampa
+6. `[Frase]` **The lid is not closed.** — A tampa não está fechada.
+7. `[Palavra]` **Envelope** — Envelope
+8. `[Frase]` **The envelope is in the box.** — O envelope está na caixa.
+9. `[Palavra]` **Zipper** — Zíper
+10. `[Frase]` **Is the zipper closed?** — O zíper está fechado?
+11. `[Palavra]` **Chest** — Baú
+12. `[Frase]` **The chest is not locked.** — O baú não está trancado.
+13. `[Palavra]` **Booklet** — Livreto
+14. `[Frase]` **The booklet is in the cabinet.** — O livreto está no armário.
+15. `[Frase]` **The dog is trapped in the room.** — O cachorro está preso no quarto.
+16. `[Gramática]` **Gramática — Lição 155: Estados com Particípio**
+   > Algumas formas de particípio podem descrever um estado depois de *to be*: *The door is closed* descreve uma porta fechada; *The dog is trapped* descreve um cachorro preso. Nessas frases, não dizemos quem fechou a porta ou prendeu o cachorro. Com sujeito plural, usamos *are*, como em *The doors are closed*. Compare com o *present perfect* de experiência: nele usamos *have/has* com o particípio; aqui usamos *is/are* para descrever o estado.
+
+**PAL:** 6<br>
+**TPA:** 832<br>
+**PA:** Cabinet, Lid, Envelope, Zipper, Chest, Booklet
+
+### Lição 156 — Fixação: Objetos pelo Caminho
+**Foco**: Praticar direções e estados.
+
+1. `[Frase]` **She carries the lantern down the stairs.** — Ela leva a lanterna escada abaixo. `[Ver palavra: lantern]`
+2. `[Frase]` **The bicycle is locked near the house.** — A bicicleta está presa com cadeado perto da casa. `[Ver palavra: bicycle]`
+3. `[Frase]` **The frog jumps up the steps.** — O sapo sobe os degraus pulando. `[Ver palavra: frog]`
+4. `[Frase]` **The helmet is in the closed cabinet.** — O capacete está no armário fechado. `[Ver palavra: helmet]`
+5. `[Frase]` **We push the cart up the hill.** — Nós empurramos o carrinho colina acima. `[Ver palavra: cart]`
+6. `[Frase]` **The bat is trapped in the attic.** — O morcego está preso no sótão. `[Ver palavra: bat]`
+
+**PAL:** 6<br>
+**TPA:** 838<br>
+**PA:** lantern, bicycle, frog, helmet, cart, bat
+
+### Encerramento — banco, história e exame
+
+Pré-requisito: Blocos 1–12 e Lições 148–156.
+
+#### Lição 157-BF — banco de frases: ingredientes e temperos
+
+1. `[Frase]` **The garlic is on the table.** — O alho está na mesa. `[Ver palavra: garlic]`
+2. `[Frase]` **I would like ketchup with the burger.** — Eu gostaria de ketchup com o hambúrguer. `[Ver palavra: ketchup]`
+3. `[Frase]` **I want mustard with the burger.** — Eu quero mostarda com o hambúrguer. `[Ver palavra: mustard]`
+4. `[Frase]` **There is vinegar in the sauce.** — Há vinagre no molho. `[Ver palavra: vinegar]`
+5. `[Frase]` **I like cinnamon in the cake.** — Eu gosto de canela no bolo. `[Ver palavra: cinnamon]`
+6. `[Frase]` **The cake has vanilla.** — O bolo leva baunilha. `[Ver palavra: vanilla]`
+7. `[Frase]` **The chocolate is sweet.** — O chocolate é doce. `[Ver palavra: chocolate]`
+8. `[Frase]` **How much oil is in the bottle?** — Quanto óleo há na garrafa? `[Ver palavra: oil]`
+9. `[Frase]` **The herb is green.** — A erva é verde. `[Ver palavra: herb]`
+10. `[Frase]` **The bread has sesame.** — O pão tem gergelim. `[Ver palavra: sesame]`
+11. `[Frase]` **I have a pickle.** — Eu tenho um picles. `[Ver palavra: pickle]`
+12. `[Frase]` **There is a walnut in the bowl.** — Há uma noz na tigela. `[Ver palavra: walnut]`
+
+**PAL:** 12<br>
+**TPA:** 850<br>
+**PA:** garlic, ketchup, mustard, vinegar, cinnamon, vanilla, chocolate, oil, herb, sesame, pickle, walnut
+
+#### Lição 158 — história: uma refeição com uma amiga
+
+1. Yesterday I went to a restaurant with my friend. — Ontem fui a um restaurante com minha amiga.
+2. We saw the menu. The soup was five dollars. — Nós vimos o cardápio. A sopa custava cinco dólares.
+3. I was worried. I had only two dollars. — Eu estava preocupada. Eu tinha apenas dois dólares.
+4. “I can help you,” my friend said. — “Eu posso ajudar você”, disse minha amiga.
+5. We ordered soup and bread. — Nós pedimos sopa e pão.
+6. The soup was delicious, and the bread was crunchy. — A sopa estava deliciosa, e o pão estava crocante.
+7. My friend paid the bill. I wanted to thank her. — Minha amiga pagou a conta. Eu queria agradecê-la.
+8. We shared a sweet pancake for dessert. She is my best friend. — Nós dividimos uma panqueca doce de sobremesa. Ela é minha melhor amiga.
+
+#### Lição 159 — exame: apêndice de frases inéditas
+
+1. How many bananas are on the table? — Quantas bananas estão na mesa?
+2. There is some yogurt in the fridge. — Há um pouco de iogurte na geladeira.
+3. How much water is in the bottle? — Quanta água há na garrafa?
+4. How much is the pancake? — Quanto custa a panqueca?
+5. Would you like some garlic with the pasta? — Você gostaria de um pouco de alho com o macarrão?
+6. The dogs are trapped in the kitchen. — Os cachorros estão presos na cozinha.
+7. The envelope is not closed. — O envelope não está fechado.
+8. She walked down the steep hill. — Ela desceu a colina íngreme.
+9. My friend paid the bill for the pizza. — Minha amiga pagou a conta da pizza.
+10. The bicycle is not locked. — A bicicleta não está presa com cadeado.
 
 # BLOCO 14 — Caso Possessivo ('s), Descrição de Aparência e Personalidade, Comparativos Básicos (-er than)
-*Ciclos: (131, 132, R133) · (134, 135, R136) · (137, 138, R139) · Fechamento: História 140 · Teste 14*
+
+### Lições dos ciclos — rascunhos a revisar
 
 ### Lição 131 — O Caso Genitivo Saxão ("'s" de Posse) *(2 palavras novas)*
 *Novas: **Whose** (pronome interrogativo de posse), e o marcador morfológico **'s** (Genitivo Saxão).*
@@ -2543,6 +3318,10 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 131**
    > O Genitivo Saxão (`'s`): Em inglês, a relação de posse entre pessoas e coisas expressa-se antepondo o possuidor com **'s** ao objeto possuído: **Possuidor + 's + Coisa possuída** (*Gabriel's car* = o carro de Gabriel; *my sister's house* = a casa da minha irmã). Não confunda com a contração de *is* (*David's tall = David is tall*; *David's dog = o cachorro de David*). O pronome **Whose** questiona especificamente a quem pertence algo (*Whose phone is this?*).
 
+**PAL:** 1<br>
+**TPA:** 537<br>
+**PA:** Whose
+
 ### Lição 132 — Descrição Física: Cabelo, Olhos e Traços *(4 palavras novas)*
 *Novas: **Hair** (substantivo incontável cabelo), **Eye** (substantivo olho, plural: *eyes*), **Dark** (adjetivo escuro/moreno), **Blonde** (adjetivo loiro/loira).*
 **Foco**: Descrições Físicas com **Have/Has**: Usamos o verbo *have...
@@ -2560,6 +3339,10 @@ flowchart TD
 11. `[Frase]` **The boy with green eyes is my son.** — O menino de olhos verdes é meu filho.
 12. `[Gramática]` **Gramática — Lição 132**
    > Descrições Físicas com **Have/Has**: Usamos o verbo *have/has* para indicar características físicas permanentes (*She has blue eyes; He has blonde hair*). Atenção: a palavra **hair** é tratada quase sempre como substantivo incontável no singular quando nos referimos ao conjunto capilar (*Her hair is dark*, nunca *Her hairs are dark*).
+
+**PAL:** 5<br>
+**TPA:** 542<br>
+**PA:** Hair, Eye, Eyes, Dark, Blonde
 
 ### Lição 133 — Revisão: Idade e Estágios da Vida *(3 palavras novas)*
 *Novas: **Year** (substantivo ano, plural: *years*), **Young** (adjetivo jovem/novo), **How old** (locução interrogativa de idade).*
@@ -2579,6 +3362,10 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 133**
    > Expressando Idade em Inglês: Diferentemente do português (onde usamos o verbo "ter"), a idade em inglês é concebida como um estado, sendo formulada obrigatoriamente com o verbo **To Be**: **Sujeito + To Be + [número] + years old** (*I am twenty years old*; incorreto usar *have*). A pergunta para saber a idade de alguém é sempre **How old are you?** ou **How old is he/she?**.
 
+**PAL:** 4<br>
+**TPA:** 546<br>
+**PA:** Year, years, Young, How old
+
 ### Lição 134 — Descrição de Personalidade *(3 palavras novas)*
 *Novas: **Kind** (adjetivo gentil/bondoso), **Smart** (adjetivo inteligente/esperto), **Funny** (adjetivo engraçado/divertido).*
 **Foco**: Adjetivos de Personalidade: Qualificam o temperamento e a...
@@ -2596,6 +3383,10 @@ flowchart TD
 11. `[Frase]` **He is funny, and we play together.** — Ele é engraçado, e nós brincamos juntos.
 12. `[Gramática]` **Gramática — Lição 134**
    > Adjetivos de Personalidade: Qualificam o temperamento e a inteligência das pessoas. Posicionam-se após o verbo *To Be* (*She is smart; He is kind*) ou antes do substantivo que qualificam (*a funny boy; kind people*). Em inglês, os adjetivos são invariáveis em gênero e número (a mesma forma serve para homem, mulher, singular e plural).
+
+**PAL:** 3<br>
+**TPA:** 549<br>
+**PA:** Kind, Smart, Funny
 
 ### Lição 135 — Comparativos de Superioridade: A Regra do "-er than" *(2 palavras novas)*
 *Novas: **Than** (conjunção comparativa do que/que), **Taller** (forma comparativa mais alto/mais alta que).*
@@ -2615,6 +3406,10 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 135**
    > O Comparativo de Superioridade Regular: Para comparar dois elementos usando adjetivos curtos (de uma sílaba), acrescentamos o sufixo **-er** ao adjetivo, acompanhado da conjunção **than** (*do que*):
 
+**PAL:** 2<br>
+**TPA:** 551<br>
+**PA:** Than, Taller
+
 ### Lição 136 — Variações Ortográficas do Comparativo (-ier e Consoante Dupla) *(3 palavras novas)*
 *Novas: **Easy** (adjetivo fácil), **Town** (substantivo cidade pequena/município), **Cleaner** (comparativo mais limpo/mais limpa).*
 **Foco**: Regras Ortográficas do Comparativo:
@@ -2632,6 +3427,10 @@ flowchart TD
 11. `[Frase]` **A big city is busier than a quiet town.** — Uma cidade grande é mais agitada do que uma cidadezinha tranquila.
 12. `[Gramática]` **Gramática — Lição 136**
    > Regras Ortográficas do Comparativo:
+
+**PAL:** 3<br>
+**TPA:** 554<br>
+**PA:** Easy, Town, Cleaner
 
 ### Lição 137 — Comparativos Irregulares: "Better than" e "Worse than" *(2 palavras novas)*
 *Novas: **Better** (comparativo irregular de *good*: melhor do que), **Worse** (comparativo irregular de *bad*: pior do que).*
@@ -2651,6 +3450,10 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 137**
    > Comparativos Irregulares (*Good* e *Bad*): Os dois adjetivos mais universais do inglês possuem formas comparativas próprias, que não seguem a terminação *-er*:
 
+**PAL:** 2<br>
+**TPA:** 556<br>
+**PA:** Better, Worse
+
 ### Lição 138 — Comparando Cidades, Lugares e Ambientes *(3 palavras novas)*
 *Novas: **Quieter** (comparativo mais silencioso que), **Cheaper** (comparativo mais barato que), **Strong** (adjetivo forte).*
 **Foco**: Flexões Comparativas Adicionais: Adjetivos monossilábicos...
@@ -2668,6 +3471,10 @@ flowchart TD
 11. `[Frase]` **This hotel room is cleaner and quieter.** — Este quarto de hotel é mais limpo e silencioso.
 12. `[Gramática]` **Gramática — Lição 138**
    > Flexões Comparativas Adicionais: Adjetivos monossilábicos e dissilábicos regulares recebem *-er*: *quiet $\rightarrow$ quieter than*; *cheap $\rightarrow$ cheaper than*; *strong $\rightarrow$ stronger than*. Na linguagem oral cotidiana, após a conjunção *than* emprega-se o pronome objeto (*stronger than me*).
+
+**PAL:** 3<br>
+**TPA:** 559<br>
+**PA:** Quieter, Cheaper, Strong
 
 ### Lição 139 — Revisão: Comparações Pessoais e Preferências *(2 palavras novas)*
 *Novas: **Friendly** (adjetivo simpático/amigável), **Friendlier** (comparativo mais simpático/mais amigável).*
@@ -2687,30 +3494,55 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 139**
    > Padrões de Comparação Direta:
 
-### Lição 140 — Fechamento do Bloco 14: História 2 — Dois Amigos e Duas Vidas
-*Lição 140 do nível A1*
-**Foco**: Fechamento do Bloco 14: História 2 — Dois Amigos e Duas Vidas
+**PAL:** 1<br>
+**TPA:** 560<br>
+**PA:** Friendlier
 
-1. `[Frase]` **Gabriel and Leo are two good friends from Brazil.** — Gabriel e Leo são dois bons amigos do Brasil.
-2. `[Frase]` **Gabriel is twenty-eight years old, and Leo is twenty-five.** — Gabriel tem vinte e oito anos de idade, e Leo tem vinte e cinco.
-3. `[Frase]` **Gabriel is three years older than Leo.** — Gabriel é três anos mais velho do que Leo.
-4. `[Frase]` **Gabriel is very tall, and he has short dark hair and brown eyes.** — Gabriel é muito alto, e tem cabelo escuro curto e olhos castanhos.
-5. `[Frase]` **Leo is shorter than Gabriel, and he has blonde hair and green eyes.** — Leo é mais baixo do que Gabriel, e tem cabelo loiro e olhos verdes.
-6. `[Frase]` **Gabriel is an engineer, and he is very smart and kind.** — Gabriel é engenheiro, e ele é muito inteligente e gentil.
-7. `[Frase]` **Leo is a chef, and he is funnier and friendlier.** — Leo é chef de cozinha, e ele é mais engraçado e mais simpático.
-8. `[Frase]` **Gabriel's apartment is in a big city near his office.** — O apartamento do Gabriel fica em uma cidade grande perto do escritório dele.
-9. `[Frase]` **Leo's house is in a quiet town near the beach.** — A casa do Leo fica em uma cidadezinha tranquila perto da praia.
-10. `[Frase]` **Gabriel's apartment is smaller, but it is near his office.** — O apartamento do Gabriel é menor, mas fica perto do escritório dele.
-11. `[Frase]` **Leo's house is bigger, quieter and cheaper than Gabriel's apartment.** — A casa do Leo é maior, mais silenciosa e mais barata do que o apartamento do Gabriel.
-12. `[Frase]` **In the summer, Gabriel drives his car to Leo's house on the weekend.** — No verão, Gabriel dirige o carro dele até a casa do Leo no fim de semana.
-13. `[Frase]` **Leo cooks delicious pasta and chicken for his friend.** — Leo cozinha massa e frango deliciosos para o amigo dele.
-14. `[Frase]` **Gabriel's life is busier, but Leo's life is quieter and healthier.** — A vida do Gabriel é mais agitada, mas a vida do Leo é mais tranquila e saudável.
-15. `[Frase]` **They love their lives, and they are very good friends.** — Eles amam as suas vidas, e são muito bons amigos.
+### Encerramento proposto — banco, texto e exame
 
----
+Pré-requisito: ciclos de aparência, personalidade e comparativos do Bloco 14 revisados. Confirmar também a apresentação de *cold* antes deste banco; o rascunho anterior o usa em frases, mas não o apresenta explicitamente como vocabulário novo.
+
+#### Lição 172-BF — banco de frases: aparência, personalidade e partes do corpo
+
+1. She has **curly** hair. — Ela tem cabelo cacheado. (*curly*: cacheado)
+2. He has **straight** hair. — Ele tem cabelo liso. (*straight*: liso)
+3. She has **long** hair. — Ela tem cabelo comprido. (*long*: comprido)
+4. My cousin is **shy**. — Minha prima é tímida. (*shy*: tímido, tímida)
+5. My sister is **cheerful**. — Minha irmã é alegre. (*cheerful*: alegre)
+6. My **hand** is cold. — Minha mão está fria. (*hand*: mão)
+7. My **arm** is cold. — Meu braço está frio. (*arm*: braço)
+8. My **nose** is cold. — Meu nariz está frio. (*nose*: nariz)
+9. My **face** is cold. — Meu rosto está frio. (*face*: rosto)
+
+**PAL:** 9<br>
+**TPA:** 569<br>
+**PA:** curly, straight, long, shy, cheerful, hand, arm, nose, face
+
+#### Texto — duas pessoas
+
+1. My sister has curly hair. — Minha irmã tem cabelo cacheado.
+2. She is cheerful and kind. — Ela é alegre e gentil.
+3. My cousin has straight hair. — Minha prima tem cabelo liso.
+4. She is shy and friendly. — Ela é tímida e simpática.
+5. My sister is taller than my cousin. — Minha irmã é mais alta do que minha prima.
+6. My cousin has green eyes. — Minha prima tem olhos verdes.
+
+#### Exame — apêndice de frases inéditas
+
+1. My father has curly hair. — Meu pai tem cabelo cacheado.
+2. Her brother has straight hair. — O irmão dela tem cabelo liso.
+3. His mother has long hair. — A mãe dele tem cabelo comprido.
+4. The teacher is shy. — A professora é tímida.
+5. Her cousin is cheerful. — A prima dela é alegre.
+6. My uncle has curly hair. — Meu tio tem cabelo cacheado.
+7. The writer has straight hair. — A escritora tem cabelo liso.
+8. His daughter is shy. — A filha dele é tímida.
+9. The dancer is cheerful. — A dançarina é alegre.
+10. Her hair is long and dark. — O cabelo dela é comprido e escuro.
 
 # BLOCO 15 — Introdução ao Passado Simples (Was/Were e Regulares -ed), Marcadores de Tempo e Consolidação Geral A1
-*Ciclos: (141, 142, R143) · (144, 145, R146) · (147, 148, R149) · Fechamento: Grande História 150 · Teste 15*
+
+### Lições dos ciclos — rascunhos a revisar
 
 ### Lição 141 — Passado do Verbo To Be: "Was" e "Were" (Afirmativa) *(3 palavras novas)*
 *Novas: **Was** (passado de *am/is* para *I, he, she, it*), **Were** (passado de *are* para *you, we, they*), **Yesterday** (advérbio temporal ontem).*
@@ -2730,6 +3562,10 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 141**
    > O Passado do Verbo To Be: No Simple Past afirmativo, o verbo *To Be* possui apenas duas formas:
 
+**PAL:** 3<br>
+**TPA:** 572<br>
+**PA:** Was, Yesterday, Were
+
 ### Lição 142 — Passado do Verbo To Be: Negação ("Wasn't" e "Weren't") e Perguntas *(3 palavras novas)*
 *Novas: **Wasn't** (forma negativa de *was*), **Weren't** (forma negativa de *were*), **Last** (adjetivo temporal passado/último).*
 **Foco**: Negações e Perguntas com Was/Were:
@@ -2747,6 +3583,10 @@ flowchart TD
 11. `[Frase]` **Yes, she was.** — Sim, ela estava.
 12. `[Gramática]` **Gramática — Lição 142**
    > Negações e Perguntas com Was/Were:
+
+**PAL:** 1<br>
+**TPA:** 573<br>
+**PA:** Last
 
 ### Lição 143 — Revisão: Marcadores Temporais do Passado e "Ago" *(2 palavras novas)*
 *Novas: **Ago** (advérbio temporal atrás/faz tempo), **Month** (substantivo mês, plural: *months*).*
@@ -2766,6 +3606,10 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 143**
    > O Advérbio **Ago**: Posiciona-se **obrigatoriamente após** o período de tempo decorrido (*two days ago* = dois dias atrás; *three months ago* = há três meses; *ten minutes ago* = dez minutos atrás). O substantivo *month* forma plural regular com acréscimo de *-s* (*months*).
 
+**PAL:** 3<br>
+**TPA:** 576<br>
+**PA:** Ago, Month, months
+
 ### Lição 144 — Passado Simples Regular: A Regra Geral do "-ed" *(Ativação Morfológica)*
 *Novas: Ativação das formas de passado regular com sufixo **-ed** no contador morfológico. Verbos de prática: **Worked**, **Walked**, **Cooked**, **Cleaned**.*
 **Foco**: A Regra Geral do **-ed**: No Simple Past, a grande maiori...
@@ -2784,6 +3628,10 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 144**
    > A Regra Geral do **-ed**: No Simple Past, a grande maioria dos verbos regulares em inglês recebe o sufixo **-ed** (*work $\rightarrow$ worked, walk $\rightarrow$ walked, cook $\rightarrow$ cooked, clean $\rightarrow$ cleaned, play $\rightarrow$ played, visit $\rightarrow$ visited*). A mesma forma verbal serve para todos os sujeitos sem exceção (*I worked, she worked, they worked*).
 
+**PAL:** 4<br>
+**TPA:** 580<br>
+**PA:** Worked, Walked, Cooked, Cleaned
+
 ### Lição 145 — Variações Ortográficas do Passado Regular (-d e -ied) *(2 palavras novas)*
 *Novas: Verbos regulares em passado com variações: **Lived** (passado de *live*), **Studied** (passado de *study*).*
 **Foco**: Variações Ortográficas do Passado Regular:
@@ -2801,6 +3649,10 @@ flowchart TD
 11. `[Frase]` **He carried a big backpack to school.** — Ele carregou uma mochila grande para a escola.
 12. `[Gramática]` **Gramática — Lição 145**
    > Variações Ortográficas do Passado Regular:
+
+**PAL:** 2<br>
+**TPA:** 582<br>
+**PA:** Lived, Studied
 
 ### Lição 146 — Revisão: Negação no Passado com "Didn't" *(1 palavra nova)*
 *Novas: **Didn't** (verbo auxiliar negativo do passado simples para todas as pessoas).*
@@ -2838,6 +3690,10 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 147**
    > Perguntas e Respostas Curtas no Passado com **Did**:
 
+**PAL:** 1<br>
+**TPA:** 583<br>
+**PA:** Did
+
 ### Lição 148 — Perguntas Abertas no Passado (Wh- + Did) *(Prática Integrada)*
 *Lição 148 do nível A1*
 **Foco**: Estrutura de Perguntas Abertas no Passado: **Question Wor...
@@ -2874,28 +3730,46 @@ flowchart TD
 12. `[Gramática]` **Gramática — Lição 149**
    > O Verbo **Call** e Cadeias de Ações no Passado: O verbo *call* segue a regra geral acrescentando **-ed** (*call $\rightarrow$ called*). Para narrar acontecimentos em ordem cronológica no passado, conectamos as frases com marcadores de sequência como *first* (primeiro), *then* (então/depois) e *and* (e), mantendo todos os verbos no tempo passado (*We arrived, took the subway, and called our family*).
 
-### Lição 150 — Fechamento do Bloco 15 & Grande Fechamento do Nível A1: Grande História 3 — A Viagem Inesquecível a Nova York
-*Lição 150 do nível A1*
-**Foco**: Fechamento do Bloco 15 & Grande Fechamento do Nível A1: Grande História 3 — A Viagem Inesquecível a Nova York
+**PAL:** 2<br>
+**TPA:** 585<br>
+**PA:** Call, Called
 
-1. `[Frase]` **Last month, Lucas traveled to New York with his sister, Mariana.** — No mês passado, Lucas viajou para Nova York com a irmã dele, Mariana.
-2. `[Frase]` **Lucas is twenty-six years old, and Mariana is twenty-four.** — Lucas tem vinte e seis anos de idade, e Mariana tem vinte e quatro.
-3. `[Frase]` **They were very happy because it was their big trip to the United States.** — Eles estavam muito felizes porque era a grande viagem deles aos Estados Unidos.
-4. `[Frase]` **They arrived at the airport at eight o'clock in the morning.** — Eles chegaram ao aeroporto às oito horas da manhã.
-5. `[Frase]` **The weather in New York was cool, sunny and beautiful.** — O tempo em Nova York estava fresco, ensolarado e lindo.
-6. `[Frase]` **Lucas carried their big suitcases, and Mariana had their tickets and passports.** — Lucas carregou as malas grandes deles, e Mariana estava com as passagens e passaportes.
-7. `[Frase]` **First, they took the train from the airport to the city station.** — Primeiro, eles pegaram o trem do aeroporto para a estação da cidade.
-8. `[Frase]` **Then, they walked on foot for ten minutes to their hotel.** — Depois, eles caminharam a pé por dez minutos até o hotel deles.
-9. `[Frase]` **Their hotel room was clean, quiet and warm.** — O quarto de hotel deles era limpo, silencioso e acolhedor.
-10. `[Frase]` **In the afternoon, they walked in the park and watched the children play.** — À tarde, eles caminharam no parque e observaram as crianças brincar.
-11. `[Frase]` **Mariana loved the red flowers and green trees.** — Mariana amou as flores vermelhas e as árvores verdes.
-12. `[Frase]` **In the evening, they visited an Italian restaurant near the hotel.** — À noite, eles visitaram um restaurante italiano perto do hotel.
-13. `[Frase]` **The waiter was very polite, and Lucas ordered chicken with rice and fresh vegetables.** — O garçom foi muito educado, e Lucas pediu frango com arroz e legumes frescos.
-14. `[Frase]` **Mariana would like delicious pasta with a glass of red wine.** — Mariana pediu uma massa deliciosa com uma taça de vinho tinto.
-15. `[Frase]` **They didn't eat fast food because they prefer healthy food.** — Eles não comeram fast food porque preferem comida saudável.
-16. `[Frase]` **After dinner, they ordered sweet cake for dessert and the bill was forty dollars.** — Depois do jantar, eles pediram bolo doce de sobremesa e a conta deu quarenta dólares.
-17. `[Frase]` **Lucas left a five-dollar tip for the waiter.** — Lucas deixou uma gorjeta de cinco dólares para o garçom.
-18. `[Frase]` **Yesterday, they called their parents in Brazil and spoke about the trip.** — Ontem, eles ligaram para os pais deles no Brasil e falaram sobre a viagem.
-19. `[Frase]` **Lucas and Mariana studied English, practiced every day and now speak English very well.** — Lucas e Mariana estudaram inglês, praticaram todos os dias e agora falam inglês muito bem.
-20. `[Frase]` **Now, they speak English, understand people and love their life.** — Agora, eles falam inglês, entendem as pessoas e amam a vida deles.
-21. `[Frase]` **Congratulations! You completed the Level A1 curriculum with fluency!** — Parabéns! Você concluiu o currículo do Nível A1 com fluência!
+### Encerramento proposto — banco, texto e exame
+
+Pré-requisito: ciclos de passado e marcadores temporais do Bloco 15 revisados.
+
+#### Lição 184-BF — banco de frases: lembranças e objetos de viagem
+
+1. I have a **souvenir**. — Eu tenho uma lembrança de viagem. (*souvenir*: lembrança de viagem)
+2. The **postcard** is on the table. — O cartão-postal está na mesa. (*postcard*: cartão-postal)
+3. The **guide** is in the museum. — O guia está no museu. (*guide*: guia)
+4. My **camera** is in the suitcase. — Minha câmera está na mala. (*camera*: câmera)
+5. The **luggage tag** is on the suitcase. — A etiqueta de bagagem está na mala. (*luggage tag*: etiqueta de bagagem)
+
+**PAL:** 5<br>
+**TPA:** 590<br>
+**PA:** souvenir, postcard, guide, camera, luggage tag
+
+#### Texto — lembranças de uma viagem
+
+1. I was in Portugal last month. — Eu estava em Portugal no mês passado.
+2. I visited the museum. — Eu visitei o museu.
+3. The guide was in the museum. — O guia estava no museu.
+4. My camera was in the suitcase. — Minha câmera estava na mala.
+5. The souvenir was on the table. — A lembrança de viagem estava na mesa.
+6. The postcard was in my suitcase. — O cartão-postal estava na minha mala.
+
+#### Exame — apêndice de frases inéditas
+
+1. My souvenir was in the suitcase. — Minha lembrança de viagem estava na mala.
+2. The postcard was on the desk. — O cartão-postal estava na mesa.
+3. The guide was at the hotel. — O guia estava no hotel.
+4. Her camera was in the room. — A câmera dela estava no quarto.
+5. The luggage tag was on the table. — A etiqueta de bagagem estava na mesa.
+6. Did you visit the museum? — Você visitou o museu?
+7. We visited the museum yesterday. — Nós visitamos o museu ontem.
+8. Was the guide in the hotel? — O guia estava no hotel?
+9. His camera wasn't in the suitcase. — A câmera dele não estava na mala.
+10. The postcard was not on the table. — O cartão-postal não estava na mesa.
+
+~];~;
