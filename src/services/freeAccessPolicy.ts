@@ -135,7 +135,7 @@ export function completeFreeExam(
   }
   return {
     allowed: true,
-    state: correctAnswers >= 8
+    state: correctAnswers >= 7
       ? { ...state, passedBlocks: [...state.passedBlocks, blockNumber], activeCycle: null, activeExam: null, lastCycleDate: today }
       : { ...state, activeExam: null, lastCycleDate: today },
   };

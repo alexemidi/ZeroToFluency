@@ -201,7 +201,7 @@ describe('Currículo Construtivo i+1 (Sem Palavras Auxiliares Desconhecidas), Li
     expect(lesson8.cards.map((c) => c.english)).toContain('I am in the school.');
     expect(lesson8.cards.map((c) => c.english)).toContain('You are in the cafeteria.');
 
-    const lesson24 = INITIAL_STUDY_DAYS.find((d) => d.dayNumber === 26)!;
+    const lesson24 = INITIAL_STUDY_DAYS.find((d) => d.dayNumber === 28)!;
     expect(lesson24.cards.map((c) => c.english)).toContain('Living room');
     expect(lesson24.cards.map((c) => c.english)).toContain('My father is in the living room.');
   });
@@ -1421,7 +1421,7 @@ describe('Currículo Construtivo i+1 (Sem Palavras Auxiliares Desconhecidas), Li
     ]);
 
     const a1Lessons = INITIAL_STUDY_DAYS.filter((d) => d.cefrLevel === 'A1');
-    expect(a1Lessons.length).toBe(151);
+    expect(a1Lessons.length).toBe(153);
   });
 });
 
@@ -1742,7 +1742,7 @@ describe('Pré-cadastro Inteligente de Palavras Conhecidas (Pulo Automático) e 
   });
 
   it('deve possuir 150 lições completas do Nível A1 e retomar exatamente do card onde o aluno parou via checkpoint', () => {
-    expect(INITIAL_STUDY_DAYS.length).toBe(151);
+    expect(INITIAL_STUDY_DAYS.length).toBe(153);
 
     const email = 'julia.aluna@gmail.com';
     const lesson2 = storageService.getStudyDays().find((d) => d.dayNumber === 2)!;

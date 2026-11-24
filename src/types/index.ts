@@ -18,7 +18,7 @@ export interface AuthorizedUser {
   dailyStudyDaysQuota?: number; // Quantos "dias de estudo" (blocos de 10 palavras novas) o aluno pode aprender por dia (Padrão alunos: 2 = 20 palavras/dia; Gratuito: 1 = 10 palavras/dia)
   maxTotalStudyDaysLimit?: number; // Limite geral do plano (ex: 50 ou 100 dias no plano gratuito, ou 1000 no curso completo)
   subscriptionTier?: SubscriptionTier;
-  passedBlockTests?: number[]; // Índices dos blocos (1 a 15) em que o aluno foi aprovado com >= 80%
+  passedBlockTests?: number[]; // Índices dos blocos (1 a 15) em que o aluno foi aprovado com >= 70%
   createdAt: string;
 }
 
@@ -98,6 +98,7 @@ export interface StudyDayLesson {
 
 export type BlockTestSkill =
   | 'listening_writing'
+  | 'listening_speaking'
   | 'listening_translation'
   | 'reading_speaking'
   | 'reading_translation';
@@ -110,6 +111,7 @@ export interface BlockTestQuestion {
   prompt: string; // Instrução exibida ao aluno
   audioText?: string; // Texto falado na síntese de áudio (listening)
   acceptedAnswers: string[]; // Respostas válidas para escrita ou tradução
+  recommendedTranslation?: string; // Tradução recomendada em português conforme o roteiro
 }
 
 export interface BlockTestAnswerSubmission {
@@ -122,7 +124,7 @@ export interface BlockTestAnswerSubmission {
 export interface BlockTestResult {
   blockNumber: number;
   userEmail: string;
-  passed: boolean; // >= 80% (8 de 10)
+  passed: boolean; // >= 70% (7 de 10)
   score: number; // 0 a 10
   totalQuestions: number; // 10
   attemptDateIso: string;

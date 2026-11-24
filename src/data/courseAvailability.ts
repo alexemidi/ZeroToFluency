@@ -8,10 +8,10 @@ import { StudyDayLesson } from '../types';
  * bloco novo, inclua seu número aqui somente depois de seus cards, fechamento
  * e exame estarem implementados e validados no aplicativo.
  */
-export const PUBLISHED_A1_BLOCKS = [1] as const;
+export const PUBLISHED_A1_BLOCKS = [1, 2, 3] as const;
 
 export function isPublishedA1Block(blockNumber: number | undefined): boolean {
-  return blockNumber !== undefined && PUBLISHED_A1_BLOCKS.includes(blockNumber as 1);
+  return blockNumber !== undefined && PUBLISHED_A1_BLOCKS.includes(blockNumber as typeof PUBLISHED_A1_BLOCKS[number]);
 }
 
 export function isPublishedLesson(lesson: StudyDayLesson): boolean {
@@ -23,5 +23,6 @@ export function publishedLessons(lessons: StudyDayLesson[]): StudyDayLesson[] {
 }
 
 export function publishedBlockCountLabel(): string {
-  return `${PUBLISHED_A1_BLOCKS.length} bloco revisado disponível`;
+  const count = PUBLISHED_A1_BLOCKS.length;
+  return `${count} ${count === 1 ? 'bloco revisado disponível' : 'blocos revisados disponíveis'}`;
 }

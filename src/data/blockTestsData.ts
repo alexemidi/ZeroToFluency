@@ -1,5 +1,6 @@
 import { BlockTestQuestion, BlockTestSkill } from '../types';
 import { BLOCK_ONE_LESSONS } from './blockOneLessons';
+import { BLOCK_THREE_LESSONS, BLOCK_TWO_LESSONS, REVISED_BLOCK_APPENDICES } from './revisedBlocks';
 
 export interface BlockMeta {
   blockNumber: number;
@@ -21,14 +22,14 @@ export const A1_BLOCKS_METADATA: BlockMeta[] = [
     blockNumber: 2,
     title: "Bloco 2 — Negação e Interrogação Básica",
     theme: "Negação, Preposições e Perguntas com To Be",
-    lessonRange: [11, 20],
+    lessonRange: [13, 23],
     grammarTopics: "To Be negativo (not), contrações (isn't, aren't), preposições (with, from, at, for) e inversão interrogativa.",
   },
   {
     blockNumber: 3,
     title: "Bloco 3 — Posse e Descrição do Lar",
     theme: "Adjetivos Possessivos e Ambientes do Lar",
-    lessonRange: [21, 30],
+    lessonRange: [25, 35],
     grammarTopics: "Possessivos (my, your, his, her, our, their) e qualificadores do lar.",
   },
   {
@@ -117,9 +118,9 @@ export const A1_BLOCKS_METADATA: BlockMeta[] = [
   },
 ];
 
-// Os blocos legados ainda não seguem o roteiro novo; a etapa 12 pertence ao exame.
-for (const block of A1_BLOCKS_METADATA.slice(1)) {
-  block.lessonRange = [block.lessonRange[0] + 2, block.lessonRange[1] + 2];
+// Os três primeiros blocos já seguem o novo roteiro, que insere uma prova entre blocos.
+for (const block of A1_BLOCKS_METADATA.slice(3)) {
+  block.lessonRange = [block.lessonRange[0] + 6, block.lessonRange[1] + 6];
 }
 
 /**
@@ -3376,7 +3377,7 @@ function drawBlockOneQuestions(): BlockTestQuestion[] {
   const formats = shuffle([...skills, ...skills, ...shuffle(skills).slice(0, 2)]);
   return sentences.map(([english, portuguese], index) => {
     const skill = formats[index];
-    const isTranslation = skill === 'listening_translation' || skill === 'reading_translation';
+    const isTranslation = skill === 'reading_translation';
     const answers: string[] = [];
     if (isTranslation) {
       answers.push(portuguese);
@@ -3384,6 +3385,16 @@ function drawBlockOneQuestions(): BlockTestQuestion[] {
         answers.push(portuguese.replace('Ela é a ', 'Ela é '));
       } else if (portuguese.startsWith('Ele é o ')) {
         answers.push(portuguese.replace('Ele é o ', 'Ele é '));
+      }
+      if (portuguese.includes('escrivaninha')) {
+        answers.push(portuguese.replace(/escrivaninha/g, 'mesa'));
+        answers.push(portuguese.replace(/escrivaninha/g, 'carteira'));
+      } else if (portuguese.includes('mesa')) {
+        answers.push(portuguese.replace(/mesa/g, 'escrivaninha'));
+      }
+      if (portuguese.includes('sobre a escrivaninha')) {
+        answers.push(portuguese.replace('sobre a escrivaninha', 'na mesa'));
+        answers.push(portuguese.replace('sobre a escrivaninha', 'na escrivaninha'));
       }
     } else {
       answers.push(english);
@@ -3399,15 +3410,71 @@ function drawBlockOneQuestions(): BlockTestQuestion[] {
         : 'Leia e traduza para o português.',
       audioText: english,
       acceptedAnswers: answers,
+      recommendedTranslation: portuguese,
     };
   });
+}
+
+const REVISED_TEST_SKILLS: BlockTestSkill[] = [
+  'listening_writing', 'listening_translation', 'reading_speaking', 'reading_translation',
+];
+
+function revisedSentences(lessons: typeof BLOCK_TWO_LESSONS, appendix: Array<[string, string]>): {
+  known: Array<[string, string]>; appendix: Array<[string, string]>;
+} {
+  const known = new Map<string, [string, string]>();
+  for (const card of lessons.flatMap((lesson) => lesson.cards)) {
+    if ((card.type === 'phrase' || card.type === 'dialogue') && card.portuguese) {
+      known.set(card.english.toLowerCase(), [card.english, card.portuguese]);
+    }
+  }
+  return { known: [...known.values()], appendix };
+}
+
+function revisedQuestion(
+  blockNumber: number, qNum: number, skill: BlockTestSkill, [english, portuguese]: [string, string],
+): BlockTestQuestion {
+  const isTranslation = skill === 'listening_translation' || skill === 'reading_translation';
+  return {
+    id: `block-${blockNumber}-revised-${qNum}`,
+    blockNumber, qNum, skill,
+    prompt: skill === 'listening_writing' ? 'Ouça e escreva em inglês.'
+      : skill === 'listening_translation' ? 'Ouça e traduza para o português.'
+      : skill === 'reading_speaking' ? 'Leia a frase em voz alta.'
+      : 'Leia e traduza para o português.',
+    audioText: english,
+    acceptedAnswers: [isTranslation ? portuguese : english],
+    recommendedTranslation: portuguese,
+  };
+}
+
+function revisedBlockBank(blockNumber: number): BlockTestQuestion[] {
+  const lessons = blockNumber === 2 ? BLOCK_TWO_LESSONS : BLOCK_THREE_LESSONS;
+  const pool = revisedSentences(lessons, REVISED_BLOCK_APPENDICES[blockNumber]);
+  const sentences = [...pool.known.slice(0, 10), ...pool.appendix.slice(0, 10)];
+  return sentences.map((sentence, index) => revisedQuestion(
+    blockNumber, index + 1, REVISED_TEST_SKILLS[index % REVISED_TEST_SKILLS.length], sentence,
+  ));
+}
+
+function drawRevisedBlockQuestions(blockNumber: number): BlockTestQuestion[] {
+  const lessons = blockNumber === 2 ? BLOCK_TWO_LESSONS : BLOCK_THREE_LESSONS;
+  const pool = revisedSentences(lessons, REVISED_BLOCK_APPENDICES[blockNumber]);
+  const sentences = shuffle([
+    ...shuffle(pool.known).slice(0, 5),
+    ...shuffle(pool.appendix).slice(0, 5),
+  ]);
+  const skills = shuffle([...REVISED_TEST_SKILLS, ...REVISED_TEST_SKILLS, ...shuffle(REVISED_TEST_SKILLS).slice(0, 2)]);
+  return sentences.map((sentence, index) => revisedQuestion(blockNumber, index + 1, skills[index], sentence));
 }
 
 export const ALL_BLOCK_TEST_QUESTIONS = LEGACY_BLOCK_TEST_QUESTIONS.filter((q) => q.blockNumber !== 1);
 
 export const BLOCK_TESTS_MAP: Record<number, BlockTestQuestion[]> = {};
 for (let b = 1; b <= 15; b++) {
-  BLOCK_TESTS_MAP[b] = b === 1 ? drawBlockOneQuestions() : ALL_BLOCK_TEST_QUESTIONS.filter((q) => q.blockNumber === b);
+  BLOCK_TESTS_MAP[b] = b === 1 ? drawBlockOneQuestions()
+    : b === 2 || b === 3 ? revisedBlockBank(b)
+      : ALL_BLOCK_TEST_QUESTIONS.filter((q) => q.blockNumber === b);
 }
 
 /**
@@ -3416,11 +3483,13 @@ for (let b = 1; b <= 15; b++) {
  */
 export function drawBlockTestQuestions(blockNumber: number): BlockTestQuestion[] {
   if (blockNumber === 1) return drawBlockOneQuestions();
+  if (blockNumber === 2 || blockNumber === 3) return drawRevisedBlockQuestions(blockNumber);
   const blockPool = ALL_BLOCK_TEST_QUESTIONS.filter((q) => q.blockNumber === blockNumber);
   if (blockPool.length === 0) return [];
 
   const bySkill: Record<BlockTestSkill, BlockTestQuestion[]> = {
     listening_writing: [],
+    listening_speaking: [],
     listening_translation: [],
     reading_speaking: [],
     reading_translation: [],
@@ -3476,6 +3545,7 @@ const PORTUGUESE_EQUIVALENTS = [
   ['garota', 'menina'],
   ['carro', 'automovel'],
   ['casa', 'lar'],
+  ['escrivaninha', 'mesa', 'carteira'],
 ];
 
 function normalizedWords(text: string): string[] {

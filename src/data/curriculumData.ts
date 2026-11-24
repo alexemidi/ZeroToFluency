@@ -1,6 +1,6 @@
 import { StudyDayLesson, Flashcard, CefrLevel } from '../types';
-import { REVIEWED_A1_LESSONS } from './reviewedA1Lessons';
 import { BLOCK_ONE_LESSONS } from './blockOneLessons';
+import { BLOCK_THREE_LESSONS, BLOCK_TWO_LESSONS } from './revisedBlocks';
 
 /**
  * Currículo Pedagógico Estruturado 100% Construtivo Nível A1 (150 Lições, 15 Blocos, 1.500+ Palavras).
@@ -12117,15 +12117,16 @@ const ORIGINAL_STUDY_DAYS: StudyDayLesson[] = [
 
 export const INITIAL_STUDY_DAYS: StudyDayLesson[] = [
   ...BLOCK_ONE_LESSONS,
-  ...ORIGINAL_STUDY_DAYS.filter((lesson) => lesson.dayNumber >= 11).map((original) => {
-    const lesson = REVIEWED_A1_LESSONS.find((reviewed) => reviewed.dayNumber === original.dayNumber) ?? original;
-    const dayNumber = lesson.dayNumber + 2;
+  ...BLOCK_TWO_LESSONS,
+  ...BLOCK_THREE_LESSONS,
+  ...ORIGINAL_STUDY_DAYS.filter((lesson) => lesson.dayNumber >= 31).map((original) => {
+    const dayNumber = original.dayNumber + 6;
     return {
-      ...lesson,
+      ...original,
       dayNumber,
       weekNumber: Math.ceil(dayNumber / 7),
-      title: lesson.title.replace(/^(?:Dia|Lição) \d+/, `Lição ${dayNumber}`),
-      cards: lesson.cards.map((card) => ({ ...card, dayNumber })),
+      title: original.title.replace(/^(?:Dia|Lição) \d+/, `Lição ${dayNumber}`),
+      cards: original.cards.map((card) => ({ ...card, dayNumber })),
     };
   }),
 ];

@@ -90,23 +90,58 @@ export function detectWrongLanguageAttempt(
   const trimmed = userText.trim();
   if (!trimmed) return null;
 
+  const words = trimmed
+    .toLowerCase()
+    .replace(/[^a-zA-Z0-9À-ÿ\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+
+  if (words.length === 0) return null;
+
+  const hasPtAccents = /[áàâãéêíóôõúçÁÀÂÃÉÊÍÓÔÕÚÇ]/i.test(trimmed);
+
+  const PT_DISTINCT_WORDS = new Set([
+    'o', 'os', 'as', 'um', 'uma', 'uns', 'umas', 'do', 'da', 'dos', 'das',
+    'no', 'na', 'nos', 'nas', 'num', 'numa', 'dele', 'dela', 'deles', 'delas',
+    'ele', 'ela', 'eles', 'elas', 'eu', 'voce', 'você', 'voces', 'vocês', 'nos', 'nós',
+    'sou', 'estou', 'esta', 'está', 'estao', 'estão', 'estamos', 'e', 'é', 'sao', 'são',
+    'nao', 'não', 'sim', 'com', 'para', 'por', 'favor', 'sobre', 'embaixo', 'perto',
+    'livro', 'caderno', 'escrivaninha', 'carteira', 'mesa', 'cadeira', 'porta', 'janela',
+    'quadro', 'mochila', 'diretora', 'diretor', 'escola', 'aluno', 'aluna', 'estudante',
+    'menino', 'menina', 'garoto', 'garota', 'homem', 'mulher', 'cachorro', 'gato',
+    'borracha', 'laranja', 'maca', 'maçã', 'cafe', 'café', 'agua', 'água', 'leite',
+    'cha', 'chá', 'sanduiche', 'sanduíche', 'refeitorio', 'refeitório', 'sala', 'aula',
+    'tem', 'temos', 'têm', 'tinha', 'vejo', 'olha', 'onde', 'aqui', 'ali'
+  ]);
+
+  const EN_DISTINCT_WORDS = new Set([
+    'the', 'is', 'are', 'am', 'she', 'he', 'they', 'we', 'you', 'it', 'my', 'your', 'his', 'her', 'their', 'our',
+    'in', 'on', 'under', 'this', 'that', 'these', 'those', 'not', 'with', 'from', 'for', 'of', 'have', 'has',
+    'book', 'notebook', 'desk', 'chair', 'board', 'door', 'window', 'paper', 'marker', 'crayon', 'backpack',
+    'teacher', 'student', 'school', 'table', 'cat', 'dog', 'orange', 'apple', 'coffee', 'water', 'milk', 'tea',
+    'sandwich', 'cafeteria', 'classroom', 'principal', 'janitor', 'doctor', 'pencil', 'eraser', 'where', 'here', 'there'
+  ]);
+
+  let ptWordCount = 0;
+  let enWordCount = 0;
+
+  for (const w of words) {
+    if (PT_DISTINCT_WORDS.has(w)) ptWordCount++;
+    if (EN_DISTINCT_WORDS.has(w)) enWordCount++;
+  }
+
   if (targetSkill === 'listening_writing') {
-    // Esperado: Inglês. Detectar se digitou em português.
-    const hasPtAccents = /[áàâãéêíóôõúçÁÀÂÃÉÊÍÓÔÕÚÇ]/.test(trimmed);
-    const ptWordsRegex = /\b(o|a|os|as|um|uma|do|da|dos|das|no|na|nos|nas|ele|ela|eles|elas|nós|você|vocês|eu|sou|estou|está|estão|estamos|é|são|não|sim|com|para|de|em|por|favor|livro|mesa|caneta|diretora|diretor|escola|aluno|aluna|menino|menina|cachorro|gato|borracha|laranja|maçã|café|água|leite|chá|sanduíche|refeitório|sala)\b/i;
-    if (hasPtAccents || ptWordsRegex.test(trimmed)) {
+    // Esperado: Inglês. O aluno digitou em português.
+    if (hasPtAccents || (ptWordCount > 0 && enWordCount === 0)) {
       return 'should_be_en';
     }
   } else if (targetSkill === 'listening_translation' || targetSkill === 'reading_translation') {
-    // Esperado: Português. Detectar se digitou em inglês.
-    const hasPtAccents = /[áàâãéêíóôõúçÁÀÂÃÉÊÍÓÔÕÚÇ]/.test(trimmed);
-    if (!hasPtAccents) {
-      const enWordsRegex = /\b(the|and|is|are|am|she|he|they|we|you|it|in|on|under|this|that|these|those|not|with|from|for|of|book|pen|pencil|teacher|student|school|table|chair|cat|dog|orange|apple|coffee|water|milk|tea|sandwich|cafeteria|classroom|principal|janitor|doctor)\b/i;
-      if (enWordsRegex.test(trimmed)) {
-        return 'should_be_pt';
-      }
+    // Esperado: Português. O aluno digitou em inglês.
+    if (!hasPtAccents && enWordCount > 0 && ptWordCount === 0) {
+      return 'should_be_pt';
     }
   }
+
   return null;
 }
 
@@ -1407,7 +1442,7 @@ class ZeroToFluencyApp {
                     isPassed
                       ? `Você já foi aprovado neste bloco${bestResult ? ` com nota ${bestResult.score}/10` : ''}. Você pode refazer o teste a qualquer momento.`
                       : allBlockLessonsCompleted || isTeacher
-                      ? `Faça a avaliação de 10 questões (mínimo 80% / 8 acertos) para desbloquear o próximo bloco.`
+                      ? `Faça a avaliação de 10 questões (mínimo 70% / 7 acertos) para desbloquear o próximo bloco.`
                       : `Complete as ${blockDays.length} lições deste bloco para habilitar a avaliação.`
                   }
                 </div>
@@ -1580,11 +1615,17 @@ class ZeroToFluencyApp {
     const wrongLang = detectWrongLanguageAttempt(response, q.skill);
     if (wrongLang && !s.wrongLanguageWarning) {
       if (wrongLang === 'should_be_en') {
-        s.wrongLanguageWarning = 'Você escreveu em português. Por favor, escreva em inglês!';
+        s.wrongLanguageWarning = 'Você escreveu em português. Por favor, escreva em inglês! (Você tem mais uma chance)';
       } else {
-        s.wrongLanguageWarning = 'Você escreveu em inglês. Por favor, escreva em português!';
+        s.wrongLanguageWarning = 'Você escreveu em inglês. Por favor, escreva em português! (Você tem mais uma chance)';
       }
+      s.currentResponse = '';
       this.render();
+      const inputEl = document.getElementById('block-test-input') as HTMLInputElement | null;
+      if (inputEl) {
+        inputEl.value = '';
+        inputEl.focus();
+      }
       return;
     }
     s.wrongLanguageWarning = null;
@@ -1628,7 +1669,8 @@ class ZeroToFluencyApp {
       // Test finished, compute and save result
       const correctCount = s.answers.filter((a) => a.isCorrect).length;
       const totalQuestions = s.questions.length;
-      const passed = correctCount >= 8;
+      const minRequired = Math.ceil(totalQuestions * 0.70); // 70% (7 de 10)
+      const passed = correctCount >= minRequired;
 
       const result: BlockTestResult = {
         blockNumber: s.blockNumber,
@@ -1802,32 +1844,45 @@ class ZeroToFluencyApp {
         ${
           s.isSubmitted && s.evaluationResult
             ? `
-            <div class="test-feedback-box ${s.evaluationResult.isCorrect ? 'correct' : 'incorrect'}">
-              <div style="font-weight: 700; margin-bottom: 4px;">
+            <div class="test-feedback-box ${s.evaluationResult.isCorrect ? 'correct' : 'incorrect'}" style="margin-top: 20px; padding: 16px 20px; border-radius: var(--radius-sm); border: 1px solid ${s.evaluationResult.isCorrect ? 'rgba(16, 185, 129, 0.4)' : 'rgba(239, 68, 68, 0.4)'}; background: ${s.evaluationResult.isCorrect ? 'rgba(16, 185, 129, 0.08)' : 'rgba(239, 68, 68, 0.08)'};">
+              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom: 12px;">
+                <span class="block-badge ${s.evaluationResult.isCorrect ? 'badge-passed' : 'badge-locked'}" style="font-size: 0.85rem; padding: 4px 12px; font-weight: 700;">
+                  ${s.evaluationResult.isCorrect ? '✔ Resposta Correta' : '✖ Resposta Incorreta'}
+                </span>
+                <div style="display:flex; gap:8px;">
+                  <button id="btn-feedback-audio-normal" type="button" class="btn btn-sm" style="font-size:0.8rem; padding:4px 10px;">
+                    🔊 Ouvir Áudio
+                  </button>
+                  <button id="btn-feedback-audio-slow" type="button" class="btn btn-sm" style="font-size:0.8rem; padding:4px 10px;">
+                    🐢 Lento
+                  </button>
+                </div>
+              </div>
+
+              <div style="font-size: 0.92rem; line-height: 1.6; color: var(--text-primary);">
+                <div><strong>Inglês:</strong> "${this.escapeHtml(q.audioText || q.prompt)}"</div>
+                <div><strong>Tradução recomendada:</strong> "${this.escapeHtml(q.recommendedTranslation || q.acceptedAnswers[0] || '')}"</div>
+                <div style="color: var(--text-secondary); margin-top: 4px;">
+                  <strong>Sua resposta:</strong> "${this.escapeHtml(s.currentResponse || '(vazio)')}"
+                </div>
                 ${
-                  q.skill === 'reading_speaking'
-                    ? (s.evaluationResult.isCorrect ? 'Pronúncia acompanhada!' : 'Vamos praticar mais uma vez?')
-                    : (s.evaluationResult.isCorrect ? 'Resposta correta!' : 'Resposta ainda não correspondeu')
+                  !s.evaluationResult.isCorrect && q.acceptedAnswers.length > 0 && (q.skill === 'listening_translation' || q.skill === 'reading_translation')
+                    ? `<div style="font-size:0.82rem; color:var(--text-secondary); margin-top:4px;">
+                        Gabarito aceito: <strong>"${this.escapeHtml(q.acceptedAnswers[0])}"</strong>
+                        ${q.acceptedAnswers.length > 1 ? `<br/><span style="font-size:0.8rem;">Outras variantes válidas: ${q.acceptedAnswers.slice(1).map((a) => `"${this.escapeHtml(a)}"`).join(', ')}</span>` : ''}
+                      </div>`
+                    : ''
                 }
               </div>
-              <div>
-                ${
-                  s.evaluationResult.isCorrect
-                    ? `Gabarito correspondido: <strong>"${this.escapeHtml(s.evaluationResult.matchedAnswer ?? '')}"</strong>`
-                    : `Sua resposta: "${this.escapeHtml(s.currentResponse || '(vazio)')}"<br/>
-                       Gabarito aceito: <strong>"${this.escapeHtml(q.acceptedAnswers[0] || q.audioText || '')}"</strong>
-                       ${q.acceptedAnswers.length > 1 ? `<br/><span style="font-size:0.8rem; color:var(--text-secondary);">Outras variantes válidas: ${q.acceptedAnswers.slice(1).map((a) => `"${this.escapeHtml(a)}"`).join(', ')}</span>` : ''}`
-                }
-              </div>
+
               ${
                 s.evaluationResult.wordFeedback
-                  ? `<div class="speech-word-feedback">
+                  ? `<div class="speech-word-feedback" style="margin-top: 10px;">
                       ${s.evaluationResult.wordFeedback.map((word) => `<span class="speech-word ${word.status}">${this.escapeHtml(word.spoken)}</span>`).join('')}
                     </div>`
                   : ''
               }
-              ${s.evaluationResult.feedback ? `<p class="test-feedback-tip">${this.escapeHtml(s.evaluationResult.feedback)}</p>` : ''}
-              ${q.skill === 'reading_speaking' ? `<button id="btn-replay-speech-model" class="btn btn-sm" style="margin-top:10px;">Ouvir o modelo novamente</button>` : ''}
+              ${s.evaluationResult.feedback ? `<p class="test-feedback-tip" style="margin-top: 8px; font-size: 0.85rem;">${this.escapeHtml(s.evaluationResult.feedback)}</p>` : ''}
             </div>
           `
             : ''
@@ -1892,13 +1947,14 @@ class ZeroToFluencyApp {
     const s = this.blockTestSession;
     const correctCount = s.answers.filter((a) => a.isCorrect).length;
     const totalCount = s.questions.length;
+    const minRequired = Math.ceil(totalCount * 0.70);
     const scorePercent = Math.round((correctCount / totalCount) * 100);
-    const passed = correctCount >= 8;
+    const passed = correctCount >= minRequired;
 
     return `
       <section class="block-test-stage test-result-summary">
         <span class="block-badge ${passed ? 'badge-passed' : 'badge-locked'}" style="font-size: 0.88rem; padding: 6px 16px;">
-          ${passed ? '<span class="css-icon-check"></span> Aprovado no Bloco' : 'Reprovado — Nota Mínima: 80% (8/10)'}
+          ${passed ? '<span class="css-icon-check"></span> Aprovado no Bloco' : 'Reprovado — Nota Mínima: 70% (7/10)'}
         </span>
 
         <h2 style="font-size: 1.5rem; font-weight: 800; margin-top: 14px;">
@@ -1916,28 +1972,45 @@ class ZeroToFluencyApp {
           ${
             passed
               ? `Parabéns! Você demonstrou domínio nas habilidades avaliadas e desbloqueou oficialmente o <strong>Bloco ${s.blockNumber + 1}</strong>!`
-              : `Você atingiu ${correctCount} acertos de um mínimo de 8 necessários. Revise as lições do Bloco ${s.blockNumber} e tente novamente.`
+              : `Você atingiu ${correctCount} acertos de um mínimo de ${minRequired} necessários. Revise as lições do Bloco ${s.blockNumber} e tente novamente.`
           }
         </p>
 
         <!-- Detalhamento questão por questão -->
         <div style="text-align: left; margin: 24px 0; background: var(--bg-elevated); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 16px;">
-          <h4 style="font-size: 0.92rem; font-weight: 700; margin-bottom: 12px;">Desempenho por Questão:</h4>
+          <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 14px;">Desempenho por Questão:</h4>
           ${s.answers
             .map((ans, idx) => {
               const q = s.questions.find((quest) => quest.id === ans.questionId);
+              const englishText = q?.audioText || q?.prompt || '';
+              const recTranslation = q?.recommendedTranslation || (q?.acceptedAnswers && (q.skill === 'listening_translation' || q.skill === 'reading_translation') ? q.acceptedAnswers[0] : '');
               return `
-              <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; padding: 8px 0; border-bottom: 1px dashed var(--border-color); font-size: 0.85rem;">
-                <div>
-                  <span style="font-weight: 600;">#${idx + 1} [${ans.skill}]</span>:
-                  <span>${this.escapeHtml(q?.audioText || q?.prompt || '')}</span>
-                  <div style="font-size: 0.78rem; color: var(--text-secondary);">
-                    Sua resposta: "${this.escapeHtml(ans.userResponse || '(vazio)')}"
+              <div style="padding: 12px 0; border-bottom: 1px dashed var(--border-color); font-size: 0.88rem;">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom: 6px;">
+                  <span style="font-weight: 700;">#${idx + 1} [${ans.skill}]</span>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    ${
+                      englishText
+                        ? `<button type="button" class="btn btn-sm" data-play-summary-audio="${this.escapeHtml(englishText)}" style="font-size:0.75rem; padding:3px 8px;">
+                            🔊 Ouvir
+                          </button>
+                          <button type="button" class="btn btn-sm" data-play-summary-audio-slow="${this.escapeHtml(englishText)}" style="font-size:0.75rem; padding:3px 8px;">
+                            🐢 Lento
+                          </button>`
+                        : ''
+                    }
+                    <span class="block-badge ${ans.isCorrect ? 'badge-passed' : 'badge-locked'}" style="font-size: 0.75rem; padding: 3px 8px;">
+                      ${ans.isCorrect ? 'Correto' : 'Incorreto'}
+                    </span>
                   </div>
                 </div>
-                <span class="block-badge ${ans.isCorrect ? 'badge-passed' : 'badge-locked'}" style="font-size: 0.72rem;">
-                  ${ans.isCorrect ? 'Correto' : 'Incorreto'}
-                </span>
+                <div style="line-height: 1.5;">
+                  <div><strong>Inglês:</strong> "${this.escapeHtml(englishText)}"</div>
+                  ${recTranslation ? `<div><strong>Tradução recomendada:</strong> "${this.escapeHtml(recTranslation)}"</div>` : ''}
+                  <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">
+                    <strong>Sua resposta:</strong> "${this.escapeHtml(ans.userResponse || '(vazio)')}"
+                  </div>
+                </div>
               </div>
             `;
             })
@@ -3238,6 +3311,32 @@ class ZeroToFluencyApp {
 
     document.getElementById('btn-block-test-audio-slow')?.addEventListener('click', () => {
       this.playBlockTestAudio(0.62);
+    });
+
+    document.getElementById('btn-feedback-audio-normal')?.addEventListener('click', () => {
+      this.playBlockTestAudio(0.96);
+    });
+
+    document.getElementById('btn-feedback-audio-slow')?.addEventListener('click', () => {
+      this.playBlockTestAudio(0.62);
+    });
+
+    document.querySelectorAll<HTMLElement>('[data-play-summary-audio]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-play-summary-audio');
+        if (text) {
+          audioService.speak(text, undefined, 0.96);
+        }
+      });
+    });
+
+    document.querySelectorAll<HTMLElement>('[data-play-summary-audio-slow]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-play-summary-audio-slow');
+        if (text) {
+          audioService.speak(text, undefined, 0.62);
+        }
+      });
     });
 
     document.getElementById('btn-block-test-report-flag')?.addEventListener('click', () => {

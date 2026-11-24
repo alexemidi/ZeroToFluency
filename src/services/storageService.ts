@@ -33,7 +33,7 @@ const STORAGE_KEYS = {
 };
 
 const CURRENT_SCHEMA_VERSION = 9;
-const CURRENT_CURRICULUM_REVISION = 'a1-block-5-reviewed-v1';
+const CURRENT_CURRICULUM_REVISION = 'a1-block-3-revised-v1';
 
 const DEFAULT_AUTHORIZED_USERS: AuthorizedUser[] = [
   {
@@ -474,6 +474,18 @@ class StorageService {
   }
 
   public getStudyDays(): StudyDayLesson[] {
+    const savedRevision = localStorage.getItem(STORAGE_KEYS.CURRICULUM_REVISION);
+    if (savedRevision && savedRevision !== CURRENT_CURRICULUM_REVISION) {
+      // Ambiente de testes: os blocos 2 e 3 mudaram a numeração e o conteúdo.
+      // Progresso anterior não pode apontar para cards de outra trilha.
+      localStorage.setItem(STORAGE_KEYS.STUDY_DAYS, JSON.stringify(INITIAL_STUDY_DAYS));
+      localStorage.setItem(STORAGE_KEYS.CURRICULUM_REVISION, CURRENT_CURRICULUM_REVISION);
+      localStorage.removeItem(STORAGE_KEYS.SRS_PROGRESS);
+      localStorage.removeItem(STORAGE_KEYS.DAILY_ACTIVITY);
+      localStorage.removeItem(STORAGE_KEYS.LESSON_CHECKPOINTS);
+      localStorage.removeItem(STORAGE_KEYS.BLOCK_TEST_RESULTS);
+      return [...INITIAL_STUDY_DAYS];
+    }
     const raw = localStorage.getItem(STORAGE_KEYS.STUDY_DAYS);
     if (!raw) return [...INITIAL_STUDY_DAYS];
     let parsed: StudyDayLesson[];

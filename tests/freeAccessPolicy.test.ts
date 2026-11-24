@@ -62,10 +62,10 @@ describe('regras do plano gratuito', () => {
     state = allowed(startFreeLesson(state, 11, '2026-11-25'));
     state = allowed(completeFreeLesson(state, 11, '2026-11-25'));
     state = allowed(startFreeExam(state, 1, '2026-11-25'));
-    state = allowed(completeFreeExam(state, 1, 7, '2026-11-25'));
+    state = allowed(completeFreeExam(state, 1, 6, '2026-11-25'));
     expect(startFreeLesson(state, 1, '2026-11-25').allowed).toBe(true);
     state = allowed(startFreeExam(state, 1, '2026-11-25'));
-    state = allowed(completeFreeExam(state, 1, 8, '2026-11-25'));
+    state = allowed(completeFreeExam(state, 1, 7, '2026-11-25'));
     expect(state.passedBlocks).toEqual([1]);
     expect(state.activeCycle).toBeNull();
     expect(state.lastCycleDate).toBe('2026-11-25');
